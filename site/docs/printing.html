@@ -1,0 +1,23 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Printing — KINETIQ</title><link rel="stylesheet" href="../styles.css"><link rel="icon" href="../media/mark.svg"><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet"></head><body><a class="skip" href="#reference">Skip to reference</a><header class="header"><a class="brand" href="../index.html"><img src="../media/mark.svg" width="32" height="32" alt="">KINETIQ</a><a href="../index.html#build">Back to build guide ↗</a></header><main id="reference" class="guide-page section container"><p class="section-kicker">Prototype reference · v0.1</p><h1>Printing</h1>
+<p>All printed parts are in <code>print/</code> (STL, in the assembly frame: orient them in the slicer, see the &quot;face down&quot; column in
+<code>print/README.md</code>). Every hole is already at its final size for the inserts and screws.</p>
+<h2>Materials</h2>
+<ul>
+<li><strong>Structural</strong> (bottom plates, fairlead carrier and back plate, ODrive bracket, bearing cartridges, gussets): PA-CF
+(PAHT-CF), dried before printing.</li>
+<li><strong>Covers and end caps:</strong> PETG-CF or PA-CF.</li>
+<li><strong>Light brackets</strong> (screen frame, board plate, WAGO bracket, fan duct): PETG is fine.</li>
+</ul>
+<p>Suggested settings for the structural parts (not yet validated by a load test): 0.2 mm layers, 5-6 walls, 6 top/bottom layers,
+40-50 % gyroid infill, print the bottom plates flat on their underside. All parts fit a 256 mm bed (Bambu P2S class).</p>
+<h2>Fit coupons first</h2>
+<p><code>print/fit-coupons/</code> tests the tolerances in your material before the big prints:</p>
+<ol>
+<li>Insert pockets M2.5 / M3 / M4 at -0.15 / nominal / +0.15 mm (Ruthex RX, pockets 3.6 / 4.0 / 5.6 mm).</li>
+<li>Clearance holes M2.5 / M3 / M4 and the 5.2 mm pulley axle at -0.2 / nominal / +0.2 mm.</li>
+<li>A 10 mm slice of the battery saddle (40.0 mm inside): slide a pack through it.</li>
+<li>The exit pulley axles, 21.13 mm apart, with the carrier walls.</li>
+<li>The 6809 bearing seat (58 mm): the bearing should press in by hand.</li>
+</ol>
+<p>If your printer needs different sizes, adjust the holes in the FreeCAD parts (or the <code>source/</code> scripts) and re-export.</p>
+<p class="table-note">This is a draft design reference. Physical validation and Pi/Teensy software are pending.</p><a class="text-link" href="printing.md" download>Download Markdown source ↗</a></main><footer class="footer container"><a class="brand" href="../index.html">KINETIQ</a><a href="../index.html#parts">Parts & cost</a><a href="../index.html#files">CAD & fabrication</a></footer></body></html>

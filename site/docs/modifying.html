@@ -1,0 +1,104 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Modifying the design — KINETIQ</title><link rel="stylesheet" href="../styles.css"><link rel="icon" href="../media/mark.svg"><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet"></head><body><a class="skip" href="#reference">Skip to reference</a><header class="header"><a class="brand" href="../index.html"><img src="../media/mark.svg" width="32" height="32" alt="">KINETIQ</a><a href="../index.html#build">Back to build guide ↗</a></header><main id="reference" class="guide-page section container"><p class="section-kicker">Prototype reference · v0.1</p><h1>Modifying the design</h1>
+<p>The design is meant to be adapted: a different motor, a rotary encoder instead of the touch screen, a different battery.
+This release ships the parts as FreeCAD files with their full feature history and as STEP; fully sketch-based,
+parameter-driven parts are planned for the next release.</p>
+<h2>How the CAD is organised</h2>
+<ul>
+<li><code>cad/freecad/&lt;printed|cnc&gt;/V44_&lt;variant&gt;_assembly.FCStd</code>: the whole machine. Every part is a link to its own file in <code>parts/</code>.
+A part that takes heat-set inserts is a container holding the part and its inserts.</li>
+<li><code>cad/freecad/&lt;variant&gt;/parts/&lt;part&gt;.FCStd</code>: one part with its feature tree (boxes, cylinders, cuts, fuses, fillets, moves).
+Each feature is labelled with the build-script line that made it. Change a size or a placement and recompute.</li>
+<li><code>cad/freecad/&lt;variant&gt;/V44_&lt;variant&gt;_drivetrain_motion.FCStd</code>: Assembly-workbench motion study of the drivetrain.</li>
+<li><code>cad/step/</code>: the same parts as STEP for any CAD program, plus one assembly STEP per variant.</li>
+<li><code>cad/dxf/</code>: 2-D profiles of the flat parts.</li>
+<li>Supplier parts (motor driver, bearings, gears, boards...) are simple placeholders of the right size; get the real CAD
+from <code>cad/vendor/README.md</code>.</li>
+<li><code>source/</code>: the Python (CadQuery) scripts that generate everything. They are the source of truth, but in this release they
+still expect the full design workspace; a self-contained build is planned.</li>
+</ul>
+<p>Variants: <strong>printed</strong> (PA-CF bottom plate with aluminium flat bars under it) and <strong>cnc</strong> (aluminium bottom plate).</p>
+<h2>Swapping the motor</h2>
+<p>What the motor touches:</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Reference table"><table>
+<thead>
+<tr>
+  <th>Interface</th>
+  <th>Where</th>
+  <th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Face mount</td>
+  <td>the 4 mm motor face plate (<code>V43_METAL_motor_face_4mm</code>) + two printed gussets</td>
+  <td>hole pattern and pilot bore for your motor</td>
+</tr>
+<tr>
+  <td>Shaft</td>
+  <td>the NBK MSTS-25-10-12 coupling (10 mm motor, 12 mm drum shaft)</td>
+  <td>coupling bore for your shaft</td>
+</tr>
+<tr>
+  <td>Envelope</td>
+  <td>motor body about 80 x 82 mm at the motor end (X -77 to -3)</td>
+  <td>the end cap, covers and the board plate around it</td>
+</tr>
+<tr>
+  <td>Leads</td>
+  <td>three phase leads through a 12 mm grommet in the face plate to the ODrive terminal</td>
+  <td>lead exit and length</td>
+</tr>
+<tr>
+  <td>Electrical</td>
+  <td>ODrive Pro limits (current, voltage), torque constant</td>
+  <td><code>firmware-setup.md</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>Torque at the drum is the motor torque (direct drive): the cable force is about torque / 0.025 m (rope radius on the drum).</p>
+<h2>Swapping the batteries</h2>
+<ol>
+<li>Measure both actual packs, including leads and connector bodies. Record length, width and height; do not rely only on nominal capacity.</li>
+<li>Open a copy of the assembly and the saddle/retainer part files. Edit the relevant feature dimensions. For a STEP-only workflow, import the solids, create a constrained rectangular envelope sketch, and use new additive/subtractive features for your revised mount.</li>
+<li>Add padding and lead-bend clearance to the envelope. Keep the BMS, wires and mounting screws outside the straight removal path. Test both pack envelopes together, including staggered removal.</li>
+<li>Recompute the covers and check intersections and retaining surfaces. Print a fit sample before committing to a full enclosure; export the updated STEP/STL and update the BOM and revision.</li>
+<li>Review series count, fully charged voltage, BMS, charger, fuse/wire sizing and regenerative charge limits as a system before powered testing. Capacity alone does not establish compatibility.</li>
+</ol>
+<p>The reference is two 5S packs in series (10S, 42 V fully charged). The <a href="https://kinetiqgym.com/#modify">website adaptation guide</a> illustrates the pack envelope and motor interfaces. Its diagrams are measurement guides, not dimensioned manufacturing drawings.</p>
+<h2>Rotary encoder instead of the touch screen</h2>
+<p>What the screen touches:</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Reference table"><table>
+<thead>
+<tr>
+  <th>Interface</th>
+  <th>Where</th>
+  <th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Front window</td>
+  <td>the left cover (<code>V44_PRINT_cover_left_screen</code>), 4 in window</td>
+  <td>replace the window with a panel hole for the encoder (and a small display if wanted)</td>
+</tr>
+<tr>
+  <td>Screen frame</td>
+  <td><code>MOUNT_screen_rear_retaining_frame_printed</code> + 2 x M3 legs into inserts</td>
+  <td>not needed</td>
+</tr>
+<tr>
+  <td>Pi + DSI ribbon</td>
+  <td>Raspberry Pi 4 hanging from the cover ceiling, ribbon to the screen</td>
+  <td>optional: the Teensy can run the machine alone</td>
+</tr>
+<tr>
+  <td>Encoder</td>
+  <td>quadrature A/B + push switch to free Teensy pins, 3.3 V</td>
+  <td>firmware</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Contributing changes back</h2>
+<p>The hardware is CERN-OHL-S-2.0 (share-alike): if you distribute a modified version, publish your modified design files under
+the same licence. Pull requests and issues are welcome: see <code>CONTRIBUTING.md</code>.</p>
+<p class="table-note">This is a draft design reference. Physical validation and Pi/Teensy software are pending.</p><a class="text-link" href="modifying.md" download>Download Markdown source ↗</a></main><footer class="footer container"><a class="brand" href="../index.html">KINETIQ</a><a href="../index.html#parts">Parts & cost</a><a href="../index.html#files">CAD & fabrication</a></footer></body></html>

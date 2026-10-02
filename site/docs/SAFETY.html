@@ -1,0 +1,33 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Safety — KINETIQ</title><link rel="stylesheet" href="../styles.css"><link rel="icon" href="../media/mark.svg"><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet"></head><body><a class="skip" href="#reference">Skip to reference</a><header class="header"><a class="brand" href="../index.html"><img src="../media/mark.svg" width="32" height="32" alt="">KINETIQ</a><a href="../index.html#build">Back to build guide ↗</a></header><main id="reference" class="guide-page section container"><p class="section-kicker">Prototype reference · v0.1</p><h1>Safety</h1>
+<p><strong>Status: prototype design. It has not been built or load-tested as published.</strong> Treat every number here as a design value
+until your own build has passed the tests below.</p>
+<h2>What can hurt you</h2>
+<ul>
+<li><strong>Cable load.</strong> The machine is designed for 890 N (200 lbf) on the cable. A rope, an anchor or a printed part that fails
+under load releases that energy at the handle. Inspect the rope, the anchor wraps and the fairlead before every session;
+replace a frayed rope at once.</li>
+<li><strong>Battery.</strong> Two 5S lithium-polymer packs in series make 30-42 V and can deliver very high current. Use the specified
+BMS and fuses, never bypass them, charge only with the BMS connected, and store and charge the packs on a fire-safe surface.</li>
+<li><strong>Motor torque.</strong> The ODrive can drive the drum with up to about 13 N·m. Keep fingers, hair and loose clothing away from the
+drum, gears and the rope exit while it is powered.</li>
+<li><strong>Regenerative braking.</strong> Lowering the weight charges the battery. If the BMS stops charging (full pack, over-temperature),
+the ODrive trips on over-voltage and <strong>the cable goes slack for that rep</strong>. Charge to about 80 % so braking energy has room.</li>
+</ul>
+<h2>Rules for every build</h2>
+<ol>
+<li><strong>Payout limit in software.</strong> Home the drum fully wound and set the ODrive position limits (<code>docs/firmware-setup.md</code>):
+<code>pos_min = 0</code>, <code>pos_max = 13.26</code> turns. The two hard stops on the fairlead carrier (+-48.4 deg) are only a backstop for
+assembly and hand-turning: the worm drive cannot be back-driven, so a stop hit under load locks the drum through the
+gears and can strip the m0.8 gears or break the printed lug.</li>
+<li><strong>Keep the 3 dead wraps</strong> of rope on the drum at full payout. Never run the rope off the drum.</li>
+<li><strong>Fuses:</strong> 40 A 58 V main fuse, 3 A 58 V regulator fuse, 7.5 A 58 V charge fuse. Automotive 32 V fuses are not rated for
+this pack voltage.</li>
+<li><strong>First power-up</strong> with the rope unloaded: check the inrush at the power button (the BMS may trip; lengthen its
+short-circuit delay in the BMS app if it does), the direction of the drum, the soft limits and the ODrive over-voltage trip.</li>
+<li><strong>Load test</strong> before training: hang a static load in steps up to 1.5 x your planned use, with nobody in the rope's path.</li>
+<li>Print the structural parts in the specified material (PA-CF / PETG-CF), with the infill and walls in <code>docs/printing.md</code>,
+and print the fit coupons first.</li>
+</ol>
+<h2>No warranty</h2>
+<p>The design is shared under the licences in <code>LICENSE.md</code> <strong>without any warranty</strong>. You build and use it at your own risk.</p>
+<p class="table-note">This is a draft design reference. Physical validation and Pi/Teensy software are pending.</p><a class="text-link" href="SAFETY.md" download>Download Markdown source ↗</a></main><footer class="footer container"><a class="brand" href="../index.html">KINETIQ</a><a href="../index.html#parts">Parts & cost</a><a href="../index.html#files">CAD & fabrication</a></footer></body></html>

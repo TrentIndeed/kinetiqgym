@@ -1,0 +1,248 @@
+part,group,kind,size,source,note
+B_V3_ODrive_PCB_supplier_810,electronics,fastener,B_V3_ODrive_PCB_supplier_810,, V21: real helical nominal thread surfaces; verify purchased fastener class/engagement.
+B_V3_ODrive_PCB_supplier_811,electronics,fastener,B_V3_ODrive_PCB_supplier_811,, V21: real helical nominal thread surfaces; verify purchased fastener class/engagement.
+B_V3_ODrive_PCB_supplier_814,electronics,fastener,B_V3_ODrive_PCB_supplier_814,, V21: real helical nominal thread surfaces; verify purchased fastener class/engagement.
+B_V3_ODrive_PCB_supplier_817,electronics,fastener,B_V3_ODrive_PCB_supplier_817,, V21: real helical nominal thread surfaces; verify purchased fastener class/engagement.
+B_V21_goBILDA_1301_0016_0012_left,drivetrain,fastener,B_V21_goBILDA_1301_0016_0012_left,,Supplier STEP. FOUR MOUNTING HOLES DRILLED4.4mm CLEARANCE for screws into drum inserts; pinch thread retained. Original supplier STEP archived unchanged.
+I_V21_hub_left_1,drivetrain,fastener,I_V21_hub_left_1,,Match pocket to actual insert supplier; coupon test required. V21: real helical nominal thread surfaces; verify purchased fastener class/engagement.
+B_V21_hub_left_1,drivetrain,fastener,B_V21_hub_left_1,, V21: real helical nominal thread surfaces; verify purchased fastener class/engagement.
+I_V21_hub_left_2,drivetrain,fastener,I_V21_hub_left_2,,Match pocket to actual insert supplier; coupon test required. V21: real helical nominal thread surfaces; verify purchased fastener class/engagement.
+B_V21_hub_left_2,drivetrain,fastener,B_V21_hub_left_2,, V21: real helical nominal thread surfaces; verify purchased fastener class/engagement.
+I_V21_hub_left_3,drivetrain,fastener,I_V21_hub_left_3,,Match pocket to actual insert supplier; coupon test required. V21: real helical nominal thread surfaces; verify purchased fastener class/engagement.
+B_V21_hub_left_3,drivetrain,fastener,B_V21_hub_left_3,, V21: real helical nominal thread surfaces; verify purchased fastener class/engagement.
+I_V21_hub_left_4,drivetrain,fastener,I_V21_hub_left_4,,Match pocket to actual insert supplier; coupon test required. V21: real helical nominal thread surfaces; verify purchased fastener class/engagement.
+B_V21_hub_left_4,drivetrain,fastener,B_V21_hub_left_4,, V21: real helical nominal thread surfaces; verify purchased fastener class/engagement.
+I_V30_anchor_1_M4x4,drivetrain,fastener,I_V30_anchor_1_M4x4,,"V37 nominal M4 insert X86.25..90.25, installed from open drum face before plate; 2.1mm closed flange floor; actual insert and pullout test pending."
+I_V30_anchor_2_M4x4,drivetrain,fastener,I_V30_anchor_2_M4x4,,"V37 nominal M4 insert X86.25..90.25, installed from open drum face before plate; 2.1mm closed flange floor; actual insert and pullout test pending."
+I_V30_anchor_3_M4x4,drivetrain,fastener,I_V30_anchor_3_M4x4,,"V37 nominal M4 insert X86.25..90.25, installed from open drum face before plate; 2.1mm closed flange floor; actual insert and pullout test pending."
+B_V37_anchor_1_M4x8_button,drivetrain,fastener,B_V37_anchor_1_M4x8_button,,"Nominal head envelope D7.6 H2.2; simplified thread. Flat underside bears on 2mm plate; 4mm insert engagement, 1.4mm tip clearance."
+B_V37_anchor_2_M4x8_button,drivetrain,fastener,B_V37_anchor_2_M4x8_button,,"Nominal head envelope D7.6 H2.2; simplified thread. Flat underside bears on 2mm plate; 4mm insert engagement, 1.4mm tip clearance."
+B_V37_anchor_3_M4x8_button,drivetrain,fastener,B_V37_anchor_3_M4x8_button,,"Nominal head envelope D7.6 H2.2; simplified thread. Flat underside bears on 2mm plate; 4mm insert engagement, 1.4mm tip clearance."
+V43_REF_motor_spacer_0,drivetrain,spacer,V43_REF_motor_spacer_0,,"Standard M5 ID, 3 mm spacer. Actual motor thread depth must be measured."
+V43_B_motor_0,drivetrain,fastener,V43_B_motor_0,,"M5x12 socket screw through plate/spacer; nominal 5 mm motor engagement, confirm actual motor blind-hole depth."
+V43_REF_motor_spacer_1,drivetrain,spacer,V43_REF_motor_spacer_1,,"Standard M5 ID, 3 mm spacer. Actual motor thread depth must be measured."
+V43_B_motor_1,drivetrain,fastener,V43_B_motor_1,,"M5x12 socket screw through plate/spacer; nominal 5 mm motor engagement, confirm actual motor blind-hole depth."
+V43_REF_motor_spacer_2,drivetrain,spacer,V43_REF_motor_spacer_2,,"Standard M5 ID, 3 mm spacer. Actual motor thread depth must be measured."
+V43_B_motor_2,drivetrain,fastener,V43_B_motor_2,,"M5x12 socket screw through plate/spacer; nominal 5 mm motor engagement, confirm actual motor blind-hole depth."
+V43_REF_motor_spacer_3,drivetrain,spacer,V43_REF_motor_spacer_3,,"Standard M5 ID, 3 mm spacer. Actual motor thread depth must be measured."
+V43_B_motor_3,drivetrain,fastener,V43_B_motor_3,,"M5x12 socket screw through plate/spacer; nominal 5 mm motor engagement, confirm actual motor blind-hole depth."
+V43_B_motor_web_-101_16,drivetrain,fastener,V43_B_motor_web_-101_16,,M4x20 button screw. Fasten plate to braces before installing motor. Rear nut socket enters through open brace center; front Allen access requires motor removal.
+V43_W_head_motor_web_-101_16,drivetrain,fastener,V43_W_head_motor_web_-101_16,,Standard M4 washer under screw head.
+V43_W_nut_motor_web_-101_16,drivetrain,fastener,V43_W_nut_motor_web_-101_16,,Standard M4 washer under exposed nut.
+V43_N_motor_web_-101_16,drivetrain,fastener,V43_N_motor_web_-101_16,,Standard M4 hex nut; no insert or enclosed nut pocket.
+V43_B_motor_web_-101_30,drivetrain,fastener,V43_B_motor_web_-101_30,,M4x20 button screw. Fasten plate to braces before installing motor. Rear nut socket enters through open brace center; front Allen access requires motor removal.
+V43_W_head_motor_web_-101_30,drivetrain,fastener,V43_W_head_motor_web_-101_30,,Standard M4 washer under screw head.
+V43_W_nut_motor_web_-101_30,drivetrain,fastener,V43_W_nut_motor_web_-101_30,,Standard M4 washer under exposed nut.
+V43_N_motor_web_-101_30,drivetrain,fastener,V43_N_motor_web_-101_30,,Standard M4 hex nut; no insert or enclosed nut pocket.
+V43_B_motor_foot_-101,drivetrain,fastener,V43_B_motor_foot_-101,,M4x16 socket screw. Top Allen access between ribs; exposed nut below chassis.
+V43_W_head_motor_foot_-101,drivetrain,fastener,V43_W_head_motor_foot_-101,,Standard M4 washer under screw head.
+V43_B_motor_web_-24_16,drivetrain,fastener,V43_B_motor_web_-24_16,,M4x20 button screw. Fasten plate to braces before installing motor. Rear nut socket enters through open brace center; front Allen access requires motor removal.
+V43_W_head_motor_web_-24_16,drivetrain,fastener,V43_W_head_motor_web_-24_16,,Standard M4 washer under screw head. Rectangular trial: rear motor brace/joint shifted 6 mm inward.
+V43_W_nut_motor_web_-24_16,drivetrain,fastener,V43_W_nut_motor_web_-24_16,,Standard M4 washer under exposed nut. Rectangular trial: rear motor brace/joint shifted 6 mm inward.
+V43_N_motor_web_-24_16,drivetrain,fastener,V43_N_motor_web_-24_16,,Standard M4 hex nut; no insert or enclosed nut pocket. Rectangular trial: rear motor brace/joint shifted 6 mm inward.
+V43_B_motor_web_-24_30,drivetrain,fastener,V43_B_motor_web_-24_30,,M4x20 button screw. Fasten plate to braces before installing motor. Rear nut socket enters through open brace center; front Allen access requires motor removal.
+V43_W_head_motor_web_-24_30,drivetrain,fastener,V43_W_head_motor_web_-24_30,,Standard M4 washer under screw head. Rectangular trial: rear motor brace/joint shifted 6 mm inward.
+V43_W_nut_motor_web_-24_30,drivetrain,fastener,V43_W_nut_motor_web_-24_30,,Standard M4 washer under exposed nut. Rectangular trial: rear motor brace/joint shifted 6 mm inward.
+V43_N_motor_web_-24_30,drivetrain,fastener,V43_N_motor_web_-24_30,,Standard M4 hex nut; no insert or enclosed nut pocket. Rectangular trial: rear motor brace/joint shifted 6 mm inward.
+V43_B_motor_foot_-24,drivetrain,fastener,V43_B_motor_foot_-24,,M4x16 socket screw. Top Allen access between ribs; exposed nut below chassis. Rectangular trial: rear motor brace/joint shifted 6 mm inward.
+V43_W_head_motor_foot_-24,drivetrain,fastener,V43_W_head_motor_foot_-24,,Standard M4 washer under screw head. Rectangular trial: rear motor brace/joint shifted 6 mm inward.
+V43_B_retainer_left_-83.5_FM6,drivetrain,fastener,V43_B_retainer_left_-83.5_FM6,,M3x16 socket screw across 12.4 mm cheek/cartridge stack and 2.4 mm nut; 1.2 mm tip beyond nut. Shortened to clear adjacent foot-screw insertion. Moved +5 mm tow
+V43_N_retainer_left_-83.5_FM6,drivetrain,fastener,V43_N_retainer_left_-83.5_FM6,,"Standard M3 nut, exposed tool access. Moved +5 mm toward the drum (fairlead module rev 6)."
+V43_B_retainer_left_-41.5_FM6,drivetrain,fastener,V43_B_retainer_left_-41.5_FM6,,M3x16 socket screw across 12.4 mm cheek/cartridge stack and 2.4 mm nut; 1.2 mm tip beyond nut. Shortened to clear adjacent foot-screw insertion. Moved +5 mm tow
+V43_N_retainer_left_-41.5_FM6,drivetrain,fastener,V43_N_retainer_left_-41.5_FM6,,"Standard M3 nut, exposed tool access. Moved +5 mm toward the drum (fairlead module rev 6)."
+V43_B_bearing_foot_left_-14_-82.5_FM6,drivetrain,fastener,V43_B_bearing_foot_left_-14_-82.5_FM6,,M4x16 socket screw. Install with underside chassis access before fitting the drum/shaft. Nuts remain exposed below the plate. Moved +5 mm toward the drum (fairl
+V43_W_head_bearing_foot_left_-14_-82.5_FM6,drivetrain,fastener,V43_W_head_bearing_foot_left_-14_-82.5_FM6,,Standard M4 washer under screw head. Moved +5 mm toward the drum (fairlead module rev 6).
+V43_B_bearing_foot_left_-14_-42.5_FM6,drivetrain,fastener,V43_B_bearing_foot_left_-14_-42.5_FM6,,M4x16 socket screw. Install with underside chassis access before fitting the drum/shaft. Nuts remain exposed below the plate. Moved +5 mm toward the drum (fairl
+V43_W_head_bearing_foot_left_-14_-42.5_FM6,drivetrain,fastener,V43_W_head_bearing_foot_left_-14_-42.5_FM6,,Standard M4 washer under screw head. Moved +5 mm toward the drum (fairlead module rev 6).
+V43_B_bearing_foot_left_14_-82.5_FM6,drivetrain,fastener,V43_B_bearing_foot_left_14_-82.5_FM6,,M4x16 socket screw. Install with underside chassis access before fitting the drum/shaft. Nuts remain exposed below the plate. Moved +5 mm toward the drum (fairl
+V43_W_head_bearing_foot_left_14_-82.5_FM6,drivetrain,fastener,V43_W_head_bearing_foot_left_14_-82.5_FM6,,Standard M4 washer under screw head. Moved +5 mm toward the drum (fairlead module rev 6).
+V43_B_bearing_foot_left_14_-42.5_FM6,drivetrain,fastener,V43_B_bearing_foot_left_14_-42.5_FM6,,M4x16 socket screw. Install with underside chassis access before fitting the drum/shaft. Nuts remain exposed below the plate. Moved +5 mm toward the drum (fairl
+V43_W_head_bearing_foot_left_14_-42.5_FM6,drivetrain,fastener,V43_W_head_bearing_foot_left_14_-42.5_FM6,,Standard M4 washer under screw head. Moved +5 mm toward the drum (fairlead module rev 6).
+B_V21_goBILDA_1301_0016_0012_right_FM9,drivetrain,fastener,B_V21_goBILDA_1301_0016_0012_right_FM9,,Supplier STEP. FOUR MOUNTING HOLES DRILLED4.4mm CLEARANCE for screws into drum inserts; pinch thread retained. Original supplier STEP archived unchanged. Moved 
+I_V21_hub_right_1_FM9,drivetrain,fastener,I_V21_hub_right_1_FM9,,Match pocket to actual insert supplier; coupon test required. V21: real helical nominal thread surfaces; verify purchased fastener class/engagement. Moved +6 mm
+B_V21_hub_right_1_FM9,drivetrain,fastener,B_V21_hub_right_1_FM9,, V21: real helical nominal thread surfaces; verify purchased fastener class/engagement. Moved +6 mm with the 6 mm wider drum (fairlead rev 9).
+I_V21_hub_right_2_FM9,drivetrain,fastener,I_V21_hub_right_2_FM9,,Match pocket to actual insert supplier; coupon test required. V21: real helical nominal thread surfaces; verify purchased fastener class/engagement. Moved +6 mm
+B_V21_hub_right_2_FM9,drivetrain,fastener,B_V21_hub_right_2_FM9,, V21: real helical nominal thread surfaces; verify purchased fastener class/engagement. Moved +6 mm with the 6 mm wider drum (fairlead rev 9).
+I_V21_hub_right_3_FM9,drivetrain,fastener,I_V21_hub_right_3_FM9,,Match pocket to actual insert supplier; coupon test required. V21: real helical nominal thread surfaces; verify purchased fastener class/engagement. Moved +6 mm
+B_V21_hub_right_3_FM9,drivetrain,fastener,B_V21_hub_right_3_FM9,, V21: real helical nominal thread surfaces; verify purchased fastener class/engagement. Moved +6 mm with the 6 mm wider drum (fairlead rev 9).
+I_V21_hub_right_4_FM9,drivetrain,fastener,I_V21_hub_right_4_FM9,,Match pocket to actual insert supplier; coupon test required. V21: real helical nominal thread surfaces; verify purchased fastener class/engagement. Moved +6 mm
+B_V21_hub_right_4_FM9,drivetrain,fastener,B_V21_hub_right_4_FM9,, V21: real helical nominal thread surfaces; verify purchased fastener class/engagement. Moved +6 mm with the 6 mm wider drum (fairlead rev 9).
+V43_B_retainer_right_-83.5_FM9,drivetrain,fastener,V43_B_retainer_right_-83.5_FM9,,M3x16 socket screw across 12.4 mm cheek/cartridge stack and 2.4 mm nut; 1.2 mm tip beyond nut. Shortened to clear adjacent foot-screw insertion. Moved -5 mm tow
+V43_N_retainer_right_-83.5_FM9,drivetrain,fastener,V43_N_retainer_right_-83.5_FM9,,"Standard M3 nut, exposed tool access. Moved -5 mm toward the drum (fairlead module rev 6). Moved +6 mm with the 6 mm wider drum (fairlead rev 9)."
+V43_B_retainer_right_-41.5_FM9,drivetrain,fastener,V43_B_retainer_right_-41.5_FM9,,M3x16 socket screw across 12.4 mm cheek/cartridge stack and 2.4 mm nut; 1.2 mm tip beyond nut. Shortened to clear adjacent foot-screw insertion. Moved -5 mm tow
+V43_N_retainer_right_-41.5_FM9,drivetrain,fastener,V43_N_retainer_right_-41.5_FM9,,"Standard M3 nut, exposed tool access. Moved -5 mm toward the drum (fairlead module rev 6). Moved +6 mm with the 6 mm wider drum (fairlead rev 9)."
+V43_B_bearing_foot_right_-14_-82.5_FM9,drivetrain,fastener,V43_B_bearing_foot_right_-14_-82.5_FM9,,M4x16 socket screw. Install with underside chassis access before fitting the drum/shaft. Nuts remain exposed below the plate. Moved -5 mm toward the drum (fairl
+V43_W_head_bearing_foot_right_-14_-82.5_FM9,drivetrain,fastener,V43_W_head_bearing_foot_right_-14_-82.5_FM9,,Standard M4 washer under screw head. Moved -5 mm toward the drum (fairlead module rev 6). Moved +6 mm with the 6 mm wider drum (fairlead rev 9).
+V43_B_bearing_foot_right_-14_-42.5_FM9,drivetrain,fastener,V43_B_bearing_foot_right_-14_-42.5_FM9,,M4x16 socket screw. Install with underside chassis access before fitting the drum/shaft. Nuts remain exposed below the plate. Moved -5 mm toward the drum (fairl
+V43_W_head_bearing_foot_right_-14_-42.5_FM9,drivetrain,fastener,V43_W_head_bearing_foot_right_-14_-42.5_FM9,,Standard M4 washer under screw head. Moved -5 mm toward the drum (fairlead module rev 6). Moved +6 mm with the 6 mm wider drum (fairlead rev 9).
+V43_B_bearing_foot_right_14_-82.5_FM9,drivetrain,fastener,V43_B_bearing_foot_right_14_-82.5_FM9,,M4x16 socket screw. Install with underside chassis access before fitting the drum/shaft. Nuts remain exposed below the plate. Moved -5 mm toward the drum (fairl
+V43_W_head_bearing_foot_right_14_-82.5_FM9,drivetrain,fastener,V43_W_head_bearing_foot_right_14_-82.5_FM9,,Standard M4 washer under screw head. Moved -5 mm toward the drum (fairlead module rev 6). Moved +6 mm with the 6 mm wider drum (fairlead rev 9).
+V43_B_bearing_foot_right_14_-42.5_FM9,drivetrain,fastener,V43_B_bearing_foot_right_14_-42.5_FM9,,M4x16 socket screw. Install with underside chassis access before fitting the drum/shaft. Nuts remain exposed below the plate. Moved -5 mm toward the drum (fairl
+V43_W_head_bearing_foot_right_14_-42.5_FM9,drivetrain,fastener,V43_W_head_bearing_foot_right_14_-42.5_FM9,,Standard M4 washer under screw head. Moved -5 mm toward the drum (fairlead module rev 6). Moved +6 mm with the 6 mm wider drum (fairlead rev 9).
+FM10_Carrier_M3x25_1,fairlead,fastener,FM10 Carrier_M3x25_1,,"Actual saved oval-exit assembly, unchanged internal spacing; translated with main carrier bearing.  Whole exit shifted inward; internal spacings unchanged. Exis"
+FM10_Carrier_M3x25_2,fairlead,fastener,FM10 Carrier_M3x25_2,,"Actual saved oval-exit assembly, unchanged internal spacing; translated with main carrier bearing.  Whole exit shifted inward; internal spacings unchanged. Exis"
+FM10_Carrier_M3x25_3,fairlead,fastener,FM10 Carrier_M3x25_3,,"Actual saved oval-exit assembly, unchanged internal spacing; translated with main carrier bearing.  Whole exit shifted inward; internal spacings unchanged. Exis"
+FM10_Carrier_M3x25_4,fairlead,fastener,FM10 Carrier_M3x25_4,,"Actual saved oval-exit assembly, unchanged internal spacing; translated with main carrier bearing.  Whole exit shifted inward; internal spacings unchanged. Exis"
+FM10_Hub_retainer_M3x8_1,fairlead,fastener,FM10 Hub_retainer_M3x8_1,,"R14: countersunk M3 x 8 (ISO 10642), head flush in the rear inner-race retainer (was a hex head 3 mm proud); same nut."
+FM10_Hub_retainer_M3_nut_1,fairlead,fastener,FM10 Hub_retainer_M3_nut_1,,"Actual saved oval-exit assembly, unchanged internal spacing; translated with main carrier bearing.  Whole exit shifted inward; internal spacings unchanged. Exis"
+FM10_Hub_retainer_M3x8_2,fairlead,fastener,FM10 Hub_retainer_M3x8_2,,"R14: countersunk M3 x 8 (ISO 10642), head flush in the rear inner-race retainer (was a hex head 3 mm proud); same nut."
+FM10_Hub_retainer_M3_nut_2,fairlead,fastener,FM10 Hub_retainer_M3_nut_2,,"Actual saved oval-exit assembly, unchanged internal spacing; translated with main carrier bearing.  Whole exit shifted inward; internal spacings unchanged. Exis"
+FM10_Hub_retainer_M3x8_3,fairlead,fastener,FM10 Hub_retainer_M3x8_3,,"R14: countersunk M3 x 8 (ISO 10642), head flush in the rear inner-race retainer (was a hex head 3 mm proud); same nut."
+FM10_Hub_retainer_M3_nut_3,fairlead,fastener,FM10 Hub_retainer_M3_nut_3,,"Actual saved oval-exit assembly, unchanged internal spacing; translated with main carrier bearing.  Whole exit shifted inward; internal spacings unchanged. Exis"
+FM10_Oval_clamp_M3x14_-1_54,fairlead,fastener,FM10 Oval_clamp_M3x14_-1_54,,"Actual saved oval-exit assembly, unchanged internal spacing; translated with main carrier bearing. Nominal M3 x 14 socket screw, shortened for the ring movement"
+FM10_Oval_clamp_M3_nut_-1_54,fairlead,fastener,FM10 Oval_clamp_M3_nut_-1_54,,"Actual saved oval-exit assembly, unchanged internal spacing; translated with main carrier bearing. M3 nut in rear hex recess; install before placing cap. Whole "
+FM10_Oval_clamp_M3x14_-1_94,fairlead,fastener,FM10 Oval_clamp_M3x14_-1_94,,"Actual saved oval-exit assembly, unchanged internal spacing; translated with main carrier bearing. Nominal M3 x 14 socket screw, shortened for the ring movement"
+FM10_Oval_clamp_M3_nut_-1_94,fairlead,fastener,FM10 Oval_clamp_M3_nut_-1_94,,"Actual saved oval-exit assembly, unchanged internal spacing; translated with main carrier bearing. M3 nut in rear hex recess; install before placing cap. Whole "
+FM10_Oval_clamp_M3x14_1_54,fairlead,fastener,FM10 Oval_clamp_M3x14_1_54,,"Actual saved oval-exit assembly, unchanged internal spacing; translated with main carrier bearing. Nominal M3 x 14 socket screw, shortened for the ring movement"
+FM10_Oval_clamp_M3_nut_1_54,fairlead,fastener,FM10 Oval_clamp_M3_nut_1_54,,"Actual saved oval-exit assembly, unchanged internal spacing; translated with main carrier bearing. M3 nut in rear hex recess; install before placing cap. Whole "
+FM10_Oval_clamp_M3x14_1_94,fairlead,fastener,FM10 Oval_clamp_M3x14_1_94,,"Actual saved oval-exit assembly, unchanged internal spacing; translated with main carrier bearing. Nominal M3 x 14 socket screw, shortened for the ring movement"
+FM10_Oval_clamp_M3_nut_1_94,fairlead,fastener,FM10 Oval_clamp_M3_nut_1_94,,"Actual saved oval-exit assembly, unchanged internal spacing; translated with main carrier bearing. M3 nut in rear hex recess; install before placing cap. Whole "
+FM10_Exit_pulley_U625ZZ_0,fairlead,bearing_reference,FM10 Exit_pulley_U625ZZ_0,,"uxcell U625ZZ nylon U-groove pulley bearing 5 x 20 x 7 (GCr15, ABEC3): the rope runs in its groove, between the two pulleys."
+FM10_Exit_axle_M5_spacer_2mm_0_0,fairlead,spacer,FM10 Exit_axle_M5_spacer_2mm_0_0,,M5 x 2 mm spacer between the carrier wall and the pulley inner race.
+FM10_Exit_axle_M5_spacer_2mm_0_1,fairlead,spacer,FM10 Exit_axle_M5_spacer_2mm_0_1,,M5 x 2 mm spacer between the carrier wall and the pulley inner race.
+FM10_Exit_axle_M4_washer_0,fairlead,fastener,FM10 Exit_axle_M4_washer_0,,Washer under the axle nut.
+FM10_Exit_axle_M4_nut_0,fairlead,fastener,FM10 Exit_axle_M4_nut_0,,M4 nut on the axle thread.
+FM10_Exit_pulley_U625ZZ_1,fairlead,bearing_reference,FM10 Exit_pulley_U625ZZ_1,,"uxcell U625ZZ nylon U-groove pulley bearing 5 x 20 x 7 (GCr15, ABEC3): the rope runs in its groove, between the two pulleys."
+FM10_Exit_axle_M5_spacer_2mm_1_0,fairlead,spacer,FM10 Exit_axle_M5_spacer_2mm_1_0,,M5 x 2 mm spacer between the carrier wall and the pulley inner race.
+FM10_Exit_axle_M5_spacer_2mm_1_1,fairlead,spacer,FM10 Exit_axle_M5_spacer_2mm_1_1,,M5 x 2 mm spacer between the carrier wall and the pulley inner race.
+FM10_Exit_axle_M4_washer_1,fairlead,fastener,FM10 Exit_axle_M4_washer_1,,Washer under the axle nut.
+FM10_Exit_axle_M4_nut_1,fairlead,fastener,FM10 Exit_axle_M4_nut_1,,M4 nut on the axle thread.
+SKF_6001-2RSH_left,drivetrain,bearing_reference,SKF_6001-2RSH_left,supplier-cad/,"SKF 6001-2RSH (6001-2RS), manufacturer STEP."
+SKF_6001-2RSH_right,drivetrain,bearing_reference,SKF_6001-2RSH_right,supplier-cad/,"SKF 6001-2RSH (6001-2RS), manufacturer STEP."
+SKF_61809-2RS1_pivot_6809,fairlead,bearing_reference,SKF_61809-2RS1_pivot_6809,supplier-cad/,"SKF 61809-2RS1 (6809-2RS 45x58x7), manufacturer STEP; carries the printed ring journal."
+SKF_61808-2RS1_exit_6808_1,fairlead,bearing_reference,SKF_61808-2RS1_exit_6808_1,supplier-cad/,"SKF 61808-2RS1 (6808-2RS 40x52x7), manufacturer STEP; exit swivel."
+SKF_61808-2RS1_exit_6808_2,fairlead,bearing_reference,SKF_61808-2RS1_exit_6808_2,supplier-cad/,"SKF 61808-2RS1 (6808-2RS 40x52x7), manufacturer STEP; exit swivel."
+Bearing_625ZZ_roller_0,fairlead,bearing_reference,Bearing_625ZZ_roller_0,supplier-cad/,"625ZZ 5x16x5, step.parts generic model (SKF 625-2Z download did not arrive); rope roller inside the journal."
+Bearing_625ZZ_roller_1,fairlead,bearing_reference,Bearing_625ZZ_roller_1,supplier-cad/,"625ZZ 5x16x5, step.parts generic model (SKF 625-2Z download did not arrive); rope roller inside the journal."
+goBILDA_1601-0014-0006_worm_bearing_0,fairlead,bearing_reference,goBILDA_1601-0014-0006_worm_bearing_0,supplier-cad/,"goBILDA 1601-0014-0006 flanged bearing 6x14x5, supplier STEP; flange seated on the outboard cradle face."
+goBILDA_1601-0014-0006_worm_bearing_1,fairlead,bearing_reference,goBILDA_1601-0014-0006_worm_bearing_1,supplier-cad/,"goBILDA 1601-0014-0006 flanged bearing 6x14x5, supplier STEP; flange seated on the outboard cradle face."
+goBILDA_1611-0514-4008_shaft2_bearing_0,fairlead,bearing_reference,goBILDA_1611-0514-4008_shaft2_bearing_0,supplier-cad/,"goBILDA 1611-0514-4008 flanged bearing 8 mm REX, supplier STEP; flange on the pedestal face toward the 20T."
+goBILDA_1611-0514-4008_shaft2_bearing_1,fairlead,bearing_reference,goBILDA_1611-0514-4008_shaft2_bearing_1,supplier-cad/,"goBILDA 1611-0514-4008 flanged bearing 8 mm REX, supplier STEP; flange on the outboard pedestal face (rev 12: the 60T sits 1 mm inboard of the pedestal)."
+goBILDA_2106-4008-0560_REX_shaft_56,drivetrain,part,goBILDA_2106-4008-0560_REX_shaft_56,supplier-cad/,"goBILDA 2106-4008-0560 8 mm REX shaft 56 mm with e-clip, supplier STEP (shaft 2)."
+ServoCity_2101-0006-0060_D_shaft_60,fairlead,part,ServoCity_2101-0006-0060_D_shaft_60,supplier-cad/,"ServoCity 2101-0006-0060 6 mm stainless D-shaft 60 mm, supplier STEP (worm shaft)."
+NBK_MSTS-25-10-12_coupling,drivetrain,part,NBK_MSTS-25-10-12_coupling,supplier-cad/,"NBK MSTS-25-10-12 slit coupling OD25 x L31, bores 10 (motor) / 12 (drum), manufacturer STEP. Closest real part to the user-confirmed flexible OD25 x L30 coupler"
+KHK_SW0.8-R1_worm,fairlead,part,KHK_SW0.8-R1_worm,supplier-cad/,"KHK SW0.8-R1 steel worm, manufacturer STEP (fully threaded 30 mm). Phased 222 deg about its axis for zero overlap with the printed 53T ring (overlap 0.0000 mm3)"
+SameSky_TB005-762-05BE_ODrive_terminal,electronics,electronics_reference,SameSky_TB005-762-05BE_ODrive_terminal,supplier-cad/,"Same Sky (CUI) TB005-762-05BE 5-pole 7.62 mm terminal block, manufacturer STEP, placed from the datasheet on the ODrive board face (pin row position on the boar"
+Littelfuse_04980921GXM5_holder,power,part,Littelfuse_04980921GXM5_holder,supplier-cad/,"Littelfuse 04980921GXM5 MIDI 58 V inline holder with cover, M5 studs 30 mm apart, manufacturer STEP. Round 11: under the fan and the WAGO."
+Littelfuse_BF1_142.5631.5402_fuse_40A,power,part,Littelfuse_BF1_142.5631.5402_fuse_40A,supplier-cad/,"Littelfuse BF1 58 V M5 fuse (series STEP 142.5631.0000; 142.5631.5402 = 40 A), manufacturer STEP, on the holder studs."
+AMASS_XT60E-F_charge_port,power,part,AMASS_XT60E-F_charge_port,supplier-cad/,"AMASS XT60E-F female panel socket, flange flush in the rear I/O panel pocket (STEP scaled to the Amass size)."
+F44_I_odrive_foot_0_M4,fasteners,insert,M4 heat-set insert L4 (Ruthex RX),build_v44_fasteners.py,M4 heat-set insert L4 (Ruthex RX)
+F44_B_odrive_foot_0_M4x10_csk,fasteners,fastener,M4x10 countersunk (ISO 10642),build_v44_fasteners.py,M4x10 countersunk (ISO 10642)
+F44_I_odrive_foot_1_M4,fasteners,insert,M4 heat-set insert L4 (Ruthex RX),build_v44_fasteners.py,M4 heat-set insert L4 (Ruthex RX)
+F44_B_odrive_foot_1_M4x10_csk,fasteners,fastener,M4x10 countersunk (ISO 10642),build_v44_fasteners.py,M4x10 countersunk (ISO 10642)
+F44_I_exit_plate_0_M4,fasteners,insert,M4 heat-set insert L4 (Ruthex RX),build_v44_fasteners.py,M4 heat-set insert L4 (Ruthex RX)
+F44_B_exit_plate_0_M4x10_csk,fasteners,fastener,M4x10 countersunk (ISO 10642),build_v44_fasteners.py,M4x10 countersunk (ISO 10642)
+F44_I_exit_plate_1_M4,fasteners,insert,M4 heat-set insert L4 (Ruthex RX),build_v44_fasteners.py,M4 heat-set insert L4 (Ruthex RX)
+F44_B_exit_plate_1_M4x10_csk,fasteners,fastener,M4x10 countersunk (ISO 10642),build_v44_fasteners.py,M4x10 countersunk (ISO 10642)
+F44_I_board_plate_0_M3,fasteners,insert,M3 heat-set insert L4 (Ruthex RX),build_v44_fasteners.py,M3 heat-set insert L4 (Ruthex RX)
+F44_B_board_plate_0_M3x6_socket,fasteners,fastener,M3x6 socket head (ISO 4762),build_v44_fasteners.py,M3x6 socket head (ISO 4762)
+F44_I_board_plate_1_M3,fasteners,insert,M3 heat-set insert L4 (Ruthex RX),build_v44_fasteners.py,M3 heat-set insert L4 (Ruthex RX)
+F44_B_board_plate_1_M3x6_socket,fasteners,fastener,M3x6 socket head (ISO 4762),build_v44_fasteners.py,M3x6 socket head (ISO 4762)
+F44_I_cover_back_0_M3,fasteners,insert,M3 heat-set insert L4 (Ruthex RX),build_v44_fasteners.py,M3 heat-set insert L4 (Ruthex RX)
+F44_B_cover_back_0_M3x10_csk,fasteners,fastener,M3x10 countersunk (ISO 10642),build_v44_fasteners.py,M3x10 countersunk (ISO 10642)
+F44_I_cover_back_1_M3,fasteners,insert,M3 heat-set insert L4 (Ruthex RX),build_v44_fasteners.py,M3 heat-set insert L4 (Ruthex RX)
+F44_B_cover_back_1_M3x10_csk,fasteners,fastener,M3x10 countersunk (ISO 10642),build_v44_fasteners.py,M3x10 countersunk (ISO 10642)
+F44_I_cover_back_2_M3,fasteners,insert,M3 heat-set insert L4 (Ruthex RX),build_v44_fasteners.py,M3 heat-set insert L4 (Ruthex RX)
+F44_B_cover_back_2_M3x10_csk,fasteners,fastener,M3x10 countersunk (ISO 10642),build_v44_fasteners.py,M3x10 countersunk (ISO 10642)
+F44_I_cover_back_3_M3,fasteners,insert,M3 heat-set insert L4 (Ruthex RX),build_v44_fasteners.py,M3 heat-set insert L4 (Ruthex RX)
+F44_B_cover_back_3_M3x10_csk,fasteners,fastener,M3x10 countersunk (ISO 10642),build_v44_fasteners.py,M3x10 countersunk (ISO 10642)
+F44_I_cover_back_4_M3,fasteners,insert,M3 heat-set insert L4 (Ruthex RX),build_v44_fasteners.py,M3 heat-set insert L4 (Ruthex RX)
+F44_B_cover_back_4_M3x10_csk,fasteners,fastener,M3x10 countersunk (ISO 10642),build_v44_fasteners.py,M3x10 countersunk (ISO 10642)
+F44_I_cover_foot_0_M3,fasteners,insert,M3 heat-set insert L4 (Ruthex RX),build_v44_fasteners.py,M3 heat-set insert L4 (Ruthex RX)
+F44_B_cover_foot_0_M3x8_csk,fasteners,fastener,M3x8 countersunk (ISO 10642),build_v44_fasteners.py,M3x8 countersunk (ISO 10642)
+F44_I_cover_foot_1_M3,fasteners,insert,M3 heat-set insert L4 (Ruthex RX),build_v44_fasteners.py,M3 heat-set insert L4 (Ruthex RX)
+F44_B_cover_foot_1_M3x8_csk,fasteners,fastener,M3x8 countersunk (ISO 10642),build_v44_fasteners.py,M3x8 countersunk (ISO 10642)
+F44_I_cover_foot_2_M3,fasteners,insert,M3 heat-set insert L4 (Ruthex RX),build_v44_fasteners.py,M3 heat-set insert L4 (Ruthex RX)
+F44_B_cover_foot_2_M3x8_csk,fasteners,fastener,M3x8 countersunk (ISO 10642),build_v44_fasteners.py,M3x8 countersunk (ISO 10642)
+F44_I_cover_foot_3_M3,fasteners,insert,M3 heat-set insert L4 (Ruthex RX),build_v44_fasteners.py,M3 heat-set insert L4 (Ruthex RX)
+F44_B_cover_foot_3_M3x8_csk,fasteners,fastener,M3x8 countersunk (ISO 10642),build_v44_fasteners.py,M3x8 countersunk (ISO 10642)
+F44_I_cover_foot_4_M3,fasteners,insert,M3 heat-set insert L4 (Ruthex RX),build_v44_fasteners.py,M3 heat-set insert L4 (Ruthex RX)
+F44_B_cover_foot_4_M3x8_csk,fasteners,fastener,M3x8 countersunk (ISO 10642),build_v44_fasteners.py,M3x8 countersunk (ISO 10642)
+F44_I_cover_foot_5_M3,fasteners,insert,M3 heat-set insert L4 (Ruthex RX),build_v44_fasteners.py,M3 heat-set insert L4 (Ruthex RX)
+F44_B_cover_foot_5_M3x8_csk,fasteners,fastener,M3x8 countersunk (ISO 10642),build_v44_fasteners.py,M3x8 countersunk (ISO 10642)
+F44_I_cover_foot_6_M3,fasteners,insert,M3 heat-set insert L4 (Ruthex RX),build_v44_fasteners.py,M3 heat-set insert L4 (Ruthex RX)
+F44_B_cover_foot_6_M3x8_csk,fasteners,fastener,M3x8 countersunk (ISO 10642),build_v44_fasteners.py,M3x8 countersunk (ISO 10642)
+F44_I_cover_foot_7_M3,fasteners,insert,M3 heat-set insert L4 (Ruthex RX),build_v44_fasteners.py,M3 heat-set insert L4 (Ruthex RX)
+F44_B_cover_foot_7_M3x8_csk,fasteners,fastener,M3x8 countersunk (ISO 10642),build_v44_fasteners.py,M3x8 countersunk (ISO 10642)
+F44_I_cover_foot_8_M3,fasteners,insert,M3 heat-set insert L4 (Ruthex RX),build_v44_fasteners.py,M3 heat-set insert L4 (Ruthex RX)
+F44_B_cover_foot_8_M3x8_csk,fasteners,fastener,M3x8 countersunk (ISO 10642),build_v44_fasteners.py,M3x8 countersunk (ISO 10642)
+F44_I_cover_foot_9_M3,fasteners,insert,M3 heat-set insert L4 (Ruthex RX),build_v44_fasteners.py,M3 heat-set insert L4 (Ruthex RX)
+F44_B_cover_foot_9_M3x8_csk,fasteners,fastener,M3x8 countersunk (ISO 10642),build_v44_fasteners.py,M3x8 countersunk (ISO 10642)
+F44_I_cover_foot_10_M3,fasteners,insert,M3 heat-set insert L4 (Ruthex RX),build_v44_fasteners.py,M3 heat-set insert L4 (Ruthex RX)
+F44_B_cover_foot_10_M3x8_csk,fasteners,fastener,M3x8 countersunk (ISO 10642),build_v44_fasteners.py,M3x8 countersunk (ISO 10642)
+F44_B_fan_0_M3x25_csk,fasteners,fastener,M3x25 countersunk (ISO 10642),build_v44_fasteners.py,M3x25 countersunk (ISO 10642)
+F44_B_fan_1_M3x25_csk,fasteners,fastener,M3x25 countersunk (ISO 10642),build_v44_fasteners.py,M3x25 countersunk (ISO 10642)
+F44_B_fan_2_M3x25_csk,fasteners,fastener,M3x25 countersunk (ISO 10642),build_v44_fasteners.py,M3x25 countersunk (ISO 10642)
+F44_B_fan_3_M3x25_csk,fasteners,fastener,M3x25 countersunk (ISO 10642),build_v44_fasteners.py,M3x25 countersunk (ISO 10642)
+F44_B_wago_bracket_0_M3x10_socket,fasteners,fastener,M3x10 socket head (ISO 4762),build_v44_fasteners.py,M3x10 socket head (ISO 4762)
+F44_B_wago_bracket_1_M3x10_socket,fasteners,fastener,M3x10 socket head (ISO 4762),build_v44_fasteners.py,M3x10 socket head (ISO 4762)
+F44_B_clevis_0_M6x16_csk,fasteners,fastener,M6x16 countersunk (ISO 10642),build_v44_fasteners.py,M6x16 countersunk (ISO 10642)
+F44_B_clevis_1_M6x16_csk,fasteners,fastener,M6x16 countersunk (ISO 10642),build_v44_fasteners.py,M6x16 countersunk (ISO 10642)
+F44_B_clevis_2_M6x16_csk,fasteners,fastener,M6x16 countersunk (ISO 10642),build_v44_fasteners.py,M6x16 countersunk (ISO 10642)
+F44_B_clevis_3_M6x16_csk,fasteners,fastener,M6x16 countersunk (ISO 10642),build_v44_fasteners.py,M6x16 countersunk (ISO 10642)
+F44_B_block_0_M3x8_csk,fasteners,fastener,M3x8 countersunk (ISO 10642),build_v44_fasteners.py,M3x8 countersunk (ISO 10642)
+F44_B_block_1_M3x8_csk,fasteners,fastener,M3x8 countersunk (ISO 10642),build_v44_fasteners.py,M3x8 countersunk (ISO 10642)
+F44_I_block_2_M3,fasteners,insert,M3 heat-set insert L4 (Ruthex RX),build_v44_fasteners.py,M3 heat-set insert L4 (Ruthex RX)
+F44_B_block_2_M3x10_csk,fasteners,fastener,M3x10 countersunk (ISO 10642),build_v44_fasteners.py,M3x10 countersunk (ISO 10642)
+F44_I_block_3_M3,fasteners,insert,M3 heat-set insert L4 (Ruthex RX),build_v44_fasteners.py,M3 heat-set insert L4 (Ruthex RX)
+F44_B_block_3_M3x10_csk,fasteners,fastener,M3x10 countersunk (ISO 10642),build_v44_fasteners.py,M3x10 countersunk (ISO 10642)
+F44_I_block_4_M3,fasteners,insert,M3 heat-set insert L4 (Ruthex RX),build_v44_fasteners.py,M3 heat-set insert L4 (Ruthex RX)
+F44_B_block_4_M3x10_csk,fasteners,fastener,M3x10 countersunk (ISO 10642),build_v44_fasteners.py,M3x10 countersunk (ISO 10642)
+F44_I_block_5_M3,fasteners,insert,M3 heat-set insert L4 (Ruthex RX),build_v44_fasteners.py,M3 heat-set insert L4 (Ruthex RX)
+F44_B_block_5_M3x10_csk,fasteners,fastener,M3x10 countersunk (ISO 10642),build_v44_fasteners.py,M3x10 countersunk (ISO 10642)
+F44_I_screen_leg_0_M3,fasteners,insert,M3 heat-set insert L4 (Ruthex RX),build_v44_fasteners.py,M3 heat-set insert L4 (Ruthex RX)
+F44_B_screen_leg_0_M3x8_csk,fasteners,fastener,M3x8 countersunk (ISO 10642),build_v44_fasteners.py,M3x8 countersunk (ISO 10642)
+F44_I_screen_leg_1_M3,fasteners,insert,M3 heat-set insert L4 (Ruthex RX),build_v44_fasteners.py,M3 heat-set insert L4 (Ruthex RX)
+F44_B_screen_leg_1_M3x8_csk,fasteners,fastener,M3x8 countersunk (ISO 10642),build_v44_fasteners.py,M3x8 countersunk (ISO 10642)
+F44_B_pi_top_0_M2.5x5_csk,fasteners,fastener,M2.5x5 countersunk (ISO 10642),build_v44_fasteners.py,M2.5x5 countersunk (ISO 10642)
+F44_B_pi_board_0_M2.5x6_socket,fasteners,fastener,M2.5x6 socket head (ISO 4762),build_v44_fasteners.py,M2.5x6 socket head (ISO 4762)
+F44_B_pi_top_1_M2.5x5_csk,fasteners,fastener,M2.5x5 countersunk (ISO 10642),build_v44_fasteners.py,M2.5x5 countersunk (ISO 10642)
+F44_B_pi_board_1_M2.5x4_socket,fasteners,fastener,M2.5x4 socket head (ISO 4762),build_v44_fasteners.py,M2.5x4 socket head (ISO 4762)
+F44_B_pi_top_2_M2.5x5_csk,fasteners,fastener,M2.5x5 countersunk (ISO 10642),build_v44_fasteners.py,M2.5x5 countersunk (ISO 10642)
+F44_B_pi_board_2_M2.5x4_socket,fasteners,fastener,M2.5x4 socket head (ISO 4762),build_v44_fasteners.py,M2.5x4 socket head (ISO 4762)
+F44_B_pi_top_3_M2.5x5_csk,fasteners,fastener,M2.5x5 countersunk (ISO 10642),build_v44_fasteners.py,M2.5x5 countersunk (ISO 10642)
+F44_B_pi_board_3_M2.5x4_socket,fasteners,fastener,M2.5x4 socket head (ISO 4762),build_v44_fasteners.py,M2.5x4 socket head (ISO 4762)
+F44_B_bms_4_M3x12_csk,fasteners,fastener,M3x12 countersunk (ISO 10642),build_v44_fasteners.py,M3x12 countersunk (ISO 10642)
+F44_W_bms_4_M3,fasteners,fastener,M3 washer (ISO 7089),build_v44_fasteners.py,M3 washer (ISO 7089)
+F44_N_bms_4_M3,fasteners,fastener,M3 nyloc nut (ISO 10511),build_v44_fasteners.py,M3 nyloc nut (ISO 10511)
+F44_B_bms_5_M3x12_csk,fasteners,fastener,M3x12 countersunk (ISO 10642),build_v44_fasteners.py,M3x12 countersunk (ISO 10642)
+F44_W_bms_5_M3,fasteners,fastener,M3 washer (ISO 7089),build_v44_fasteners.py,M3 washer (ISO 7089)
+F44_N_bms_5_M3,fasteners,fastener,M3 nyloc nut (ISO 10511),build_v44_fasteners.py,M3 nyloc nut (ISO 10511)
+F44_B_bms_6_M3x12_csk,fasteners,fastener,M3x12 countersunk (ISO 10642),build_v44_fasteners.py,M3x12 countersunk (ISO 10642)
+F44_W_bms_6_M3,fasteners,fastener,M3 washer (ISO 7089),build_v44_fasteners.py,M3 washer (ISO 7089)
+F44_N_bms_6_M3,fasteners,fastener,M3 nyloc nut (ISO 10511),build_v44_fasteners.py,M3 nyloc nut (ISO 10511)
+F44_B_bms_7_M3x12_csk,fasteners,fastener,M3x12 countersunk (ISO 10642),build_v44_fasteners.py,M3x12 countersunk (ISO 10642)
+F44_W_bms_7_M3,fasteners,fastener,M3 washer (ISO 7089),build_v44_fasteners.py,M3 washer (ISO 7089)
+F44_N_bms_7_M3,fasteners,fastener,M3 nyloc nut (ISO 10511),build_v44_fasteners.py,M3 nyloc nut (ISO 10511)
+F44_B_xt60_0_M2.5x5_csk,fasteners,fastener,M2.5x5 countersunk (ISO 10642),build_v44_fasteners.py,M2.5x5 countersunk (ISO 10642)
+F44_B_xt60_1_M2.5x5_csk,fasteners,fastener,M2.5x5 countersunk (ISO 10642),build_v44_fasteners.py,M2.5x5 countersunk (ISO 10642)
+F44_B_io_tab_0_M2.5x5_socket,fasteners,fastener,M2.5x5 socket head (ISO 4762),build_v44_fasteners.py,M2.5x5 socket head (ISO 4762)
+F44_B_io_tab_1_M2.5x5_socket,fasteners,fastener,M2.5x5 socket head (ISO 4762),build_v44_fasteners.py,M2.5x5 socket head (ISO 4762)
+F44_B_odrive_spreader_0_M4x12_socket,fasteners,fastener,M4x12 socket head (ISO 4762),build_v44_fasteners.py,M4x12 socket head (ISO 4762)
+F44_N_odrive_spreader_0_M4,fasteners,fastener,"M4 hex nut (ISO 4032), in its pocket",build_v44_fasteners.py,"M4 hex nut (ISO 4032), in its pocket"
+F44_B_odrive_spreader_1_M4x12_socket,fasteners,fastener,M4x12 socket head (ISO 4762),build_v44_fasteners.py,M4x12 socket head (ISO 4762)
+F44_N_odrive_spreader_1_M4,fasteners,fastener,"M4 hex nut (ISO 4032), in its pocket",build_v44_fasteners.py,"M4 hex nut (ISO 4032), in its pocket"
+F44_B_odrive_spreader_2_M4x12_socket,fasteners,fastener,M4x12 socket head (ISO 4762),build_v44_fasteners.py,M4x12 socket head (ISO 4762)
+F44_N_odrive_spreader_2_M4,fasteners,fastener,"M4 hex nut (ISO 4032), in its pocket",build_v44_fasteners.py,"M4 hex nut (ISO 4032), in its pocket"
+F44_B_odrive_spreader_3_M4x12_socket,fasteners,fastener,M4x12 socket head (ISO 4762),build_v44_fasteners.py,M4x12 socket head (ISO 4762)
+F44_N_odrive_spreader_3_M4,fasteners,fastener,"M4 hex nut (ISO 4032), in its pocket",build_v44_fasteners.py,"M4 hex nut (ISO 4032), in its pocket"
+F44_I_standoff_Teensy_0_M2.5,fasteners,insert,M2.5 heat-set insert L4 (Ruthex RX),build_v44_fasteners.py,M2.5 heat-set insert L4 (Ruthex RX)
+F44_B_standoff_Teensy_0_M2.5x12_socket,fasteners,fastener,M2.5x12 socket head (ISO 4762),build_v44_fasteners.py,M2.5x12 socket head (ISO 4762)
+F44_I_standoff_Teensy_1_M2.5,fasteners,insert,M2.5 heat-set insert L4 (Ruthex RX),build_v44_fasteners.py,M2.5 heat-set insert L4 (Ruthex RX)
+F44_B_standoff_Teensy_1_M2.5x12_socket,fasteners,fastener,M2.5x12 socket head (ISO 4762),build_v44_fasteners.py,M2.5x12 socket head (ISO 4762)
+F44_I_standoff_CAN_0_M2.5,fasteners,insert,M2.5 heat-set insert L4 (Ruthex RX),build_v44_fasteners.py,M2.5 heat-set insert L4 (Ruthex RX)
+F44_B_standoff_CAN_0_M2.5x10_socket,fasteners,fastener,M2.5x10 socket head (ISO 4762),build_v44_fasteners.py,M2.5x10 socket head (ISO 4762)
+F44_I_standoff_CAN_1_M2.5,fasteners,insert,M2.5 heat-set insert L4 (Ruthex RX),build_v44_fasteners.py,M2.5 heat-set insert L4 (Ruthex RX)
+F44_B_standoff_CAN_1_M2.5x10_socket,fasteners,fastener,M2.5x10 socket head (ISO 4762),build_v44_fasteners.py,M2.5x10 socket head (ISO 4762)
+F44_I_standoff_CAN_2_M2.5,fasteners,insert,M2.5 heat-set insert L4 (Ruthex RX),build_v44_fasteners.py,M2.5 heat-set insert L4 (Ruthex RX)
+F44_B_standoff_CAN_2_M2.5x10_socket,fasteners,fastener,M2.5x10 socket head (ISO 4762),build_v44_fasteners.py,M2.5x10 socket head (ISO 4762)
+F44_I_standoff_CAN_3_M2.5,fasteners,insert,M2.5 heat-set insert L4 (Ruthex RX),build_v44_fasteners.py,M2.5 heat-set insert L4 (Ruthex RX)
+F44_B_standoff_CAN_3_M2.5x10_socket,fasteners,fastener,M2.5x10 socket head (ISO 4762),build_v44_fasteners.py,M2.5x10 socket head (ISO 4762)
+F44_I_standoff_regulator_0_M2.5,fasteners,insert,M2.5 heat-set insert L4 (Ruthex RX),build_v44_fasteners.py,M2.5 heat-set insert L4 (Ruthex RX)
+F44_B_standoff_regulator_0_M2.5x12_socket,fasteners,fastener,M2.5x12 socket head (ISO 4762),build_v44_fasteners.py,M2.5x12 socket head (ISO 4762)
+F44_I_standoff_regulator_1_M2.5,fasteners,insert,M2.5 heat-set insert L4 (Ruthex RX),build_v44_fasteners.py,M2.5 heat-set insert L4 (Ruthex RX)
+F44_B_standoff_regulator_1_M2.5x12_socket,fasteners,fastener,M2.5x12 socket head (ISO 4762),build_v44_fasteners.py,M2.5x12 socket head (ISO 4762)
+F44_I_standoff_regulator_2_M2.5,fasteners,insert,M2.5 heat-set insert L4 (Ruthex RX),build_v44_fasteners.py,M2.5 heat-set insert L4 (Ruthex RX)
+F44_B_standoff_regulator_2_M2.5x12_socket,fasteners,fastener,M2.5x12 socket head (ISO 4762),build_v44_fasteners.py,M2.5x12 socket head (ISO 4762)
+F44_I_standoff_regulator_3_M2.5,fasteners,insert,M2.5 heat-set insert L4 (Ruthex RX),build_v44_fasteners.py,M2.5 heat-set insert L4 (Ruthex RX)
+F44_B_standoff_regulator_3_M2.5x12_socket,fasteners,fastener,M2.5x12 socket head (ISO 4762),build_v44_fasteners.py,M2.5x12 socket head (ISO 4762)

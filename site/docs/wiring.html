@@ -1,0 +1,222 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Wiring — KINETIQ</title><link rel="stylesheet" href="../styles.css"><link rel="icon" href="../media/mark.svg"><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet"></head><body><a class="skip" href="#reference">Skip to reference</a><header class="header"><a class="brand" href="../index.html"><img src="../media/mark.svg" width="32" height="32" alt="">KINETIQ</a><a href="../index.html#build">Back to build guide ↗</a></header><main id="reference" class="guide-page section container"><p class="section-kicker">Prototype reference · v0.1</p><h1>Wiring</h1>
+<p>Every wire below is modelled in the CAD (<code>WIRE_*</code> parts, routed through the enclosure with their real insulation diameter),
+so the lengths are the routed lengths; add 10-15 % for the terminations. Gauges are the minimum.</p>
+<h2>Power path</h2>
+<pre><code class="language-mermaid">flowchart LR
+  A[&quot;Pack A 5S&quot;] -- &quot;series link (EC5)&quot; --&gt; B[&quot;Pack B 5S&quot;]
+  B -- &quot;B+ 10 AWG&quot; --&gt; FL[&quot;Main fuse 40 A 58 V&lt;br/&gt;line stud&quot;]
+  FL --&gt; FLD[&quot;load stud&quot;]
+  FLD -- &quot;10 AWG&quot; --&gt; OD[&quot;ODrive Pro DC+&quot;]
+  FLD -- &quot;18 AWG&quot; --&gt; F3[&quot;3 A 58 V fuse&quot;] --&gt; REG[&quot;5 V regulator&lt;br/&gt;Pololu D42V55F5&quot;]
+  CH[&quot;XT60E-F charge port&quot;] -- &quot;16 AWG&quot; --&gt; F7[&quot;7.5 A 58 V fuse&quot;] --&gt; FL
+  A -- &quot;A- 10 AWG&quot; --&gt; BMS[&quot;BMS B-&lt;br/&gt;JBD SP17S005&quot;]
+  BMS -- &quot;P- 10 AWG&quot; --&gt; W[&quot;WAGO 221-615&lt;br/&gt;P- junction&quot;]
+  W -- &quot;10 AWG&quot; --&gt; ODM[&quot;ODrive Pro DC-&quot;]
+  W -- &quot;16 AWG&quot; --&gt; CH
+  W -- &quot;18 AWG&quot; --&gt; REG
+  SW[&quot;Power button&quot;] -- &quot;signal pair&quot; --&gt; BMS
+  REG -- &quot;5 V&quot; --&gt; PI[&quot;Raspberry Pi 4&quot;]
+  REG -- &quot;5 V&quot; --&gt; T[&quot;Teensy 4.0&quot;]
+  REG -- &quot;5 V&quot; --&gt; FAN[&quot;ODrive fan&quot;]
+  T -- &quot;CAN&quot; --&gt; CANB[&quot;SN65HVD230&quot;] -- &quot;CAN H/L&quot; --&gt; OD
+  T -- &quot;USB&quot; --&gt; PI
+</code></pre>
+<p>Every return goes through the BMS P- (the WAGO), so the BMS can switch everything off. Charging enters at the main fuse's
+line stud through its own 7.5 A fuse (it bypasses the 40 A fuse; the BMS still controls it).</p>
+<h2>Wire list</h2>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Reference table"><table>
+<thead>
+<tr>
+  <th>Wire</th>
+  <th>Gauge</th>
+  <th>Route / ends</th>
+  <th>Length</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>DSI ribbon 15way FFC</td>
+  <td>FFC</td>
+  <td>Display ribbon: 15-way 1 mm FFC from the screen connector, behind the screen stand, up the back of the screen to the Pi DSI port.</td>
+  <td>-</td>
+</tr>
+<tr>
+  <td>pack plus B+ to fuse line 10AWG</td>
+  <td>10AWG</td>
+  <td>Pack B+ (EC5 on the pack lead) to the main fuse line stud (ring terminal inside the holder).</td>
+  <td>172 mm</td>
+</tr>
+<tr>
+  <td>series link A+ to B- 10AWG</td>
+  <td>10AWG</td>
+  <td>Series link between the two 5S packs (EC5 pair), in the back step.</td>
+  <td>53 mm</td>
+</tr>
+<tr>
+  <td>pack minus A- to BMS B- 10AWG</td>
+  <td>10AWG</td>
+  <td>Pack A- (EC5) to the BMS B- pad (soldered; pad position is the mock's).</td>
+  <td>124 mm</td>
+</tr>
+<tr>
+  <td>ODrive DC+ from fuse load 10AWG</td>
+  <td>10AWG</td>
+  <td>Main fuse load stud to ODrive DC+ (TB005 pole 1; ferrule).</td>
+  <td>30 mm</td>
+</tr>
+<tr>
+  <td>ODrive DC- from WAGO 10AWG</td>
+  <td>10AWG</td>
+  <td>WAGO port 1 to ODrive DC- (TB005 pole 2; ferrule).</td>
+  <td>42 mm</td>
+</tr>
+<tr>
+  <td>BMS P- to WAGO 10AWG</td>
+  <td>10AWG</td>
+  <td>BMS P- pad to the WAGO (port 2).</td>
+  <td>164 mm</td>
+</tr>
+<tr>
+  <td>motor phase C 12AWG</td>
+  <td>12AWG</td>
+  <td>Motor phase C: out of the lead-exit endcap, through the 12 mm grommet in the face plate, to TB005 pole 5 (ferrule). Gauge and exit point to confirm on the motor.</td>
+  <td>304 mm</td>
+</tr>
+<tr>
+  <td>motor phase B 12AWG</td>
+  <td>12AWG</td>
+  <td>Motor phase B: out of the lead-exit endcap, through the 12 mm grommet in the face plate, to TB005 pole 4 (ferrule). Gauge and exit point to confirm on the motor.</td>
+  <td>315 mm</td>
+</tr>
+<tr>
+  <td>motor phase A 12AWG</td>
+  <td>12AWG</td>
+  <td>Motor phase A: out of the lead-exit endcap, through the 12 mm grommet in the face plate, to TB005 pole 3 (ferrule). Gauge and exit point to confirm on the motor.</td>
+  <td>280 mm</td>
+</tr>
+<tr>
+  <td>charge plus XT60 to inline fuse 16AWG</td>
+  <td>16AWG</td>
+  <td>Charge port + (upper cup, per the panel marking) to the 7.5 A inline fuse.</td>
+  <td>40 mm</td>
+</tr>
+<tr>
+  <td>charge plus inline fuse to line 16AWG</td>
+  <td>16AWG</td>
+  <td>7.5 A inline fuse to the main fuse line stud (charging bypasses the 40 A fuse, the BMS still switches it).</td>
+  <td>79 mm</td>
+</tr>
+<tr>
+  <td>charge minus XT60 to WAGO 16AWG</td>
+  <td>16AWG</td>
+  <td>Charge port - (lower cup) to the WAGO (port 3).</td>
+  <td>126 mm</td>
+</tr>
+<tr>
+  <td>regulator feed fuse load to inline fuse 18AWG</td>
+  <td>18AWG</td>
+  <td>Main fuse load stud to the 3 A inline fuse.</td>
+  <td>147 mm</td>
+</tr>
+<tr>
+  <td>regulator VIN+ from inline fuse 18AWG</td>
+  <td>18AWG</td>
+  <td>3 A inline fuse to the regulator VIN (screw terminal on its perfboard).</td>
+  <td>338 mm</td>
+</tr>
+<tr>
+  <td>regulator VIN- to WAGO 18AWG</td>
+  <td>18AWG</td>
+  <td>WAGO port 4 to the regulator GND in.</td>
+  <td>412 mm</td>
+</tr>
+<tr>
+  <td>5V Pi plus 20AWG</td>
+  <td>20AWG</td>
+  <td>Regulator 5 V out to Pi GPIO pin 2.</td>
+  <td>131 mm</td>
+</tr>
+<tr>
+  <td>5V Pi minus 20AWG</td>
+  <td>20AWG</td>
+  <td>Regulator GND to Pi GPIO pin 6.</td>
+  <td>131 mm</td>
+</tr>
+<tr>
+  <td>5V fan plus 24AWG</td>
+  <td>24AWG</td>
+  <td>Regulator 5 V out to the ODrive fan (fan lead extended).</td>
+  <td>411 mm</td>
+</tr>
+<tr>
+  <td>5V fan minus 24AWG</td>
+  <td>24AWG</td>
+  <td>Regulator GND to the ODrive fan.</td>
+  <td>413 mm</td>
+</tr>
+<tr>
+  <td>5V Teensy VIN 22AWG</td>
+  <td>22AWG</td>
+  <td>Regulator 5 V out to Teensy VIN (cut the VIN-VUSB pad).</td>
+  <td>77 mm</td>
+</tr>
+<tr>
+  <td>5V Teensy GND 22AWG</td>
+  <td>22AWG</td>
+  <td>Regulator GND to Teensy GND.</td>
+  <td>91 mm</td>
+</tr>
+<tr>
+  <td>Teensy to CAN board 4x26AWG</td>
+  <td>4x26AWG</td>
+  <td>Teensy CAN TX/RX, 3.3 V and GND to the CAN transceiver board (short bundle on the front plate).</td>
+  <td>26 mm</td>
+</tr>
+<tr>
+  <td>CAN bus to ODrive twisted pair</td>
+  <td>twisted_pair</td>
+  <td>CAN H / CAN L / GND (twisted pair + drain) from the CAN board terminal to the ODrive CAN header, in front of the BMS.</td>
+  <td>350 mm</td>
+</tr>
+<tr>
+  <td>USB Teensy to Pi</td>
+  <td>-</td>
+  <td>USB cable, Teensy (micro-USB, right angle) to the Pi upper USB-A port (right angle).</td>
+  <td>177 mm</td>
+</tr>
+<tr>
+  <td>balance lead pack A</td>
+  <td>-</td>
+  <td>Pack A balance lead (cells 1-5) to the BMS balance header.</td>
+  <td>177 mm</td>
+</tr>
+<tr>
+  <td>balance lead pack B</td>
+  <td>-</td>
+  <td>Pack B balance lead (cells 6-10) to the BMS balance header.</td>
+  <td>128 mm</td>
+</tr>
+<tr>
+  <td>BMS NTC lead</td>
+  <td>-</td>
+  <td>BMS NTC lead to the probe on pack B.</td>
+  <td>108 mm</td>
+</tr>
+<tr>
+  <td>power switch to BMS pair</td>
+  <td>-</td>
+  <td>Power switch to the BMS soft-switch input (twisted pair).</td>
+  <td>128 mm</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Notes</h2>
+<ul>
+<li><strong>Fuses must be rated 58 V</strong> (Littelfuse BF1 MIDI 40 A, Littelfuse 997 MINI 3 A and 7.5 A). Common 32 V automotive fuses are not.</li>
+<li>EC5 plugs on the pack leads are the service disconnect: plug in with the BMS switched off.</li>
+<li>WAGO 221-615 is rated about 30 A (UL); the peak pull is about 28 A for short reps.</li>
+<li>Teensy: cut the VIN-VUSB pad (powered by the regulator and connected to the Pi by USB).</li>
+<li>Motor phase leads: gauge and exit point depend on your motor; the model assumes 12 AWG through a 12 mm grommet.</li>
+<li>Crimp ferrules on every wire into the ODrive terminal block; ring terminals on the fuse-holder studs.</li>
+</ul>
+<p class="table-note">This is a draft design reference. Physical validation and Pi/Teensy software are pending.</p><a class="text-link" href="wiring.md" download>Download Markdown source ↗</a></main><footer class="footer container"><a class="brand" href="../index.html">KINETIQ</a><a href="../index.html#parts">Parts & cost</a><a href="../index.html#files">CAD & fabrication</a></footer></body></html>
