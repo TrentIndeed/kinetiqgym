@@ -1,0 +1,515 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Build instructions (printed variant) — KINETIQ</title><link rel="stylesheet" href="../styles.css"><link rel="icon" href="../media/mark.svg"><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet"></head><body><a class="skip" href="#reference">Skip to reference</a><header class="header"><a class="brand" href="../index.html"><img src="../media/mark.svg" width="32" height="32" alt="">KINETIQ</a><a href="../index.html#build">Back to build guide ↗</a></header><main id="reference" class="guide-page section container"><p class="section-kicker">Prototype reference · v0.1</p><h1>Build instructions (printed variant)</h1>
+<p>Read <code>SAFETY.md</code> first. Order matters: some parts cannot be reached once others are in. Part names below match the files in
+<code>print/</code>, <code>cad/step/</code> and the FreeCAD assembly (open <code>cad/freecad/printed/V44_printed_assembly.FCStd</code> alongside this page).</p>
+<h2>0. Before you start</h2>
+<ol>
+<li>Print the fit coupons (<code>print/fit-coupons/</code>) in your material and tune the insert and clearance holes (<code>printing.md</code>).</li>
+<li>Print every part in <code>print/</code> (see <code>print/README.md</code> for material, orientation and the inserts each part takes).</li>
+<li>Buy the parts in <code>bom/BOM.md</code>; cut nothing metal (the printed variant only drills the two aluminium flat bars).</li>
+</ol>
+<h2>1. Heat-set inserts</h2>
+<p>Press every brass insert (Ruthex RX, M2.5 / M3 / M4 x 4 mm) into its pocket with a soldering iron and an insert tip, square
+to the face. <code>print/README.md</code> lists the inserts per part; the assembly shows each insert inside its part.</p>
+<h2>2. Base: bottom plate and flat bars</h2>
+<ol>
+<li>Drill the two 1 x 1/4 in aluminium flat bars (front and rear) at the countersunk holes of <code>S17_V44_AL_flat_bar_*</code>; countersink.</li>
+<li>Join the two printed bottom-plate halves (<code>S01_V44_PRINT_bottom_plate_left</code> / <code>_right</code>, split at X 75) and screw the
+bars on from below: M4 x 10 countersunk into the plate inserts (14 joints, <code>bar_*</code> in the table below).</li>
+</ol>
+<h2>3. Drivetrain (motor end to gear end)</h2>
+<ol>
+<li>Motor face plate and gussets to the base; motor to the face plate (M5 into the motor, spacers per the model).</li>
+<li>The two 6001 bearing cartridges (<code>V43_PRINT_6001_cartridge_*</code>) with their bearings, onto the base. <strong>Bearing blocks go on
+before the drum.</strong></li>
+<li>Drum assembly: drum, goBILDA hubs with their screws into the drum inserts, rope anchor. <strong>The drum shaft slides in from the
+ODrive end</strong> through both bearings and the drum hubs; coupling to the motor shaft.</li>
+<li>Drum 60T gear and hub on the shaft end; encoder magnet in the shaft end.</li>
+</ol>
+<h2>4. Fairlead module</h2>
+<p>The fairlead (sheave, worm-wheel carrier, worm, shaft 2 and the exit swivel) is a module on the square back plate:</p>
+<ol>
+<li>6809 bearing into the back plate; the printed carrier's journal into it; sheave and rope-turn roller on their axles.</li>
+<li>Worm shaft (6 mm D) with the KHK worm and its 20T gear on two flanged bearings; shaft 2 (8 mm REX) with its 60T and 20T on the
+printed pedestals (printed into the right bottom plate on this variant).</li>
+<li>Exit swivel: housing with two 6808 bearings, the oval ring carrier with the two U625ZZ pulleys, retainers and the
+countersunk hub screws; housing onto the back-plate face (4 x M3 into inserts).</li>
+<li>Module onto the base (2 x M4 from below). Check that the 60T gears mesh at 48 mm centres and the carrier turns freely
++-45 deg by hand (it stops at +-48.4 deg).</li>
+</ol>
+<h2>5. Electronics</h2>
+<ol>
+<li><strong>Shaft 2 and the ODrive go in before the battery.</strong> ODrive Pro on its printed bracket (heat spreader on 4 x M4 x 16, nuts in
+the bracket pockets); fan and duct on the rear wall.</li>
+<li>Front board plate with the regulator, Teensy and CAN perfboards. <strong>Screw the Teensy perfboard down before plugging the
+Teensy into its sockets</strong> (the two screws sit under it).</li>
+<li>Main fuse holder: <strong>fuse cradles before the holder</strong> (printed in on this variant); WAGO on its junction bracket.</li>
+<li>Battery packs into the saddles (they slide in from the front, 1 mm foam on top); BMS on the right cover ceiling;
+Raspberry Pi on the left cover ceiling.</li>
+</ol>
+<h2>6. Wiring</h2>
+<p>Follow <code>wiring.md</code>. Thread the harness through the wire loops under the cover tops before fitting the far connectors.</p>
+<h2>7. Rope</h2>
+<p>Wind 3 dead wraps by hand at the anchor end, then wind the rope on under light tension through the sheave, roller and exit.
+Set the payout window before the first loaded pull (<code>firmware-setup.md</code>).</p>
+<h2>8. Covers</h2>
+<p>Covers and end caps stand on the bottom plate: M3 from below into the foot bosses, and M3 countersunk from the back into the
+rear wall. Rear I/O panel last (2 tabs, M2.5).</p>
+<h2>Fasteners by joint</h2>
+<p>Generated from the model (<code>fasteners-report.json</code>): every screw, the parts it passes through and what it engages.</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Reference table"><table>
+<thead>
+<tr>
+  <th>Joint</th>
+  <th>Screw</th>
+  <th>Through / into</th>
+  <th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>bar_0</td>
+  <td>M4x10 csk</td>
+  <td>S17_V44_AL_flat_bar_front_1x0.25x12in -&gt; S01_V44_PRINT_bottom_plate_left</td>
+  <td>Flat bar to the printed bottom plate: M4 countersunk up through the bar into a heat-set insert.</td>
+</tr>
+<tr>
+  <td>bar_1</td>
+  <td>M4x10 csk</td>
+  <td>S17_V44_AL_flat_bar_rear_1x0.25x12in -&gt; S01_V44_PRINT_bottom_plate_left</td>
+  <td>Flat bar to the printed bottom plate: M4 countersunk up through the bar into a heat-set insert.</td>
+</tr>
+<tr>
+  <td>bar_2</td>
+  <td>M4x10 csk</td>
+  <td>S17_V44_AL_flat_bar_front_1x0.25x12in -&gt; S01_V44_PRINT_bottom_plate_left</td>
+  <td>Flat bar to the printed bottom plate: M4 countersunk up through the bar into a heat-set insert.</td>
+</tr>
+<tr>
+  <td>bar_3</td>
+  <td>M4x10 csk</td>
+  <td>S17_V44_AL_flat_bar_rear_1x0.25x12in -&gt; S01_V44_PRINT_bottom_plate_left</td>
+  <td>Flat bar to the printed bottom plate: M4 countersunk up through the bar into a heat-set insert.</td>
+</tr>
+<tr>
+  <td>bar_4</td>
+  <td>M4x10 csk</td>
+  <td>S17_V44_AL_flat_bar_front_1x0.25x12in -&gt; S01_V44_PRINT_bottom_plate_left</td>
+  <td>Flat bar to the printed bottom plate: M4 countersunk up through the bar into a heat-set insert.</td>
+</tr>
+<tr>
+  <td>bar_5</td>
+  <td>M4x10 csk</td>
+  <td>S17_V44_AL_flat_bar_rear_1x0.25x12in -&gt; S01_V44_PRINT_bottom_plate_left</td>
+  <td>Flat bar to the printed bottom plate: M4 countersunk up through the bar into a heat-set insert.</td>
+</tr>
+<tr>
+  <td>bar_6</td>
+  <td>M4x10 csk</td>
+  <td>S17_V44_AL_flat_bar_front_1x0.25x12in -&gt; S01_V44_PRINT_bottom_plate_left -&gt; S01_V44_PRINT_bottom_plate_right</td>
+  <td>Flat bar to the printed bottom plate: M4 countersunk up through the bar into a heat-set insert.</td>
+</tr>
+<tr>
+  <td>bar_7</td>
+  <td>M4x10 csk</td>
+  <td>S17_V44_AL_flat_bar_rear_1x0.25x12in -&gt; S01_V44_PRINT_bottom_plate_left -&gt; S01_V44_PRINT_bottom_plate_right</td>
+  <td>Flat bar to the printed bottom plate: M4 countersunk up through the bar into a heat-set insert.</td>
+</tr>
+<tr>
+  <td>bar_8</td>
+  <td>M4x10 csk</td>
+  <td>S17_V44_AL_flat_bar_front_1x0.25x12in -&gt; S01_V44_PRINT_bottom_plate_left -&gt; S01_V44_PRINT_bottom_plate_right</td>
+  <td>Flat bar to the printed bottom plate: M4 countersunk up through the bar into a heat-set insert.</td>
+</tr>
+<tr>
+  <td>bar_9</td>
+  <td>M4x10 csk</td>
+  <td>S17_V44_AL_flat_bar_rear_1x0.25x12in -&gt; S01_V44_PRINT_bottom_plate_left -&gt; S01_V44_PRINT_bottom_plate_right</td>
+  <td>Flat bar to the printed bottom plate: M4 countersunk up through the bar into a heat-set insert.</td>
+</tr>
+<tr>
+  <td>bar_10</td>
+  <td>M4x10 csk</td>
+  <td>S17_V44_AL_flat_bar_front_1x0.25x12in -&gt; S01_V44_PRINT_bottom_plate_right</td>
+  <td>Flat bar to the printed bottom plate: M4 countersunk up through the bar into a heat-set insert.</td>
+</tr>
+<tr>
+  <td>bar_11</td>
+  <td>M4x10 csk</td>
+  <td>S17_V44_AL_flat_bar_rear_1x0.25x12in -&gt; S01_V44_PRINT_bottom_plate_right</td>
+  <td>Flat bar to the printed bottom plate: M4 countersunk up through the bar into a heat-set insert.</td>
+</tr>
+<tr>
+  <td>bar_12</td>
+  <td>M4x10 csk</td>
+  <td>S17_V44_AL_flat_bar_front_1x0.25x12in -&gt; S01_V44_PRINT_bottom_plate_right</td>
+  <td>Flat bar to the printed bottom plate: M4 countersunk up through the bar into a heat-set insert.</td>
+</tr>
+<tr>
+  <td>bar_13</td>
+  <td>M4x10 csk</td>
+  <td>S17_V44_AL_flat_bar_rear_1x0.25x12in -&gt; S01_V44_PRINT_bottom_plate_right</td>
+  <td>Flat bar to the printed bottom plate: M4 countersunk up through the bar into a heat-set insert.</td>
+</tr>
+<tr>
+  <td>odrive_foot_0</td>
+  <td>M4x16 csk</td>
+  <td>S17_V44_AL_flat_bar_front_1x0.25x12in -&gt; S01_V44_PRINT_bottom_plate_right -&gt; MOUNT_ODrive_Pro_bracket_printed_PA-CF_base-mounted</td>
+  <td>ODrive bracket foot: M4 up through bar and plate slot into its insert.</td>
+</tr>
+<tr>
+  <td>odrive_foot_1</td>
+  <td>M4x16 csk</td>
+  <td>S17_V44_AL_flat_bar_rear_1x0.25x12in -&gt; S01_V44_PRINT_bottom_plate_right -&gt; MOUNT_ODrive_Pro_bracket_printed_PA-CF_base-mounted</td>
+  <td>ODrive bracket foot: M4 up through bar and plate slot into its insert.</td>
+</tr>
+<tr>
+  <td>exit_plate_0</td>
+  <td>M4x10 csk</td>
+  <td>S01_V44_PRINT_bottom_plate_right -&gt; FM10_Square_back_plate_4-screw_enclosure_mount</td>
+  <td>Square back plate (fairlead) to the bottom plate: M4 up into its insert.</td>
+</tr>
+<tr>
+  <td>exit_plate_1</td>
+  <td>M4x10 csk</td>
+  <td>S01_V44_PRINT_bottom_plate_right -&gt; FM10_Square_back_plate_4-screw_enclosure_mount</td>
+  <td>Square back plate (fairlead) to the bottom plate: M4 up into its insert.</td>
+</tr>
+<tr>
+  <td>board_plate_0</td>
+  <td>M3x6 socket</td>
+  <td>S01_V44_PRINT_bottom_plate_left -&gt; MOUNT_front_board_plate_printed</td>
+  <td>Front board plate foot: M3 up through the plate (head in a counterbore) into its insert.</td>
+</tr>
+<tr>
+  <td>board_plate_1</td>
+  <td>M3x6 socket</td>
+  <td>S01_V44_PRINT_bottom_plate_left -&gt; MOUNT_front_board_plate_printed</td>
+  <td>Front board plate foot: M3 up through the plate (head in a counterbore) into its insert.</td>
+</tr>
+<tr>
+  <td>cover_back_0</td>
+  <td>M3x10 csk</td>
+  <td>S01_V44_PRINT_bottom_plate_left -&gt; V44_PRINT_cover_left_screen</td>
+  <td>Cover to the rear plate: M3 countersunk from the back (flush, D6) into the cover boss insert.</td>
+</tr>
+<tr>
+  <td>cover_back_1</td>
+  <td>M3x10 csk</td>
+  <td>S01_V44_PRINT_bottom_plate_left -&gt; V44_PRINT_cover_left_screen</td>
+  <td>Cover to the rear plate: M3 countersunk from the back (flush, D6) into the cover boss insert.</td>
+</tr>
+<tr>
+  <td>cover_back_2</td>
+  <td>M3x10 csk</td>
+  <td>S01_V44_PRINT_bottom_plate_left -&gt; S01_V44_PRINT_bottom_plate_right -&gt; V44_PRINT_cover_left_screen</td>
+  <td>Cover to the rear plate: M3 countersunk from the back (flush, D6) into the cover boss insert.</td>
+</tr>
+<tr>
+  <td>cover_back_3</td>
+  <td>M3x10 csk</td>
+  <td>S01_V44_PRINT_bottom_plate_right -&gt; V44_PRINT_cover_right_grille</td>
+  <td>Cover to the rear plate: M3 countersunk from the back (flush, D6) into the cover boss insert.</td>
+</tr>
+<tr>
+  <td>cover_back_4</td>
+  <td>M3x10 csk</td>
+  <td>S01_V44_PRINT_bottom_plate_right -&gt; V44_PRINT_cover_right_grille</td>
+  <td>Cover to the rear plate: M3 countersunk from the back (flush, D6) into the cover boss insert.</td>
+</tr>
+<tr>
+  <td>cover_foot_0</td>
+  <td>M3x8 csk</td>
+  <td>S01_V44_PRINT_bottom_plate_left -&gt; V44_PRINT_cover_left_screen</td>
+  <td>Cover / cap foot boss: M3 up through the plate into its insert.</td>
+</tr>
+<tr>
+  <td>cover_foot_1</td>
+  <td>M3x8 csk</td>
+  <td>S01_V44_PRINT_bottom_plate_left -&gt; S01_V44_PRINT_bottom_plate_right -&gt; V44_PRINT_cover_left_screen</td>
+  <td>Cover / cap foot boss: M3 up through the plate into its insert.</td>
+</tr>
+<tr>
+  <td>cover_foot_2</td>
+  <td>M3x8 csk</td>
+  <td>S01_V44_PRINT_bottom_plate_right -&gt; V44_PRINT_cover_right_grille</td>
+  <td>Cover / cap foot boss: M3 up through the plate into its insert.</td>
+</tr>
+<tr>
+  <td>cover_foot_3</td>
+  <td>M3x8 csk</td>
+  <td>S01_V44_PRINT_bottom_plate_right -&gt; V44_PRINT_cover_right_grille</td>
+  <td>Cover / cap foot boss: M3 up through the plate into its insert.</td>
+</tr>
+<tr>
+  <td>cover_foot_4</td>
+  <td>M3x8 csk</td>
+  <td>S01_V44_PRINT_bottom_plate_right -&gt; V44_PRINT_cover_right_grille</td>
+  <td>Cover / cap foot boss: M3 up through the plate into its insert.</td>
+</tr>
+<tr>
+  <td>cover_foot_5</td>
+  <td>M3x8 csk</td>
+  <td>S01_V44_PRINT_bottom_plate_right -&gt; V44_PRINT_cover_right_grille</td>
+  <td>Cover / cap foot boss: M3 up through the plate into its insert.</td>
+</tr>
+<tr>
+  <td>cover_foot_6</td>
+  <td>M3x8 csk</td>
+  <td>S01_V44_PRINT_bottom_plate_right -&gt; V44_PRINT_cover_right_grille</td>
+  <td>Cover / cap foot boss: M3 up through the plate into its insert.</td>
+</tr>
+<tr>
+  <td>cover_foot_7</td>
+  <td>M3x8 csk</td>
+  <td>S01_V44_PRINT_bottom_plate_right -&gt; V44_PRINT_cover_right_grille -&gt; V44_PRINT_end_cap_battery</td>
+  <td>Cover / cap foot boss: M3 up through the plate into its insert.</td>
+</tr>
+<tr>
+  <td>cover_foot_8</td>
+  <td>M3x8 csk</td>
+  <td>S01_V44_PRINT_bottom_plate_left -&gt; V44_PRINT_end_cap_motor</td>
+  <td>Cover / cap foot boss: M3 up through the plate into its insert.</td>
+</tr>
+<tr>
+  <td>cover_foot_9</td>
+  <td>M3x16 csk</td>
+  <td>S17_V44_AL_flat_bar_rear_1x0.25x12in -&gt; S01_V44_PRINT_bottom_plate_left -&gt; V44_PRINT_end_cap_motor</td>
+  <td>Cover / cap foot boss: M3 up through the bar and plate into its insert.</td>
+</tr>
+<tr>
+  <td>cover_foot_10</td>
+  <td>M3x8 csk</td>
+  <td>S01_V44_PRINT_bottom_plate_right -&gt; V44_PRINT_end_cap_battery</td>
+  <td>Cover / cap foot boss: M3 up through the plate into its insert.</td>
+</tr>
+<tr>
+  <td>fan_0</td>
+  <td>M3x25 csk</td>
+  <td>S01_V44_PRINT_bottom_plate_right -&gt; MOUNT_fan_duct_mount_frame_printed -&gt; TRIAL_driver_fan</td>
+  <td>ODrive fan: M3 countersunk from the back (flush, D6) through the rear plate and duct, self-tapping into the fan corner holes.</td>
+</tr>
+<tr>
+  <td>fan_1</td>
+  <td>M3x25 csk</td>
+  <td>S01_V44_PRINT_bottom_plate_right -&gt; MOUNT_fan_duct_mount_frame_printed -&gt; TRIAL_driver_fan</td>
+  <td>ODrive fan: M3 countersunk from the back (flush, D6) through the rear plate and duct, self-tapping into the fan corner holes.</td>
+</tr>
+<tr>
+  <td>fan_2</td>
+  <td>M3x25 csk</td>
+  <td>S01_V44_PRINT_bottom_plate_right -&gt; MOUNT_fan_duct_mount_frame_printed -&gt; TRIAL_driver_fan</td>
+  <td>ODrive fan: M3 countersunk from the back (flush, D6) through the rear plate and duct, self-tapping into the fan corner holes.</td>
+</tr>
+<tr>
+  <td>fan_3</td>
+  <td>M3x25 csk</td>
+  <td>S01_V44_PRINT_bottom_plate_right -&gt; MOUNT_fan_duct_mount_frame_printed -&gt; TRIAL_driver_fan</td>
+  <td>ODrive fan: M3 countersunk from the back (flush, D6) through the rear plate and duct, self-tapping into the fan corner holes.</td>
+</tr>
+<tr>
+  <td>wago_bracket_0</td>
+  <td>M3x8 socket</td>
+  <td>MOUNT_power_junction_bracket_printed -&gt; S01_V44_PRINT_bottom_plate_right</td>
+  <td>WAGO bracket: M3 into a rear-plate insert.</td>
+</tr>
+<tr>
+  <td>wago_bracket_1</td>
+  <td>M3x8 socket</td>
+  <td>MOUNT_power_junction_bracket_printed -&gt; S01_V44_PRINT_bottom_plate_right</td>
+  <td>WAGO bracket: M3 into a rear-plate insert.</td>
+</tr>
+<tr>
+  <td>screen_leg_0</td>
+  <td>M3x8 csk</td>
+  <td>V44_PRINT_cover_left_screen -&gt; MOUNT_screen_rear_retaining_frame_printed</td>
+  <td>Screen frame leg: M3 countersunk from the front (flush under the bezel edge) into the leg insert.</td>
+</tr>
+<tr>
+  <td>screen_leg_1</td>
+  <td>M3x8 csk</td>
+  <td>V44_PRINT_cover_left_screen -&gt; MOUNT_screen_rear_retaining_frame_printed</td>
+  <td>Screen frame leg: M3 countersunk from the front (flush under the bezel edge) into the leg insert.</td>
+</tr>
+<tr>
+  <td>pi_top_0</td>
+  <td>M2.5x5 csk</td>
+  <td>V44_PRINT_cover_left_screen -&gt; MOUNT_Pi_ceiling_standoffs_M2.5</td>
+  <td>Pi standoff to the cover top: M2.5 countersunk from above.</td>
+</tr>
+<tr>
+  <td>pi_board_0</td>
+  <td>M2.5x6 socket</td>
+  <td>TRIAL_Pi4_upright -&gt; MOUNT_Pi_ceiling_standoffs_M2.5</td>
+  <td>Pi to its standoff: M2.5 from below through the board.</td>
+</tr>
+<tr>
+  <td>pi_top_1</td>
+  <td>M2.5x5 csk</td>
+  <td>V44_PRINT_cover_left_screen -&gt; MOUNT_Pi_ceiling_standoffs_M2.5</td>
+  <td>Pi standoff to the cover top: M2.5 countersunk from above.</td>
+</tr>
+<tr>
+  <td>pi_board_1</td>
+  <td>M2.5x4 socket</td>
+  <td>TRIAL_Pi4_upright -&gt; MOUNT_Pi_ceiling_standoffs_M2.5</td>
+  <td>Pi to its standoff: M2.5 from below through the board.</td>
+</tr>
+<tr>
+  <td>pi_top_2</td>
+  <td>M2.5x5 csk</td>
+  <td>V44_PRINT_cover_left_screen -&gt; MOUNT_Pi_ceiling_standoffs_M2.5</td>
+  <td>Pi standoff to the cover top: M2.5 countersunk from above.</td>
+</tr>
+<tr>
+  <td>pi_board_2</td>
+  <td>M2.5x4 socket</td>
+  <td>TRIAL_Pi4_upright -&gt; MOUNT_Pi_ceiling_standoffs_M2.5</td>
+  <td>Pi to its standoff: M2.5 from below through the board.</td>
+</tr>
+<tr>
+  <td>pi_top_3</td>
+  <td>M2.5x5 csk</td>
+  <td>V44_PRINT_cover_left_screen -&gt; MOUNT_Pi_ceiling_standoffs_M2.5</td>
+  <td>Pi standoff to the cover top: M2.5 countersunk from above.</td>
+</tr>
+<tr>
+  <td>pi_board_3</td>
+  <td>M2.5x4 socket</td>
+  <td>TRIAL_Pi4_upright -&gt; MOUNT_Pi_ceiling_standoffs_M2.5</td>
+  <td>Pi to its standoff: M2.5 from below through the board.</td>
+</tr>
+<tr>
+  <td>bms_4</td>
+  <td>M3x12 csk</td>
+  <td>V44_PRINT_cover_right_grille -&gt; MOUNT_BMS_ceiling_standoffs_M3 -&gt; JBD_SP17S005_BMS_mock_from_spec</td>
+  <td>BMS to the cover top: M3 countersunk from above through the spacer and board, nut under the board.</td>
+</tr>
+<tr>
+  <td>bms_5</td>
+  <td>M3x12 csk</td>
+  <td>V44_PRINT_cover_right_grille -&gt; MOUNT_BMS_ceiling_standoffs_M3 -&gt; JBD_SP17S005_BMS_mock_from_spec</td>
+  <td>BMS to the cover top: M3 countersunk from above through the spacer and board, nut under the board.</td>
+</tr>
+<tr>
+  <td>bms_6</td>
+  <td>M3x12 csk</td>
+  <td>V44_PRINT_cover_right_grille -&gt; MOUNT_BMS_ceiling_standoffs_M3 -&gt; JBD_SP17S005_BMS_mock_from_spec</td>
+  <td>BMS to the cover top: M3 countersunk from above through the spacer and board, nut under the board.</td>
+</tr>
+<tr>
+  <td>bms_7</td>
+  <td>M3x12 csk</td>
+  <td>V44_PRINT_cover_right_grille -&gt; MOUNT_BMS_ceiling_standoffs_M3 -&gt; JBD_SP17S005_BMS_mock_from_spec</td>
+  <td>BMS to the cover top: M3 countersunk from above through the spacer and board, nut under the board.</td>
+</tr>
+<tr>
+  <td>xt60_0</td>
+  <td>M2.5x5 csk</td>
+  <td>AMASS_XT60E-F_charge_port -&gt; V44_PRINT_rear_IO_panel_flush</td>
+  <td>XT60E-F flange: M2.5 countersunk (countersink the flange holes) self-tapping into the backing frame.</td>
+</tr>
+<tr>
+  <td>xt60_1</td>
+  <td>M2.5x5 csk</td>
+  <td>AMASS_XT60E-F_charge_port -&gt; V44_PRINT_rear_IO_panel_flush</td>
+  <td>XT60E-F flange: M2.5 countersunk (countersink the flange holes) self-tapping into the backing frame.</td>
+</tr>
+<tr>
+  <td>io_tab_0</td>
+  <td>M2.5x5 socket</td>
+  <td>V44_PRINT_rear_IO_panel_flush -&gt; V44_PRINT_cover_right_grille</td>
+  <td>Rear I/O panel tab: M2.5 self-tapping into the step wall.</td>
+</tr>
+<tr>
+  <td>io_tab_1</td>
+  <td>M2.5x5 socket</td>
+  <td>V44_PRINT_rear_IO_panel_flush -&gt; V44_PRINT_cover_right_grille</td>
+  <td>Rear I/O panel tab: M2.5 self-tapping into the step wall.</td>
+</tr>
+<tr>
+  <td>odrive_spreader_0</td>
+  <td>M4x12 socket</td>
+  <td>V3_ODrive_heat_spreader_SUPPLIER_CAD -&gt; MOUNT_ODrive_Pro_bracket_printed_PA-CF_base-mounted</td>
+  <td>ODrive heat spreader to the bracket post: M4 from the board side, nut in the hex pocket on the far face.</td>
+</tr>
+<tr>
+  <td>odrive_spreader_1</td>
+  <td>M4x12 socket</td>
+  <td>V3_ODrive_heat_spreader_SUPPLIER_CAD -&gt; MOUNT_ODrive_Pro_bracket_printed_PA-CF_base-mounted</td>
+  <td>ODrive heat spreader to the bracket post: M4 from the board side, nut in the hex pocket on the far face.</td>
+</tr>
+<tr>
+  <td>odrive_spreader_2</td>
+  <td>M4x12 socket</td>
+  <td>V3_ODrive_heat_spreader_SUPPLIER_CAD -&gt; MOUNT_ODrive_Pro_bracket_printed_PA-CF_base-mounted</td>
+  <td>ODrive heat spreader to the bracket post: M4 from the board side, nut in the hex pocket on the far face.</td>
+</tr>
+<tr>
+  <td>odrive_spreader_3</td>
+  <td>M4x12 socket</td>
+  <td>V3_ODrive_heat_spreader_SUPPLIER_CAD -&gt; MOUNT_ODrive_Pro_bracket_printed_PA-CF_base-mounted</td>
+  <td>ODrive heat spreader to the bracket post: M4 from the board side, nut in the hex pocket on the far face.</td>
+</tr>
+<tr>
+  <td>standoff_Teensy_0</td>
+  <td>M2.5x12 socket</td>
+  <td>TRIAL_Teensy -&gt; MOUNT_Teensy_perfboard_standoffs -&gt; MOUNT_front_board_plate_printed</td>
+  <td>Board standoff: M2.5 through the board and the standoff into a front-plate insert.</td>
+</tr>
+<tr>
+  <td>standoff_Teensy_1</td>
+  <td>M2.5x12 socket</td>
+  <td>TRIAL_Teensy -&gt; MOUNT_Teensy_perfboard_standoffs -&gt; MOUNT_front_board_plate_printed</td>
+  <td>Board standoff: M2.5 through the board and the standoff into a front-plate insert.</td>
+</tr>
+<tr>
+  <td>standoff_CAN_0</td>
+  <td>M2.5x10 socket</td>
+  <td>TRIAL_CAN_headers -&gt; MOUNT_CAN_board_perfboard_standoffs -&gt; MOUNT_front_board_plate_printed</td>
+  <td>Board standoff: M2.5 through the board and the standoff into a front-plate insert.</td>
+</tr>
+<tr>
+  <td>standoff_CAN_1</td>
+  <td>M2.5x10 socket</td>
+  <td>TRIAL_CAN_headers -&gt; MOUNT_CAN_board_perfboard_standoffs -&gt; MOUNT_front_board_plate_printed</td>
+  <td>Board standoff: M2.5 through the board and the standoff into a front-plate insert.</td>
+</tr>
+<tr>
+  <td>standoff_CAN_2</td>
+  <td>M2.5x10 socket</td>
+  <td>TRIAL_CAN_headers -&gt; MOUNT_CAN_board_perfboard_standoffs -&gt; MOUNT_front_board_plate_printed</td>
+  <td>Board standoff: M2.5 through the board and the standoff into a front-plate insert.</td>
+</tr>
+<tr>
+  <td>standoff_CAN_3</td>
+  <td>M2.5x10 socket</td>
+  <td>TRIAL_CAN_headers -&gt; MOUNT_CAN_board_perfboard_standoffs -&gt; MOUNT_front_board_plate_printed</td>
+  <td>Board standoff: M2.5 through the board and the standoff into a front-plate insert.</td>
+</tr>
+<tr>
+  <td>standoff_regulator_0</td>
+  <td>M2.5x12 socket</td>
+  <td>TRIAL_Pololu5571 -&gt; MOUNT_regulator_perfboard_standoffs -&gt; MOUNT_front_board_plate_printed</td>
+  <td>Board standoff: M2.5 through the board and the standoff into a front-plate insert.</td>
+</tr>
+<tr>
+  <td>standoff_regulator_1</td>
+  <td>M2.5x12 socket</td>
+  <td>TRIAL_Pololu5571 -&gt; MOUNT_regulator_perfboard_standoffs -&gt; MOUNT_front_board_plate_printed</td>
+  <td>Board standoff: M2.5 through the board and the standoff into a front-plate insert.</td>
+</tr>
+<tr>
+  <td>standoff_regulator_2</td>
+  <td>M2.5x12 socket</td>
+  <td>TRIAL_Pololu5571 -&gt; MOUNT_regulator_perfboard_standoffs -&gt; MOUNT_front_board_plate_printed</td>
+  <td>Board standoff: M2.5 through the board and the standoff into a front-plate insert.</td>
+</tr>
+<tr>
+  <td>standoff_regulator_3</td>
+  <td>M2.5x12 socket</td>
+  <td>TRIAL_Pololu5571 -&gt; MOUNT_regulator_perfboard_standoffs -&gt; MOUNT_front_board_plate_printed</td>
+  <td>Board standoff: M2.5 through the board and the standoff into a front-plate insert.</td>
+</tr>
+</tbody>
+</table></div>
+<p class="table-note">This is a draft design reference. Physical validation and Pi/Teensy software are pending.</p><a class="text-link" href="build.md" download>Download Markdown source ↗</a></main><footer class="footer container"><a class="brand" href="../index.html">KINETIQ</a><a href="../index.html#parts">Parts & cost</a><a href="../index.html#files">CAD & fabrication</a></footer></body></html>

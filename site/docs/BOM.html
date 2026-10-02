@@ -1,0 +1,461 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bill of materials — KINETIQ</title><link rel="stylesheet" href="../styles.css"><link rel="icon" href="../media/mark.svg"><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet"></head><body><a class="skip" href="#reference">Skip to reference</a><header class="header"><a class="brand" href="../index.html"><img src="../media/mark.svg" width="32" height="32" alt="">KINETIQ</a><a href="../index.html#build">Back to build guide ↗</a></header><main id="reference" class="guide-page section container"><p class="section-kicker">Prototype reference · v0.1</p><h1>Bill of materials</h1>
+<p>Quantities are for one machine (printed variant). Links are examples checked in September 2026: pick by reviews and check the
+specs. Nothing here is endorsed by the suppliers.</p>
+<h2>Drive and fairlead</h2>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Reference table"><table>
+<thead>
+<tr>
+  <th>Qty</th>
+  <th>Part</th>
+  <th>Notes / example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>Outrunner motor, about 80 mm diameter, about 50 Kv, about 13 N·m peak, 10 mm shaft</td>
+  <td>the reference design; see <code>docs/modifying.md</code> to use another</td>
+</tr>
+<tr>
+  <td>1</td>
+  <td>ODrive Pro motor controller (with its heat spreader)</td>
+  <td>odriverobotics.com</td>
+</tr>
+<tr>
+  <td>1</td>
+  <td>NBK MSTS-25-10-12 slit coupling (10 mm motor / 12 mm drum shaft)</td>
+  <td>or any 25 mm clamp coupling 10-12</td>
+</tr>
+<tr>
+  <td>1</td>
+  <td>12 mm round steel shaft, cut to 176 mm</td>
+  <td>drum shaft</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>6001-2RS bearing (12 x 28 x 8)</td>
+  <td>drum shaft, in the printed cartridges</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>goBILDA 1301-0016-0012 12 mm round-bore hub</td>
+  <td>drum hubs (4 mounting holes drilled 4.4 mm)</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>goBILDA 2302-0014-0060 60T MOD 0.8 gear</td>
+  <td>drum gear + shaft-2 gear (48 mm centres)</td>
+</tr>
+<tr>
+  <td>1</td>
+  <td>goBILDA 2303-4008-0020 20T MOD 0.8 pinion, 8 mm REX</td>
+  <td><a href="https://www.gobilda.com/2303-series-steel-mod-0-8-pinion-gear-8mm-rex-bore-20-tooth/">gobilda.com</a></td>
+</tr>
+<tr>
+  <td>1</td>
+  <td>goBILDA 2303-1006-0020 20T MOD 0.8 pinion, 6 mm D-bore</td>
+  <td><a href="https://www.gobilda.com/pinion-gears/">gobilda.com</a></td>
+</tr>
+<tr>
+  <td>1</td>
+  <td>goBILDA 2106-4008-0560 8 mm REX shaft 56 mm with e-clip</td>
+  <td><a href="https://www.gobilda.com/2106-series-stainless-steel-rex-shaft-8mm-diameter-56mm-length/">gobilda.com</a></td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>goBILDA 1611-0514-4008 flanged bearing 8 mm REX x 14 x 5</td>
+  <td><a href="https://www.gobilda.com/1611-series-flanged-ball-bearing-8mm-rex-id-x-14mm-od-5mm-thickness-2-pack/">gobilda.com</a></td>
+</tr>
+<tr>
+  <td>1</td>
+  <td>ServoCity 6 mm stainless D-shaft, 60 mm</td>
+  <td><a href="https://www.servocity.com/6mm-stainless-steel-d-shafting/">servocity.com</a></td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>goBILDA 1601 flanged bearing 6 x 14 x 5</td>
+  <td><a href="https://www.gobilda.com/1601-series-flanged-ball-bearing-6mm-id-x-14mm-od-5mm-thickness-2-pack/">gobilda.com</a></td>
+</tr>
+<tr>
+  <td>1</td>
+  <td>KHK SW0.8-R1 steel worm, module 0.8, single start, right hand</td>
+  <td><a href="https://catalog.khkgears.us/item/worm-gears/steel-worms-sw/sw0-8-r1">khkgears.us</a></td>
+</tr>
+<tr>
+  <td>1</td>
+  <td>6809-2RS bearing 45 x 58 x 7 (carrier pivot)</td>
+  <td>e.g. <a href="https://www.amazon.com/dp/B07RVJJPVG">Amazon</a></td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>6808-2RS bearing 40 x 52 x 7 (exit swivel)</td>
+  <td></td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>625ZZ bearing 5 x 16 x 5 (rope-turn roller)</td>
+  <td>e.g. <a href="https://www.amazon.com/dp/B07MXCQSMD">Amazon</a></td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>688ZZ bearing 8 x 16 x 5 (top sheave)</td>
+  <td></td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>uxcell U625ZZ nylon U-groove pulley 5 x 20 x 7 (exit)</td>
+  <td></td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>ISO 7379 shoulder bolt 5 x 25, M4 + 4 x M5 2 mm shims</td>
+  <td>exit pulley axles</td>
+</tr>
+<tr>
+  <td>1</td>
+  <td>8 mm axle / bolt for the sheave, 5 mm shoulder screw for the roller</td>
+  <td>see the fairlead parts</td>
+</tr>
+<tr>
+  <td>-</td>
+  <td>Rope, 3.175 mm (1/8 in), about 3 m</td>
+  <td>e.g. UHMWPE; rated well above the 890 N design load</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Power</h2>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Reference table"><table>
+<thead>
+<tr>
+  <th>Qty</th>
+  <th>Part</th>
+  <th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>2</td>
+  <td>Thunder Power TP2700-5SR70 5S LiPo (EC5 leads)</td>
+  <td>in series = 10S</td>
+</tr>
+<tr>
+  <td>1</td>
+  <td>JBD / LLT SP17S005 10S BMS, 60 A, with soft switch and NTC</td>
+  <td></td>
+</tr>
+<tr>
+  <td>1</td>
+  <td>Littelfuse 04980921GXM5 MIDI 58 V fuse holder, M5 studs</td>
+  <td><a href="https://www.waytekwire.com/product/littelfuse-inline-midi-fuse-holder-04980921gxm5">Waytek</a></td>
+</tr>
+<tr>
+  <td>1 (+1)</td>
+  <td>Littelfuse BF1 142.5631.5402 40 A 58 V fuse</td>
+  <td><a href="https://nationalfuse.com/shop/142-5631-5402/">National Fuse</a></td>
+</tr>
+<tr>
+  <td>2 (+2)</td>
+  <td>Littelfuse 997 MINI 58 V fuses: 3 A (0997003.WXN) and 7.5 A</td>
+  <td><a href="https://www.newark.com/littelfuse/0997003-wxn/automotive-fuse-fast-acting-3a/dp/79J5391">Newark</a></td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>Inline MINI fuse holder with cover, 16 AWG</td>
+  <td>e.g. <a href="https://www.amazon.com/dp/B07MQZ9Q8L">VANTRONIK</a></td>
+</tr>
+<tr>
+  <td>1</td>
+  <td>WAGO 221-615 5-port lever nut</td>
+  <td>e.g. <a href="https://www.amazon.com/dp/B07CJR8MH4">WAGO 15-pack</a></td>
+</tr>
+<tr>
+  <td>1</td>
+  <td>AMASS XT60E-F female panel socket (charge port)</td>
+  <td>e.g. <a href="https://www.amazon.com/dp/B09SL2MNN1">Amass</a></td>
+</tr>
+<tr>
+  <td>1</td>
+  <td>12 mm latching push switch with ring LED (power button)</td>
+  <td>e.g. <a href="https://www.amazon.com/dp/B083QMF2J1">APIELE</a></td>
+</tr>
+<tr>
+  <td>-</td>
+  <td>EC5 connector pairs, 5S JST-XH balance leads</td>
+  <td>e.g. <a href="https://www.amazon.com/dp/B08GPR7SVR">EC5</a>, <a href="https://www.amazon.com/dp/B073ZGF8D9">XH leads</a></td>
+</tr>
+<tr>
+  <td>-</td>
+  <td>Silicone wire 10 / 12 / 16 / 18 / 20 / 22 / 24 AWG, ferrules, M5 ring terminals</td>
+  <td>see <code>docs/wiring.md</code> for lengths</td>
+</tr>
+<tr>
+  <td>1</td>
+  <td>Charger: 10S Li-ion/LiPo, XT60, 4 A</td>
+  <td></td>
+</tr>
+</tbody>
+</table></div>
+<h2>Electronics</h2>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Reference table"><table>
+<thead>
+<tr>
+  <th>Qty</th>
+  <th>Part</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>Raspberry Pi 4 Model B</td>
+</tr>
+<tr>
+  <td>1</td>
+  <td>Waveshare 4 in DPI LCD (C), 720 x 720 touch, with its 15-way FFC</td>
+</tr>
+<tr>
+  <td>1</td>
+  <td>Teensy 4.0 + 2 x 14-pin low-profile female headers</td>
+</tr>
+<tr>
+  <td>1</td>
+  <td>Waveshare SN65HVD230 CAN board</td>
+</tr>
+<tr>
+  <td>1</td>
+  <td>Pololu D42V55F5 5 V 5.5 A regulator (#5571)</td>
+</tr>
+<tr>
+  <td>1</td>
+  <td>Noctua NF-A4x10 5V fan</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>Perfboards (Teensy, CAN, regulator), cut to the outlines in the CAD</td>
+</tr>
+<tr>
+  <td>1</td>
+  <td>Right-angle micro-USB to right-angle USB-A cable, short</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Structure and consumables</h2>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Reference table"><table>
+<thead>
+<tr>
+  <th>Qty</th>
+  <th>Part</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>2</td>
+  <td>6061 aluminium flat bar 1 x 1/4 x 12 in (drilled, used uncut)</td>
+</tr>
+<tr>
+  <td>-</td>
+  <td>PA-CF filament about 1 kg; PETG-CF or PA-CF for the covers about 0.5 kg (see <code>print/README.md</code>)</td>
+</tr>
+<tr>
+  <td>-</td>
+  <td>1 mm and 2 mm EVA foam sheet (battery pads)</td>
+</tr>
+<tr>
+  <td>-</td>
+  <td>Cable ties, thread-locker</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Screws, nuts and heat-set inserts</h2>
+<p>Generated by <code>print-v44-nano/hardware_summary.py</code> from the model (every F44_* screw / nut / washer / insert, plus the exit
+axles, ceiling standoffs and Teensy socket headers). Counts are exact for each build; buy packs (assortment kits cover most
+screws). Printed = the PA-CF / PETG prototype; CNC = the aluminium-plate build. Nothing is ordered.</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Reference table"><table>
+<thead>
+<tr>
+  <th>Item</th>
+  <th style="text-align:right">Printed</th>
+  <th style="text-align:right">CNC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>M2.5 heat-set insert L4 (Ruthex RX)</td>
+  <td style="text-align:right">10</td>
+  <td style="text-align:right">10</td>
+</tr>
+<tr>
+  <td>M3 heat-set insert L4 (Ruthex RX)</td>
+  <td style="text-align:right">22</td>
+  <td style="text-align:right">24</td>
+</tr>
+<tr>
+  <td>M4 heat-set insert L4 (Ruthex RX)</td>
+  <td style="text-align:right">18</td>
+  <td style="text-align:right">4</td>
+</tr>
+<tr>
+  <td>M2.5x4 socket head (ISO 4762)</td>
+  <td style="text-align:right">3</td>
+  <td style="text-align:right">3</td>
+</tr>
+<tr>
+  <td>M2.5x5 countersunk (ISO 10642)</td>
+  <td style="text-align:right">6</td>
+  <td style="text-align:right">6</td>
+</tr>
+<tr>
+  <td>M2.5x5 socket head (ISO 4762)</td>
+  <td style="text-align:right">2</td>
+  <td style="text-align:right">2</td>
+</tr>
+<tr>
+  <td>M2.5x6 socket head (ISO 4762)</td>
+  <td style="text-align:right">1</td>
+  <td style="text-align:right">1</td>
+</tr>
+<tr>
+  <td>M2.5x10 socket head (ISO 4762)</td>
+  <td style="text-align:right">4</td>
+  <td style="text-align:right">4</td>
+</tr>
+<tr>
+  <td>M2.5x12 socket head (ISO 4762)</td>
+  <td style="text-align:right">6</td>
+  <td style="text-align:right">6</td>
+</tr>
+<tr>
+  <td>M3x6 socket head (ISO 4762)</td>
+  <td style="text-align:right">2</td>
+  <td style="text-align:right">2</td>
+</tr>
+<tr>
+  <td>M3x8 countersunk (ISO 10642)</td>
+  <td style="text-align:right">12</td>
+  <td style="text-align:right">15</td>
+</tr>
+<tr>
+  <td>M3x8 socket head (ISO 4762)</td>
+  <td style="text-align:right">2</td>
+  <td style="text-align:right">-</td>
+</tr>
+<tr>
+  <td>M3x10 countersunk (ISO 10642)</td>
+  <td style="text-align:right">5</td>
+  <td style="text-align:right">9</td>
+</tr>
+<tr>
+  <td>M3x10 socket head (ISO 4762)</td>
+  <td style="text-align:right">-</td>
+  <td style="text-align:right">2</td>
+</tr>
+<tr>
+  <td>M3x12 countersunk (ISO 10642)</td>
+  <td style="text-align:right">4</td>
+  <td style="text-align:right">4</td>
+</tr>
+<tr>
+  <td>M3x16 countersunk (ISO 10642)</td>
+  <td style="text-align:right">1</td>
+  <td style="text-align:right">-</td>
+</tr>
+<tr>
+  <td>M3x25 countersunk (ISO 10642)</td>
+  <td style="text-align:right">4</td>
+  <td style="text-align:right">4</td>
+</tr>
+<tr>
+  <td>M4x10 countersunk (ISO 10642)</td>
+  <td style="text-align:right">16</td>
+  <td style="text-align:right">4</td>
+</tr>
+<tr>
+  <td>M4x12 socket head (ISO 4762)</td>
+  <td style="text-align:right">4</td>
+  <td style="text-align:right">4</td>
+</tr>
+<tr>
+  <td>M4x16 countersunk (ISO 10642)</td>
+  <td style="text-align:right">2</td>
+  <td style="text-align:right">-</td>
+</tr>
+<tr>
+  <td>M6x16 countersunk (ISO 10642)</td>
+  <td style="text-align:right">-</td>
+  <td style="text-align:right">4</td>
+</tr>
+<tr>
+  <td>uxcell U625ZZ nylon U-groove pulley bearing 5 x 20 x 7</td>
+  <td style="text-align:right">2</td>
+  <td style="text-align:right">2</td>
+</tr>
+<tr>
+  <td>M2.5 female-female brass hex standoff 3 mm</td>
+  <td style="text-align:right">4</td>
+  <td style="text-align:right">4</td>
+</tr>
+<tr>
+  <td>M3 female-female brass hex standoff / spacer 2 mm</td>
+  <td style="text-align:right">4</td>
+  <td style="text-align:right">4</td>
+</tr>
+<tr>
+  <td>M3 nyloc nut (ISO 10511)</td>
+  <td style="text-align:right">4</td>
+  <td style="text-align:right">4</td>
+</tr>
+<tr>
+  <td>M3 washer (ISO 7089)</td>
+  <td style="text-align:right">4</td>
+  <td style="text-align:right">4</td>
+</tr>
+<tr>
+  <td>M4 hex nut (ISO 4032), in its pocket</td>
+  <td style="text-align:right">4</td>
+  <td style="text-align:right">4</td>
+</tr>
+<tr>
+  <td>M4 nyloc nut (ISO 10511)</td>
+  <td style="text-align:right">2</td>
+  <td style="text-align:right">2</td>
+</tr>
+<tr>
+  <td>M4 washer (ISO 7089)</td>
+  <td style="text-align:right">2</td>
+  <td style="text-align:right">2</td>
+</tr>
+<tr>
+  <td>M5 spacer / shim washer 2 mm (5.2 ID)</td>
+  <td style="text-align:right">4</td>
+  <td style="text-align:right">4</td>
+</tr>
+<tr>
+  <td>2.54 mm 14-pin female socket header, low profile (Teensy on the perfboard)</td>
+  <td style="text-align:right">2</td>
+  <td style="text-align:right">2</td>
+</tr>
+<tr>
+  <td>Shoulder bolt ISO 7379, 5 mm shoulder x 25, M4 thread</td>
+  <td style="text-align:right">2</td>
+  <td style="text-align:right">2</td>
+</tr>
+<tr>
+  <td><strong>Total pieces</strong></td>
+  <td style="text-align:right"><strong>158</strong></td>
+  <td style="text-align:right"><strong>142</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h2>Shopping by kit (printed build)</h2>
+<ul>
+<li><strong>M2.5 countersunk screws:</strong> 6 x 5 mm</li>
+<li><strong>M2.5 socket head screws:</strong> 3 x 4 mm, 2 x 5 mm, 1 x 6 mm, 4 x 10 mm, 6 x 12 mm</li>
+<li><strong>M3 countersunk screws:</strong> 12 x 8 mm, 5 x 10 mm, 4 x 12 mm, 1 x 16 mm, 4 x 25 mm</li>
+<li><strong>M3 socket head screws:</strong> 2 x 6 mm, 2 x 8 mm</li>
+<li><strong>M4 countersunk screws:</strong> 16 x 10 mm, 2 x 16 mm</li>
+<li><strong>M4 socket head screws:</strong> 4 x 12 mm</li>
+<li><strong>heat-set inserts (Ruthex RX, L4):</strong> 22 x M3, 18 x M4, 10 x M2.5</li>
+<li><strong>nuts / washers:</strong> 4 x M3 nyloc nut (ISO 10511), 4 x M3 washer (ISO 7089), 4 x M4 hex nut (ISO 4032), in its pocket, 2 x M4 nyloc nut (ISO 10511), 2 x M4 washer (ISO 7089), 4 x M5 spacer / shim washer 2 mm (5.2 ID)</li>
+</ul>
+<p>Hole sizes the model is cut to (tune with <code>fit-coupons/</code>): inserts M2.5 3.6 / M3 4.0 / M4 5.6 mm, printed clearance
+M2.5 2.9 / M3 3.6 / M4 4.7 / M6 6.8 mm, self-tap pilots M2.5 2.2 / M3 2.6 mm.</p>
+<p class="table-note">This is a draft design reference. Physical validation and Pi/Teensy software are pending.</p><a class="text-link" href="BOM.md" download>Download Markdown source ↗</a></main><footer class="footer container"><a class="brand" href="../index.html">KINETIQ</a><a href="../index.html#parts">Parts & cost</a><a href="../index.html#files">CAD & fabrication</a></footer></body></html>

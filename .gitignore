@@ -1,0 +1,11 @@
+cad/freecad/.built.json
+*.FCBak
+__pycache__/
+
+# Local deployment credentials, internal notes and review artifacts
+.wrangler/
+wrangler.jsonc
+docs/deployment.md
+website-review/
+.env*
+node_modules/
