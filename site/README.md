@@ -17,3 +17,5 @@ The illustrated CNC build and phone app are concept previews extracted from the 
 The website links to the public GitHub proposal form and contribution guide. The initial review owner is `@TrentIndeed`; `.github/CODEOWNERS` and the main-branch ruleset enforce reviews for community changes. Additional moderators must be appointed by the repository owner.
 
 The four illustrated stages have a standalone guide in `docs/cnc-build-preview.md` and `.html`. When replacing film stills, keep their revision and concept status clear.
+
+The owner-approved public proposal address is `trentondragon02@gmail.com`. PayPal is the proposed donation provider; its checkout remains pending until the owner supplies the actual donation or PayPal.Me link. Do not assume the proposal email is a PayPal recipient account.

@@ -1,7 +1,7 @@
 {
-  "proposalEmail": "",
+  "proposalEmail": "trentondragon02@gmail.com",
   "donationUrl": "",
-  "donationProvider": "",
+  "donationProvider": "PayPal",
   "fundingPurpose": "CNC equipment and prototype fabrication, measurement, and testing",
   "reviewPolicy": "Maintainer review required before community changes enter the main branch"
 }
