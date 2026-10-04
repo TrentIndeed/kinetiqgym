@@ -1,7 +1,7 @@
 {
   "proposalEmail": "trentondragon02@gmail.com",
-  "donationUrl": "",
+  "donationUrl": "https://www.paypal.com/donate/?business=XFB4JBBVTRW8U&no_recurring=0&item_name=I+would+greatly+appreciate+help+to+get+the+carvera+air+machine+to+make+the+aluminum+plates+and+iterate+the+design&currency_code=USD",
   "donationProvider": "PayPal",
-  "fundingPurpose": "CNC equipment and prototype fabrication, measurement, and testing",
+  "fundingPurpose": "Carvera Air CNC machine and prototype fabrication, measurement, and testing",
   "reviewPolicy": "Maintainer review required before community changes enter the main branch"
 }

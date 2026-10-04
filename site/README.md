@@ -18,4 +18,4 @@ The website links to the public GitHub proposal form and contribution guide. The
 
 The four illustrated stages have a standalone guide in `docs/cnc-build-preview.md` and `.html`. When replacing film stills, keep their revision and concept status clear.
 
-The owner-approved public proposal address is `trentondragon02@gmail.com`. PayPal is the proposed donation provider; its checkout remains pending until the owner supplies the actual donation or PayPal.Me link. Do not assume the proposal email is a PayPal recipient account.
+The owner-approved public proposal address is `trentondragon02@gmail.com`. The owner-supplied PayPal donation URL is active and its recipient was verified as Trenton Dragon on the PayPal checkout page. The goal is a Carvera Air CNC machine and prototype testing. Preserve the recipient ID and checkout parameters when editing the link; do not substitute the proposal email as a payment recipient.
