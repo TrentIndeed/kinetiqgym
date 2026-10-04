@@ -1,0 +1,22 @@
+name: Build or test report
+description: Share a prototype, fit check or measured test result.
+title: "[Build report] "
+body:
+  - type: input
+    id: revision
+    attributes:
+      label: Design revision and manufacturing path
+    validations:
+      required: true
+  - type: textarea
+    id: report
+    attributes:
+      label: What did you build or test?
+      description: Include materials, changes, setup and measured results. State what remains untested.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Photos and evidence
+      description: Do not include private addresses, personal contact details or credentials.
