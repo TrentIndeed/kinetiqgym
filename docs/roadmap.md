@@ -1,15 +1,15 @@
 # Project roadmap
 
-KINETIQ is a prototype design. The repository is a working design release, not a tested exercise product.
+KINETIQ is a prototype design. The repository contains an earlier development snapshot. Updated CAD, confirmed build instructions and parts list, app code and control programs are upcoming.
 
 | Area | Available now | Next milestone |
 |---|---|---|
 | Hardware | Printed and CNC assemblies; FreeCAD feature histories, STEP, DXF and STL | Reconcile every export and manifest against one revision; prototype fit and load testing |
-| Build guide | Draft assembly, wiring and print references | Step-by-step CAD assembly animation, build photos and measured fit notes |
+| Build guide | Draft references and an illustrated CNC animation preview on the website | Confirmed assembly steps, build photos and measured fit notes |
 | Adaptation | Motor interface guide and battery-envelope sketch | Fully constrained sketch-based parts and a self-contained CAD generation pipeline |
 | Raspberry Pi | Screen concept in the product film | Touchscreen application, reproducible image and installation guide |
 | Teensy | Proposed control architecture and setup reference | Firmware, configuration schema, limits and bench test procedure |
-| Companion | Planned Bluetooth browser application | Protocol, connection flow, mode settings and workout history |
+| Companion | Phone app concept screens in the film and website | Bluetooth protocol, connection flow, mode settings and workout history |
 
 ## How releases should work
 
@@ -28,3 +28,7 @@ For the Pi and Teensy, add actual source, dependency versions, build commands, c
 - Documentation: one reproducible step or correction with the affected revision.
 
 See [CONTRIBUTING.md](../CONTRIBUTING.md) and [the license map](../LICENSE.md). Supplier CAD and controller firmware retain their own terms.
+
+## Prototype funding
+
+Project support is intended for a CNC machine, fabrication and prototype test equipment. The website support section explains these goals. A payment link appears only when the owner has configured the chosen donation provider; contributions are not orders for a finished product. No funding total or equipment price is implied by the concept film.
