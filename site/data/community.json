@@ -1,0 +1,7 @@
+{
+  "proposalEmail": "",
+  "donationUrl": "",
+  "donationProvider": "",
+  "fundingPurpose": "CNC equipment and prototype fabrication, measurement, and testing",
+  "reviewPolicy": "Maintainer review required before community changes enter the main branch"
+}

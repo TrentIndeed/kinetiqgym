@@ -11,6 +11,10 @@ a rotary encoder instead of the touch screen.
 > **Status: v0.1.0, prototype design. Not yet built or load-tested.** Read [SAFETY.md](SAFETY.md) before building.
 > The control app is not included yet.
 
+**Upcoming:** updated CAD models, the confirmed parts list and build instructions, phone/touchscreen apps, and Pi/Teensy programs. The files here are an earlier prototype snapshot. The website includes an [illustrated CNC build preview](https://kinetiqgym.com/docs/cnc-build-preview.html), mechanism camera views and app concepts from the latest animation.
+
+Want to help? [Propose an improvement](https://github.com/TrentIndeed/kinetiqgym/issues/new?template=proposal.yml), read the [maintainer review process](CONTRIBUTING.md), or visit [project support](https://kinetiqgym.com/#support) for CNC equipment and prototype testing.
+
 <p align="center"><img src="images/06_hero.jpg" alt="KinetiqGym on a rack upright" width="100%"></p>
 
 | | |

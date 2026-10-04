@@ -6,7 +6,22 @@
 the changed CAD (FreeCAD and STEP), a short description and what you tested.</li>
 <li><strong>Docs:</strong> clearer build steps, translations.</li>
 </ul>
-<p>Ground rules:</p>
+<h2>Propose, contribute, review</h2>
+<ol>
+<li>Open a proposal or build-report issue before a substantial change. Describe the problem, intended improvement and affected design revision.</li>
+<li>Fork the repository and use a branch for a focused change. Submit a pull request with the changed files and supporting evidence. Do not upload a replacement of the whole assembly for an unrelated small fix.</li>
+<li>Project maintainers review the change for usefulness, compatibility, documentation and testing. Changes are accepted, revised or declined through the pull request discussion. Community changes do not go directly into <code>main</code>.</li>
+</ol>
+<p>The initial reviewer is the repository owner, <strong>@TrentIndeed</strong>. Additional moderators can be added as the project grows; moderator access is appointed by the owner, not granted automatically to contributors. CODEOWNERS identifies the current review owner. The main branch requires a pull request and a code-owner approval for community changes; repository administrators retain a pull-request-only bypass for owner-authored maintenance.</p>
+<h3>What to include</h3>
+<ul>
+<li><strong>CAD:</strong> source model and neutral export when applicable, dimensions or interfaces changed, clearance checks, and any manufacturing assumptions. Distinguish a proposed improvement from a physically tested one.</li>
+<li><strong>Software:</strong> intended behavior, screenshots where relevant, and how you checked it. Mark mock interfaces clearly; the Pi, Teensy and companion software are upcoming.</li>
+<li><strong>Build or test reports:</strong> revision, materials, settings, measurements and photos. State test conditions and what remains unverified.</li>
+<li><strong>Documentation:</strong> the relevant Markdown and website reference copies together.</li>
+</ul>
+<p>An animation or simulation alone does not establish a resistance rating or a validated build. The updated CAD, confirmed BOM and final instructions are still pending.</p>
+<h2>Ground rules</h2>
 <ul>
 <li>Never commit supplier CAD (bearings, gears, boards, connectors...): reference it in <code>cad/vendor/README.md</code> instead.</li>
 <li>Never commit API keys, tokens, passwords or personal data.</li>
