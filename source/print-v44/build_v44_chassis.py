@@ -1,4 +1,4 @@
-"""V44 phase 3/4 mock: interfaces, printed base + aluminium flat bars, and a Nano-style shell in P2S pieces.
+"""V44 phase 3/4 mock: interfaces, printed base + aluminium flat bars, and a compact shell in P2S pieces.
 
 Run after mock_models.py (run_v44.sh does). World frame as everywhere: X along the shaft (motor at -X), -Y front, Z up,
 base top Z 0. The shell follows the live demo's box rule (parts + 1 mm gap + 3 mm wall, front set by the fairlead plate):
@@ -212,7 +212,7 @@ for a in (90, 210, 330):
 for a in (45, 135, 225, 315):
     t = math.radians(a); puck = puck.cut(ycyl(2.75, PUCK[0] + 24 * math.cos(t), PUCK[1] + 24 * math.sin(t), Y1E + 3.9, Y1E + 14.1))
 add('V44_PRINT_rack_twist_lock_puck', puck, 'rack', 'part', 'PRINT PA-CF (aluminium later)', [.35, .38, .42],
-    'VOLTRA-style twist-lock rack puck behind the fairlead exit (X 135.2): d70, 3 bayonet lugs, 4 x M5 through the back wall. Printed for force tests; the load path inside the shell is NOT designed yet. MOCK.')
+    'twist-lock rack puck behind the fairlead exit (X 135.2): d70, 3 bayonet lugs, 4 x M5 through the back wall. Printed for force tests; the load path inside the shell is NOT designed yet. MOCK.')
 
 # ---------------------------------------------------------------- CAD updates on existing parts + new allowances
 FP = 'V43_METAL_motor_face_4mm'
@@ -305,7 +305,7 @@ for mode in ('cnc', 'printed'):
     r['views']['drivetrain'] = sorted(set(r['views']['drivetrain'] + base))
     r['allowances'] = [a for a in r.get('allowances', []) if a['name'] not in ALLOW] + [dict(name=n, note=t[:200], demo_name='') for n, (_, t) in ALLOW.items()]
     r['status'] = ('V44 phase 1d + fix list L1-L4 (battery saddles, back step for leads and rear I/O, square exit frame); base and shell being redesigned (fix list S/E).') if not MOCK_SHELL else ('V44 phase 1d + chassis mock: design layout rev 12 (176 mm drum shaft) as real CAD, plus a MOCK printed base on two aluminium flat bars '
-                   'and a Nano-style shell in P2S pieces. Mock = looks, fit and interfaces only; load paths and seams not designed.')
+                   'and a compact shell in P2S pieces. Mock = looks, fit and interfaces only; load paths and seams not designed.')
     (d / 'revision.json').write_text(json.dumps(r, indent=1))
     with open(d / 'hardware.csv', 'w', newline='', encoding='utf-8') as fh:
         wr = csv.DictWriter(fh, fieldnames=['part', 'group', 'kind', 'size', 'source', 'note']); wr.writeheader(); wr.writerows(r['hardware'])

@@ -1,6 +1,6 @@
 # V44 print files (printed build)
 
-28 files, exported from `print-v44-nano/printed/` with every hole cut to its final size (inserts, clearance, pilots).
+28 files, exported from `print-v44/printed/` with every hole cut to its final size (inserts, clearance, pilots).
 Print `../fit-coupons/` first in the same material and tune the hole sizes if needed. Sizes in mm (longest first);
 bed: Bambu Lab P2S 256 mm. Parts are in the assembly frame: orient them in the slicer.
 

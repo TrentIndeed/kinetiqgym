@@ -1,4 +1,4 @@
-"""Round 5 picture: the Nano handle loop at the motor end, seen from behind and the motor end (thin side faces the rear), with the
+"""Round 5 picture: the handle loop at the motor end, seen from behind and the motor end (thin side faces the rear), with the
 CAN board standing on its standoffs behind the motor. Writes handle-round5.png."""
 from pathlib import Path
 import os, subprocess

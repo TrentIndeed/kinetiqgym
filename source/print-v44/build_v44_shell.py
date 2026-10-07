@@ -1,4 +1,4 @@
-"""V44 fix list E1-E8: Nano-style enclosure on the bottom plate (same for both variants). Run after build_v44_structure.py.
+"""V44 fix list E1-E8: compact enclosure on the bottom plate (same for both variants). Run after build_v44_structure.py.
 
 - E1: covers and end caps stand on the bottom plate (no bottom pans). Bosses at the foot of the walls take M3 from below through the
   plate into heat-set inserts; bosses are placed only where they clear every part inside, never over the ladder or the uprights.

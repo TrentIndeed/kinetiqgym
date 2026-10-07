@@ -1,4 +1,4 @@
-"""Build caches for the V44 pipeline (run_v44.sh). Everything lives in print-v44-nano/.cache/ (not committed); deleting that
+"""Build caches for the V44 pipeline (run_v44.sh). Everything lives in print-v44/.cache/ (not committed); deleting that
 folder, or running `./run_v44.sh --clean`, forces a full rebuild.
 
 - part cache (build_v44_phase1.py): a part is rebuilt only when its page placement, its page mesh / source CAD or the phase-1

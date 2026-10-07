@@ -51,7 +51,7 @@ for n in r['parts']:
                          size=' x '.join(f'{d:.0f}' for d in dims), fits=fits, volume_cm3=round(sol.Volume() / 1000, 1), inserts=ins, face=face))
 
 L = ['# V44 print files (printed build)', '',
-     f'{len(rows)} files, exported from `print-v44-nano/printed/` with every hole cut to its final size (inserts, clearance, pilots).',
+     f'{len(rows)} files, exported from `print-v44/printed/` with every hole cut to its final size (inserts, clearance, pilots).',
      'Print `../fit-coupons/` first in the same material and tune the hole sizes if needed. Sizes in mm (longest first);',
      f"bed: {r.get('printer', {}).get('model', '')} {BED[0]} mm. Parts are in the assembly frame: orient them in the slicer.", '',
      '| File | Qty | Material | Size | Fits bed | Volume cm³ | Heat-set inserts | Face down |', '|---|---:|---|---|---|---:|---|---|']

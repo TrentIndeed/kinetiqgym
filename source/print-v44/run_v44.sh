@@ -1,5 +1,5 @@
 #!/bin/sh
-# Full V44 rebuild: sources -> placed parts -> vendor swaps -> mocks -> CAD updates -> structure (bottom plate, ladder, uprights) -> enclosure. Run from print-v44-nano/.
+# Full V44 rebuild: sources -> placed parts -> vendor swaps -> mocks -> CAD updates -> structure (bottom plate, ladder, uprights) -> enclosure. Run from print-v44/.
 # Round 8: unchanged parts, vendor swaps and clash pairs come from .cache/ (see v44cache.py). ./run_v44.sh --clean rebuilds everything.
 set -e
 export PYTHONIOENCODING=utf-8

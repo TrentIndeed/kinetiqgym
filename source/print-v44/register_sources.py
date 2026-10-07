@@ -12,9 +12,9 @@ import cadquery as cq
 import trimesh
 
 R = Path(__file__).resolve().parent.parent
-PL = json.loads((R / 'print-v44-nano/demo-placements-rev12.json').read_text(encoding='utf-8-sig'))['rows']
+PL = json.loads((R / 'print-v44/demo-placements-rev12.json').read_text(encoding='utf-8-sig'))['rows']
 MODEL = {p['name']: p for p in json.loads(gzip.decompress((R / 'workbench/public/stock-battery-fit/editor-model-tp2700.json.gz').read_bytes()))['parts']}
-M10 = R / 'real-fairlead-revision/voltra-module10'
+M10 = R / 'real-fairlead-revision/fairlead-module10'
 VEND = R / 'rectangular-body-study/vendor'
 FIXED = {
     'TRIAL_Pi4_upright': VEND / 'pi4.step', 'TRIAL_driver_fan': VEND / 'fan/NF-A4x10_public-CAD.stp',
@@ -108,7 +108,7 @@ for row in PL:
 if VC.ENABLED:
     VC.CACHE.mkdir(parents=True, exist_ok=True); _rc_file.write_text(json.dumps(_rc))
 print('register cache:', _hits, 'reused')
-(R / 'print-v44-nano/sources.json').write_text(json.dumps(dict(sources=out, missing=missing), indent=1))
+(R / 'print-v44/sources.json').write_text(json.dumps(dict(sources=out, missing=missing), indent=1))
 print('matched', len(out), 'exact', sum(v['status'] == 'exact' for v in out.values()), 'missing', len(missing))
 for n, why in missing: print('  MISSING', n[:70], '|', why)
 for n, v in out.items():

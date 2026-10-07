@@ -1,4 +1,4 @@
-"""Voltra-style fairlead module, revision 10: gear train moved to the free right end of the drum shaft (old 2GT pulley slot), clear of the motor coupler.
+"""Fairlead module, revision 10: gear train moved to the free right end of the drum shaft (old 2GT pulley slot), clear of the motor coupler.
 
 Rope leaves the drum top, wraps the sheave above the cable-lead ring, drops into the ring
 bore, turns under a 2x625 roller inside the bore and leaves along the pivot axis (Z 28)
@@ -27,7 +27,7 @@ from scipy.spatial import ConvexHull
 R = Path(__file__).resolve().parent.parent
 SD = R / 'stock-drive-study'
 P = R / 'workbench/public/stock-drive-study'
-O = R / 'real-fairlead-revision/voltra-module10'
+O = R / 'real-fairlead-revision/fairlead-module10'
 O.mkdir(exist_ok=True)
 src = json.loads(gzip.decompress((P / 'supported-wheel-model.json.gz').read_bytes()))
 
@@ -229,7 +229,7 @@ def yz_hull(x0, x1, pts):
     pts = np.array(pts); hv = ConvexHull(pts).vertices
     return cq.Workplane(cq.Plane(origin=(x0, 0, 0), xDir=(0, 1, 0), normal=(1, 0, 0))).polyline([tuple(pts[k]) for k in hv]).close().extrude(x1 - x0).val()
 def circ(y, z, r, n=40): return [(y + r * math.cos(t), z + r * math.sin(t)) for t in np.linspace(0, 2 * math.pi, n, endpoint=False)]
-# One printed PA-CF rotating body, Voltra style: worm-wheel ring + 45 mm journal + a fork of two
+# One printed PA-CF rotating body: worm-wheel ring + 45 mm journal + a fork of two
 # cheeks rising straight up to the sheave. The cheeks are anchored into the ring centre and tied by
 # a cross-web under the sheave; the sheave runs on an 8 mm axle supported by both cheeks.
 # Journal: 43 mm where it passes over the worm (clears the worm top), 45 mm from there back into the 6809.
@@ -248,7 +248,7 @@ body = body.cut(cy(4.1, 30, (X0 - 15, Y1, Z1), (1, 0, 0))).cut(cy(2.6, 30, (X0 -
 body = body.cut(cy(7.0, 4.8, (X0 - 15.8, Y1, Z1), (1, 0, 0))).cut(cy(7.0, 4.8, (X0 + 11.0, Y1, Z1), (1, 0, 0)))
 body = body.cut(box(X0 - 6.5, X0 + 6.5, RING[1] - .01, RING[0] + .01, ZP + 17, ZP + 30))       # ring top slot between the fork cheeks: the sheave turns in it
 body = body.cut(box(X0 - 4, X0 + 4, -121.0, RING[1] + .01, ZP + 17, ZP + 33))                  # hub top slot: the rope drops straight down through it
-# Front centre plate across the ring bore (Voltra's centre piece) with a window for the sheave, rope and roller.
+# Front centre plate across the ring bore (the centre piece) with a window for the sheave, rope and roller.
 ctr = cy(19.6, 2, (X0, RING[0] - 2, ZP)).cut(box(X0 - 7.5, X0 + 7.5, RING[0] - 2.01, RING[0] + .01, ZP - 7, ZP + 40))
 for a in (45, 135, 225, 315):
     t = math.radians(a); ctr = ctr.cut(cy(1.7, 2, (X0 + 14 * math.cos(t), RING[0] - 2, ZP + 14 * math.sin(t))))
@@ -282,7 +282,7 @@ frame = cq.Workplane('XY').box(FX[1] - FX[0], PLATE[1] - PLATE[0], 74.0 - FZ[0],
     .edges('|Y').fillet(6.0).faces('<Y').edges().fillet(1.5).val().cut(cy(24, PLATE[1] - PLATE[0], (X0, PLATE[0], ZP)))   # R4-1: one clean plate, curved edges
 frame = frame.cut(cy(29, BRG[0] - PLATE[0], (X0, PLATE[0] - 0.01, ZP)))                        # 6809 seat, open to the front (fits from the front)
 # R4-7: no corner holes (the plate bolts down to the bottom plate; the exit housing screws into inserts below)
-# Worm housing (Voltra's box under the ring): open on top where the ring teeth come down; floor at Z -5.
+# Worm housing (the box under the ring): open on top where the ring teeth come down; floor at Z -5.
 housing = box(X0 - 17, X0 + 21, -113.0, -97.0, 0.5, ZW + 5).cut(cy(9, 50, (X0 - 25, YW, ZW), (1, 0, 0)))
 housing = housing.cut(box(X0 - 17, X0 + 21, -121, -90, ZW + 1.5, ZW + 6))
 frame = frame.fuse(housing).fuse(box(X0 + 17, X0 + 21, FRAME[0] - .5, -113.0, 0.5, ZW))    # tie the housing back to the plate
@@ -369,11 +369,11 @@ for i, x in enumerate(S2_BRG):
 
 def arc(c, r, a0, a1): return [(X0, c[0] + r * math.cos(t), c[1] + r * math.sin(t)) for t in np.linspace(a0, a1, 24)]
 path = [(X0, YD, ZT)] + arc((Y1, Z1), SR, math.pi / 2, math.pi) + arc((Y2, Z2), R2, 0, -math.pi / 2) + [(X0, -240.0, ZP)]
-geo = dict(revision='voltra-module-10', pivot=[X0, ZP], sheave_center=[X0, Y1, Z1], roller_center=[X0, Y2, Z2], branch='top', ratio=53.0,
+geo = dict(revision='fairlead-module-10', pivot=[X0, ZP], sheave_center=[X0, Y1, Z1], roller_center=[X0, Y2, Z2], branch='top', ratio=53.0,
            shaft2=[float(S2[0]), float(S2[1])], worm_axis=[YW, ZW], ratio_text='60/60 x 20/20 x 1/53 = 1/53 carrier turn per drum turn',
            exit_stack_shift=list(EXIT_SHIFT), cable_diameter_mm=ROPE,
            drum=dict(y=YD, z=ZD, r=RD + RR, x0=TRACK[0], x1=TRACK[1], turns=13.4, sweep=[-45.4, 45.4], dead_wraps=DEAD))
-out = dict(parts=rows, metadata=dict(geo, scope='Voltra-style fairlead on the square frame. Not a manufacturing release. Saved packing unchanged.'),
+out = dict(parts=rows, metadata=dict(geo, scope='Fairlead on the square frame. Not a manufacturing release. Saved packing unchanged.'),
            cablePaths=[dict(name='Neutral rope path', points=[list(map(float, p)) for p in path])],
            audit={'mesh_checks': [], 'solid_checks': [], 'unresolved': [
                'Ring teeth are an involute/helix/throat approximation of a hobbed worm wheel; confirm against the purchased worm before printing. Ring is now part of the printed carrier (replace the whole part when teeth wear).',
@@ -382,6 +382,6 @@ out = dict(parts=rows, metadata=dict(geo, scope='Voltra-style fairlead on the sq
                'Sheave is the saved custom CNC D31; the 625 roller bend radius is small for Amsteel.',
                'Exit swivel moved as an unchanged block; integrating it into the frame is still to do.']},
            motion={'center': [X0, 0.0, ZP], 'rotatingParts': moving, 'samples': [], 'note': 'Pending audit.'})
-(P / 'voltra-module10-model.json.gz').write_bytes(gzip.compress(json.dumps(out, separators=(',', ':')).encode(), mtime=0))
+(P / 'fairlead-module10-model.json.gz').write_bytes(gzip.compress(json.dumps(out, separators=(',', ':')).encode(), mtime=0))
 (O / 'geometry.json').write_text(json.dumps(dict(geo, moving=moving), indent=2))
 print(json.dumps(dict(parts=len(rows), moving=len(moving), shaft2=np.round(S2, 2).tolist(), worm=[YW, ZW], frame_z=FZ, frame_x=FX)))

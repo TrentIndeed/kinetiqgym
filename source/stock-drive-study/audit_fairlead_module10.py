@@ -1,4 +1,4 @@
-"""Audit for build_voltra_fairlead.py: top-routing rope tangency and winding, sampled exact
+"""Audit for build_fairlead.py: top-routing rope tangency and winding, sampled exact
 sweep of the carrier against the removable mount/drive/drum, rope-envelope proximity.
 Geometric model only. Run with few workers (AUDIT_WORKERS, default 4): each holds ~600 MB."""
 from pathlib import Path
@@ -9,8 +9,8 @@ import cadquery as cq
 import trimesh
 
 R = Path(__file__).resolve().parent.parent
-P = R / 'workbench/public/stock-drive-study/voltra-module10-model.json.gz'
-O = R / 'real-fairlead-revision/voltra-module10'
+P = R / 'workbench/public/stock-drive-study/fairlead-module10-model.json.gz'
+O = R / 'real-fairlead-revision/fairlead-module10'
 g = json.loads((O / 'geometry.json').read_text())
 X0, ZP = g['pivot']; _, Y1, Z1 = g['sheave_center']; _, Y2, Z2 = g['roller_center']; RATIO = float(g['ratio'])
 YD, ZD, ROPE = -62.5, 43.0, 3.175; RR = ROPE / 2

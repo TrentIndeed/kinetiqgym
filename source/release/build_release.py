@@ -11,7 +11,7 @@ from pathlib import Path
 import json, os, re, shutil, subprocess, sys, hashlib, csv
 import cadquery as cq
 
-HERE = Path(__file__).resolve().parent; R = HERE.parent; M = R / 'print-v44-nano'
+HERE = Path(__file__).resolve().parent; R = HERE.parent; M = R / 'print-v44'
 OUT = Path(sys.argv[1]).resolve(); ARGS = sys.argv[2:]
 VERSION = ARGS[ARGS.index('--version') + 1] if '--version' in ARGS else '0.1.0'
 FC_BIN = os.environ.get('FREECAD_BIN', r'D:/Programs/FreeCAD_1.1.4-Windows-x86_64-py311/bin')
@@ -198,17 +198,17 @@ def vendor_readme(vend):
 def source():
     sd = OUT / 'source'
     if sd.exists(): shutil.rmtree(sd)
-    sets = {'print-v44-nano': ['*.py', '*.sh'], 'mounts-rev11': ['*.py'], 'fchist': ['*.py', '*.sh', 'README.md', 'boot/*.py'], 'release': ['*.py']}
+    sets = {'print-v44': ['*.py', '*.sh'], 'mounts-rev11': ['*.py'], 'fchist': ['*.py', '*.sh', 'README.md', 'boot/*.py'], 'release': ['*.py']}
     for d, pats in sets.items():
         for p in pats:
             for f in (R / d).glob(p):
                 t = sd / d / f.relative_to(R / d); t.parent.mkdir(parents=True, exist_ok=True); shutil.copyfile(f, t)
-    for f in ('build_voltra_module10.py', 'audit_voltra_module10.py', 'publish_fairlead_module10_packing.py'):
+    for f in ('build_fairlead_module10.py', 'audit_fairlead_module10.py', 'publish_fairlead_module10_packing.py'):
         t = sd / 'stock-drive-study' / f; t.parent.mkdir(parents=True, exist_ok=True); shutil.copyfile(R / 'stock-drive-study' / f, t)
     (sd / 'README.md').write_text('# Build scripts (GPL-3.0)\n\nThe Python / CadQuery scripts that generate every part, the fasteners, the wiring and the FreeCAD files.\n'
         'They are the source of truth for the CAD. In this release they still expect the full design workspace (supplier CAD and the\n'
         'interactive layout data are not published), so treat them as readable source; a self-contained build is planned.\n\n'
-        '- `print-v44-nano/run_v44.sh`: the V44 pipeline (parts -> structure -> enclosure -> fasteners -> wiring -> checks)\n'
+        '- `print-v44/run_v44.sh`: the V44 pipeline (parts -> structure -> enclosure -> fasteners -> wiring -> checks)\n'
         '- `mounts-rev11/`: brackets, saddles, board plates; `stock-drive-study/`: the fairlead module\n'
         '- `fchist/`: records the CadQuery history and writes the FreeCAD files; `release/`: builds this repository\n', encoding='utf-8')
 
