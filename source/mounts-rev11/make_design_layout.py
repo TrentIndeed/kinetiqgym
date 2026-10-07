@@ -11,7 +11,7 @@ The recovered file itself is not modified.
 Rev 12 (September 27, user-approved option A of volume-options-2026-09-27): the user's drum shaft is cut to 176 mm, so the
 ODrive, fan, battery and BMS move 24 mm toward the motor. Written to design-layout-rev12.json; design-layout-rev11.json is
 frozen (it carries the rev 11b mount poses). Pieces with no pose in the layout take their rev 11b page pose from
-print-v44-nano/demo-placements-rev11.json (frozen) before they move.
+print-v44/demo-placements-rev11.json (frozen) before they move.
 """
 import json, copy, numpy as np
 from pathlib import Path
@@ -60,7 +60,7 @@ reorient_piece('RESERVE_regulator_leads', [0, s2, 0, s2], [146.7, -10.6, 8.5])  
 P['designLayout'] = 'rev11b-2026-09-27'
 
 # --- rev 12 (September 27): 176 mm drum shaft ---
-ROWS = {r['n']: r for r in json.loads((HERE.parent / 'print-v44-nano/demo-placements-rev11.json').read_text(encoding='utf-8-sig'))['rows']}
+ROWS = {r['n']: r for r in json.loads((HERE.parent / 'print-v44/demo-placements-rev11.json').read_text(encoding='utf-8-sig'))['rows']}
 def asm_T(a): return (np.zeros(3), Rot.identity()) if a is None else (np.array(PT[a]['position']), Rot.from_quat(PT[a]['rotation']))
 def ensure(n):
     """Piece pose in the layout; a piece without one gets its rev 11b page pose (call before its assembly moves)."""
@@ -87,7 +87,7 @@ move_piece('V3_REF_encoder_magnet_6x5_N45SH_DIAMETRIC', DX12)           # magnet
 # The 176 mm shaft part (REF_drum_shaft_12mm_176mm) keeps the old shaft's pivot (pose_bounds) and pose; the 200 mm part is retired.
 PT['piece:REF_drum_shaft_12mm_176mm'] = dict(PT['piece:REF_drum_shaft_APPROX_12mm'], id='piece:REF_drum_shaft_12mm_176mm')
 P['transforms'].append(PT['piece:REF_drum_shaft_12mm_176mm'])
-# Shaft 2 (60T hub inboard, outer pedestal 10 mm in, REX 5 mm in) is rebuilt in the module itself: build_voltra_module10.py rev 12.
+# Shaft 2 (60T hub inboard, outer pedestal 10 mm in, REX 5 mm in) is rebuilt in the module itself: build_fairlead_module10.py rev 12.
 s2 = np.sin(np.pi / 4); CYC, Y90 = [.5, .5, .5, .5], [0, s2, 0, s2]
 place_piece('RESERVE_driver_terminal_access', CYC, [231.8, -112.4, 25.6])      # 19.5 x 30 x 48 in front of the TB005 wire entries (X 222..243.7)
 place_piece('RESERVE_battery_connections', Y90, [205.0, -115.0, 66.0])         # XT90 plug space: 60 x 30 x 20 along X above the gears, under the tray

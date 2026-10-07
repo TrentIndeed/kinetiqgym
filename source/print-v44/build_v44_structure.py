@@ -1,11 +1,11 @@
-"""V44 fix list S1-S12 (round 2): bottom plate, minimal Amazon metal, rear rack wall + clevis, Nano end handle. Run after build_v44_chassis.py.
+"""V44 fix list S1-S12 (round 2): bottom plate, minimal Amazon metal, rear rack wall + clevis, end handle. Run after build_v44_chassis.py.
 
 Decisions (V44_FIX_LIST.md D1-D10): the bottom plate is the product bottom and the enclosure (same for both variants) bolts onto it.
 The printed prototype is the CNC model's parts printed, with the minimum metal you can buy on Amazon and only drill (no cutting,
 no tapping, no welding): two 6061 flat bars 1 x 1/4 x 12 in at stock length under the printed plate, through-bolted with nuts below.
 PRINT: bottom plate in two P2S pieces (split X 75). The right piece has the rear rack wall printed in - 16 mm thick, the CNC rear plate
 (6) plus the clevis flange (10) in one - with the clevis cheeks, shaft-2 pedestals, fuse cradles and battery saddles. The left piece
-carries the Nano-style end handle loop off its back at the motor end (round 5).
+carries the end handle loop off its back at the motor end (round 5).
 CNC: one 6061 plate (same outline, tapped), a 6 mm 6061 rear plate welded on, the printed clevis R07 bolted to it; blocks separate.
 Both: no rubber feet. No front upright, no spacers, no top tie (D8, D10).
 World frame: X shaft (motor -X), -Y front, Z up, plate top Z 0.
@@ -34,10 +34,10 @@ def cur(mode, n): return cq.Shape.importBrep(str(H / mode / (n + '.brep')))
 X0E, X1E, Y0E, Y1E = -81.0, 290.0, -137.0, 5.5
 STEP = (248.0, 20.5)
 SPLIT = 75.0                                                           # printed plate split (rear wall X 80..188 stays in one piece)
-# R3-3: Nano-style D-loop at the motor end, at the back edge: lower leg bolted down to the plate (+ rear bar), upper leg into the end cap
-# R4-6: Nano-style rear plate - one plate along the whole back (X -81..248, Y 2.5..8.5, up to the cover ceiling Z 93.5), continuing
+# R3-3: D-loop at the motor end, at the back edge: lower leg bolted down to the plate (+ rear bar), upper leg into the end cap
+# R4-6: rear plate - one plate along the whole back (X -81..248, Y 2.5..8.5, up to the cover ceiling Z 93.5), continuing
 # Covers screw to it from the back.
-# Round 5: the Nano handle is a short loop standing off the BACK of the rear plate at the motor end, flush with the end face: a 10 mm
+# Round 5: the handle is a short loop standing off the BACK of the rear plate at the motor end, flush with the end face: a 10 mm
 # thin loop in the end-face plane (thin side faces rear), 40 mm deep, hand slot 26 x 66 through it, grip bar 14 deep x 10 thin.
 RP = dict(x=(-81.0, 248.0), y=(2.5, 8.5), top=93.45)
 HANDLE = dict(x=(-81.0, -71.0), y=(5.5 + BW.dy(-80), 48.5 + BW.dy(-80)), z=(-5.0, 93.45), slot=(8.5 + BW.dy(-80), 34.5 + BW.dy(-80), 14.0, 80.0), r_out=12.0, r_slot=6.0, edge=3.0)   # round 9: moves with wall zone A
@@ -89,7 +89,7 @@ def cheeks(fillet_root=True):
     return s.cut(xcyl(CLEV['pin_r'], CLEV['pin'][0], CLEV['pin'][1], x0, x0 + CLEV['gap'] + 2 * CLEV['cheek'] + 16))
 
 def handle():
-    """Round 5: Nano-style end handle - a thin loop standing off the back of the rear plate, in the end-face plane. It starts 3 mm
+    """Round 5: end handle - a thin loop standing off the back of the rear plate, in the end-face plane. It starts 3 mm
     inside the plate (Y 5.5) so the fuse is solid; its edges are rounded 3 mm except where it enters the plate."""
     (x0, x1), (y0, y1), (z0, z1) = HANDLE['x'], HANDLE['y'], HANDLE['z']; sy0, sy1, sz0, sz1 = HANDLE['slot']
     loop = cq.Workplane('YZ', origin=(x0, 0, 0)).center((y0 + y1) / 2, (z0 + z1) / 2).rect(y1 - y0, z1 - z0).extrude(x1 - x0)         .edges('|X and >Y').fillet(HANDLE['r_out'])
@@ -104,7 +104,7 @@ def handle():
     return loop.val()
 
 def rear_plate(mode):
-    """R4-6: the rear plate along the whole back + the round 5 Nano handle loop off its back at the motor end. PRINT: 6 mm (16 mm in the
+    """R4-6: the rear plate along the whole back + the round 5 handle loop off its back at the motor end. PRINT: 6 mm (16 mm in the
     rack zone with the clevis cheeks), fused into the bottom-plate pieces. CNC: 6061 6 mm, welded to the bottom plate, handle loop 6061
     10 mm welded to its back; the R07 clevis bolts on."""
     z0 = -5.0 if mode == 'printed' else 0.0
@@ -189,7 +189,7 @@ AL, PR, AL_PLATE = [.76, .78, .81], [.18, .2, .23], [.70, .72, .75]
 L_, Rr = printed_plate_pieces()
 NEW = {
  'printed': [
-  ('S01_V44_PRINT_bottom_plate_left', L_, 'PRINT PA-CF', PR, 'Bottom plate X -81..75 with the rear plate printed in (6 mm, up to the cover ceiling) and the Nano-style handle loop standing 40 mm off its back at the motor end, flush with the end face (round 5); 2 x M3 holes for the front board plate (round 6). On the two flat bars.'),
+  ('S01_V44_PRINT_bottom_plate_left', L_, 'PRINT PA-CF', PR, 'Bottom plate X -81..75 with the rear plate printed in (6 mm, up to the cover ceiling) and the handle loop standing 40 mm off its back at the motor end, flush with the end face (round 5); 2 x M3 holes for the front board plate (round 6). On the two flat bars.'),
   ('S01_V44_PRINT_bottom_plate_right', Rr, 'PRINT PA-CF', PR,
    'Bottom plate X 75..290 with the rear plate printed in (6 mm; 16 mm in the rack zone = CNC plate 6 + clevis flange 10), fan exhaust grille, filleted clevis cheeks '
    '(3 in upright, d29 pin at the rope height), shaft-2 pedestals, fuse cradles and battery saddles. Prints flat.'),
@@ -201,7 +201,7 @@ NEW = {
   ('S01_V44_CNC_bottom_plate_6061_5mm', bottom_plate('cnc'), 'CNC / laser 6061 5 mm, tapped', AL_PLATE,
    'CNC bottom plate: same outline and top face as the printed plate; tapped M4 (use M4 x 14); printed blocks screwed from below.'),
   ('S17_V44_CNC_rear_plate_6061_6mm', rear_plate('cnc'), 'CNC / laser 6061 6 mm, welded to the bottom plate', AL,
-   'Rear plate along the whole back (R4-6) with the Nano-style handle loop (6061 10 mm, welded to its back at the motor end, round 5), fan grille, tapped M6 for the clevis.'),
+   'Rear plate along the whole back (R4-6) with the handle loop (6061 10 mm, welded to its back at the motor end, round 5), fan grille, tapped M6 for the clevis.'),
   ('R07_V44_PRINT_rack_clevis_rear', cnc_clevis(), 'PRINT PA-CF (aluminium later)', [.35, .38, .42],
    'R06 clevis on the rear plate, filleted (S10): cheeks 76.2 apart straddle a vertical 3 in upright, d29 pin left-right at the rope height; 4 countersunk M6.')]}
 
@@ -254,7 +254,7 @@ for mode in ('cnc', 'printed'):
         lo, hi = bb(s); dims = sorted((hi - lo).tolist())
         report['p2s_fit'][f'{mode}:{n}'] = dict(size_mm=[round(float(v), 1) for v in (hi - lo)], fits_p2s=bool(dims[1] <= 256 and dims[2] <= 256) if 'PRINT' in manu else None)
     r['status'] = ('V44 + fix list round 2: ' + ('PRINT prototype - printed CNC parts + two uncut Amazon flat bars (drill only)' if mode == 'printed'
-                   else 'CNC - 6061 bottom plate + rear plate') + '; printed rear rack wall / R06 clevis, Nano end handle, Pi and BMS on the ceilings.')
+                   else 'CNC - 6061 bottom plate + rear plate') + '; printed rear rack wall / R06 clevis, end handle, Pi and BMS on the ceilings.')
     (d / 'revision.json').write_text(json.dumps(r, indent=1))
     with open(d / 'hardware.csv', 'w', newline='', encoding='utf-8') as fh:
         w = csv.DictWriter(fh, fieldnames=['part', 'group', 'kind', 'size', 'source', 'note']); w.writeheader(); w.writerows([h for h in r['hardware'] if h['part'] in r['parts']])
@@ -270,7 +270,7 @@ report['loads'] = dict(design_force_N=F,
                   front_bolts_N_each=round(F * 28 / 34.75 / 2)),
     plate_in_plane_MPa=round(F / (5 * 100), 1),
     clevis_pin_bearing_MPa=round(F / (2 * CLEV['cheek'] * 2 * CLEV['pin_r']), 1),
-    handle=dict(carry_x3_N=159.0, note='Nano loop off the back of the rear plate, carried hanging (load along X, across the 10 mm loop): legs bend as cantilevers from the plate; the plate takes it in-plane',
+    handle=dict(carry_x3_N=159.0, note='loop off the back of the rear plate, carried hanging (load along X, across the 10 mm loop): legs bend as cantilevers from the plate; the plate takes it in-plane',
                 root_arm_mm=33.0, legs_root_bending_MPa=round(159 * 33.0 / ((19.0 + 13.45) * 10.0 ** 2 / 6), 1), grip_bending_MPa=round(159 * 66 / 8 / (14 * 10.0 ** 2 / 6), 1)),
     metal='2 x 6061 1 x 1/4 x 12 in flat bar, uncut, drilled + countersunk; flat-head M4 from below, nuts on top; no welding, cutting or tapping')
 report['joints'] = dict(FEET=FEET, ODRIVE_FEET=ODRIVE_FEET, BAR_SCREWS=BAR_SCREWS, FRAME_DOWN=FRAME_DOWN, BOARD_PLATE_SCREWS=BOARD_PLATE_SCREWS,   # round 13: for build_v44_fasteners.py

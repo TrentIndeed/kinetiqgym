@@ -10,7 +10,7 @@ import gzip, json
 
 R = Path(__file__).resolve().parent.parent
 PUB = R / 'workbench/public/stock-battery-fit'
-MOD = json.loads(gzip.decompress((R / 'workbench/public/stock-drive-study/voltra-module10-model.json.gz').read_bytes()))
+MOD = json.loads(gzip.decompress((R / 'workbench/public/stock-drive-study/fairlead-module10-model.json.gz').read_bytes()))
 TAG = 'fairlead-module-10'
 EXTERNAL = ('Square back plate', 'Square exit frame', 'Square exit bezel', 'Exit frame spacer', '6809-2RS', 'Printed PA-CF carrier', 'Roller 625ZZ', 'roller axle', '6808_sealed_bearing', 'Carrier_M3',
             'Fixed_bearing_housing', 'Front_outer_race', 'Rear_mount_plate', 'Hub_retainer', 'Rear_inner_race', 'Owned_exit_625', 'JY_MARINE',
@@ -50,7 +50,7 @@ def patch(path):
     d['parts'] = parts
     if isinstance(d.get('notes'), list):
         d['notes'] = [n for n in d['notes'] if TAG not in str(n)] + [f'{TAG}: drum 60T moved out of the Ruland motor coupler to the right shaft end (old 2GT pulley retired); shaft 2 and the 20T pair moved right of the fairlead frame on two printed base pedestals. Rev 9 module parts retired.']
-    d['fairlead_update'] = dict(revision=TAG, source='real-fairlead-revision/voltra-module10', front_plate='FM10 Square back plate (4-screw enclosure mount)', plate_standoff_mm=7.5)
+    d['fairlead_update'] = dict(revision=TAG, source='real-fairlead-revision/fairlead-module10', front_plate='FM10 Square back plate (4-screw enclosure mount)', plate_standoff_mm=7.5)
     path.write_bytes(gzip.compress(json.dumps(d, separators=(',', ':')).encode(), mtime=0))
     return retired, len(new), len(parts)
 

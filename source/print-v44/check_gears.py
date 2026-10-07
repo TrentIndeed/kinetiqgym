@@ -8,7 +8,7 @@ Power path: drum 60T -> shaft-2 60T (1:1) ; shaft-2 20T -> worm-shaft 20T (1:1) 
 2. Rub: every turning part is replaced by its swept body (a cylinder of its largest radius about its own axis, over its length)
    and its clearance to every part that does not turn with it is measured (bearings, housings and the parts it passes through
    by design are skipped). Under 0.5 mm is flagged.
-The carrier's swing (+-45 deg) is covered by the fairlead audit (stock-drive-study/audit_voltra_module10.py).
+The carrier's swing (+-45 deg) is covered by the fairlead audit (stock-drive-study/audit_fairlead_module10.py).
 """
 from pathlib import Path
 import json, math

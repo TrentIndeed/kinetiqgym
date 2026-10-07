@@ -12,8 +12,8 @@ import numpy as np
 import cadquery as cq
 
 H = Path(__file__).resolve().parent; R = H.parent
-src = (R / 'stock-drive-study/audit_voltra_module10.py').read_text(encoding='utf-8')
-g = {'__file__': str(R / 'stock-drive-study/audit_voltra_module10.py')}
+src = (R / 'stock-drive-study/audit_fairlead_module10.py').read_text(encoding='utf-8')
+g = {'__file__': str(R / 'stock-drive-study/audit_fairlead_module10.py')}
 exec(src[:src.index('FIXED = [')], g)                                     # winding-law part of the audit only
 a_lo, a_hi, wl = g['winding_law'](); station, RATIO, DR, WIDTH, ROPE = g['station'], g['RATIO'], g['DR'], g['WIDTH'], g['ROPE']
 DEAD = 3; WRAP_MM = 2 * math.pi * DR

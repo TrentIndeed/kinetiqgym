@@ -139,8 +139,8 @@ _cf = json.loads((HERE / 'face_collision_boxes.json').read_text())
 # and its page mesh becomes the trimmed plate (from the V44 CAD, world -> model through its current page pose); pose_bounds keeps the old
 # bounds so the layout pose still places it.
 import cadquery as _cq
-_fb_path = HERE.parent / 'print-v44-nano/printed/V43_METAL_motor_face_4mm.brep'
-_dump = json.loads((HERE.parent / 'print-v44-nano/demo-placements-rev12.json').read_text(encoding='utf-8-sig'))
+_fb_path = HERE.parent / 'print-v44/printed/V43_METAL_motor_face_4mm.brep'
+_dump = json.loads((HERE.parent / 'print-v44/demo-placements-rev12.json').read_text(encoding='utf-8-sig'))
 _frow = next((r for r in _dump['rows'] if r['n'] == 'V43_METAL_motor_face_4mm'), None)
 if _fb_path.exists() and _frow:
     _plate = _cq.Shape.importBrep(str(_fb_path)).cut(_cq.Solid.makeBox(4.2, 87.2, 8.6, _cq.Vector(5.9, -108.1, 80.5))).cut(_cq.Solid.makeBox(4.2, 21.1, 18.6, _cq.Vector(5.9, -57.0, 70.5)))
@@ -155,7 +155,7 @@ _fp['collision_shape'] = dict(boxes=[[*(np.array(b[:3]) + _fc).round(4).tolist()
 # Round 12: the screen's page envelope becomes its real bodies too (one box per solid of the V44 CAD), so the Pi can sit over its top
 # edge (the envelope included the empty space behind the screen up to its top).
 def _detail_from_v44(page_name, brep_name, source):
-    row = next((r for r in _dump['rows'] if r['n'] == page_name), None); f = HERE.parent / 'print-v44-nano/printed' / (brep_name + '.brep')
+    row = next((r for r in _dump['rows'] if r['n'] == page_name), None); f = HERE.parent / 'print-v44/printed' / (brep_name + '.brep')
     if not (row and f.exists()): return
     part = BYNAME[page_name]; pb = np.array(part.get('pose_bounds') or part['bounds'], float); pc = (pb[:3] + pb[3:]) / 2
     Mi = np.linalg.inv(np.array(row['m']).reshape(4, 4).T); boxes = []
