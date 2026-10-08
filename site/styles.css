@@ -25,3 +25,5 @@ body{overflow-x:clip}
 .file-links .file-pending{position:relative;border-top:2px solid var(--muted);padding:20px 72px 20px 0;color:var(--muted)}
 .file-links .file-pending span{color:inherit}
 .file-links .file-pending .pill{position:absolute;right:0;top:20px;font-style:normal}
+
+.motor-choice{display:flex;align-items:center;gap:8px 18px;flex-wrap:wrap;margin-bottom:6px}.motor-choice label{display:flex;align-items:center;gap:12px;font-size:14px;font-weight:600;flex:0 1 auto;min-width:0}.motor-choice select{padding:12px 14px;border:1px solid var(--line);border-radius:6px;background:#fff;color:var(--ink);height:48px;width:min(380px,72vw);min-width:0}.motor-choice small{color:var(--muted);font-size:13px;max-width:60ch}.accessory-list{border:1px solid var(--line);margin-top:28px}

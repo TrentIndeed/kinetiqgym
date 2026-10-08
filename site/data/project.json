@@ -6,6 +6,33 @@
     "currency": "USD",
     "date": "2026-10-08"
   },
+  "motors": [
+    {
+      "id": "mp80100",
+      "load": "150 lb",
+      "label": "MP80100 50 Kv outrunner",
+      "default": true,
+      "note": "Light rotor (about 4 kg felt at the rope before compensation); ships from China."
+    },
+    {
+      "id": "aps8072s",
+      "load": "150 lb",
+      "label": "APS 8072S 50 Kv outrunner",
+      "note": "The first motor the frame was drawn for; it bolts to the same face plate."
+    },
+    {
+      "id": "sanyo",
+      "load": "220 lb",
+      "label": "Sanyo Denki Q1AA13500 servo (in design)",
+      "note": "130 mm flange low-inertia servo, used; stands in a printed pod past the body."
+    },
+    {
+      "id": "fuji",
+      "load": "220 lb",
+      "label": "Fuji GYS502D7 servo (in design)",
+      "note": "130 mm flange low-inertia servo, new; the same pod and mount as the Sanyo."
+    }
+  ],
   "parts": [
     {
       "id": "p086",
@@ -13,11 +40,169 @@
       "category": "Drive",
       "qty": 1,
       "price": 260,
-      "note": "Freerchobby, via AliExpress: $230 + $30 shipping, ships from China (3-4 weeks). Light rotor; cut its bell-end prop shaft to a 10 mm stub. An APS 8072S fits the same plate.",
+      "note": "Freerchobby, via AliExpress: $230 + $30 shipping, ships from China (3-4 weeks). Cut its bell-end prop shaft to a 10 mm stub.",
       "url": "https://www.aliexpress.us/item/3256805081566856.html",
       "status": "Recorded price",
       "build": "both",
-      "date": "Checked Oct 7, 2026"
+      "date": "Checked Oct 7, 2026",
+      "motor": [
+        "mp80100"
+      ]
+    },
+    {
+      "id": "p001",
+      "name": "APS 8072S outrunner, 50 Kv",
+      "category": "Drive",
+      "qty": 1,
+      "price": 220,
+      "note": "Alien Power Systems, UK: about \u00a3169 plus shipping. Bolts to the same face plate as the MP80100.",
+      "url": "",
+      "status": "Estimate",
+      "build": "both",
+      "date": "",
+      "motor": [
+        "aps8072s"
+      ]
+    },
+    {
+      "id": "p112",
+      "name": "Sanyo Denki Q1AA13500DXP00M servo, no brake (used)",
+      "category": "Drive",
+      "qty": 1,
+      "price": 640,
+      "note": "15.7 N\u00b7m rated, 18.1 stall; $600 + $40 shipping, Texas. Discontinued: new about $1,180.",
+      "url": "https://www.ebay.com/itm/116519671846",
+      "status": "Recorded price",
+      "build": "both",
+      "date": "Checked Oct 8, 2026",
+      "motor": [
+        "sanyo"
+      ]
+    },
+    {
+      "id": "p113",
+      "name": "Fuji GYS502D7-NC2 servo, no brake (new)",
+      "category": "Drive",
+      "qty": 1,
+      "price": 725,
+      "note": "15.9 N\u00b7m rated, 47.8 peak; $630 + $95 shipping, New York.",
+      "url": "https://www.ebay.com/itm/236895440818",
+      "status": "Recorded price",
+      "build": "both",
+      "date": "Checked Oct 8, 2026",
+      "motor": [
+        "fuji"
+      ]
+    },
+    {
+      "id": "p087",
+      "name": "Ruland MCLX-12-12-F clamp coupling",
+      "category": "Drive",
+      "qty": 1,
+      "price": 35,
+      "note": "One-piece steel, 12 mm motor / 12 mm drum, 105 N\u00b7m. About \u00a322 ex VAT in the UK; US price at ruland.com.",
+      "url": "https://www.ruland.com",
+      "status": "Estimate",
+      "build": "both",
+      "date": "",
+      "motor": [
+        "mp80100"
+      ]
+    },
+    {
+      "id": "p114",
+      "name": "Ruland MCLX-12-10-F clamp coupling",
+      "category": "Drive",
+      "qty": 1,
+      "price": 35,
+      "note": "One-piece steel, 10 mm motor / 12 mm drum.",
+      "url": "https://www.ruland.com",
+      "status": "Estimate",
+      "build": "both",
+      "date": "",
+      "motor": [
+        "aps8072s"
+      ]
+    },
+    {
+      "id": "p115",
+      "name": "28 to 12 mm shaft coupling",
+      "category": "Drive",
+      "qty": 1,
+      "price": 60,
+      "note": "Not chosen yet: no one-piece clamp coupling comes in this bore pair. A jaw or disc coupling with a 28 mm keyed hub and a 12 mm clamp hub, at least 26 N\u00b7m.",
+      "url": "",
+      "status": "Estimate",
+      "build": "both",
+      "date": "",
+      "motor": [
+        "sanyo",
+        "fuji"
+      ]
+    },
+    {
+      "id": "p089",
+      "name": "M5 aluminium spacers, pack",
+      "category": "Drive",
+      "qty": 1,
+      "price": 7,
+      "note": "Motor to the face plate: 10 mm long for the MP80100, 3 mm for the APS 8072S (4 needed).",
+      "url": "",
+      "status": "Estimate",
+      "build": "both",
+      "date": "",
+      "motor": [
+        "mp80100",
+        "aps8072s"
+      ]
+    },
+    {
+      "id": "p116",
+      "name": "M8 steel hex standoffs, 13 AF, female both ends",
+      "category": "Drive",
+      "qty": 4,
+      "price": 3,
+      "note": "Servo mount off the face plate: 35 mm (Sanyo) or 40 mm (Fuji).",
+      "url": "",
+      "status": "Estimate",
+      "build": "both",
+      "date": "",
+      "motor": [
+        "sanyo",
+        "fuji"
+      ]
+    },
+    {
+      "id": "p006",
+      "name": "12 mm steel drum shaft",
+      "category": "Drive",
+      "qty": 1,
+      "price": 15,
+      "note": "The drum shaft, 200 mm, used uncut.",
+      "url": "",
+      "status": "Estimate",
+      "build": "both",
+      "date": "",
+      "motor": [
+        "mp80100",
+        "aps8072s"
+      ]
+    },
+    {
+      "id": "p117",
+      "name": "12 mm round steel shaft, 250 mm",
+      "category": "Drive",
+      "qty": 1,
+      "price": 18,
+      "note": "The drum shaft, cut to 224 mm (Sanyo) or 221 mm (Fuji) to reach the coupling.",
+      "url": "",
+      "status": "Estimate",
+      "build": "both",
+      "date": "",
+      "motor": [
+        "sanyo",
+        "fuji"
+      ]
     },
     {
       "id": "p002",
@@ -39,42 +224,6 @@
       "price": 25,
       "note": "Thermal hardware allowance.",
       "url": "https://shop.odriverobotics.com/",
-      "status": "Estimate",
-      "build": "both",
-      "date": ""
-    },
-    {
-      "id": "p004",
-      "name": "USB isolator for controller setup",
-      "category": "Electronics",
-      "qty": 1,
-      "price": 35,
-      "note": "Setup accessory allowance; controller USB/DC isolation requirement.",
-      "url": "https://shop.odriverobotics.com/",
-      "status": "Estimate",
-      "build": "both",
-      "date": ""
-    },
-    {
-      "id": "p087",
-      "name": "Ruland MCLX-12-12-F clamp coupling",
-      "category": "Drive",
-      "qty": 1,
-      "price": 35,
-      "note": "One-piece steel, 12 mm motor / 12 mm drum, 105 N\u00b7m. About \u00a322 ex VAT in the UK; US price at ruland.com.",
-      "url": "https://www.ruland.com",
-      "status": "Estimate",
-      "build": "both",
-      "date": ""
-    },
-    {
-      "id": "p006",
-      "name": "12 mm steel drum shaft",
-      "category": "Drive",
-      "qty": 1,
-      "price": 15,
-      "note": "The drum shaft, used uncut (200 mm).",
-      "url": "",
       "status": "Estimate",
       "build": "both",
       "date": ""
@@ -296,6 +445,22 @@
       "date": ""
     },
     {
+      "id": "p118",
+      "name": "Servo pilot and adapter plates, 0.250 in 6061",
+      "category": "Fabrication",
+      "qty": 1,
+      "price": 45,
+      "note": "Two more plates in the same laser order (\u25a1130).",
+      "url": "https://sendcutsend.com",
+      "status": "Estimate",
+      "build": "cnc",
+      "date": "",
+      "motor": [
+        "sanyo",
+        "fuji"
+      ]
+    },
+    {
       "id": "p103",
       "name": "Drum tube, 6061, 1-1/4 in OD x 0.250 in wall, 100 mm",
       "category": "Fabrication",
@@ -464,42 +629,6 @@
       "date": "Sep 2026"
     },
     {
-      "id": "p039",
-      "name": "Silicone wire, mixed gauges",
-      "category": "Power",
-      "qty": 1,
-      "price": 45,
-      "note": "10/12/16/18/20/22/24 AWG purchasing allowance; lengths in wiring guide.",
-      "url": "",
-      "status": "Estimate",
-      "build": "both",
-      "date": ""
-    },
-    {
-      "id": "p040",
-      "name": "M5 ring terminals, pack",
-      "category": "Power",
-      "qty": 1,
-      "price": 9.99,
-      "note": "12\u201310 AWG terminals; verify selected listing.",
-      "url": "https://www.amazon.com/dp/B0DM8FW4LV",
-      "status": "Recorded price",
-      "build": "both",
-      "date": "Sep 2026"
-    },
-    {
-      "id": "p041",
-      "name": "Ferrules & heat-shrink",
-      "category": "Power",
-      "qty": 1,
-      "price": 15,
-      "note": "Consumables allowance; crimping tools excluded.",
-      "url": "",
-      "status": "Estimate",
-      "build": "both",
-      "date": ""
-    },
-    {
       "id": "p107",
       "name": "42 V 2 A charger (10S)",
       "category": "Power",
@@ -524,18 +653,6 @@
       "date": ""
     },
     {
-      "id": "p044",
-      "name": "MicroSD card",
-      "category": "Electronics",
-      "qty": 1,
-      "price": 10,
-      "note": "OS storage allowance; Pi image not released.",
-      "url": "",
-      "status": "Estimate",
-      "build": "both",
-      "date": ""
-    },
-    {
       "id": "p045",
       "name": "Waveshare 4 inch DPI LCD (C)",
       "category": "Electronics",
@@ -555,18 +672,6 @@
       "price": 25,
       "note": "Board allowance; use non-lockable reference.",
       "url": "https://www.pjrc.com/store/teensy40.html",
-      "status": "Estimate",
-      "build": "both",
-      "date": ""
-    },
-    {
-      "id": "p047",
-      "name": "Low-profile female header strips",
-      "category": "Electronics",
-      "qty": 1,
-      "price": 8,
-      "note": "Two 14-pin sockets for Teensy; pack allowance.",
-      "url": "https://www.amazon.com/dp/B0948H7FPP",
       "status": "Estimate",
       "build": "both",
       "date": ""
@@ -608,18 +713,6 @@
       "date": ""
     },
     {
-      "id": "p051",
-      "name": "Prototype perfboards, pack",
-      "category": "Electronics",
-      "qty": 1,
-      "price": 10,
-      "note": "Three cut boards used.",
-      "url": "https://www.amazon.com/dp/B072Z7Y19F",
-      "status": "Estimate",
-      "build": "both",
-      "date": ""
-    },
-    {
       "id": "p052",
       "name": "Right-angle micro-USB cable, pack",
       "category": "Electronics",
@@ -630,23 +723,109 @@
       "status": "Estimate",
       "build": "both",
       "date": ""
+    }
+  ],
+  "accessories": [
+    {
+      "id": "p004",
+      "name": "USB isolator for controller setup",
+      "category": "Accessories",
+      "qty": 1,
+      "price": 35,
+      "note": "Protects the PC when you set up the ODrive over USB.",
+      "url": "https://shop.odriverobotics.com/",
+      "status": "Estimate",
+      "build": "both",
+      "date": ""
     },
     {
-      "id": "p059",
-      "name": "PAHT-CF filament, 1 kg spool",
-      "category": "Fabrication",
-      "qty": 4,
-      "price": 60,
-      "note": "Printed build: the frame is printed too.",
-      "url": "https://www.amazon.com/dp/B0F37YW223",
+      "id": "p026",
+      "name": "PTFE / lithium grease",
+      "category": "Accessories",
+      "qty": 1,
+      "price": 10,
+      "note": "Lead screw and gears.",
+      "url": "https://www.amazon.com/dp/B000XBH9HI",
       "status": "Estimate",
-      "build": "printed",
+      "build": "both",
+      "date": ""
+    },
+    {
+      "id": "p039",
+      "name": "Silicone wire, mixed gauges",
+      "category": "Accessories",
+      "qty": 1,
+      "price": 45,
+      "note": "10 to 24 AWG; lengths in the wiring reference.",
+      "url": "",
+      "status": "Estimate",
+      "build": "both",
+      "date": ""
+    },
+    {
+      "id": "p040",
+      "name": "M5 ring terminals, pack",
+      "category": "Accessories",
+      "qty": 1,
+      "price": 9.99,
+      "note": "12\u201310 AWG terminals; verify selected listing.",
+      "url": "https://www.amazon.com/dp/B0DM8FW4LV",
+      "status": "Recorded price",
+      "build": "both",
+      "date": "Sep 2026"
+    },
+    {
+      "id": "p041",
+      "name": "Ferrules & heat-shrink",
+      "category": "Accessories",
+      "qty": 1,
+      "price": 15,
+      "note": "Consumables allowance; crimping tools excluded.",
+      "url": "",
+      "status": "Estimate",
+      "build": "both",
+      "date": ""
+    },
+    {
+      "id": "p047",
+      "name": "Low-profile female header strips",
+      "category": "Accessories",
+      "qty": 1,
+      "price": 8,
+      "note": "Teensy socket: 2 x 14-pin low-profile machined-pin female.",
+      "url": "https://www.amazon.com/dp/B0948H7FPP",
+      "status": "Estimate",
+      "build": "both",
+      "date": ""
+    },
+    {
+      "id": "p051",
+      "name": "Prototype perfboards, pack",
+      "category": "Accessories",
+      "qty": 1,
+      "price": 10,
+      "note": "Three small boards (Teensy, CAN, regulator).",
+      "url": "https://www.amazon.com/dp/B072Z7Y19F",
+      "status": "Estimate",
+      "build": "both",
+      "date": ""
+    },
+    {
+      "id": "p044",
+      "name": "MicroSD card",
+      "category": "Accessories",
+      "qty": 1,
+      "price": 10,
+      "note": "For the Raspberry Pi.",
+      "url": "",
+      "status": "Estimate",
+      "build": "both",
       "date": ""
     },
     {
       "id": "p060",
       "name": "PAHT-CF filament, 1 kg spool",
-      "category": "Fabrication",
+      "category": "Accessories",
       "qty": 2,
       "price": 60,
       "note": "End pieces, level-wind, exit, tower, gears and brackets.",
@@ -656,12 +835,24 @@
       "date": ""
     },
     {
+      "id": "p059",
+      "name": "PAHT-CF filament, 1 kg spool",
+      "category": "Accessories",
+      "qty": 4,
+      "price": 60,
+      "note": "Printed build: the frame is printed too.",
+      "url": "https://www.amazon.com/dp/B0F37YW223",
+      "status": "Estimate",
+      "build": "printed",
+      "date": ""
+    },
+    {
       "id": "p108",
       "name": "PETG-CF filament, 1 kg spool",
-      "category": "Consumables",
+      "category": "Accessories",
       "qty": 1,
       "price": 30,
-      "note": "The covers.",
+      "note": "The covers (and the motor pod for the 220 lb servo).",
       "url": "",
       "status": "Estimate",
       "build": "both",
@@ -670,10 +861,10 @@
     {
       "id": "p061",
       "name": "1 mm EVA foam roll",
-      "category": "Consumables",
+      "category": "Accessories",
       "qty": 1,
       "price": 10,
-      "note": "Battery pad material; allowance.",
+      "note": "Battery pads: or print them in TPU 95A.",
       "url": "https://www.amazon.com/dp/B0BXJHVH5M",
       "status": "Estimate",
       "build": "both",
@@ -682,23 +873,11 @@
     {
       "id": "p062",
       "name": "2 mm EVA foam sheet",
-      "category": "Consumables",
+      "category": "Accessories",
       "qty": 1,
       "price": 10,
-      "note": "Battery separator and retention pads.",
+      "note": "Battery pads: or print them in TPU 95A.",
       "url": "https://www.amazon.com/dp/B08YXYN327",
-      "status": "Estimate",
-      "build": "both",
-      "date": ""
-    },
-    {
-      "id": "p026",
-      "name": "PTFE / lithium grease",
-      "category": "Consumables",
-      "qty": 1,
-      "price": 10,
-      "note": "One tube for worm and gear lubrication.",
-      "url": "https://www.amazon.com/dp/B000XBH9HI",
       "status": "Estimate",
       "build": "both",
       "date": ""
@@ -706,7 +885,7 @@
     {
       "id": "p063",
       "name": "Cable ties & thread locker",
-      "category": "Consumables",
+      "category": "Accessories",
       "qty": 1,
       "price": 12,
       "note": "Assembly consumables allowance.",
@@ -718,7 +897,7 @@
     {
       "id": "p064",
       "name": "1 inch steel rack hitch pin",
-      "category": "Mount & handle",
+      "category": "Accessories",
       "qty": 1,
       "price": 20,
       "note": "Or your rack's own 1 in pin: at least 92 mm between the head and the clip hole.",
@@ -730,7 +909,7 @@
     {
       "id": "p065",
       "name": "Straight bar & carabiner",
-      "category": "Mount & handle",
+      "category": "Accessories",
       "qty": 1,
       "price": 35,
       "note": "Training attachment allowance; rack itself excluded.",
@@ -742,7 +921,7 @@
     {
       "id": "p066",
       "name": "Metric socket screw assortment",
-      "category": "Fasteners",
+      "category": "Accessories",
       "qty": 1,
       "price": 22.99,
       "note": "Purchase pack; exact installed sizes/counts are in the hardware manifest.",
@@ -754,7 +933,7 @@
     {
       "id": "p067",
       "name": "M4 button-head assortment",
-      "category": "Fasteners",
+      "category": "Accessories",
       "qty": 1,
       "price": 9.59,
       "note": "Purchase pack; exact installed sizes/counts are in the hardware manifest.",
@@ -766,7 +945,7 @@
     {
       "id": "p072",
       "name": "M2/M3/M4/M5 heat-set insert kit",
-      "category": "Fasteners",
+      "category": "Accessories",
       "qty": 1,
       "price": 25,
       "note": "Purchase pack; exact installed sizes/counts are in the hardware manifest.",
@@ -778,7 +957,7 @@
     {
       "id": "p073",
       "name": "M2.5 heat-set inserts, pack",
-      "category": "Fasteners",
+      "category": "Accessories",
       "qty": 1,
       "price": 10,
       "note": "Purchase pack; exact installed sizes/counts are in the hardware manifest.",
@@ -790,7 +969,7 @@
     {
       "id": "p074",
       "name": "M3 flat-head assortment",
-      "category": "Fasteners",
+      "category": "Accessories",
       "qty": 1,
       "price": 15,
       "note": "Purchase pack; exact installed sizes/counts are in the hardware manifest.",
@@ -802,7 +981,7 @@
     {
       "id": "p075",
       "name": "M3 x 25 flat-head screws, pack",
-      "category": "Fasteners",
+      "category": "Accessories",
       "qty": 1,
       "price": 8,
       "note": "Purchase pack; exact installed sizes/counts are in the hardware manifest.",
@@ -814,7 +993,7 @@
     {
       "id": "p076",
       "name": "M4 x 10 flat-head screws, pack",
-      "category": "Fasteners",
+      "category": "Accessories",
       "qty": 1,
       "price": 8,
       "note": "Purchase pack; exact installed sizes/counts are in the hardware manifest.",
@@ -826,7 +1005,7 @@
     {
       "id": "p077",
       "name": "M4 flat-head assortment",
-      "category": "Fasteners",
+      "category": "Accessories",
       "qty": 1,
       "price": 12,
       "note": "Purchase pack; exact installed sizes/counts are in the hardware manifest.",
@@ -838,7 +1017,7 @@
     {
       "id": "p078",
       "name": "M2.5 x 5 flat-head screws, pack",
-      "category": "Fasteners",
+      "category": "Accessories",
       "qty": 1,
       "price": 8,
       "note": "Purchase pack; exact installed sizes/counts are in the hardware manifest.",
@@ -850,7 +1029,7 @@
     {
       "id": "p079",
       "name": "M2.5 socket screw assortment",
-      "category": "Fasteners",
+      "category": "Accessories",
       "qty": 1,
       "price": 12,
       "note": "Purchase pack; exact installed sizes/counts are in the hardware manifest.",
@@ -862,7 +1041,7 @@
     {
       "id": "p080",
       "name": "M2.5 x 5 socket screws, pack",
-      "category": "Fasteners",
+      "category": "Accessories",
       "qty": 1,
       "price": 8,
       "note": "Purchase pack; exact installed sizes/counts are in the hardware manifest.",
@@ -874,7 +1053,7 @@
     {
       "id": "p109",
       "name": "M3 x 40 countersunk screws, pack",
-      "category": "Fasteners",
+      "category": "Accessories",
       "qty": 1,
       "price": 8,
       "note": "Exit clamp, 4 needed.",
@@ -886,7 +1065,7 @@
     {
       "id": "p110",
       "name": "M3 x 10 low-head socket screws (DIN 7984), pack",
-      "category": "Fasteners",
+      "category": "Accessories",
       "qty": 1,
       "price": 7,
       "note": "Lead screw nut flange, 4 needed.",
@@ -896,21 +1075,9 @@
       "date": ""
     },
     {
-      "id": "p089",
-      "name": "M5 aluminium spacers 10 x 10 mm, pack",
-      "category": "Fasteners",
-      "qty": 1,
-      "price": 7,
-      "note": "Motor to the face plate, 4 needed.",
-      "url": "",
-      "status": "Estimate",
-      "build": "both",
-      "date": ""
-    },
-    {
       "id": "p085",
       "name": "M6 x 16 countersunk screws, pack",
-      "category": "Fasteners",
+      "category": "Accessories",
       "qty": 1,
       "price": 8,
       "note": "Rack mount: M6 x 22 (4) and M6 x 30 (2).",
@@ -922,7 +1089,7 @@
     {
       "id": "p111",
       "name": "M10 nyloc nuts and washers",
-      "category": "Fasteners",
+      "category": "Accessories",
       "qty": 1,
       "price": 6,
       "note": "Exit pulley axles, 2 of each.",
@@ -932,9 +1099,25 @@
       "date": ""
     },
     {
+      "id": "p119",
+      "name": "M8 screws, washers and nyloc nuts",
+      "category": "Accessories",
+      "qty": 1,
+      "price": 10,
+      "note": "220 lb servo: M8 x 16 socket (4), M8 countersunk x 22 or x 25 (4), M8 x 35 socket with washers and nyloc nuts (4).",
+      "url": "",
+      "status": "Estimate",
+      "build": "both",
+      "date": "",
+      "motor": [
+        "sanyo",
+        "fuji"
+      ]
+    },
+    {
       "id": "p083",
       "name": "Lock-nut & washer assortment",
-      "category": "Fasteners",
+      "category": "Accessories",
       "qty": 1,
       "price": 12,
       "note": "Purchase pack; exact installed sizes/counts are in the hardware manifest.",
@@ -946,7 +1129,7 @@
     {
       "id": "p084",
       "name": "Plain hex-nut assortment",
-      "category": "Fasteners",
+      "category": "Accessories",
       "qty": 1,
       "price": 9,
       "note": "Purchase pack; exact installed sizes/counts are in the hardware manifest.",
