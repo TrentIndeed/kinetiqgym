@@ -433,58 +433,6 @@
       "date": ""
     },
     {
-      "id": "p102",
-      "name": "Laser-cut 6061-T6 plates, 0.250 in",
-      "category": "Fabrication",
-      "qty": 1,
-      "price": 220,
-      "note": "Instant-priced online order (e.g. SendCutSend), tapped and countersunk as drawn: base plate, rear plate, motor face plate, rack mount back plate and 2 cheeks, 2 drum flanges. You weld the frame, rack mount and drum.",
-      "url": "https://sendcutsend.com",
-      "status": "Estimate",
-      "build": "cnc",
-      "date": ""
-    },
-    {
-      "id": "p118",
-      "name": "Servo pilot and adapter plates, 0.250 in 6061",
-      "category": "Fabrication",
-      "qty": 1,
-      "price": 45,
-      "note": "Two more plates in the same laser order (\u25a1130).",
-      "url": "https://sendcutsend.com",
-      "status": "Estimate",
-      "build": "cnc",
-      "date": "",
-      "motor": [
-        "sanyo",
-        "fuji"
-      ]
-    },
-    {
-      "id": "p103",
-      "name": "Drum tube, 6061, 1-1/4 in OD x 0.250 in wall, 100 mm",
-      "category": "Fabrication",
-      "qty": 1,
-      "price": 15,
-      "note": "Cut to length; ask for T6.",
-      "url": "https://www.amazon.com/dp/B0BFGLLHXC",
-      "status": "Estimate",
-      "build": "cnc",
-      "date": ""
-    },
-    {
-      "id": "p054",
-      "name": "Bearing cheeks, four cut plates",
-      "category": "Fabrication",
-      "qty": 1,
-      "price": 30,
-      "note": "2 mm steel, in the same laser order.",
-      "url": "",
-      "status": "Estimate",
-      "build": "both",
-      "date": ""
-    },
-    {
       "id": "p027",
       "name": "Thunder Power TP2700-5SR70",
       "category": "Power",
@@ -1134,6 +1082,60 @@
       "price": 9,
       "note": "Purchase pack; exact installed sizes/counts are in the hardware manifest.",
       "url": "https://www.amazon.com/dp/B097N3SGCD",
+      "status": "Estimate",
+      "build": "both",
+      "date": ""
+    }
+  ],
+  "outsourced": [
+    {
+      "id": "p102",
+      "name": "Laser-cut 6061-T6 plates, 0.250 in",
+      "category": "Fabrication",
+      "qty": 1,
+      "price": 220,
+      "note": "Only if you have the plates cut: instant-priced online order (e.g. SendCutSend), tapped and countersunk as drawn. You weld the frame, rack mount and drum.",
+      "url": "https://sendcutsend.com",
+      "status": "Estimate",
+      "build": "cnc",
+      "date": ""
+    },
+    {
+      "id": "p118",
+      "name": "Servo pilot and adapter plates, 0.250 in 6061",
+      "category": "Fabrication",
+      "qty": 1,
+      "price": 45,
+      "note": "Two more plates in the same laser order (\u25a1130).",
+      "url": "https://sendcutsend.com",
+      "status": "Estimate",
+      "build": "cnc",
+      "date": "",
+      "motor": [
+        "sanyo",
+        "fuji"
+      ]
+    },
+    {
+      "id": "p103",
+      "name": "Drum tube, 6061, 1-1/4 in OD x 0.250 in wall, 100 mm",
+      "category": "Fabrication",
+      "qty": 1,
+      "price": 15,
+      "note": "Only if you buy the tube: cut to length, ask for T6.",
+      "url": "https://www.amazon.com/dp/B0BFGLLHXC",
+      "status": "Estimate",
+      "build": "cnc",
+      "date": ""
+    },
+    {
+      "id": "p054",
+      "name": "Bearing cheeks, four cut plates",
+      "category": "Fabrication",
+      "qty": 1,
+      "price": 30,
+      "note": "2 mm steel, in the same laser order.",
+      "url": "",
       "status": "Estimate",
       "build": "both",
       "date": ""
