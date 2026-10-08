@@ -1,37 +1,37 @@
 id,name,category,qty,price,note,url,status,build,date
-p001,APS 8072S-class motor,Drive,1,220,"Motor allowance; confirm exact winding, shaft and mount. Not a supplier quote.",,Estimate,both,
+p086,"MP80100 outrunner, 50 Kv, sensored",Drive,1,260,"Freerchobby, via AliExpress: $230 + $30 shipping, ships from China (3-4 weeks). Light rotor; cut its bell-end prop shaft to a 10 mm stub. An APS 8072S fits the same plate.",https://www.aliexpress.us/item/3256805081566856.html,Recorded price,both,"Checked Oct 7, 2026"
 p002,ODrive Pro ODv44-ST,Drive,1,229,Controller only; heat spreader is separate.,https://shop.odriverobotics.com/products/odrive-pro,Source price,both,"Checked Oct 2, 2026"
 p003,ODrive Pro heat spreader,Drive,1,25,Thermal hardware allowance.,https://shop.odriverobotics.com/,Estimate,both,
 p004,USB isolator for controller setup,Electronics,1,35,Setup accessory allowance; controller USB/DC isolation requirement.,https://shop.odriverobotics.com/,Estimate,both,
-p005,NBK MSTS-25-10-12 coupling,Drive,1,40,10 mm motor shaft to 12 mm drum shaft; quote required.,,Estimate,both,
-p006,12 mm steel drum shaft,Drive,1,15,Stock length plus cutting to 176 mm allowance.,,Estimate,both,
+p087,Ruland MCLX-12-12-F clamp coupling,Drive,1,35,"One-piece steel, 12 mm motor / 12 mm drum, 105 N·m. About £22 ex VAT in the UK; US price at ruland.com.",https://www.ruland.com,Estimate,both,
+p006,12 mm steel drum shaft,Drive,1,15,"The drum shaft, used uncut (200 mm).",,Estimate,both,
 p007,"6001-2RS bearings, 2-pack",Drive,1,6.95,Two bearings required.,https://www.amazon.com/dp/B07GVN7GQ7,Recorded price,both,"Oct 2, 2026"
-p008,goBILDA 1301-0016-0012 hub,Drive,2,9.99,12 mm round-bore hub; unit allowance.,https://www.gobilda.com/,Estimate,both,
-p009,goBILDA 8 mm REX hub,Drive,1,9.99,Shaft-2 gear hub; exact SKU must be confirmed.,https://www.gobilda.com/,Estimate,both,
-p010,goBILDA 2302-0014-0060 60T gear,Drive,2,19.99,MOD 0.8 steel gear; unit allowance.,https://www.gobilda.com/,Estimate,both,
-p011,"20T pinion, 8 mm REX",Drive,1,10.59,2303-4008-0020.,https://www.gobilda.com/2303-series-steel-mod-0-8-pinion-gear-8mm-rex-bore-20-tooth/,Recorded price,both,Sep 2026
-p012,"20T pinion, 6 mm D-bore",Drive,1,10.59,2303-1006-0020.,https://www.gobilda.com/pinion-gears/,Recorded price,both,Sep 2026
-p013,"8 mm REX shaft, 56 mm",Drive,1,4.49,"2106-4008-0560, with E-clip.",https://www.gobilda.com/2106-series-stainless-steel-rex-shaft-8mm-diameter-56mm-length/,Recorded price,both,Sep 2026
-p014,"8 mm REX flanged bearings, 2-pack",Drive,1,5.99,1611-0514-4008; two required.,https://www.gobilda.com/1611-series-flanged-ball-bearing-8mm-rex-id-x-14mm-od-5mm-thickness-2-pack/,Recorded price,both,Sep 2026
-p015,"6 mm D-shaft, 60 mm",Drive,1,5,2101-0006-0060; stock allowance.,https://www.servocity.com/6mm-stainless-steel-d-shafting/,Estimate,both,
-p016,"6 mm flanged bearings, 2-pack",Drive,1,6,6 x 14 x 5 mm; two required.,https://www.gobilda.com/1601-series-flanged-ball-bearing-6mm-id-x-14mm-od-5mm-thickness-2-pack/,Estimate,both,
-p017,KHK SW0.8-R1 steel worm,Drive,1,14.67,Current released worm for both builds; printed replacement is still in development.,https://shop.sdp-si.com/ksw08-r1.html,Recorded price,both,Oct 2026
-p018,6809-2RS carrier bearing,Fairlead & rope,1,7.79,45 x 58 x 7 mm.,https://www.amazon.com/dp/B07RVJJPVG,Recorded price,both,"Oct 2, 2026"
-p019,"6808-2RS bearings, 2-pack",Fairlead & rope,1,7.39,40 x 52 x 7 mm; two required.,https://www.amazon.com/dp/B0CRLGD5GL,Recorded price,both,"Oct 2, 2026"
-p020,"625ZZ bearings, 20-pack",Fairlead & rope,1,8.79,"5 x 16 x 5 mm; two used, remainder spare.",https://www.amazon.com/dp/B0GCZBYBSD,Recorded price,both,"Oct 2, 2026"
-p021,"688ZZ bearings, 5-pack",Fairlead & rope,1,5.99,8 x 16 x 5 mm; two used in the sheave.,https://www.amazon.com/dp/B08199J4RJ,Recorded price,both,"Oct 2, 2026"
-p022,"U625ZZ nylon groove pulleys, pair",Fairlead & rope,1,10,Two 5 x 20 x 7 mm exit pulleys; allowance.,,Estimate,both,
-p023,"316 stainless oval rings, 6-pack",Fairlead & rope,1,9.99,11 x 38 mm; one used.,https://www.amazon.com/dp/B0DQCTS4H4,Recorded price,both,"Oct 2, 2026"
-p024,1/8 in UHMWPE rope,Fairlead & rope,1,15,About 3 m needed; retail-length allowance. Confirm rope rating.,,Estimate,both,
-p025,Sheave axle hardware,Fairlead & rope,1,8,Allowance only: final stock axle and pocket fit remain unresolved.,,Estimate,both,
-p026,PTFE / lithium grease,Consumables,1,10,One tube for worm and gear lubrication.,https://www.amazon.com/dp/B000XBH9HI,Estimate,both,
+p008,goBILDA 1301-0016-0012 hub,Drive,2,9.99,Drum hub and 81T gear hub.,https://www.servocity.com,Estimate,both,
+p088,"Loctite 638 retaining compound, 10 mL",Drive,1,20,Bonds the drum hub and both drum flanges to the round shaft (or Loctite 648).,https://www.amazon.com/dp/B004GZDV8I,Estimate,both,
+p090,"goBILDA 1309-0016-0008 Sonic Hub, 8 mm",Level-wind,1,7.99,Carries the printed 45T gear on the lead screw.,https://www.servocity.com/1309-series-sonic-hub-8mm-bore/,Source price,both,"Checked Oct 5, 2026"
+p091,"Tr8 x 2 lead screw, 200 mm, 2-pack",Level-wind,1,11.99,"With brass flange nuts; used uncut. Pick ""200mm / 2pcs Tr8X2"".",https://www.amazon.com/dp/B0B8RKSDJV,Recorded price,both,"Checked Oct 3-5, 2026"
+p092,"MGN15H rail 200 mm with block, 2 sets",Level-wind,1,49.99,The traveller rail (one spare set).,https://www.amazon.com/dp/B0D7CLND4B,Recorded price,both,"Checked Oct 3-5, 2026"
+p093,"626ZZ bearings, 10-pack",Level-wind,1,9.99,"Travelling and fixed rollers, 8 needed.",https://www.amazon.com/dp/B07JHKBG4X,Recorded price,both,"Checked Oct 3-5, 2026"
+p094,"ISO 7379 shoulder bolts 6 x 16, M5, 6-pack",Level-wind,1,8.99,The four roller axles.,https://www.amazon.com/dp/B0DP6ZRSTT,Recorded price,both,"Checked Oct 3-5, 2026"
+p021,"688ZZ bearings, 5-pack",Level-wind,1,5.99,"Lead screw far end, in the printed stand.",https://www.amazon.com/dp/B08199J4RJ,Recorded price,both,"Checked Oct 3-5, 2026"
+p095,"MR128ZZ bearings, 10-pack",Level-wind,1,7,"Lead screw fixed end, in the tower wall.",https://www.amazon.com/dp/B089GG2YCT,Estimate,both,
+p096,"F8-16M thrust bearings, 4-pack",Level-wind,1,7.99,"Lead screw fixed end, both directions.",https://www.amazon.com/dp/B07QLTXJDH,Recorded price,both,"Checked Oct 3-5, 2026"
+p097,"8 mm set-screw shaft collars, 10-pack",Level-wind,1,8.89,Preloads the thrust pair.,https://www.amazon.com/dp/B08SK2LNNV,Recorded price,both,"Checked Oct 3-5, 2026"
+p098,16008-2RS bearing 40 x 68 x 9,Fairlead & rope,2,9.59,Exit swivel (sold singly).,https://www.amazon.com/dp/B07PPNVNYY,Recorded price,both,"Checked Oct 3-5, 2026"
+p099,"F6001-2RS flanged bearings, 4-pack",Fairlead & rope,1,9.99,Exit pulleys: the rope runs on the outer ring.,https://www.amazon.com/dp/B09BVV9BYZ,Recorded price,both,"Checked Oct 3-5, 2026"
+p100,"ISO 7379 shoulder bolts 12 x 20, M10, 2-pack",Fairlead & rope,1,9.89,Exit pulley axles.,https://www.amazon.com/dp/B0FDQY2795,Recorded price,both,"Checked Oct 3-5, 2026"
+p101,"Dowel pins 5 x 60 mm, 304 stainless, 24-pack",Fairlead & rope,1,8.49,The exit's side rails.,https://www.amazon.com/dp/B0FZHR1NP3,Recorded price,both,"Checked Oct 3-5, 2026"
+p024,1/8 in UHMWPE rope,Fairlead & rope,1,15,About 3 m.,,Estimate,both,
+p102,"Laser-cut 6061-T6 plates, 0.250 in",Fabrication,1,220,"Instant-priced online order (e.g. SendCutSend), tapped and countersunk as drawn: base plate, rear plate, motor face plate, rack mount back plate and 2 cheeks, 2 drum flanges. You weld the frame, rack mount and drum.",https://sendcutsend.com,Estimate,cnc,
+p103,"Drum tube, 6061, 1-1/4 in OD x 0.250 in wall, 100 mm",Fabrication,1,15,Cut to length; ask for T6.,https://www.amazon.com/dp/B0BFGLLHXC,Estimate,cnc,
+p054,"Bearing cheeks, four cut plates",Fabrication,1,30,"2 mm steel, in the same laser order.",,Estimate,both,
 p027,Thunder Power TP2700-5SR70,Power,2,102.99,"5S 2.7 Ah LiPo, EC5 leads. Two packs in series.",https://www.thunderpowerrc.com/products/tp2700-5sr70,Source price,both,"Checked Oct 2, 2026"
-p028,JBD / LLT SP17S005 BMS,Power,1,45,"10S, 60 A, soft switch, NTC and setup adapter; allowance.",,Estimate,both,
-p029,Littelfuse MIDI 58 V holder,Power,1,20,04980921GXM5; allowance.,https://www.waytekwire.com/product/littelfuse-inline-midi-fuse-holder-04980921gxm5,Estimate,both,
-p030,Littelfuse 40 A 58 V BF1 fuse,Power,2,6,142.5631.5402; one installed plus one spare.,https://nationalfuse.com/shop/142-5631-5402/,Estimate,both,
+p028,"10S smart BMS, 60 A or more",Power,1,45,US-stocked pick in progress; the CAD is sized for a 102 x 65 x 12 mm board.,,Estimate,both,
+p104,Blue Sea 5191 MRBF terminal fuse block,Power,1,30.78,58 V DC; upright on a printed insulating pad.,https://www.amazon.com/dp/B0019ZBTV4,Recorded price,both,"Checked Oct 3-5, 2026"
+p105,Blue Sea 5176 MRBF 40 A fuse,Power,2,17.93,58 V DC; one spare.,https://www.amazon.com/dp/B0016HTXAY,Recorded price,both,"Checked Oct 3-5, 2026"
 p031,MINI 58 V 3 A fuse,Power,2,4,0997003.WXN; one installed plus spare.,https://www.newark.com/littelfuse/0997003-wxn/automotive-fuse-fast-acting-3a/dp/79J5391,Estimate,both,
 p032,MINI 58 V 7.5 A fuse,Power,2,4,One installed plus spare; verify 58 V rating.,,Estimate,both,
-p033,"Inline MINI fuse holders, 10-pack",Power,1,6.89,16 AWG; two used.,https://www.amazon.com/dp/B07MQZ9Q8L,Recorded price,both,Sep 2026
+p106,"Inline MINI fuse holder, 58 V rated",Power,2,6,"With cover, 16 AWG. Most holders are rated 32 V: buy from Digi-Key or Mouser.",,Estimate,both,
 p034,"WAGO 221-615, 15-pack",Power,1,24.39,Five-port 10 AWG connector; one used.,https://www.amazon.com/dp/B07CJR8MH4,Recorded price,both,Sep 2026
 p035,"Amass XT60E-F, 10-pack",Power,1,9.88,Panel charge socket; one used.,https://www.amazon.com/dp/B09SL2MNN1,Recorded price,both,Sep 2026
 p036,"APIELE 12 mm latching switch, 2-pack",Power,1,8.99,BMS signal switch; LED not wired in reference.,https://www.amazon.com/dp/B083QMF2J1,Recorded price,both,Sep 2026
@@ -40,7 +40,7 @@ p038,"5S JST-XH balance leads, 10-pack",Power,1,6.99,Pack-to-BMS sense harness.,
 p039,"Silicone wire, mixed gauges",Power,1,45,10/12/16/18/20/22/24 AWG purchasing allowance; lengths in wiring guide.,,Estimate,both,
 p040,"M5 ring terminals, pack",Power,1,9.99,12–10 AWG terminals; verify selected listing.,https://www.amazon.com/dp/B0DM8FW4LV,Recorded price,both,Sep 2026
 p041,Ferrules & heat-shrink,Power,1,15,Consumables allowance; crimping tools excluded.,,Estimate,both,
-p042,Luna Mini 42 V / 4 A charger,Power,1,59.95,"10S charger, XT60 plug; check configuration.",https://lunacycle.com/36v-4amp-luna-mini-charger/,Recorded price,both,Oct 2026
+p107,42 V 2 A charger (10S),Power,1,16.99,Fit an XT60 male plug (about 1.5 h per charge).,https://www.amazon.com/dp/B08JYSZX78,Recorded price,both,"Checked Oct 3-5, 2026"
 p043,Raspberry Pi 4 Model B,Electronics,1,55,2 GB reference budget; actual memory variant/retailer may differ.,https://www.raspberrypi.com/products/raspberry-pi-4-model-b/,Estimate,both,
 p044,MicroSD card,Electronics,1,10,OS storage allowance; Pi image not released.,,Estimate,both,
 p045,Waveshare 4 inch DPI LCD (C),Electronics,1,54.99,720 x 720 square capacitive display.,https://www.waveshare.com/product/4inch-dpi-lcd-c.htm,Source price,both,"Checked Oct 2, 2026"
@@ -51,25 +51,17 @@ p049,Pololu D42V55F5 regulator,Electronics,1,39.95,"#5571, 5 V output, 60 V maxi
 p050,Noctua NF-A4x10 5V fan,Electronics,1,17,Non-PWM reference; unit allowance.,https://www.amazon.com/dp/B00NEMGCIA,Estimate,both,
 p051,"Prototype perfboards, pack",Electronics,1,10,Three cut boards used.,https://www.amazon.com/dp/B072Z7Y19F,Estimate,both,
 p052,"Right-angle micro-USB cable, pack",Electronics,1,10,Short setup/board cable.,https://www.amazon.com/dp/B08BZD66H4,Estimate,both,
-p053,"6061 flat bars, pair",Fabrication,1,15,1 x 1/4 x 12 in; drill and countersink.,https://www.amazon.com/dp/B0CJ7V24MN,Estimate,printed,
-p054,"Bearing cheeks, four cut plates",Fabrication,1,30,"2 mm steel; fabrication allowance, get a quote.",,Estimate,both,
-p055,Rope anchor clamp plate,Fabrication,1,10,"2 mm steel; fabrication allowance, get a quote.",,Estimate,both,
-p056,Motor face plate,Fabrication,1,20,4 mm aluminum or steel; fabrication allowance.,,Estimate,both,
-p057,CNC aluminum bottom plate,Fabrication,1,160,"6061, 5 mm, tapped; allowance, not a machining quote.",,Estimate,cnc,
-p058,CNC rear plate & welding,Fabrication,1,90,"6061, 6 mm; fabrication and weld allowance.",,Estimate,cnc,
-p059,"PAHT-CF filament, 1 kg spool",Fabrication,2,60,Two-spool purchase budget; includes covers and printed drivetrain parts.,https://www.amazon.com/dp/B0F37YW223,Estimate,printed,
-p060,"PAHT-CF filament, 1 kg spool",Fabrication,1,60,"Shared covers, mounts and fairlead parts remain printed.",https://www.amazon.com/dp/B0F37YW223,Estimate,cnc,
+p059,"PAHT-CF filament, 1 kg spool",Fabrication,4,60,Printed build: the frame is printed too.,https://www.amazon.com/dp/B0F37YW223,Estimate,printed,
+p060,"PAHT-CF filament, 1 kg spool",Fabrication,2,60,"End pieces, level-wind, exit, tower, gears and brackets.",https://www.amazon.com/dp/B0F37YW223,Estimate,cnc,
+p108,"PETG-CF filament, 1 kg spool",Consumables,1,30,The covers.,,Estimate,both,
 p061,1 mm EVA foam roll,Consumables,1,10,Battery pad material; allowance.,https://www.amazon.com/dp/B0BXJHVH5M,Estimate,both,
 p062,2 mm EVA foam sheet,Consumables,1,10,Battery separator and retention pads.,https://www.amazon.com/dp/B08YXYN327,Estimate,both,
+p026,PTFE / lithium grease,Consumables,1,10,One tube for worm and gear lubrication.,https://www.amazon.com/dp/B000XBH9HI,Estimate,both,
 p063,Cable ties & thread locker,Consumables,1,12,Assembly consumables allowance.,,Estimate,both,
-p064,1 inch steel rack hitch pin,Mount & handle,1,20,Rack connection allowance; verify usable pin length.,,Estimate,both,
+p064,1 inch steel rack hitch pin,Mount & handle,1,20,Or your rack's own 1 in pin: at least 92 mm between the head and the clip hole.,https://www.amazon.com/dp/B08974F734,Estimate,both,
 p065,Straight bar & carabiner,Mount & handle,1,35,Training attachment allowance; rack itself excluded.,,Estimate,both,
 p066,Metric socket screw assortment,Fasteners,1,22.99,Purchase pack; exact installed sizes/counts are in the hardware manifest.,https://www.amazon.com/dp/B0FJFVG31G,Recorded price,both,"Oct 2, 2026"
 p067,M4 button-head assortment,Fasteners,1,9.59,Purchase pack; exact installed sizes/counts are in the hardware manifest.,https://www.amazon.com/dp/B0BJQ4M7D5,Recorded price,both,"Oct 2, 2026"
-p068,Set-screw assortment,Fasteners,1,5.99,Purchase pack; exact installed sizes/counts are in the hardware manifest.,https://www.amazon.com/dp/B0DQJMBLNB,Recorded price,both,"Oct 2, 2026"
-p069,"5 x 25 M4 shoulder bolts, 5-pack",Fasteners,1,10,Purchase pack; exact installed sizes/counts are in the hardware manifest.,https://www.amazon.com/dp/B077GXTHWN,Estimate,both,
-p070,"5 x 16 M4 shoulder bolts, 10-pack",Fasteners,1,10,Purchase pack; exact installed sizes/counts are in the hardware manifest.,https://www.amazon.com/dp/B077GYHYSB,Estimate,both,
-p071,"M5 shim washers, pack",Fasteners,1,8,Purchase pack; exact installed sizes/counts are in the hardware manifest.,https://www.amazon.com/dp/B0BRTXF1SG,Estimate,both,
 p072,M2/M3/M4/M5 heat-set insert kit,Fasteners,1,25,Purchase pack; exact installed sizes/counts are in the hardware manifest.,https://www.amazon.com/dp/B08K1BVGN9,Estimate,both,
 p073,"M2.5 heat-set inserts, pack",Fasteners,1,10,Purchase pack; exact installed sizes/counts are in the hardware manifest.,https://www.amazon.com/dp/B0CS6YVJYD,Estimate,both,
 p074,M3 flat-head assortment,Fasteners,1,15,Purchase pack; exact installed sizes/counts are in the hardware manifest.,https://www.amazon.com/dp/B0GS8FZLTK,Estimate,both,
@@ -79,8 +71,10 @@ p077,M4 flat-head assortment,Fasteners,1,12,Purchase pack; exact installed sizes
 p078,"M2.5 x 5 flat-head screws, pack",Fasteners,1,8,Purchase pack; exact installed sizes/counts are in the hardware manifest.,https://www.amazon.com/dp/B0CG1NVX6J,Estimate,both,
 p079,M2.5 socket screw assortment,Fasteners,1,12,Purchase pack; exact installed sizes/counts are in the hardware manifest.,https://www.amazon.com/dp/B0FG2BYJSR,Estimate,both,
 p080,"M2.5 x 5 socket screws, pack",Fasteners,1,8,Purchase pack; exact installed sizes/counts are in the hardware manifest.,https://www.amazon.com/dp/B0GM84W3X8,Estimate,both,
-p081,"M3 x 14 socket screws, pack",Fasteners,1,9,Purchase pack; exact installed sizes/counts are in the hardware manifest.,https://www.amazon.com/dp/B0GHMWMMN4,Estimate,both,
-p082,"M3 x 25 socket screws, pack",Fasteners,1,9,Purchase pack; exact installed sizes/counts are in the hardware manifest.,https://www.amazon.com/dp/B07CMQMHGY,Estimate,both,
+p109,"M3 x 40 countersunk screws, pack",Fasteners,1,8,"Exit clamp, 4 needed.",,Estimate,both,
+p110,"M3 x 10 low-head socket screws (DIN 7984), pack",Fasteners,1,7,"Lead screw nut flange, 4 needed.",,Estimate,both,
+p089,"M5 aluminium spacers 10 x 10 mm, pack",Fasteners,1,7,"Motor to the face plate, 4 needed.",,Estimate,both,
+p085,"M6 x 16 countersunk screws, pack",Fasteners,1,8,Rack mount: M6 x 22 (4) and M6 x 30 (2).,,Estimate,both,
+p111,M10 nyloc nuts and washers,Fasteners,1,6,"Exit pulley axles, 2 of each.",,Estimate,both,
 p083,Lock-nut & washer assortment,Fasteners,1,12,Purchase pack; exact installed sizes/counts are in the hardware manifest.,https://www.amazon.com/dp/B0F1FGKC1C,Estimate,both,
 p084,Plain hex-nut assortment,Fasteners,1,9,Purchase pack; exact installed sizes/counts are in the hardware manifest.,https://www.amazon.com/dp/B097N3SGCD,Estimate,both,
-p085,"M6 x 16 countersunk screws, pack",Fasteners,1,8,Four used for CNC variant; allowance.,,Estimate,cnc,
