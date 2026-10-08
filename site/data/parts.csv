@@ -29,10 +29,6 @@ p099,"F6001-2RS flanged bearings, 4-pack",Fairlead & rope,1,9.99,Exit pulleys: t
 p100,"ISO 7379 shoulder bolts 12 x 20, M10, 2-pack",Fairlead & rope,1,9.89,Exit pulley axles.,https://www.amazon.com/dp/B0FDQY2795,Recorded price,both,"Checked Oct 3-5, 2026",all,main
 p101,"Dowel pins 5 x 60 mm, 304 stainless, 24-pack",Fairlead & rope,1,8.49,The exit's side rails.,https://www.amazon.com/dp/B0FZHR1NP3,Recorded price,both,"Checked Oct 3-5, 2026",all,main
 p024,1/8 in UHMWPE rope,Fairlead & rope,1,15,About 3 m.,,Estimate,both,,all,main
-p102,"Laser-cut 6061-T6 plates, 0.250 in",Fabrication,1,220,"Instant-priced online order (e.g. SendCutSend), tapped and countersunk as drawn: base plate, rear plate, motor face plate, rack mount back plate and 2 cheeks, 2 drum flanges. You weld the frame, rack mount and drum.",https://sendcutsend.com,Estimate,cnc,,all,main
-p118,"Servo pilot and adapter plates, 0.250 in 6061",Fabrication,1,45,Two more plates in the same laser order (□130).,https://sendcutsend.com,Estimate,cnc,,sanyo fuji,main
-p103,"Drum tube, 6061, 1-1/4 in OD x 0.250 in wall, 100 mm",Fabrication,1,15,Cut to length; ask for T6.,https://www.amazon.com/dp/B0BFGLLHXC,Estimate,cnc,,all,main
-p054,"Bearing cheeks, four cut plates",Fabrication,1,30,"2 mm steel, in the same laser order.",,Estimate,both,,all,main
 p027,Thunder Power TP2700-5SR70,Power,2,102.99,"5S 2.7 Ah LiPo, EC5 leads. Two packs in series.",https://www.thunderpowerrc.com/products/tp2700-5sr70,Source price,both,"Checked Oct 2, 2026",all,main
 p028,"10S smart BMS, 60 A or more",Power,1,45,US-stocked pick in progress; the CAD is sized for a 102 x 65 x 12 mm board.,,Estimate,both,,all,main
 p104,Blue Sea 5191 MRBF terminal fuse block,Power,1,30.78,58 V DC; upright on a printed insulating pad.,https://www.amazon.com/dp/B0019ZBTV4,Recorded price,both,"Checked Oct 3-5, 2026",all,main
@@ -87,3 +83,7 @@ p111,M10 nyloc nuts and washers,Accessories,1,6,"Exit pulley axles, 2 of each.",
 p119,"M8 screws, washers and nyloc nuts",Accessories,1,10,"220 lb servo: M8 x 16 socket (4), M8 countersunk x 22 or x 25 (4), M8 x 35 socket with washers and nyloc nuts (4).",,Estimate,both,,sanyo fuji,accessory
 p083,Lock-nut & washer assortment,Accessories,1,12,Purchase pack; exact installed sizes/counts are in the hardware manifest.,https://www.amazon.com/dp/B0F1FGKC1C,Estimate,both,,all,accessory
 p084,Plain hex-nut assortment,Accessories,1,9,Purchase pack; exact installed sizes/counts are in the hardware manifest.,https://www.amazon.com/dp/B097N3SGCD,Estimate,both,,all,accessory
+p102,"Laser-cut 6061-T6 plates, 0.250 in",Fabrication,1,220,"Only if you have the plates cut: instant-priced online order (e.g. SendCutSend), tapped and countersunk as drawn. You weld the frame, rack mount and drum.",https://sendcutsend.com,Estimate,cnc,,all,if outsourced
+p118,"Servo pilot and adapter plates, 0.250 in 6061",Fabrication,1,45,Two more plates in the same laser order (□130).,https://sendcutsend.com,Estimate,cnc,,sanyo fuji,if outsourced
+p103,"Drum tube, 6061, 1-1/4 in OD x 0.250 in wall, 100 mm",Fabrication,1,15,"Only if you buy the tube: cut to length, ask for T6.",https://www.amazon.com/dp/B0BFGLLHXC,Estimate,cnc,,all,if outsourced
+p054,"Bearing cheeks, four cut plates",Fabrication,1,30,"2 mm steel, in the same laser order.",,Estimate,both,,all,if outsourced
