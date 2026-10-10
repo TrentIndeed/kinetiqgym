@@ -4,33 +4,33 @@
     "repoVerified": true,
     "revision": "v0.1.0 prototype",
     "currency": "USD",
-    "date": "2026-10-08"
+    "date": "2026-10-10"
   },
   "motors": [
-    {
-      "id": "mp80100",
-      "load": "150 lb",
-      "label": "MP80100 50 Kv outrunner",
-      "default": true,
-      "note": "Light rotor (about 4 kg felt at the rope before compensation); ships from China."
-    },
     {
       "id": "aps8072s",
       "load": "150 lb",
       "label": "APS 8072S 50 Kv outrunner",
-      "note": "The first motor the frame was drawn for; it bolts to the same face plate."
+      "default": true,
+      "note": "The main build: 400 x 227 x 103 mm. Light rotor (about 2.5 kg felt at the rope before compensation); 13 N\u00b7m; ODrive Pro."
     },
     {
-      "id": "sanyo",
-      "load": "220 lb",
-      "label": "Sanyo Denki Q1AA13500 servo (in design)",
-      "note": "130 mm flange low-inertia servo, used; stands in a printed pod past the body."
+      "id": "mp80100",
+      "load": "150 lb",
+      "label": "MP80100 50 Kv outrunner",
+      "note": "Same frame with a 44 mm longer motor bay (444 mm). About 4 kg felt at the rope; ODrive Pro; ships from China."
     },
     {
-      "id": "fuji",
-      "load": "220 lb",
-      "label": "Fuji GYS502D7 servo (in design)",
-      "note": "130 mm flange low-inertia servo, new; the same pod and mount as the Sanyo."
+      "id": "mp80100_220",
+      "load": "220 lb peak",
+      "label": "MP80100 50 Kv + Flipsky 75200 driver (in design)",
+      "note": "220 lb peak needs about 105-135 A, past the ODrive Pro (70 A continuous, 100 A for 3 s): a Flipsky 75200 Pro V2 (VESC, 200 A continuous at 50 V) and an AS5047P encoder at the drum shaft. The driver bay adds about 45 mm at the battery end."
+    },
+    {
+      "id": "c80100_220",
+      "load": "220 lb peak",
+      "label": "APS C80100 50 Kv + Flipsky 75200 driver (in design)",
+      "note": "Second 220 lb motor: the MP80100 build with this motor (same face pattern, shaft and coupling; 15 mm shorter). Alien Power Systems, UK; on backorder October 10."
     }
   ],
   "parts": [
@@ -46,7 +46,8 @@
       "build": "both",
       "date": "Checked Oct 7, 2026",
       "motor": [
-        "mp80100"
+        "mp80100",
+        "mp80100_220"
       ]
     },
     {
@@ -55,43 +56,13 @@
       "category": "Drive",
       "qty": 1,
       "price": 220,
-      "note": "Alien Power Systems, UK: about \u00a3169 plus shipping. Bolts to the same face plate as the MP80100.",
+      "note": "Alien Power Systems, UK: about \u00a3169 plus shipping. The main build's motor.",
       "url": "",
       "status": "Estimate",
       "build": "both",
       "date": "",
       "motor": [
         "aps8072s"
-      ]
-    },
-    {
-      "id": "p112",
-      "name": "Sanyo Denki Q1AA13500DXP00M servo, no brake (used)",
-      "category": "Drive",
-      "qty": 1,
-      "price": 640,
-      "note": "15.7 N\u00b7m rated, 18.1 stall; $600 + $40 shipping, Texas. Discontinued: new about $1,180.",
-      "url": "https://www.ebay.com/itm/116519671846",
-      "status": "Recorded price",
-      "build": "both",
-      "date": "Checked Oct 8, 2026",
-      "motor": [
-        "sanyo"
-      ]
-    },
-    {
-      "id": "p113",
-      "name": "Fuji GYS502D7-NC2 servo, no brake (new)",
-      "category": "Drive",
-      "qty": 1,
-      "price": 725,
-      "note": "15.9 N\u00b7m rated, 47.8 peak; $630 + $95 shipping, New York.",
-      "url": "https://www.ebay.com/itm/236895440818",
-      "status": "Recorded price",
-      "build": "both",
-      "date": "Checked Oct 8, 2026",
-      "motor": [
-        "fuji"
       ]
     },
     {
@@ -106,7 +77,9 @@
       "build": "both",
       "date": "",
       "motor": [
-        "mp80100"
+        "mp80100",
+        "mp80100_220",
+        "c80100_220"
       ]
     },
     {
@@ -125,52 +98,16 @@
       ]
     },
     {
-      "id": "p115",
-      "name": "28 to 12 mm shaft coupling",
-      "category": "Drive",
-      "qty": 1,
-      "price": 60,
-      "note": "Not chosen yet: no one-piece clamp coupling comes in this bore pair. A jaw or disc coupling with a 28 mm keyed hub and a 12 mm clamp hub, at least 26 N\u00b7m.",
-      "url": "",
-      "status": "Estimate",
-      "build": "both",
-      "date": "",
-      "motor": [
-        "sanyo",
-        "fuji"
-      ]
-    },
-    {
       "id": "p089",
       "name": "M5 aluminium spacers, pack",
       "category": "Drive",
       "qty": 1,
       "price": 7,
-      "note": "Motor to the face plate: 10 mm long for the MP80100, 3 mm for the APS 8072S (4 needed).",
+      "note": "Motor to the face plate: 10 mm long for the MP80100 and C80100, 3 mm for the APS 8072S (4 needed).",
       "url": "",
       "status": "Estimate",
       "build": "both",
-      "date": "",
-      "motor": [
-        "mp80100",
-        "aps8072s"
-      ]
-    },
-    {
-      "id": "p116",
-      "name": "M8 steel hex standoffs, 13 AF, female both ends",
-      "category": "Drive",
-      "qty": 4,
-      "price": 3,
-      "note": "Servo mount off the face plate: 35 mm (Sanyo) or 40 mm (Fuji).",
-      "url": "",
-      "status": "Estimate",
-      "build": "both",
-      "date": "",
-      "motor": [
-        "sanyo",
-        "fuji"
-      ]
+      "date": ""
     },
     {
       "id": "p006",
@@ -182,27 +119,7 @@
       "url": "",
       "status": "Estimate",
       "build": "both",
-      "date": "",
-      "motor": [
-        "mp80100",
-        "aps8072s"
-      ]
-    },
-    {
-      "id": "p117",
-      "name": "12 mm round steel shaft, 250 mm",
-      "category": "Drive",
-      "qty": 1,
-      "price": 18,
-      "note": "The drum shaft, cut to 224 mm (Sanyo) or 221 mm (Fuji) to reach the coupling.",
-      "url": "",
-      "status": "Estimate",
-      "build": "both",
-      "date": "",
-      "motor": [
-        "sanyo",
-        "fuji"
-      ]
+      "date": ""
     },
     {
       "id": "p002",
@@ -210,11 +127,15 @@
       "category": "Drive",
       "qty": 1,
       "price": 229,
-      "note": "Controller only; heat spreader is separate.",
+      "note": "Controller only; heat spreader is separate. The 150 lb builds (70 A continuous).",
       "url": "https://shop.odriverobotics.com/products/odrive-pro",
       "status": "Source price",
       "build": "both",
-      "date": "Checked Oct 2, 2026"
+      "date": "Checked Oct 2, 2026",
+      "motor": [
+        "aps8072s",
+        "mp80100"
+      ]
     },
     {
       "id": "p003",
@@ -226,7 +147,58 @@
       "url": "https://shop.odriverobotics.com/",
       "status": "Estimate",
       "build": "both",
-      "date": ""
+      "date": "",
+      "motor": [
+        "aps8072s",
+        "mp80100"
+      ]
+    },
+    {
+      "id": "p120",
+      "name": "APS C80100 outrunner, 50 Kv, sensored",
+      "category": "Drive",
+      "qty": 1,
+      "price": 290,
+      "note": "Alien Power Systems, UK: \u00a3209 plus shipping, on backorder (October 10). \u00d880 x 92, 4 x M5 on \u00d856, 12 mm keyed shaft; cut its rear shaft to a 10 mm stub.",
+      "url": "https://alienpowersystem.com",
+      "status": "Estimate",
+      "build": "both",
+      "date": "Checked Oct 10, 2026",
+      "motor": [
+        "c80100_220"
+      ]
+    },
+    {
+      "id": "p121",
+      "name": "Flipsky 75200 Pro V2.0 driver, aluminium PCB, key switch",
+      "category": "Drive",
+      "qty": 1,
+      "price": 165.99,
+      "note": "VESC-based: 14-84 V, 200 A continuous at 50 V, 300 A burst; 130 x 68 x 41 mm. The key-switch version (better reviewed than the push-button one); bridge its switch leads so it runs whenever the BMS output is on. Set up in VESC Tool.",
+      "url": "https://www.amazon.com/dp/B0DG8B675S",
+      "status": "Recorded price",
+      "build": "both",
+      "date": "Checked Oct 10, 2026",
+      "motor": [
+        "mp80100_220",
+        "c80100_220"
+      ]
+    },
+    {
+      "id": "p122",
+      "name": "AS5047P encoder board with magnet (Sideview Tech)",
+      "category": "Drive",
+      "qty": 1,
+      "price": 11.99,
+      "note": "Reads the magnet on the drum shaft for the Flipsky driver (SPI). Comes with a 6 x 2.5 mm diametric magnet; 25 x 25 mm board.",
+      "url": "https://www.amazon.com/dp/B0DLJ6XDNM",
+      "status": "Recorded price",
+      "build": "both",
+      "date": "Checked Oct 10, 2026",
+      "motor": [
+        "mp80100_220",
+        "c80100_220"
+      ]
     },
     {
       "id": "p007",
@@ -800,7 +772,7 @@
       "category": "Accessories",
       "qty": 1,
       "price": 30,
-      "note": "The covers (and the motor pod for the 220 lb servo).",
+      "note": "The covers.",
       "url": "",
       "status": "Estimate",
       "build": "both",
@@ -1047,22 +1019,6 @@
       "date": ""
     },
     {
-      "id": "p119",
-      "name": "M8 screws, washers and nyloc nuts",
-      "category": "Accessories",
-      "qty": 1,
-      "price": 10,
-      "note": "220 lb servo: M8 x 16 socket (4), M8 countersunk x 22 or x 25 (4), M8 x 35 socket with washers and nyloc nuts (4).",
-      "url": "",
-      "status": "Estimate",
-      "build": "both",
-      "date": "",
-      "motor": [
-        "sanyo",
-        "fuji"
-      ]
-    },
-    {
       "id": "p083",
       "name": "Lock-nut & washer assortment",
       "category": "Accessories",
@@ -1099,22 +1055,6 @@
       "status": "Estimate",
       "build": "cnc",
       "date": ""
-    },
-    {
-      "id": "p118",
-      "name": "Servo pilot and adapter plates, 0.250 in 6061",
-      "category": "Fabrication",
-      "qty": 1,
-      "price": 45,
-      "note": "Two more plates in the same laser order (\u25a1130).",
-      "url": "https://sendcutsend.com",
-      "status": "Estimate",
-      "build": "cnc",
-      "date": "",
-      "motor": [
-        "sanyo",
-        "fuji"
-      ]
     },
     {
       "id": "p103",

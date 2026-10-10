@@ -1,17 +1,15 @@
 id,name,category,qty,price,note,url,status,build,date,motor,list
-p086,"MP80100 outrunner, 50 Kv, sensored",Drive,1,260,"Freerchobby, via AliExpress: $230 + $30 shipping, ships from China (3-4 weeks). Cut its bell-end prop shaft to a 10 mm stub.",https://www.aliexpress.us/item/3256805081566856.html,Recorded price,both,"Checked Oct 7, 2026",mp80100,main
-p001,"APS 8072S outrunner, 50 Kv",Drive,1,220,"Alien Power Systems, UK: about £169 plus shipping. Bolts to the same face plate as the MP80100.",,Estimate,both,,aps8072s,main
-p112,"Sanyo Denki Q1AA13500DXP00M servo, no brake (used)",Drive,1,640,"15.7 N·m rated, 18.1 stall; $600 + $40 shipping, Texas. Discontinued: new about $1,180.",https://www.ebay.com/itm/116519671846,Recorded price,both,"Checked Oct 8, 2026",sanyo,main
-p113,"Fuji GYS502D7-NC2 servo, no brake (new)",Drive,1,725,"15.9 N·m rated, 47.8 peak; $630 + $95 shipping, New York.",https://www.ebay.com/itm/236895440818,Recorded price,both,"Checked Oct 8, 2026",fuji,main
-p087,Ruland MCLX-12-12-F clamp coupling,Drive,1,35,"One-piece steel, 12 mm motor / 12 mm drum, 105 N·m. About £22 ex VAT in the UK; US price at ruland.com.",https://www.ruland.com,Estimate,both,,mp80100,main
+p086,"MP80100 outrunner, 50 Kv, sensored",Drive,1,260,"Freerchobby, via AliExpress: $230 + $30 shipping, ships from China (3-4 weeks). Cut its bell-end prop shaft to a 10 mm stub.",https://www.aliexpress.us/item/3256805081566856.html,Recorded price,both,"Checked Oct 7, 2026",mp80100 mp80100_220,main
+p001,"APS 8072S outrunner, 50 Kv",Drive,1,220,"Alien Power Systems, UK: about £169 plus shipping. The main build's motor.",,Estimate,both,,aps8072s,main
+p087,Ruland MCLX-12-12-F clamp coupling,Drive,1,35,"One-piece steel, 12 mm motor / 12 mm drum, 105 N·m. About £22 ex VAT in the UK; US price at ruland.com.",https://www.ruland.com,Estimate,both,,mp80100 mp80100_220 c80100_220,main
 p114,Ruland MCLX-12-10-F clamp coupling,Drive,1,35,"One-piece steel, 10 mm motor / 12 mm drum.",https://www.ruland.com,Estimate,both,,aps8072s,main
-p115,28 to 12 mm shaft coupling,Drive,1,60,"Not chosen yet: no one-piece clamp coupling comes in this bore pair. A jaw or disc coupling with a 28 mm keyed hub and a 12 mm clamp hub, at least 26 N·m.",,Estimate,both,,sanyo fuji,main
-p089,"M5 aluminium spacers, pack",Drive,1,7,"Motor to the face plate: 10 mm long for the MP80100, 3 mm for the APS 8072S (4 needed).",,Estimate,both,,mp80100 aps8072s,main
-p116,"M8 steel hex standoffs, 13 AF, female both ends",Drive,4,3,Servo mount off the face plate: 35 mm (Sanyo) or 40 mm (Fuji).,,Estimate,both,,sanyo fuji,main
-p006,12 mm steel drum shaft,Drive,1,15,"The drum shaft, 200 mm, used uncut.",,Estimate,both,,mp80100 aps8072s,main
-p117,"12 mm round steel shaft, 250 mm",Drive,1,18,"The drum shaft, cut to 224 mm (Sanyo) or 221 mm (Fuji) to reach the coupling.",,Estimate,both,,sanyo fuji,main
-p002,ODrive Pro ODv44-ST,Drive,1,229,Controller only; heat spreader is separate.,https://shop.odriverobotics.com/products/odrive-pro,Source price,both,"Checked Oct 2, 2026",all,main
-p003,ODrive Pro heat spreader,Drive,1,25,Thermal hardware allowance.,https://shop.odriverobotics.com/,Estimate,both,,all,main
+p089,"M5 aluminium spacers, pack",Drive,1,7,"Motor to the face plate: 10 mm long for the MP80100 and C80100, 3 mm for the APS 8072S (4 needed).",,Estimate,both,,all,main
+p006,12 mm steel drum shaft,Drive,1,15,"The drum shaft, 200 mm, used uncut.",,Estimate,both,,all,main
+p002,ODrive Pro ODv44-ST,Drive,1,229,Controller only; heat spreader is separate. The 150 lb builds (70 A continuous).,https://shop.odriverobotics.com/products/odrive-pro,Source price,both,"Checked Oct 2, 2026",aps8072s mp80100,main
+p003,ODrive Pro heat spreader,Drive,1,25,Thermal hardware allowance.,https://shop.odriverobotics.com/,Estimate,both,,aps8072s mp80100,main
+p120,"APS C80100 outrunner, 50 Kv, sensored",Drive,1,290,"Alien Power Systems, UK: £209 plus shipping, on backorder (October 10). Ø80 x 92, 4 x M5 on Ø56, 12 mm keyed shaft; cut its rear shaft to a 10 mm stub.",https://alienpowersystem.com,Estimate,both,"Checked Oct 10, 2026",c80100_220,main
+p121,"Flipsky 75200 Pro V2.0 driver, aluminium PCB, key switch",Drive,1,165.99,"VESC-based: 14-84 V, 200 A continuous at 50 V, 300 A burst; 130 x 68 x 41 mm. The key-switch version (better reviewed than the push-button one); bridge its switch leads so it runs whenever the BMS output is on. Set up in VESC Tool.",https://www.amazon.com/dp/B0DG8B675S,Recorded price,both,"Checked Oct 10, 2026",mp80100_220 c80100_220,main
+p122,AS5047P encoder board with magnet (Sideview Tech),Drive,1,11.99,Reads the magnet on the drum shaft for the Flipsky driver (SPI). Comes with a 6 x 2.5 mm diametric magnet; 25 x 25 mm board.,https://www.amazon.com/dp/B0DLJ6XDNM,Recorded price,both,"Checked Oct 10, 2026",mp80100_220 c80100_220,main
 p007,"6001-2RS bearings, 2-pack",Drive,1,6.95,Two bearings required.,https://www.amazon.com/dp/B07GVN7GQ7,Recorded price,both,"Oct 2, 2026",all,main
 p008,goBILDA 1301-0016-0012 hub,Drive,2,9.99,Drum hub and 81T gear hub.,https://www.servocity.com,Estimate,both,,all,main
 p088,"Loctite 638 retaining compound, 10 mL",Drive,1,20,Bonds the drum hub and both drum flanges to the round shaft (or Loctite 648).,https://www.amazon.com/dp/B004GZDV8I,Estimate,both,,all,main
@@ -59,7 +57,7 @@ p051,"Prototype perfboards, pack",Accessories,1,10,"Three small boards (Teensy, 
 p044,MicroSD card,Accessories,1,10,For the Raspberry Pi.,,Estimate,both,,all,accessory
 p060,"PAHT-CF filament, 1 kg spool",Accessories,2,60,"End pieces, level-wind, exit, tower, gears and brackets.",https://www.amazon.com/dp/B0F37YW223,Estimate,cnc,,all,accessory
 p059,"PAHT-CF filament, 1 kg spool",Accessories,4,60,Printed build: the frame is printed too.,https://www.amazon.com/dp/B0F37YW223,Estimate,printed,,all,accessory
-p108,"PETG-CF filament, 1 kg spool",Accessories,1,30,The covers (and the motor pod for the 220 lb servo).,,Estimate,both,,all,accessory
+p108,"PETG-CF filament, 1 kg spool",Accessories,1,30,The covers.,,Estimate,both,,all,accessory
 p061,1 mm EVA foam roll,Accessories,1,10,Battery pads: or print them in TPU 95A.,https://www.amazon.com/dp/B0BXJHVH5M,Estimate,both,,all,accessory
 p062,2 mm EVA foam sheet,Accessories,1,10,Battery pads: or print them in TPU 95A.,https://www.amazon.com/dp/B08YXYN327,Estimate,both,,all,accessory
 p063,Cable ties & thread locker,Accessories,1,12,Assembly consumables allowance.,,Estimate,both,,all,accessory
@@ -80,10 +78,8 @@ p109,"M3 x 40 countersunk screws, pack",Accessories,1,8,"Exit clamp, 4 needed.",
 p110,"M3 x 10 low-head socket screws (DIN 7984), pack",Accessories,1,7,"Lead screw nut flange, 4 needed.",,Estimate,both,,all,accessory
 p085,"M6 x 16 countersunk screws, pack",Accessories,1,8,Rack mount: M6 x 22 (4) and M6 x 30 (2).,,Estimate,both,,all,accessory
 p111,M10 nyloc nuts and washers,Accessories,1,6,"Exit pulley axles, 2 of each.",,Estimate,both,,all,accessory
-p119,"M8 screws, washers and nyloc nuts",Accessories,1,10,"220 lb servo: M8 x 16 socket (4), M8 countersunk x 22 or x 25 (4), M8 x 35 socket with washers and nyloc nuts (4).",,Estimate,both,,sanyo fuji,accessory
 p083,Lock-nut & washer assortment,Accessories,1,12,Purchase pack; exact installed sizes/counts are in the hardware manifest.,https://www.amazon.com/dp/B0F1FGKC1C,Estimate,both,,all,accessory
 p084,Plain hex-nut assortment,Accessories,1,9,Purchase pack; exact installed sizes/counts are in the hardware manifest.,https://www.amazon.com/dp/B097N3SGCD,Estimate,both,,all,accessory
 p102,"Laser-cut 6061-T6 plates, 0.250 in",Fabrication,1,220,"Only if you have the plates cut: instant-priced online order (e.g. SendCutSend), tapped and countersunk as drawn. You weld the frame, rack mount and drum.",https://sendcutsend.com,Estimate,cnc,,all,if outsourced
-p118,"Servo pilot and adapter plates, 0.250 in 6061",Fabrication,1,45,Two more plates in the same laser order (□130).,https://sendcutsend.com,Estimate,cnc,,sanyo fuji,if outsourced
 p103,"Drum tube, 6061, 1-1/4 in OD x 0.250 in wall, 100 mm",Fabrication,1,15,"Only if you buy the tube: cut to length, ask for T6.",https://www.amazon.com/dp/B0BFGLLHXC,Estimate,cnc,,all,if outsourced
 p054,"Bearing cheeks, four cut plates",Fabrication,1,30,"2 mm steel, in the same laser order.",,Estimate,both,,all,if outsourced
