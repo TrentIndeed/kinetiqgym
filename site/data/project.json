@@ -23,14 +23,14 @@
     {
       "id": "mp80100_220",
       "load": "220 lb peak",
-      "label": "MP80100 50 Kv + Flipsky 75200 driver (in design)",
-      "note": "220 lb peak needs about 105-135 A, past the ODrive Pro (70 A continuous, 100 A for 3 s): a Flipsky 75200 Pro V2 (VESC, 200 A continuous at 50 V) and an AS5047P encoder at the drum shaft. The driver bay adds about 45 mm at the battery end."
+      "label": "MP80100 rewired wye, ~29 Kv (check first)",
+      "note": "The 444 mm MP80100 build on the same ODrive Pro. If the 50 Kv motor is wound delta, re-terminating it in wye gives about 29 Kv, so 220 lb takes about 60 A (the ODrive Pro gives 70 A continuous). Ask the seller how it is wound before buying for 220 lb."
     },
     {
       "id": "c80100_220",
       "load": "220 lb peak",
-      "label": "APS C80100 50 Kv + Flipsky 75200 driver (in design)",
-      "note": "Second 220 lb motor: the MP80100 build with this motor (same face pattern, shaft and coupling; 15 mm shorter). Alien Power Systems, UK; on backorder October 10."
+      "label": "APS C80100, custom ~25 Kv",
+      "note": "Alien Power Systems winds it to order at about 25 Kv: 220 lb takes about 52-63 A on the same ODrive Pro. Its own build is 429 mm long (the motor is 15 mm shorter than the MP80100)."
     }
   ],
   "parts": [
@@ -127,15 +127,11 @@
       "category": "Drive",
       "qty": 1,
       "price": 229,
-      "note": "Controller only; heat spreader is separate. The 150 lb builds (70 A continuous).",
+      "note": "Controller only; heat spreader is separate. 70 A continuous: the 220 lb choices use a lower-Kv motor to stay inside it.",
       "url": "https://shop.odriverobotics.com/products/odrive-pro",
       "status": "Source price",
       "build": "both",
-      "date": "Checked Oct 2, 2026",
-      "motor": [
-        "aps8072s",
-        "mp80100"
-      ]
+      "date": "Checked Oct 2, 2026"
     },
     {
       "id": "p003",
@@ -147,56 +143,20 @@
       "url": "https://shop.odriverobotics.com/",
       "status": "Estimate",
       "build": "both",
-      "date": "",
-      "motor": [
-        "aps8072s",
-        "mp80100"
-      ]
+      "date": ""
     },
     {
       "id": "p120",
-      "name": "APS C80100 outrunner, 50 Kv, sensored",
+      "name": "APS C80100 outrunner, sensored, custom ~25 Kv",
       "category": "Drive",
       "qty": 1,
       "price": 290,
-      "note": "Alien Power Systems, UK: \u00a3209 plus shipping, on backorder (October 10). \u00d880 x 92, 4 x M5 on \u00d856, 12 mm keyed shaft; cut its rear shaft to a 10 mm stub.",
+      "note": "Alien Power Systems, UK: stock 50 Kv is \u00a3209 plus shipping (on backorder October 10); ask APS for the ~25 Kv winding and its price before ordering. \u00d880 x 92, 4 x M5 on \u00d856, 12 mm keyed shaft; cut its rear shaft to a 10 mm stub.",
       "url": "https://alienpowersystem.com",
       "status": "Estimate",
       "build": "both",
       "date": "Checked Oct 10, 2026",
       "motor": [
-        "c80100_220"
-      ]
-    },
-    {
-      "id": "p121",
-      "name": "Flipsky 75200 Pro V2.0 driver, aluminium PCB, key switch",
-      "category": "Drive",
-      "qty": 1,
-      "price": 165.99,
-      "note": "VESC-based: 14-84 V, 200 A continuous at 50 V, 300 A burst; 130 x 68 x 41 mm. The key-switch version (better reviewed than the push-button one); bridge its switch leads so it runs whenever the BMS output is on. Set up in VESC Tool.",
-      "url": "https://www.amazon.com/dp/B0DG8B675S",
-      "status": "Recorded price",
-      "build": "both",
-      "date": "Checked Oct 10, 2026",
-      "motor": [
-        "mp80100_220",
-        "c80100_220"
-      ]
-    },
-    {
-      "id": "p122",
-      "name": "AS5047P encoder board with magnet (Sideview Tech)",
-      "category": "Drive",
-      "qty": 1,
-      "price": 11.99,
-      "note": "Reads the magnet on the drum shaft for the Flipsky driver (SPI). Comes with a 6 x 2.5 mm diametric magnet; 25 x 25 mm board.",
-      "url": "https://www.amazon.com/dp/B0DLJ6XDNM",
-      "status": "Recorded price",
-      "build": "both",
-      "date": "Checked Oct 10, 2026",
-      "motor": [
-        "mp80100_220",
         "c80100_220"
       ]
     },
