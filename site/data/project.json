@@ -12,25 +12,51 @@
       "load": "150 lb",
       "label": "APS 8072S 50 Kv outrunner",
       "default": true,
-      "note": "The main build: 400 x 227 x 103 mm. Light rotor (about 2.5 kg felt at the rope before compensation); 13 N\u00b7m; ODrive Pro."
+      "note": "The main build: 400 x 227 x 103 mm. Light rotor (about 2.5 kg felt at the rope before compensation); 13 N\u00b7m; ODrive Pro.",
+      "force": "158 lb",
+      "controller": "ODrive Pro",
+      "power": "10S battery (2 x 5S LiPo)",
+      "size": "400 x 227 x 103 mm"
+    },
+    {
+      "id": "lite150",
+      "load": "150 lb",
+      "label": "Lite: APS 8072S ~25 Kv on wall power",
+      "note": "The low-cost build: the main build's frame, mount and motor body (400 x 227 x 103 mm), plugged into the wall. A Mean Well 36 V 600 W supply inside, an ODrive S1 with two brake resistors on the base plate, and a phone app (Bluetooth) and a knob instead of the battery, Raspberry Pi and touchscreen. The motor is wound ~25 Kv to order, so 158 lb takes 37-45 A.",
+      "force": "158 lb",
+      "controller": "ODrive S1",
+      "power": "36 V wall supply inside",
+      "size": "400 x 227 x 103 mm"
     },
     {
       "id": "mp80100",
       "load": "150 lb",
       "label": "MP80100 50 Kv outrunner",
-      "note": "Same frame with a 44 mm longer motor bay (444 mm). About 4 kg felt at the rope; ODrive Pro; ships from China."
+      "note": "Same frame with a 44 mm longer motor bay (444 mm). About 4 kg felt at the rope; ODrive Pro; ships from China.",
+      "force": "158 lb",
+      "controller": "ODrive Pro",
+      "power": "10S battery (2 x 5S LiPo)",
+      "size": "444 x 227 x 103 mm"
     },
     {
       "id": "mp80100_220",
       "load": "220 lb peak",
       "label": "MP80100 rewired wye, ~29 Kv (check first)",
-      "note": "The 444 mm MP80100 build on the same ODrive Pro. If the 50 Kv motor is wound delta, re-terminating it in wye gives about 29 Kv, so 220 lb takes about 60 A (the ODrive Pro gives 70 A continuous). Ask the seller how it is wound before buying for 220 lb."
+      "note": "The 444 mm MP80100 build on the same ODrive Pro. If the 50 Kv motor is wound delta, re-terminating it in wye gives about 29 Kv, so 220 lb takes about 60 A (the ODrive Pro gives 70 A continuous). Ask the seller how it is wound before buying for 220 lb.",
+      "force": "220 lb peak",
+      "controller": "ODrive Pro",
+      "power": "10S battery (2 x 5S LiPo)",
+      "size": "444 x 227 x 103 mm"
     },
     {
       "id": "c80100_220",
       "load": "220 lb peak",
       "label": "APS C80100, custom ~25 Kv",
-      "note": "Alien Power Systems winds it to order at about 25 Kv: 220 lb takes about 52-63 A on the same ODrive Pro. Its own build is 429 mm long (the motor is 15 mm shorter than the MP80100)."
+      "note": "Alien Power Systems winds it to order at about 25 Kv: 220 lb takes about 52-63 A on the same ODrive Pro. Its own build is 429 mm long (the motor is 15 mm shorter than the MP80100).",
+      "force": "220 lb peak",
+      "controller": "ODrive Pro",
+      "power": "10S battery (2 x 5S LiPo)",
+      "size": "429 x 227 x 103 mm"
     }
   ],
   "parts": [
@@ -66,6 +92,21 @@
       ]
     },
     {
+      "id": "p121",
+      "name": "APS 8072S outrunner, custom ~25 Kv",
+      "category": "Drive",
+      "qty": 1,
+      "price": 230,
+      "note": "Alien Power Systems winds it to order: ask for about 25 Kv (the stock motor is 50 Kv). Same body, mount and 10 mm keyed shaft as the main build. Not quoted yet.",
+      "url": "",
+      "status": "Estimate",
+      "build": "both",
+      "date": "",
+      "motor": [
+        "lite150"
+      ]
+    },
+    {
       "id": "p087",
       "name": "Ruland MCLX-12-12-F clamp coupling",
       "category": "Drive",
@@ -94,7 +135,8 @@
       "build": "both",
       "date": "",
       "motor": [
-        "aps8072s"
+        "aps8072s",
+        "lite150"
       ]
     },
     {
@@ -131,7 +173,13 @@
       "url": "https://shop.odriverobotics.com/products/odrive-pro",
       "status": "Source price",
       "build": "both",
-      "date": "Checked Oct 2, 2026"
+      "date": "Checked Oct 2, 2026",
+      "motor": [
+        "aps8072s",
+        "mp80100",
+        "mp80100_220",
+        "c80100_220"
+      ]
     },
     {
       "id": "p003",
@@ -143,7 +191,28 @@
       "url": "https://shop.odriverobotics.com/",
       "status": "Estimate",
       "build": "both",
-      "date": ""
+      "date": "",
+      "motor": [
+        "aps8072s",
+        "mp80100",
+        "mp80100_220",
+        "c80100_220"
+      ]
+    },
+    {
+      "id": "p122",
+      "name": "ODrive S1, solder-pad version",
+      "category": "Drive",
+      "qty": 1,
+      "price": 149,
+      "note": "40 A continuous on its heat spreader, 80 A peak, 12-50.5 V, with an onboard magnetic encoder. Screws to a 6061 plate you make; the main build's ODrive bracket stays. In stock at ODrive (US) on Oct 10.",
+      "url": "https://shop.odriverobotics.com/products/odrive-s1",
+      "status": "Source price",
+      "build": "both",
+      "date": "Checked Oct 10, 2026",
+      "motor": [
+        "lite150"
+      ]
     },
     {
       "id": "p120",
@@ -374,7 +443,13 @@
       "url": "https://www.thunderpowerrc.com/products/tp2700-5sr70",
       "status": "Source price",
       "build": "both",
-      "date": "Checked Oct 2, 2026"
+      "date": "Checked Oct 2, 2026",
+      "motor": [
+        "aps8072s",
+        "mp80100",
+        "mp80100_220",
+        "c80100_220"
+      ]
     },
     {
       "id": "p028",
@@ -386,7 +461,13 @@
       "url": "",
       "status": "Estimate",
       "build": "both",
-      "date": ""
+      "date": "",
+      "motor": [
+        "aps8072s",
+        "mp80100",
+        "mp80100_220",
+        "c80100_220"
+      ]
     },
     {
       "id": "p104",
@@ -398,7 +479,13 @@
       "url": "https://www.amazon.com/dp/B0019ZBTV4",
       "status": "Recorded price",
       "build": "both",
-      "date": "Checked Oct 3-5, 2026"
+      "date": "Checked Oct 3-5, 2026",
+      "motor": [
+        "aps8072s",
+        "mp80100",
+        "mp80100_220",
+        "c80100_220"
+      ]
     },
     {
       "id": "p105",
@@ -410,7 +497,13 @@
       "url": "https://www.amazon.com/dp/B0016HTXAY",
       "status": "Recorded price",
       "build": "both",
-      "date": "Checked Oct 3-5, 2026"
+      "date": "Checked Oct 3-5, 2026",
+      "motor": [
+        "aps8072s",
+        "mp80100",
+        "mp80100_220",
+        "c80100_220"
+      ]
     },
     {
       "id": "p031",
@@ -434,7 +527,13 @@
       "url": "",
       "status": "Estimate",
       "build": "both",
-      "date": ""
+      "date": "",
+      "motor": [
+        "aps8072s",
+        "mp80100",
+        "mp80100_220",
+        "c80100_220"
+      ]
     },
     {
       "id": "p106",
@@ -458,7 +557,13 @@
       "url": "https://www.amazon.com/dp/B07CJR8MH4",
       "status": "Recorded price",
       "build": "both",
-      "date": "Sep 2026"
+      "date": "Sep 2026",
+      "motor": [
+        "aps8072s",
+        "mp80100",
+        "mp80100_220",
+        "c80100_220"
+      ]
     },
     {
       "id": "p035",
@@ -470,7 +575,13 @@
       "url": "https://www.amazon.com/dp/B09SL2MNN1",
       "status": "Recorded price",
       "build": "both",
-      "date": "Sep 2026"
+      "date": "Sep 2026",
+      "motor": [
+        "aps8072s",
+        "mp80100",
+        "mp80100_220",
+        "c80100_220"
+      ]
     },
     {
       "id": "p036",
@@ -482,7 +593,13 @@
       "url": "https://www.amazon.com/dp/B083QMF2J1",
       "status": "Recorded price",
       "build": "both",
-      "date": "Sep 2026"
+      "date": "Sep 2026",
+      "motor": [
+        "aps8072s",
+        "mp80100",
+        "mp80100_220",
+        "c80100_220"
+      ]
     },
     {
       "id": "p037",
@@ -494,7 +611,13 @@
       "url": "https://www.amazon.com/dp/B08GPR7SVR",
       "status": "Recorded price",
       "build": "both",
-      "date": "Sep 2026"
+      "date": "Sep 2026",
+      "motor": [
+        "aps8072s",
+        "mp80100",
+        "mp80100_220",
+        "c80100_220"
+      ]
     },
     {
       "id": "p038",
@@ -506,7 +629,13 @@
       "url": "https://www.amazon.com/dp/B073ZGF8D9",
       "status": "Recorded price",
       "build": "both",
-      "date": "Sep 2026"
+      "date": "Sep 2026",
+      "motor": [
+        "aps8072s",
+        "mp80100",
+        "mp80100_220",
+        "c80100_220"
+      ]
     },
     {
       "id": "p107",
@@ -518,7 +647,73 @@
       "url": "https://www.amazon.com/dp/B08JYSZX78",
       "status": "Recorded price",
       "build": "both",
-      "date": "Checked Oct 3-5, 2026"
+      "date": "Checked Oct 3-5, 2026",
+      "motor": [
+        "aps8072s",
+        "mp80100",
+        "mp80100_220",
+        "c80100_220"
+      ]
+    },
+    {
+      "id": "p123",
+      "name": "Mean Well LOP-600-36 power supply",
+      "category": "Power",
+      "qty": 1,
+      "price": 105.34,
+      "note": "36 V open frame: 400 W by convection, 600 W with airflow, 150 % for 3 s. Jameco: $83.60 plus a 26 % tariff added at checkout; 3-week lead time, non-returnable.",
+      "url": "https://www.jameco.com/z/LOP-600-36-MEAN-WELL-600W-Low-Profile-Energy-Efficient-Medical-Open-Frame-Power-Supply-36V-11-1A-Convection-16-7A-with-Fan_2410207.html",
+      "status": "Source price",
+      "build": "both",
+      "date": "Checked Oct 10, 2026",
+      "motor": [
+        "lite150"
+      ]
+    },
+    {
+      "id": "p124",
+      "name": "uxcell C14 panel-mount inlet, 10 A, 2-pack",
+      "category": "Power",
+      "qty": 1,
+      "price": 7.89,
+      "note": "The mains inlet, snapped into the back step. 4.8 stars (123), ships from Amazon.",
+      "url": "https://www.amazon.com/dp/B07PVP7GL2",
+      "status": "Source price",
+      "build": "both",
+      "date": "Checked Oct 10, 2026",
+      "motor": [
+        "lite150"
+      ]
+    },
+    {
+      "id": "p125",
+      "name": "KCD1 rocker switch, 10 A 125 V / 6 A 250 V",
+      "category": "Power",
+      "qty": 1,
+      "price": 3.98,
+      "note": "Mains on/off in the line lead, beside the inlet. 4.3 stars (42), ships from Amazon.",
+      "url": "https://www.amazon.com/dp/B0DX1JY5BW",
+      "status": "Source price",
+      "build": "both",
+      "date": "Checked Oct 10, 2026",
+      "motor": [
+        "lite150"
+      ]
+    },
+    {
+      "id": "p126",
+      "name": "uxcell 50 W 1 \u03a9 aluminium resistors, 5-pack",
+      "category": "Power",
+      "qty": 1,
+      "price": 8.54,
+      "note": "Two in series (2 \u03a9) as the S1's brake resistor, screwed flat to the base plate, which is their heatsink. 5.0 stars (3 reviews), ships from Amazon.",
+      "url": "https://www.amazon.com/dp/B0F43QWVM3",
+      "status": "Source price",
+      "build": "both",
+      "date": "Checked Oct 10, 2026",
+      "motor": [
+        "lite150"
+      ]
     },
     {
       "id": "p043",
@@ -530,7 +725,13 @@
       "url": "https://www.raspberrypi.com/products/raspberry-pi-4-model-b/",
       "status": "Estimate",
       "build": "both",
-      "date": ""
+      "date": "",
+      "motor": [
+        "aps8072s",
+        "mp80100",
+        "mp80100_220",
+        "c80100_220"
+      ]
     },
     {
       "id": "p045",
@@ -542,7 +743,13 @@
       "url": "https://www.waveshare.com/product/4inch-dpi-lcd-c.htm",
       "status": "Source price",
       "build": "both",
-      "date": "Checked Oct 2, 2026"
+      "date": "Checked Oct 2, 2026",
+      "motor": [
+        "aps8072s",
+        "mp80100",
+        "mp80100_220",
+        "c80100_220"
+      ]
     },
     {
       "id": "p046",
@@ -554,7 +761,13 @@
       "url": "https://www.pjrc.com/store/teensy40.html",
       "status": "Estimate",
       "build": "both",
-      "date": ""
+      "date": "",
+      "motor": [
+        "aps8072s",
+        "mp80100",
+        "mp80100_220",
+        "c80100_220"
+      ]
     },
     {
       "id": "p048",
@@ -602,7 +815,43 @@
       "url": "https://www.amazon.com/dp/B08BZD66H4",
       "status": "Estimate",
       "build": "both",
-      "date": ""
+      "date": "",
+      "motor": [
+        "aps8072s",
+        "mp80100",
+        "mp80100_220",
+        "c80100_220"
+      ]
+    },
+    {
+      "id": "p127",
+      "name": "Seeed XIAO ESP32-C3",
+      "category": "Electronics",
+      "qty": 1,
+      "price": 9.9,
+      "note": "Bluetooth link to the phone app and the knob; talks to the S1 over CAN through the CAN board. 4.7 stars (382), ships from Amazon.",
+      "url": "https://www.amazon.com/dp/B0B94JZ2YF",
+      "status": "Source price",
+      "build": "both",
+      "date": "Checked Oct 10, 2026",
+      "motor": [
+        "lite150"
+      ]
+    },
+    {
+      "id": "p128",
+      "name": "EC11 rotary encoders with push button and knob caps, 5-pack",
+      "category": "Electronics",
+      "qty": 1,
+      "price": 9.99,
+      "note": "The resistance knob, through the left cover. 4.3 stars (163), ships from Amazon. Or the WWZMDiB 6-pack (B0C6Q67V97, $8.88).",
+      "url": "https://www.amazon.com/dp/B08728K3YB",
+      "status": "Source price",
+      "build": "both",
+      "date": "Checked Oct 10, 2026",
+      "motor": [
+        "lite150"
+      ]
     }
   ],
   "accessories": [
@@ -652,7 +901,13 @@
       "url": "https://www.amazon.com/dp/B0DM8FW4LV",
       "status": "Recorded price",
       "build": "both",
-      "date": "Sep 2026"
+      "date": "Sep 2026",
+      "motor": [
+        "aps8072s",
+        "mp80100",
+        "mp80100_220",
+        "c80100_220"
+      ]
     },
     {
       "id": "p041",
@@ -665,6 +920,96 @@
       "status": "Estimate",
       "build": "both",
       "date": ""
+    },
+    {
+      "id": "p129",
+      "name": "IEC C13 mains cord",
+      "category": "Accessories",
+      "qty": 1,
+      "price": 8,
+      "note": "Any standard computer or monitor power cord.",
+      "url": "",
+      "status": "Estimate",
+      "build": "both",
+      "date": "",
+      "motor": [
+        "lite150"
+      ]
+    },
+    {
+      "id": "p130",
+      "name": "6.3 mm insulated female quick-disconnects",
+      "category": "Accessories",
+      "qty": 1,
+      "price": 7,
+      "note": "For the inlet and rocker switch tabs.",
+      "url": "",
+      "status": "Estimate",
+      "build": "both",
+      "date": "",
+      "motor": [
+        "lite150"
+      ]
+    },
+    {
+      "id": "p131",
+      "name": "Power supply mating connectors (CN1, CN2)",
+      "category": "Accessories",
+      "qty": 1,
+      "price": 6,
+      "note": "The AC input and 12 V aux housings with crimps, as listed in the LOP-600 datasheet.",
+      "url": "",
+      "status": "Estimate",
+      "build": "both",
+      "date": "",
+      "motor": [
+        "lite150"
+      ]
+    },
+    {
+      "id": "p132",
+      "name": "Ring terminals, M3.5 and M4, 10-16 AWG",
+      "category": "Accessories",
+      "qty": 1,
+      "price": 8,
+      "note": "The supply's DC screws, its earth screw and the earth stud in the base plate.",
+      "url": "",
+      "status": "Estimate",
+      "build": "both",
+      "date": "",
+      "motor": [
+        "lite150"
+      ]
+    },
+    {
+      "id": "p133",
+      "name": "Thermal pad, 0.5 mm, 6 W/mK",
+      "category": "Accessories",
+      "qty": 1,
+      "price": 8,
+      "note": "Between the S1 and its plate.",
+      "url": "",
+      "status": "Estimate",
+      "build": "both",
+      "date": "",
+      "motor": [
+        "lite150"
+      ]
+    },
+    {
+      "id": "p134",
+      "name": "JST GH 4-pin cable",
+      "category": "Accessories",
+      "qty": 1,
+      "price": 7,
+      "note": "CAN from the CAN board to the S1.",
+      "url": "",
+      "status": "Estimate",
+      "build": "both",
+      "date": "",
+      "motor": [
+        "lite150"
+      ]
     },
     {
       "id": "p047",
@@ -700,7 +1045,13 @@
       "url": "",
       "status": "Estimate",
       "build": "both",
-      "date": ""
+      "date": "",
+      "motor": [
+        "aps8072s",
+        "mp80100",
+        "mp80100_220",
+        "c80100_220"
+      ]
     },
     {
       "id": "p060",
@@ -748,7 +1099,13 @@
       "url": "https://www.amazon.com/dp/B0BXJHVH5M",
       "status": "Estimate",
       "build": "both",
-      "date": ""
+      "date": "",
+      "motor": [
+        "aps8072s",
+        "mp80100",
+        "mp80100_220",
+        "c80100_220"
+      ]
     },
     {
       "id": "p062",
@@ -760,7 +1117,13 @@
       "url": "https://www.amazon.com/dp/B08YXYN327",
       "status": "Estimate",
       "build": "both",
-      "date": ""
+      "date": "",
+      "motor": [
+        "aps8072s",
+        "mp80100",
+        "mp80100_220",
+        "c80100_220"
+      ]
     },
     {
       "id": "p063",
