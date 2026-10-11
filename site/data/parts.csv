@@ -1,12 +1,14 @@
 id,name,category,qty,price,note,url,status,build,date,motor,list
 p086,"MP80100 outrunner, 50 Kv, sensored",Drive,1,260,"Freerchobby, via AliExpress: $230 + $30 shipping, ships from China (3-4 weeks). Cut its bell-end prop shaft to a 10 mm stub.",https://www.aliexpress.us/item/3256805081566856.html,Recorded price,both,"Checked Oct 7, 2026",mp80100 mp80100_220,main
 p001,"APS 8072S outrunner, 50 Kv",Drive,1,220,"Alien Power Systems, UK: about £169 plus shipping. The main build's motor.",,Estimate,both,,aps8072s,main
+p121,"APS 8072S outrunner, custom ~25 Kv",Drive,1,230,"Alien Power Systems winds it to order: ask for about 25 Kv (the stock motor is 50 Kv). Same body, mount and 10 mm keyed shaft as the main build. Not quoted yet.",,Estimate,both,,lite150,main
 p087,Ruland MCLX-12-12-F clamp coupling,Drive,1,35,"One-piece steel, 12 mm motor / 12 mm drum, 105 N·m. About £22 ex VAT in the UK; US price at ruland.com.",https://www.ruland.com,Estimate,both,,mp80100 mp80100_220 c80100_220,main
-p114,Ruland MCLX-12-10-F clamp coupling,Drive,1,35,"One-piece steel, 10 mm motor / 12 mm drum.",https://www.ruland.com,Estimate,both,,aps8072s,main
+p114,Ruland MCLX-12-10-F clamp coupling,Drive,1,35,"One-piece steel, 10 mm motor / 12 mm drum.",https://www.ruland.com,Estimate,both,,aps8072s lite150,main
 p089,"M5 aluminium spacers, pack",Drive,1,7,"Motor to the face plate: 10 mm long for the MP80100 and C80100, 3 mm for the APS 8072S (4 needed).",,Estimate,both,,all,main
 p006,12 mm steel drum shaft,Drive,1,15,"The drum shaft, 200 mm, used uncut.",,Estimate,both,,all,main
-p002,ODrive Pro ODv44-ST,Drive,1,229,Controller only; heat spreader is separate. 70 A continuous: the 220 lb choices use a lower-Kv motor to stay inside it.,https://shop.odriverobotics.com/products/odrive-pro,Source price,both,"Checked Oct 2, 2026",all,main
-p003,ODrive Pro heat spreader,Drive,1,25,Thermal hardware allowance.,https://shop.odriverobotics.com/,Estimate,both,,all,main
+p002,ODrive Pro ODv44-ST,Drive,1,229,Controller only; heat spreader is separate. 70 A continuous: the 220 lb choices use a lower-Kv motor to stay inside it.,https://shop.odriverobotics.com/products/odrive-pro,Source price,both,"Checked Oct 2, 2026",aps8072s mp80100 mp80100_220 c80100_220,main
+p003,ODrive Pro heat spreader,Drive,1,25,Thermal hardware allowance.,https://shop.odriverobotics.com/,Estimate,both,,aps8072s mp80100 mp80100_220 c80100_220,main
+p122,"ODrive S1, solder-pad version",Drive,1,149,"40 A continuous on its heat spreader, 80 A peak, 12-50.5 V, with an onboard magnetic encoder. Screws to a 6061 plate you make; the main build's ODrive bracket stays. In stock at ODrive (US) on Oct 10.",https://shop.odriverobotics.com/products/odrive-s1,Source price,both,"Checked Oct 10, 2026",lite150,main
 p120,"APS C80100 outrunner, sensored, custom ~25 Kv",Drive,1,290,"Alien Power Systems, UK: stock 50 Kv is £209 plus shipping (on backorder October 10); ask APS for the ~25 Kv winding and its price before ordering. Ø80 x 92, 4 x M5 on Ø56, 12 mm keyed shaft; cut its rear shaft to a 10 mm stub.",https://alienpowersystem.com,Estimate,both,"Checked Oct 10, 2026",c80100_220,main
 p007,"6001-2RS bearings, 2-pack",Drive,1,6.95,Two bearings required.,https://www.amazon.com/dp/B07GVN7GQ7,Recorded price,both,"Oct 2, 2026",all,main
 p008,goBILDA 1301-0016-0012 hub,Drive,2,9.99,Drum hub and 81T gear hub.,https://www.servocity.com,Estimate,both,,all,main
@@ -25,39 +27,51 @@ p099,"F6001-2RS flanged bearings, 4-pack",Fairlead & rope,1,9.99,Exit pulleys: t
 p100,"ISO 7379 shoulder bolts 12 x 20, M10, 2-pack",Fairlead & rope,1,9.89,Exit pulley axles.,https://www.amazon.com/dp/B0FDQY2795,Recorded price,both,"Checked Oct 3-5, 2026",all,main
 p101,"Dowel pins 5 x 60 mm, 304 stainless, 24-pack",Fairlead & rope,1,8.49,The exit's side rails.,https://www.amazon.com/dp/B0FZHR1NP3,Recorded price,both,"Checked Oct 3-5, 2026",all,main
 p024,1/8 in UHMWPE rope,Fairlead & rope,1,15,About 3 m.,,Estimate,both,,all,main
-p027,Thunder Power TP2700-5SR70,Power,2,102.99,"5S 2.7 Ah LiPo, EC5 leads. Two packs in series.",https://www.thunderpowerrc.com/products/tp2700-5sr70,Source price,both,"Checked Oct 2, 2026",all,main
-p028,"10S smart BMS, 60 A or more",Power,1,45,US-stocked pick in progress; the CAD is sized for a 102 x 65 x 12 mm board.,,Estimate,both,,all,main
-p104,Blue Sea 5191 MRBF terminal fuse block,Power,1,30.78,58 V DC; upright on a printed insulating pad.,https://www.amazon.com/dp/B0019ZBTV4,Recorded price,both,"Checked Oct 3-5, 2026",all,main
-p105,Blue Sea 5176 MRBF 40 A fuse,Power,2,17.93,58 V DC; one spare.,https://www.amazon.com/dp/B0016HTXAY,Recorded price,both,"Checked Oct 3-5, 2026",all,main
+p027,Thunder Power TP2700-5SR70,Power,2,102.99,"5S 2.7 Ah LiPo, EC5 leads. Two packs in series.",https://www.thunderpowerrc.com/products/tp2700-5sr70,Source price,both,"Checked Oct 2, 2026",aps8072s mp80100 mp80100_220 c80100_220,main
+p028,"10S smart BMS, 60 A or more",Power,1,45,US-stocked pick in progress; the CAD is sized for a 102 x 65 x 12 mm board.,,Estimate,both,,aps8072s mp80100 mp80100_220 c80100_220,main
+p104,Blue Sea 5191 MRBF terminal fuse block,Power,1,30.78,58 V DC; upright on a printed insulating pad.,https://www.amazon.com/dp/B0019ZBTV4,Recorded price,both,"Checked Oct 3-5, 2026",aps8072s mp80100 mp80100_220 c80100_220,main
+p105,Blue Sea 5176 MRBF 40 A fuse,Power,2,17.93,58 V DC; one spare.,https://www.amazon.com/dp/B0016HTXAY,Recorded price,both,"Checked Oct 3-5, 2026",aps8072s mp80100 mp80100_220 c80100_220,main
 p031,MINI 58 V 3 A fuse,Power,2,4,0997003.WXN; one installed plus spare.,https://www.newark.com/littelfuse/0997003-wxn/automotive-fuse-fast-acting-3a/dp/79J5391,Estimate,both,,all,main
-p032,MINI 58 V 7.5 A fuse,Power,2,4,One installed plus spare; verify 58 V rating.,,Estimate,both,,all,main
+p032,MINI 58 V 7.5 A fuse,Power,2,4,One installed plus spare; verify 58 V rating.,,Estimate,both,,aps8072s mp80100 mp80100_220 c80100_220,main
 p106,"Inline MINI fuse holder, 58 V rated",Power,2,6,"With cover, 16 AWG. Most holders are rated 32 V: buy from Digi-Key or Mouser.",,Estimate,both,,all,main
-p034,"WAGO 221-615, 15-pack",Power,1,24.39,Five-port 10 AWG connector; one used.,https://www.amazon.com/dp/B07CJR8MH4,Recorded price,both,Sep 2026,all,main
-p035,"Amass XT60E-F, 10-pack",Power,1,9.88,Panel charge socket; one used.,https://www.amazon.com/dp/B09SL2MNN1,Recorded price,both,Sep 2026,all,main
-p036,"APIELE 12 mm latching switch, 2-pack",Power,1,8.99,BMS signal switch; LED not wired in reference.,https://www.amazon.com/dp/B083QMF2J1,Recorded price,both,Sep 2026,all,main
-p037,"EC5 connectors, 10 pairs",Power,1,15.99,Retail pack for pack and BMS connections.,https://www.amazon.com/dp/B08GPR7SVR,Recorded price,both,Sep 2026,all,main
-p038,"5S JST-XH balance leads, 10-pack",Power,1,6.99,Pack-to-BMS sense harness.,https://www.amazon.com/dp/B073ZGF8D9,Recorded price,both,Sep 2026,all,main
-p107,42 V 2 A charger (10S),Power,1,16.99,Fit an XT60 male plug (about 1.5 h per charge).,https://www.amazon.com/dp/B08JYSZX78,Recorded price,both,"Checked Oct 3-5, 2026",all,main
-p043,Raspberry Pi 4 Model B,Electronics,1,55,2 GB reference budget; actual memory variant/retailer may differ.,https://www.raspberrypi.com/products/raspberry-pi-4-model-b/,Estimate,both,,all,main
-p045,Waveshare 4 inch DPI LCD (C),Electronics,1,54.99,720 x 720 square capacitive display.,https://www.waveshare.com/product/4inch-dpi-lcd-c.htm,Source price,both,"Checked Oct 2, 2026",all,main
-p046,Teensy 4.0,Electronics,1,25,Board allowance; use non-lockable reference.,https://www.pjrc.com/store/teensy40.html,Estimate,both,,all,main
+p034,"WAGO 221-615, 15-pack",Power,1,24.39,Five-port 10 AWG connector; one used.,https://www.amazon.com/dp/B07CJR8MH4,Recorded price,both,Sep 2026,aps8072s mp80100 mp80100_220 c80100_220,main
+p035,"Amass XT60E-F, 10-pack",Power,1,9.88,Panel charge socket; one used.,https://www.amazon.com/dp/B09SL2MNN1,Recorded price,both,Sep 2026,aps8072s mp80100 mp80100_220 c80100_220,main
+p036,"APIELE 12 mm latching switch, 2-pack",Power,1,8.99,BMS signal switch; LED not wired in reference.,https://www.amazon.com/dp/B083QMF2J1,Recorded price,both,Sep 2026,aps8072s mp80100 mp80100_220 c80100_220,main
+p037,"EC5 connectors, 10 pairs",Power,1,15.99,Retail pack for pack and BMS connections.,https://www.amazon.com/dp/B08GPR7SVR,Recorded price,both,Sep 2026,aps8072s mp80100 mp80100_220 c80100_220,main
+p038,"5S JST-XH balance leads, 10-pack",Power,1,6.99,Pack-to-BMS sense harness.,https://www.amazon.com/dp/B073ZGF8D9,Recorded price,both,Sep 2026,aps8072s mp80100 mp80100_220 c80100_220,main
+p107,42 V 2 A charger (10S),Power,1,16.99,Fit an XT60 male plug (about 1.5 h per charge).,https://www.amazon.com/dp/B08JYSZX78,Recorded price,both,"Checked Oct 3-5, 2026",aps8072s mp80100 mp80100_220 c80100_220,main
+p123,Mean Well LOP-600-36 power supply,Power,1,105.34,"36 V open frame: 400 W by convection, 600 W with airflow, 150 % for 3 s. Jameco: $83.60 plus a 26 % tariff added at checkout; 3-week lead time, non-returnable.",https://www.jameco.com/z/LOP-600-36-MEAN-WELL-600W-Low-Profile-Energy-Efficient-Medical-Open-Frame-Power-Supply-36V-11-1A-Convection-16-7A-with-Fan_2410207.html,Source price,both,"Checked Oct 10, 2026",lite150,main
+p124,"uxcell C14 panel-mount inlet, 10 A, 2-pack",Power,1,7.89,"The mains inlet, snapped into the back step. 4.8 stars (123), ships from Amazon.",https://www.amazon.com/dp/B07PVP7GL2,Source price,both,"Checked Oct 10, 2026",lite150,main
+p125,"KCD1 rocker switch, 10 A 125 V / 6 A 250 V",Power,1,3.98,"Mains on/off in the line lead, beside the inlet. 4.3 stars (42), ships from Amazon.",https://www.amazon.com/dp/B0DX1JY5BW,Source price,both,"Checked Oct 10, 2026",lite150,main
+p126,"uxcell 50 W 1 Ω aluminium resistors, 5-pack",Power,1,8.54,"Two in series (2 Ω) as the S1's brake resistor, screwed flat to the base plate, which is their heatsink. 5.0 stars (3 reviews), ships from Amazon.",https://www.amazon.com/dp/B0F43QWVM3,Source price,both,"Checked Oct 10, 2026",lite150,main
+p043,Raspberry Pi 4 Model B,Electronics,1,55,2 GB reference budget; actual memory variant/retailer may differ.,https://www.raspberrypi.com/products/raspberry-pi-4-model-b/,Estimate,both,,aps8072s mp80100 mp80100_220 c80100_220,main
+p045,Waveshare 4 inch DPI LCD (C),Electronics,1,54.99,720 x 720 square capacitive display.,https://www.waveshare.com/product/4inch-dpi-lcd-c.htm,Source price,both,"Checked Oct 2, 2026",aps8072s mp80100 mp80100_220 c80100_220,main
+p046,Teensy 4.0,Electronics,1,25,Board allowance; use non-lockable reference.,https://www.pjrc.com/store/teensy40.html,Estimate,both,,aps8072s mp80100 mp80100_220 c80100_220,main
 p048,Waveshare SN65HVD230 CAN board,Electronics,1,10.99,3.3 V CAN transceiver.,https://www.amazon.com/dp/B00KM6XMXO,Recorded price,both,"Oct 2, 2026",all,main
 p049,Pololu D42V55F5 regulator,Electronics,1,39.95,"#5571, 5 V output, 60 V maximum input.",https://www.pololu.com/product/5571,Source price,both,"Checked Oct 2, 2026",all,main
 p050,Noctua NF-A4x10 5V fan,Electronics,1,17,Non-PWM reference; unit allowance.,https://www.amazon.com/dp/B00NEMGCIA,Estimate,both,,all,main
-p052,"Right-angle micro-USB cable, pack",Electronics,1,10,Short setup/board cable.,https://www.amazon.com/dp/B08BZD66H4,Estimate,both,,all,main
+p052,"Right-angle micro-USB cable, pack",Electronics,1,10,Short setup/board cable.,https://www.amazon.com/dp/B08BZD66H4,Estimate,both,,aps8072s mp80100 mp80100_220 c80100_220,main
+p127,Seeed XIAO ESP32-C3,Electronics,1,9.9,"Bluetooth link to the phone app and the knob; talks to the S1 over CAN through the CAN board. 4.7 stars (382), ships from Amazon.",https://www.amazon.com/dp/B0B94JZ2YF,Source price,both,"Checked Oct 10, 2026",lite150,main
+p128,"EC11 rotary encoders with push button and knob caps, 5-pack",Electronics,1,9.99,"The resistance knob, through the left cover. 4.3 stars (163), ships from Amazon. Or the WWZMDiB 6-pack (B0C6Q67V97, $8.88).",https://www.amazon.com/dp/B08728K3YB,Source price,both,"Checked Oct 10, 2026",lite150,main
 p004,USB isolator for controller setup,Accessories,1,35,Protects the PC when you set up the ODrive over USB.,https://shop.odriverobotics.com/,Estimate,both,,all,accessory
 p026,PTFE / lithium grease,Accessories,1,10,Lead screw and gears.,https://www.amazon.com/dp/B000XBH9HI,Estimate,both,,all,accessory
 p039,"Silicone wire, mixed gauges",Accessories,1,45,10 to 24 AWG; lengths in the wiring reference.,,Estimate,both,,all,accessory
-p040,"M5 ring terminals, pack",Accessories,1,9.99,12–10 AWG terminals; verify selected listing.,https://www.amazon.com/dp/B0DM8FW4LV,Recorded price,both,Sep 2026,all,accessory
+p040,"M5 ring terminals, pack",Accessories,1,9.99,12–10 AWG terminals; verify selected listing.,https://www.amazon.com/dp/B0DM8FW4LV,Recorded price,both,Sep 2026,aps8072s mp80100 mp80100_220 c80100_220,accessory
 p041,Ferrules & heat-shrink,Accessories,1,15,Consumables allowance; crimping tools excluded.,,Estimate,both,,all,accessory
+p129,IEC C13 mains cord,Accessories,1,8,Any standard computer or monitor power cord.,,Estimate,both,,lite150,accessory
+p130,6.3 mm insulated female quick-disconnects,Accessories,1,7,For the inlet and rocker switch tabs.,,Estimate,both,,lite150,accessory
+p131,"Power supply mating connectors (CN1, CN2)",Accessories,1,6,"The AC input and 12 V aux housings with crimps, as listed in the LOP-600 datasheet.",,Estimate,both,,lite150,accessory
+p132,"Ring terminals, M3.5 and M4, 10-16 AWG",Accessories,1,8,"The supply's DC screws, its earth screw and the earth stud in the base plate.",,Estimate,both,,lite150,accessory
+p133,"Thermal pad, 0.5 mm, 6 W/mK",Accessories,1,8,Between the S1 and its plate.,,Estimate,both,,lite150,accessory
+p134,JST GH 4-pin cable,Accessories,1,7,CAN from the CAN board to the S1.,,Estimate,both,,lite150,accessory
 p047,Low-profile female header strips,Accessories,1,8,Teensy socket: 2 x 14-pin low-profile machined-pin female.,https://www.amazon.com/dp/B0948H7FPP,Estimate,both,,all,accessory
 p051,"Prototype perfboards, pack",Accessories,1,10,"Three small boards (Teensy, CAN, regulator).",https://www.amazon.com/dp/B072Z7Y19F,Estimate,both,,all,accessory
-p044,MicroSD card,Accessories,1,10,For the Raspberry Pi.,,Estimate,both,,all,accessory
+p044,MicroSD card,Accessories,1,10,For the Raspberry Pi.,,Estimate,both,,aps8072s mp80100 mp80100_220 c80100_220,accessory
 p060,"PAHT-CF filament, 1 kg spool",Accessories,2,60,"End pieces, level-wind, exit, tower, gears and brackets.",https://www.amazon.com/dp/B0F37YW223,Estimate,cnc,,all,accessory
 p059,"PAHT-CF filament, 1 kg spool",Accessories,4,60,Printed build: the frame is printed too.,https://www.amazon.com/dp/B0F37YW223,Estimate,printed,,all,accessory
 p108,"PETG-CF filament, 1 kg spool",Accessories,1,30,The covers.,,Estimate,both,,all,accessory
-p061,1 mm EVA foam roll,Accessories,1,10,Battery pads: or print them in TPU 95A.,https://www.amazon.com/dp/B0BXJHVH5M,Estimate,both,,all,accessory
-p062,2 mm EVA foam sheet,Accessories,1,10,Battery pads: or print them in TPU 95A.,https://www.amazon.com/dp/B08YXYN327,Estimate,both,,all,accessory
+p061,1 mm EVA foam roll,Accessories,1,10,Battery pads: or print them in TPU 95A.,https://www.amazon.com/dp/B0BXJHVH5M,Estimate,both,,aps8072s mp80100 mp80100_220 c80100_220,accessory
+p062,2 mm EVA foam sheet,Accessories,1,10,Battery pads: or print them in TPU 95A.,https://www.amazon.com/dp/B08YXYN327,Estimate,both,,aps8072s mp80100 mp80100_220 c80100_220,accessory
 p063,Cable ties & thread locker,Accessories,1,12,Assembly consumables allowance.,,Estimate,both,,all,accessory
 p064,1 inch steel rack hitch pin,Accessories,1,20,Or your rack's own 1 in pin: at least 92 mm between the head and the clip hole.,https://www.amazon.com/dp/B08974F734,Estimate,both,,all,accessory
 p065,Straight bar & carabiner,Accessories,1,35,Training attachment allowance; rack itself excluded.,,Estimate,both,,all,accessory
