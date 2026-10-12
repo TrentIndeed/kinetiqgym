@@ -129,10 +129,26 @@
       "category": "Drive",
       "qty": 1,
       "price": 101.9,
-      "note": "One-piece steel, 10 mm motor / 12 mm drum. Ruland web store: $101.90 ($96.80 after its web discount), in stock.",
+      "note": "One-piece steel, 10 mm motor / 12 mm drum. Ruland web store: $101.90 ($96.80 after its web discount), in stock. The CNC build's coupling (the drum needs 17.1 N\u00b7m at 220 lb, 25.7 with the 1.5x margin); check a distributor (Digi-Key, RS, Motion) before ordering.",
       "url": "https://www.ruland.com",
       "status": "Source price",
-      "build": "both",
+      "build": "cnc",
+      "date": "Checked Oct 12, 2026",
+      "motor": [
+        "aps8072s",
+        "lite150"
+      ]
+    },
+    {
+      "id": "p138",
+      "name": "uxcell 10 -> 12 mm clamp coupling, 25 x 30 mm",
+      "category": "Drive",
+      "qty": 1,
+      "price": 8.54,
+      "note": "The printed build (light loads, a fit and function check): aluminium clamp coupling, slips somewhere round 30-50 lb. The CNC build uses the Ruland.",
+      "url": "https://www.amazon.com/dp/B06XB22GG1",
+      "status": "Source price",
+      "build": "printed",
       "date": "Checked Oct 12, 2026",
       "motor": [
         "aps8072s",
@@ -141,15 +157,15 @@
     },
     {
       "id": "p089",
-      "name": "M5 aluminium spacers, pack",
+      "name": "M5 aluminium spacers 10 x 3 mm, 20-pack",
       "category": "Drive",
       "qty": 1,
-      "price": 7,
-      "note": "Motor to the face plate: 10 mm long for the MP80100 and C80100, 3 mm for the APS 8072S (4 needed).",
-      "url": "",
-      "status": "Estimate",
+      "price": 5.5,
+      "note": "The 3 mm spacers under the APS 8072S face.",
+      "url": "https://www.amazon.com/dp/B0CQ2R5GDW",
+      "status": "Source price",
       "build": "both",
-      "date": ""
+      "date": "Checked Oct 12, 2026"
     },
     {
       "id": "p006",
@@ -255,15 +271,15 @@
     },
     {
       "id": "p088",
-      "name": "Loctite 638 retaining compound, 10 mL",
+      "name": "Loctite 638 retaining compound, 50 mL",
       "category": "Drive",
       "qty": 1,
-      "price": 20,
-      "note": "Bonds the drum hub and both drum flanges to the round shaft (or Loctite 648).",
-      "url": "https://www.amazon.com/dp/B004GZDV8I",
-      "status": "Estimate",
+      "price": 14.82,
+      "note": "Bonds the drum hub (and the CNC drum flanges) to the round shaft. The 10 mL listing is gone; the 50 mL bottle costs less.",
+      "url": "https://www.amazon.com/dp/B000O01EV0",
+      "status": "Source price",
       "build": "both",
-      "date": ""
+      "date": "Checked Oct 12, 2026"
     },
     {
       "id": "p135",
@@ -283,11 +299,11 @@
       "category": "Level-wind",
       "qty": 1,
       "price": 7.99,
-      "note": "Carries the printed 45T gear on the lead screw.",
-      "url": "https://www.servocity.com/1309-series-sonic-hub-8mm-bore/",
+      "note": "The 45T screw gear hub. goBILDA has it in stock (ServoCity showed it sold out on Oct 12); not the 8 mm REX version.",
+      "url": "https://www.gobilda.com/1309-series-sonic-hub-8mm-bore/",
       "status": "Source price",
       "build": "both",
-      "date": "Checked Oct 5, 2026"
+      "date": "Checked Oct 12, 2026"
     },
     {
       "id": "p091",
@@ -354,12 +370,12 @@
       "name": "MR128ZZ bearings, 10-pack",
       "category": "Level-wind",
       "qty": 1,
-      "price": 7,
+      "price": 8.99,
       "note": "Lead screw fixed end, in the tower wall.",
       "url": "https://www.amazon.com/dp/B089GG2YCT",
-      "status": "Estimate",
+      "status": "Source price",
       "build": "both",
-      "date": ""
+      "date": "Checked Oct 12, 2026"
     },
     {
       "id": "p096",
@@ -516,12 +532,12 @@
       "name": "Blue Sea 5176 MRBF 40 A fuse",
       "category": "Power",
       "qty": 2,
-      "price": 17.93,
+      "price": 19.35,
       "note": "58 V DC; one spare.",
       "url": "https://www.amazon.com/dp/B0016HTXAY",
-      "status": "Recorded price",
+      "status": "Source price",
       "build": "both",
-      "date": "Checked Oct 3-5, 2026",
+      "date": "Checked Oct 12, 2026",
       "motor": [
         "aps8072s",
         "mp80100",
@@ -531,27 +547,27 @@
     },
     {
       "id": "p031",
-      "name": "MINI 58 V 3 A fuse",
+      "name": "MINI 58 V 3 A fuse (Littelfuse 0997003.WXN)",
       "category": "Power",
       "qty": 2,
-      "price": 4,
-      "note": "0997003.WXN; one installed plus spare.",
-      "url": "https://www.newark.com/littelfuse/0997003-wxn/automotive-fuse-fast-acting-3a/dp/79J5391",
-      "status": "Estimate",
+      "price": 1.04,
+      "note": "The 5 V regulator feed. Digi-Key F5004-ND; ordinary MINI blades are 32 V.",
+      "url": "https://www.digikey.com/en/products/result?keywords=0997003.WXN",
+      "status": "Source price",
       "build": "both",
-      "date": ""
+      "date": "Checked Oct 12, 2026"
     },
     {
       "id": "p032",
-      "name": "MINI 58 V 7.5 A fuse (099707.5WXN)",
+      "name": "MINI 58 V 7.5 A fuse (Littelfuse 099707.5WXN)",
       "category": "Power",
       "qty": 2,
-      "price": 4,
-      "note": "One installed plus spare; verify 58 V rating.",
-      "url": "",
-      "status": "Estimate",
+      "price": 1.04,
+      "note": "The charge-port line (charging the packs). Digi-Key F5005-ND; out of stock at Digi-Key on Oct 12.",
+      "url": "https://www.digikey.com/en/products/result?keywords=099707.5WXN",
+      "status": "Source price",
       "build": "both",
-      "date": "",
+      "date": "Checked Oct 12, 2026",
       "motor": [
         "aps8072s",
         "mp80100",
@@ -561,15 +577,15 @@
     },
     {
       "id": "p106",
-      "name": "Inline MINI fuse holder, 58 V rated",
+      "name": "Inline MINI fuse holder, 58 V DC (Littelfuse 0FHM0003ZXJS)",
       "category": "Power",
       "qty": 2,
-      "price": 6,
-      "note": "With cover, 16 AWG. Most holders are rated 32 V: buy from Digi-Key or Mouser.",
-      "url": "",
-      "status": "Estimate",
+      "price": 6.39,
+      "note": "20 A, 18 AWG leads, rated 58 V DC (the Amazon holders are 32 V).",
+      "url": "https://www.digikey.com/en/products/detail/littelfuse-commercial-vehicle-products/0FHM0003ZXJS/29571868",
+      "status": "Source price",
       "build": "both",
-      "date": ""
+      "date": "Checked Oct 12, 2026"
     },
     {
       "id": "p034",
@@ -893,15 +909,15 @@
     },
     {
       "id": "p026",
-      "name": "PTFE / lithium grease",
+      "name": "Super Lube synthetic grease, 3 oz",
       "category": "Accessories",
       "qty": 1,
-      "price": 10,
+      "price": 10.99,
       "note": "Lead screw and gears.",
       "url": "https://www.amazon.com/dp/B000XBH9HI",
-      "status": "Estimate",
+      "status": "Source price",
       "build": "both",
-      "date": ""
+      "date": "Checked Oct 12, 2026"
     },
     {
       "id": "p039",
