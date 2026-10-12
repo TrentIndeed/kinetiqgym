@@ -387,15 +387,15 @@
     },
     {
       "id": "p098",
-      "name": "16008-2RS bearing 40 x 68 x 9",
+      "name": "16008-2RS bearings 40 x 68 x 9, 2-pack",
       "category": "Fairlead & rope",
-      "qty": 2,
-      "price": 9.59,
-      "note": "Exit swivel (sold singly).",
-      "url": "https://www.amazon.com/dp/B07PPNVNYY",
-      "status": "Recorded price",
+      "qty": 1,
+      "price": 12.59,
+      "note": "The exit swivel pair. uxcell 2-pack, two-day delivery (the single listing shipped in two weeks).",
+      "url": "https://www.amazon.com/dp/B0CMXGZMG8",
+      "status": "Source price",
       "build": "both",
-      "date": "Checked Oct 3-5, 2026"
+      "date": "Checked Oct 12, 2026"
     },
     {
       "id": "p099",
@@ -411,15 +411,27 @@
     },
     {
       "id": "p100",
-      "name": "ISO 7379 shoulder bolts 12 x 20, M10, 2-pack",
+      "name": "ISO 7379 shoulder bolts 12 x 25, M10, 2-pack",
       "category": "Fairlead & rope",
       "qty": 1,
-      "price": 9.89,
-      "note": "Exit pulley axles.",
-      "url": "https://www.amazon.com/dp/B0FDQY2795",
-      "status": "Recorded price",
+      "price": 9.99,
+      "note": "Exit pulley axles; next-day delivery (12 x 20 ships in two weeks). Two M12 washers go on each shoulder.",
+      "url": "https://www.amazon.com/dp/B077GX5R3H",
+      "status": "Source price",
       "build": "both",
-      "date": "Checked Oct 3-5, 2026"
+      "date": "Checked Oct 12, 2026"
+    },
+    {
+      "id": "p137",
+      "name": "M12 flat washers, DIN 125A 13 x 24 x 2.5, 25 pcs",
+      "category": "Fairlead & rope",
+      "qty": 1,
+      "price": 8.39,
+      "note": "Two on each exit axle shoulder, so the nut still clamps the pulleys. 2.5 mm thick (thinner ones leave the shoulder proud).",
+      "url": "https://www.amazon.com/dp/B0FQHCTQ5N",
+      "status": "Source price",
+      "build": "both",
+      "date": "Checked Oct 12, 2026"
     },
     {
       "id": "p101",
