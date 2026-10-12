@@ -13,6 +13,7 @@ p120,"APS C80100 outrunner, sensored, custom ~25 Kv",Drive,1,290,"Alien Power Sy
 p007,"6001-2RS bearings, 2-pack",Drive,1,6.95,Two bearings required.,https://www.amazon.com/dp/B07GVN7GQ7,Recorded price,both,"Oct 2, 2026",all,main
 p008,goBILDA 1301-0016-0012 hub,Drive,2,9.99,Drum hub and 81T gear hub.,https://www.servocity.com,Estimate,both,,all,main
 p088,"Loctite 638 retaining compound, 10 mL",Drive,1,20,Bonds the drum hub and both drum flanges to the round shaft (or Loctite 648).,https://www.amazon.com/dp/B004GZDV8I,Estimate,both,,all,main
+p135,Loctite 641 bearing retainer,Drive,1,15.25,"Holds the drum bearings' inner rings on the shaft (the rope load turns with the shaft, so a loose ring creeps) and the bearings in their seats (drum holders, MR128ZZ, 688ZZ). Medium strength: heat to take apart. Ships from Amazon.",https://www.amazon.com/dp/B01MQJ92VM,Source price,both,"Checked Oct 11, 2026",all,main
 p090,"goBILDA 1309-0016-0008 Sonic Hub, 8 mm",Level-wind,1,7.99,Carries the printed 45T gear on the lead screw.,https://www.servocity.com/1309-series-sonic-hub-8mm-bore/,Source price,both,"Checked Oct 5, 2026",all,main
 p091,"Tr8 x 2 lead screw, 200 mm, 2-pack",Level-wind,1,11.99,"With brass flange nuts; used uncut. Pick ""200mm / 2pcs Tr8X2"".",https://www.amazon.com/dp/B0B8RKSDJV,Recorded price,both,"Checked Oct 3-5, 2026",all,main
 p092,"MGN15H rail 200 mm with block, 2 sets",Level-wind,1,49.99,The traveller rail (one spare set).,https://www.amazon.com/dp/B0D7CLND4B,Recorded price,both,"Checked Oct 3-5, 2026",all,main
@@ -95,3 +96,4 @@ p084,Plain hex-nut assortment,Accessories,1,9,Purchase pack; exact installed siz
 p102,"Laser-cut 6061-T6 plates, 0.250 in",Fabrication,1,220,"Only if you have the plates cut: instant-priced online order (e.g. SendCutSend), tapped and countersunk as drawn. You weld the frame, rack mount and drum.",https://sendcutsend.com,Estimate,cnc,,all,if outsourced
 p103,"Drum tube, 6061, 1-1/4 in OD x 0.250 in wall, 100 mm",Fabrication,1,15,"Only if you buy the tube: cut to length, ask for T6.",https://www.amazon.com/dp/B0BFGLLHXC,Estimate,cnc,,all,if outsourced
 p054,"Bearing cheeks, four cut plates",Fabrication,1,30,"2 mm steel, in the same laser order.",,Estimate,both,,all,if outsourced
+p136,"Drum bearing holders, 2 x machined 6061",Fabrication,1,90,"CNC build. Only if you do not machine them yourself: two small 6061-T6 parts (40 x 53 x 63 mm, a 28 H7 bore, M4-tapped feet) from an online CNC service. The printed build keeps its printed holders.",,Estimate,cnc,,all,if outsourced
