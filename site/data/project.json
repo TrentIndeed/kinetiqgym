@@ -266,6 +266,18 @@
       "date": ""
     },
     {
+      "id": "p135",
+      "name": "Loctite 641 bearing retainer",
+      "category": "Drive",
+      "qty": 1,
+      "price": 15.25,
+      "note": "Holds the drum bearings' inner rings on the shaft (the rope load turns with the shaft, so a loose ring creeps) and the bearings in their seats (drum holders, MR128ZZ, 688ZZ). Medium strength: heat to take apart. Ships from Amazon.",
+      "url": "https://www.amazon.com/dp/B01MQJ92VM",
+      "status": "Source price",
+      "build": "both",
+      "date": "Checked Oct 11, 2026"
+    },
+    {
       "id": "p090",
       "name": "goBILDA 1309-0016-0008 Sonic Hub, 8 mm",
       "category": "Level-wind",
@@ -1402,6 +1414,18 @@
       "status": "Estimate",
       "build": "both",
       "date": ""
+    },
+    {
+      "id": "p136",
+      "name": "Drum bearing holders, 2 x machined 6061",
+      "category": "Fabrication",
+      "qty": 1,
+      "price": 90,
+      "note": "CNC build. Only if you do not machine them yourself: two small 6061-T6 parts (40 x 53 x 63 mm, a 28 H7 bore, M4-tapped feet) from an online CNC service. The printed build keeps its printed holders.",
+      "url": "",
+      "status": "Estimate",
+      "build": "cnc",
+      "date": ""
     }
   ],
   "prints": [
@@ -1632,6 +1656,11 @@
       "name": "Rear plate",
       "build": "CNC build",
       "note": "6061 \u00b7 6 mm \u00b7 welded to base \u00b7 confirm drawing/export availability"
+    },
+    {
+      "name": "2 drum bearing holders",
+      "build": "CNC build",
+      "note": "machined 6061-T6, 28 H7 bore \u00b7 V44_CNC_drum_bearing_holder_*"
     }
   ]
 }
