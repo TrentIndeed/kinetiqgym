@@ -13,7 +13,7 @@ a rotary encoder instead of the touch screen.
 
 **Upcoming:** updated CAD models, the confirmed parts list and build instructions, phone/touchscreen apps, and Pi/Teensy programs. The files here are an earlier prototype snapshot. The website includes an [illustrated CNC build preview](https://kinetiqgym.com/docs/cnc-build-preview.html), mechanism camera views and app concepts from the latest animation.
 
-Want to help? [Propose an improvement](https://github.com/TrentIndeed/kinetiqgym/issues/new?template=proposal.yml), read the [maintainer review process](CONTRIBUTING.md), or visit [project support](https://kinetiqgym.com/#support) for CNC equipment and prototype testing.
+Want to help? [Propose an improvement](https://github.com/TrentIndeed/kinetiqgym/issues/new?template=proposal.yml), read the [maintainer review process](CONTRIBUTING.md), or visit [project support](https://kinetiqgym.com/build.html#support) for CNC equipment and prototype testing.
 
 <p align="center"><img src="images/06_hero.jpg" alt="KinetiqGym on a rack upright" width="100%"></p>
 
@@ -71,4 +71,4 @@ Issues and pull requests are welcome: see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Development status and budget
 
-See [the roadmap](docs/roadmap.md) for release milestones and [the website](https://kinetiqgym.com/#parts) for itemized purchasing prices, dated sources and editable fabrication allowances. The budget is a planning estimate, excluding tax, shipping, tools, labor and the rack.
+See [the roadmap](docs/roadmap.md) for release milestones and [the website](https://kinetiqgym.com/build.html#parts) for itemized purchasing prices, dated sources and editable fabrication allowances. The budget is a planning estimate, excluding tax, shipping, tools, labor and the rack.

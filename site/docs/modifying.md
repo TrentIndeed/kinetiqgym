@@ -42,7 +42,7 @@ Torque at the drum is the motor torque (direct drive): the cable force is about 
 4. Recompute the covers and check intersections and retaining surfaces. Print a fit sample before committing to a full enclosure; export the updated STEP/STL and update the BOM and revision.
 5. Review series count, fully charged voltage, BMS, charger, fuse/wire sizing and regenerative charge limits as a system before powered testing. Capacity alone does not establish compatibility.
 
-The reference is two 5S packs in series (10S, 42 V fully charged). The [website adaptation guide](https://kinetiqgym.com/#modify) illustrates the pack envelope and motor interfaces. Its diagrams are measurement guides, not dimensioned manufacturing drawings.
+The reference is two 5S packs in series (10S, 42 V fully charged). The [website adaptation guide](https://kinetiqgym.com/build.html#modify) illustrates the pack envelope and motor interfaces. Its diagrams are measurement guides, not dimensioned manufacturing drawings.
 
 ## Rotary encoder instead of the touch screen
 

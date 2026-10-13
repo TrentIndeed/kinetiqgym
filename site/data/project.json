@@ -1215,27 +1215,15 @@
     },
     {
       "id": "p072",
-      "name": "M2/M3/M4/M5 heat-set insert kit",
+      "name": "3DZWMAN heat-set insert kit, 380 pcs (M2 to M8, with tips)",
       "category": "Accessories",
       "qty": 1,
-      "price": 25,
-      "note": "Purchase pack; exact installed sizes/counts are in the hardware manifest.",
-      "url": "https://www.amazon.com/dp/B08K1BVGN9",
-      "status": "Estimate",
+      "price": 18.99,
+      "note": "The insert pockets in every printed part are cut for this kit: M2 3 x 3.2, M2.5 4 x 4.0, M3 4 x 4.2, M4 5 x 5.0, M5 5 x 7.0 mm (length x outer diameter). Other brands may not grip.",
+      "url": "https://www.amazon.com/dp/B0D2R955CL",
+      "status": "Source price",
       "build": "both",
-      "date": ""
-    },
-    {
-      "id": "p073",
-      "name": "M2.5 heat-set inserts, pack",
-      "category": "Accessories",
-      "qty": 1,
-      "price": 10,
-      "note": "Purchase pack; exact installed sizes/counts are in the hardware manifest.",
-      "url": "https://www.amazon.com/dp/B0CS6YVJYD",
-      "status": "Estimate",
-      "build": "both",
-      "date": ""
+      "date": "Checked Oct 13, 2026"
     },
     {
       "id": "p074",

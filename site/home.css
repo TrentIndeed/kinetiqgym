@@ -1,0 +1,188 @@
+/* KinetiqGym.com front page and the short pages around it (work, privacy). Dark, technical, cinematic: the machine is the image.
+   Layout: a full-bleed film hero, then sections on a deep blue-black ground; the build-status track is the one strong graphic. */
+:root {
+  --bg: #0a0e13; --surface: #11171e; --surface-2: #17202a; --line: #233040; --ink: #edf2f7; --muted: #98a7b6; --faint: #6b7b8b;
+  --accent: #5c8dff; --accent-strong: #7aa2ff; --on-accent: #08101f; --done: #48c28a; --active: #f0b54a; --planned: #5d6d7d;
+  --display: "Barlow Condensed", "Arial Narrow", sans-serif; --body: Barlow, "Segoe UI", system-ui, sans-serif;
+  color-scheme: dark; font-family: var(--body); color: var(--ink); background: var(--bg);
+}
+* { box-sizing: border-box }
+[hidden] { display: none !important }
+html { scroll-behavior: smooth; scroll-padding-top: 80px }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto } }
+body { margin: 0; font-size: 18px; line-height: 1.6; background: var(--bg); color: var(--ink) }
+img, video { max-width: 100%; height: auto; display: block }
+a { color: inherit; text-underline-offset: 4px }
+a:hover { color: var(--accent-strong) }
+h1, h2, h3, p, figure, ul { margin: 0 }
+h1, h2 { font-family: var(--display); font-weight: 600; letter-spacing: -.01em; line-height: 1; text-wrap: balance }
+h1 { font-size: clamp(46px, 7vw, 96px) }
+h2 { font-size: clamp(36px, 4.6vw, 64px) }
+h3 { font-family: var(--display); font-size: 26px; font-weight: 600; letter-spacing: .01em; line-height: 1.15 }
+p { max-width: 64ch }
+button, input, textarea, select { font: inherit; color: inherit }
+:is(a, button, input, textarea, summary, [tabindex]):focus-visible { outline: 3px solid var(--accent); outline-offset: 3px }
+.wrap { max-width: 1280px; margin-inline: auto; padding-inline: clamp(16px, 4vw, 48px) }
+.section { padding-block: clamp(72px, 10vw, 128px) }
+.kicker { font-size: 14px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--accent-strong); margin-bottom: 18px }
+.lede { font-size: clamp(19px, 1.6vw, 22px); color: var(--muted); max-width: 52ch }
+.skip { position: fixed; top: -80px; left: 16px; background: var(--ink); color: var(--bg); padding: 10px 14px; z-index: 100; border-radius: 6px }
+.skip:focus { top: 10px }
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap }
+
+/* header */
+.top { position: fixed; inset: 0 0 auto; z-index: 30; display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  padding: calc(14px + env(safe-area-inset-top, 0px)) clamp(16px, 4vw, 48px) 14px; transition: background .2s, border-color .2s; border-bottom: 1px solid transparent }
+.top.solid { background: rgb(10 14 19 / .92); backdrop-filter: blur(10px); border-bottom-color: var(--line) }
+.brand { display: flex; align-items: center; gap: 10px; font-family: var(--display); font-size: 28px; font-weight: 700; letter-spacing: .06em; text-decoration: none }
+.brand img { filter: brightness(0) invert(1) }
+.top nav { display: flex; align-items: center; gap: 26px; font-size: 15px; font-weight: 600 }
+.top nav a { text-decoration: none; color: var(--muted) }
+.top nav a:hover { color: var(--ink) }
+.menu-toggle { display: none; background: none; border: 1px solid var(--line); border-radius: 6px; padding: 8px 12px; font-weight: 600 }
+.button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 48px; padding: 11px 22px; border-radius: 8px;
+  font-weight: 600; text-decoration: none; border: 1px solid transparent; cursor: pointer; font-size: 17px }
+.button.primary { background: var(--accent); color: var(--on-accent) }
+.button.primary:hover { background: var(--accent-strong); color: var(--on-accent) }
+.button.ghost { border-color: rgb(237 242 247 / .35); color: var(--ink); background: rgb(10 14 19 / .3) }
+.button.ghost:hover { border-color: var(--ink); color: var(--ink) }
+.top nav .button { min-height: 40px; padding: 8px 16px; color: var(--on-accent) }
+
+/* A. hero */
+.hero { position: relative; min-height: min(100svh, 980px); display: grid; align-items: end; overflow: hidden; isolation: isolate }
+.hero video, .hero .poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2 }
+.hero::after { content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(180deg, rgb(10 14 19 / .55) 0%, rgb(10 14 19 / .1) 35%, rgb(10 14 19 / .55) 65%, var(--bg) 100%),
+              linear-gradient(90deg, rgb(10 14 19 / .75) 0%, rgb(10 14 19 / 0) 60%) }
+.hero .wrap { width: 100%; padding-block: 140px clamp(56px, 8vw, 96px) }
+.hero h1 { max-width: 17ch }
+.hero .lede { margin-top: 26px; color: #c8d3de }
+.status-tag { display: inline-flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--active); margin-bottom: 22px }
+.status-tag::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--active); box-shadow: 0 0 0 4px rgb(240 181 74 / .18) }
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 34px }
+.render-note { margin-top: 26px; font-size: 13px; color: var(--faint) }
+.play-icon { width: 0; height: 0; border-left: 10px solid currentColor; border-top: 6px solid transparent; border-bottom: 6px solid transparent }
+
+/* B. what it does */
+.what { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: clamp(32px, 6vw, 96px); align-items: start }
+.what .positioning { font-family: var(--display); font-size: clamp(28px, 2.6vw, 38px); line-height: 1.2; font-weight: 500; color: var(--ink); max-width: 26ch }
+.features { list-style: none; padding: 0; display: grid; gap: 0; border-top: 1px solid var(--line) }
+.features li { display: grid; grid-template-columns: 2.4ch minmax(0, 1fr); gap: 16px; padding-block: 20px; border-bottom: 1px solid var(--line) }
+.features .n { font-family: var(--display); color: var(--accent-strong); font-size: 20px; font-variant-numeric: tabular-nums }
+.features strong { display: block; font-family: var(--display); font-size: 25px; font-weight: 600; letter-spacing: .01em }
+.features span.d { color: var(--muted); font-size: 16px }
+
+/* C. film */
+.film { background: var(--surface) }
+.film-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 20px 40px; margin-bottom: 32px }
+.player { position: relative; border-radius: 12px; overflow: hidden; background: #000; border: 1px solid var(--line); aspect-ratio: 16 / 9 }
+.player video { width: 100%; height: 100%; object-fit: cover }
+.caption { margin-top: 18px; color: var(--muted); font-size: 16px }
+
+/* D. build status */
+.track { list-style: none; padding: 0; margin-top: 48px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; counter-reset: step }
+.track li { position: relative; padding: 34px 26px 0 0 }
+.track li::before { content: ""; position: absolute; top: 9px; left: 0; right: 0; height: 2px; background: var(--line) }
+.track li.done::before { background: linear-gradient(90deg, var(--done), var(--active)) }
+.track .dot { position: absolute; top: 0; left: 0; width: 20px; height: 20px; border-radius: 50%; background: var(--bg); border: 2px solid var(--planned) }
+.track li.done .dot { border-color: var(--done); background: var(--done) }
+.track li.now .dot { border-color: var(--active); box-shadow: 0 0 0 6px rgb(240 181 74 / .16) }
+.track .state { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--planned); margin-bottom: 10px }
+.track li.done .state { color: var(--done) } .track li.now .state { color: var(--active) }
+.track h3 { font-size: 24px }
+.track p { color: var(--muted); font-size: 16px; margin-top: 8px; max-width: 30ch }
+.track-note { margin-top: 40px; color: var(--faint); font-size: 15px }
+
+/* E. why open */
+.open { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 88px); align-items: center }
+.open blockquote { margin: 0; font-family: var(--display); font-size: clamp(30px, 3vw, 44px); line-height: 1.15; font-weight: 500 }
+.open figure { border-radius: 12px; overflow: hidden; border: 1px solid var(--line) }
+.open .after { margin-top: 26px; color: var(--muted) }
+.open .after a { color: var(--accent-strong); font-weight: 600 }
+
+/* F. build / buy / hire */
+.paths { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 44px }
+.path { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 30px 28px; display: flex; flex-direction: column; gap: 14px; min-width: 0 }
+.path .label { font-family: var(--display); font-size: 15px; font-weight: 700; letter-spacing: .16em; color: var(--accent-strong) }
+.path .avail { align-self: start; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px; color: var(--muted) }
+.path p { color: var(--muted); font-size: 16px }
+.path .button { margin-top: auto; align-self: start }
+
+/* G. founder + the engineering path */
+.founder { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 88px); align-items: center }
+.founder figure { border-radius: 12px; overflow: hidden; border: 1px solid var(--line) }
+.founder p + p { margin-top: 16px }
+.founder p { color: var(--muted) }
+.skills { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px }
+.skills li { border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; font-size: 14px; color: var(--ink) }
+.work-band { background: var(--surface); border-block: 1px solid var(--line) }
+.work-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 72px); align-items: start }
+.work-grid p { color: var(--muted) }
+.examples { list-style: none; padding: 0; display: grid; gap: 10px }
+.examples li { padding-left: 22px; position: relative; color: var(--ink) }
+.examples li::before { content: ""; position: absolute; left: 0; top: .72em; width: 10px; height: 2px; background: var(--accent) }
+
+/* H. join */
+.join { text-align: left }
+.join-box { background: linear-gradient(135deg, var(--surface-2), var(--surface)); border: 1px solid var(--line); border-radius: 16px; padding: clamp(28px, 5vw, 64px);
+  display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 64px); align-items: center }
+.join-box > div > p { color: var(--muted); margin-top: 18px }
+form.signup { display: grid; gap: 12px }
+.field-row { display: flex; gap: 10px; flex-wrap: wrap }
+.field-row input { flex: 1 1 240px; min-width: 0 }
+input[type=email], input[type=text], textarea { background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; min-height: 48px; width: 100% }
+input::placeholder, textarea::placeholder { color: var(--faint) }
+textarea { min-height: 160px; resize: vertical }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden }
+.form-note { font-size: 13px; color: var(--faint) }
+.form-note a { color: var(--muted) }
+.form-msg { font-size: 15px; min-height: 1.4em } .form-msg.err { color: #ff8f8f } .form-msg.ok { color: var(--done) }
+fieldset.interest { border: 0; padding: 0; margin: 0; display: grid; gap: 8px }
+fieldset.interest legend { font-family: var(--display); font-size: 24px; font-weight: 600; margin-bottom: 8px }
+.choice { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 8px; cursor: pointer }
+.choice:has(input:checked) { border-color: var(--accent); background: rgb(92 141 255 / .08) }
+.choice input { accent-color: var(--accent) }
+.link-button { background: none; border: 0; padding: 0; color: var(--muted); text-decoration: underline; cursor: pointer; font-size: 15px }
+
+/* footer */
+footer { border-top: 1px solid var(--line); padding-block: 40px calc(40px + env(safe-area-inset-bottom, 0px)); color: var(--faint); font-size: 14px }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px 40px }
+footer nav { display: flex; flex-wrap: wrap; gap: 18px }
+footer nav a { text-decoration: none; color: var(--muted) }
+
+/* film dialog */
+dialog.watch { border: 0; padding: 0; background: #000; width: min(96vw, 1400px); border-radius: 12px; color: var(--ink) }
+dialog.watch::backdrop { background: rgb(0 0 0 / .82) }
+dialog.watch video { width: 100%; aspect-ratio: 16 / 9; background: #000 }
+dialog.watch .bar { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: var(--surface); font-size: 15px; gap: 12px }
+dialog.watch button { background: var(--surface-2); border: 1px solid var(--line); border-radius: 6px; padding: 6px 12px; cursor: pointer }
+
+/* short pages (work, privacy) */
+.page { padding-top: 140px }
+.page h1 { font-size: clamp(42px, 6vw, 80px); max-width: 16ch }
+.page .lede { margin-top: 22px }
+.prose { max-width: 70ch; color: var(--muted) } .prose h2 { font-size: 34px; color: var(--ink); margin: 40px 0 12px } .prose p + p { margin-top: 14px }
+.work-page { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(32px, 6vw, 88px); align-items: start; margin-top: 48px }
+form.contact { display: grid; gap: 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: clamp(20px, 3vw, 32px) }
+form.contact label { display: grid; gap: 6px; font-size: 15px; font-weight: 600 }
+form.contact label span.opt { font-weight: 400; color: var(--faint) }
+
+@media (max-width: 960px) {
+  .what, .open, .founder, .work-grid, .join-box, .work-page { grid-template-columns: minmax(0, 1fr) }
+  .paths { grid-template-columns: minmax(0, 1fr) }
+  .track { grid-template-columns: minmax(0, 1fr); gap: 0 }
+  .track li { padding: 0 0 34px 40px }
+  .track li::before { top: 0; bottom: 0; left: 9px; right: auto; width: 2px; height: auto }
+  .track li.done::before { background: linear-gradient(180deg, var(--done), var(--active)) }
+  .track li:last-child::before { display: none }
+  .track p { max-width: none }
+}
+@media (max-width: 820px) {
+  .menu-toggle { display: inline-block }
+  .top nav { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; background: var(--surface); border-bottom: 1px solid var(--line); padding: 8px clamp(16px, 4vw, 48px) 16px }
+  .top nav.open { display: flex }
+  .top nav a { padding: 12px 0; border-bottom: 1px solid var(--line) }
+  .top nav .button { margin-top: 12px; border: 0 }
+  .top { background: rgb(10 14 19 / .92) }
+  body { font-size: 17px }
+}

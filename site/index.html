@@ -1,71 +1,202 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>KINETIQ — Build your own cable trainer</title>
-  <meta name="description" content="An open-source cable trainer you can build and adapt. Explore printed and CNC builds, itemized costs, illustrated build previews and upcoming CAD and software releases.">
-  <meta name="theme-color" content="#ffffff"><link rel="canonical" href="https://kinetiqgym.com/">
-  <meta property="og:title" content="KINETIQ — Build your own cable trainer"><meta property="og:description" content="The design, the parts, and the path to your own build."><meta property="og:image" content="https://kinetiqgym.com/media/trainer.webp">
-  <link rel="icon" href="media/mark.svg"><link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Kinetiq Gym — a programmable smart gym, built in the open</title>
+  <meta name="description" content="Kinetiq Gym is an open-hardware digital-resistance platform in development. Follow the physical build, the testing, the software and the verified CAD release.">
+  <meta name="theme-color" content="#0a0e13"><link rel="canonical" href="https://kinetiqgym.com/">
+  <meta property="og:title" content="Kinetiq Gym — a programmable smart gym, built in the open">
+  <meta property="og:description" content="Open hardware in development. Watch the 1-minute concept and follow the build.">
+  <meta property="og:image" content="https://kinetiqgym.com/media/launch/unit.webp"><meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="media/mark.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="app.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="home.css">
+  <script src="home.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header class="header"><a class="brand" href="#main" aria-label="KINETIQ home"><img src="media/mark.svg" width="32" height="32" alt="">KINETIQ</a>
-  <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="navigation">Menu <span aria-hidden="true">☰</span></button>
-  <nav id="navigation" aria-label="Main navigation"><a href="#build">Build guide</a><a href="#parts">Parts & cost</a><a href="#files">CAD & fabrication</a><a href="#modify">Modify it</a><a href="#software">App</a><a href="#support">Support</a><a class="github-link" data-repo="" href="#open-source">GitHub <span aria-hidden="true">↗</span></a></nav>
+<header class="top" id="top">
+  <a class="brand" href="/" aria-label="Kinetiq Gym home"><img src="media/mark.svg" width="28" height="28" alt="">KINETIQ</a>
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+  <nav id="site-nav" aria-label="Main">
+    <a href="#film">Watch</a><a href="#status">Build status</a><a href="#open">Why open</a><a href="/build">Design preview</a><a href="/work">Work with me</a>
+    <a class="button primary" href="#join">Follow the Build</a>
+  </nav>
 </header>
+
 <main id="main">
-  <section class="hero container" aria-labelledby="hero-title">
-    <div class="hero-copy"><p class="project-tag"><span class="status-dot"></span> Open hardware · in development</p><h1 id="hero-title">Build your own<br>cable trainer.</h1><p class="lead">An open digital resistance platform. See how it works, follow the build, and help shape a smart gym you can make your own.</p><div class="actions"><a class="button primary" href="#build">Explore the build</a><a class="text-link" href="#film">Watch the machine <span aria-hidden="true">↗</span></a></div><p class="prototype-note">Upcoming: updated CAD, confirmed build instructions, app and control programs. Explore the design previews today.</p></div>
-    <figure class="hero-product"><img src="media/project/cover.webp" width="1400" height="788" fetchpriority="high" alt="CNC aluminum KINETIQ trainer with a light gray printed enclosure and touchscreen, mounted on a blue rack"><figcaption><span>CNC aluminum + printed enclosure</span><span>Design visualization</span></figcaption></figure>
-  </section>
-  <div class="principles container"><p><strong>Build it.</strong> Printed or CNC base.</p><p><strong>Understand it.</strong> See inside the mechanism.</p><p><strong>Adapt it.</strong> Your motor. Your battery.</p></div>
-
-  <section id="status" class="release-strip container" aria-labelledby="status-title">
-    <div class="release-heading"><p class="section-kicker">Where the project stands</p><h2 id="status-title">Preview now. Build files next.</h2><p>Development is open. The current repository contains an earlier prototype snapshot; the next coordinated release is still being prepared.</p></div>
-    <div class="status-grid"><article><span class="pill">Upcoming</span><h3>CAD models</h3><p>Updated printed and CNC assemblies, STEP files and fabrication drawings.</p><a href="#files">See CAD status ↗</a></article><article><span class="pill">Upcoming</span><h3>App & programs</h3><p>Phone app, touchscreen app, Pi setup and Teensy control firmware.</p><a href="#software">Explore the concept ↗</a></article><article><span class="pill">Pending validation</span><h3>Build instructions</h3><p>Confirmed assembly steps, tested parts list and prototype measurements.</p><a href="#build">View illustrated preview ↗</a></article></div>
-  </section>
-
-  <section id="build" class="section container"><div class="section-heading"><div><p class="section-kicker">Your build starts here</p><h2>One machine.<br>Two ways to make it.</h2></div><p>Choose a manufacturing path. The earlier CAD snapshot and planning budget follow your choice. The illustrated walkthrough below previews the CNC version.</p></div>
-    <fieldset class="build-options"><legend class="sr-only">Choose a manufacturing path</legend><label class="build-option"><input type="radio" name="build" value="printed" checked><span><strong>3D printed build</strong><small>PA-CF structure, aluminum reinforcing bars and ordered metal plates.</small><em>Printer + drill + basic assembly tools</em></span><span class="radio-mark" aria-hidden="true"></span></label><label class="build-option"><input type="radio" name="build" value="cnc"><span><strong>CNC build</strong><small>Machined aluminum base with shared printed covers and fairlead parts.</small><em>Machining + tapping + a welded rear plate</em></span><span class="radio-mark" aria-hidden="true"></span></label></fieldset>
-    <div class="assembly-preview" aria-label="Illustrated CNC assembly preview"><div class="assembly-image"><img id="assembly-image" src="media/project/base.webp" width="1400" height="788" loading="lazy" alt="CNC base and welded rear plate mounted to the rack"><span class="image-tag">From the Blender build animation</span></div><div class="assembly-copy"><p class="section-kicker">CNC build preview · <span id="assembly-progress">01 / 04</span></p><h3 id="assembly-title">Start with the welded frame.</h3><p id="assembly-description">Flat aluminum base and rear plates form the structure. The rack mount joins the rear plate before the hitch pin is inserted.</p><div id="assembly-steps" class="step-picker" role="group" aria-label="Choose an assembly stage"></div><div class="preview-controls"><button id="assembly-prev" class="button secondary" aria-label="Previous assembly stage">←</button><button id="assembly-next" class="button secondary" aria-label="Next assembly stage">→</button><a href="docs/cnc-build-preview.html">View the illustrated guide ↗</a></div><p class="quiet">Illustration of the proposed assembly. Final instructions, dimensions and fabrication details are pending.</p></div></div>
-    <div class="guide-layout"><aside class="guide-intro"><h3>From parts to assembly.</h3><p>Browse the draft references alongside the preview. They describe an earlier prototype and will be updated with the next release.</p><a class="text-link" data-doc="build.md" href="docs/build.html">Full assembly reference ↗</a><div class="pending-block"><svg viewBox="0 0 60 60" width="44" height="44" aria-hidden="true"><path d="m30 6 23 13-23 13L7 19Zm-23 24 23 13 23-13M7 41l23 13 23-13" fill="none" stroke="currentColor" stroke-width="2"/></svg><strong>Build animation</strong><span>Preview available</span><p>Watch the CNC assembly and phone concept in the extended film below.</p></div></aside><div id="chapters" class="chapters"></div></div>
-  </section>
-
-  <section id="film" class="film-section"><div class="container"><div class="section-heading"><div><p class="section-kicker">See how it comes together</p><h2>Small outside.<br>A lot going on inside.</h2></div><p>Follow the rope, drivetrain and customization, then watch the CNC assembly and phone app concept. These are design previews, with physical validation still ahead.</p></div><video controls playsinline preload="none" poster="media/mechanism.webp" aria-label="KINETIQ product, CNC build and phone app concept film"><source src="media/animation.mp4" type="video/mp4">Your browser cannot play this video. <a href="media/animation.mp4">Download the product film</a>.</video><p class="film-caption">Product + build + app concept · 67 seconds · <a href="media/animation.mp4" download>Download film</a></p></div></section>
-
-  <section id="mechanism" class="section container"><div class="section-heading"><div><p class="section-kicker">A closer look</p><h2>Understand what<br>moves the resistance.</h2></div><p>Explore the drivetrain from different angles. These stills come directly from the animation, showing the drum, gear train, fairlead and electronics.</p></div><div class="mechanism-view"><figure><img id="mechanism-image" src="media/project/drive-angle.webp" width="1258" height="900" loading="lazy" alt="Oblique view inside the trainer showing rope drum, motor, fairlead and electronics"><figcaption id="mechanism-caption">Drum & fairlead · oblique view</figcaption></figure><div id="mechanism-views" class="view-picker" role="group" aria-label="Mechanism camera views"></div></div></section>
-
-  <section id="parts" class="section container"><div class="section-heading"><div><p class="section-kicker">Plan before you order</p><h2>Every part.<br>A transparent budget.</h2></div><p>Final parts list pending. See the current planning quantities, supplier links and price assumptions. Edit a price to use your own quote, or tick parts you already have.</p></div>
-    <div class="cost-summary" aria-live="polite"><div><span id="build-label">Printed build</span><strong id="total-cost">Loading…</strong><small>Estimated complete parts budget, USD</small></div><div><span>Still to buy</span><strong id="remaining-cost">Loading…</strong><small id="owned-label">No owned items selected</small></div><p>The main list for the chosen build and motor, in purchase packs. It assumes you make the parts yourself: your own 3D printer and CNC or laser, with the material on hand. The lists below (shop stock most builders have, and the cost of having the metal parts made) are not included, nor are tax, delivery, tools, labor and the rack. Estimates are not supplier quotes.</p></div>
-    <div class="motor-choice"><label for="motor"><span>Build</span><select id="motor" aria-describedby="motor-note"></select></label><small id="motor-note"></small></div>
-    <div class="builds-compare"><div class="table-scroll" tabindex="0" role="region" aria-label="The builds compared"><table><caption class="sr-only">Each build’s maximum rope force, motor controller, power, size and main-list total</caption><thead><tr><th scope="col">Build</th><th scope="col">Max force</th><th scope="col">Controller</th><th scope="col">Power</th><th scope="col">Size</th><th scope="col" id="builds-total-head">Main list</th></tr></thead><tbody id="builds-body"></tbody></table></div></div>
-    <div class="parts-toolbar"><label class="search"><span class="sr-only">Search parts</span><input id="parts-search" type="search" name="parts-search" autocomplete="off" placeholder="Search motor, M3, battery…"></label><label><span class="sr-only">Filter category</span><select id="category"><option value="all">All categories</option></select></label><button id="export" class="button secondary">Export this BOM</button><button id="reset-prices" class="text-button">Reset my changes</button></div>
-    <p id="parts-count" class="table-note" aria-live="polite"></p><div class="table-scroll" tabindex="0" role="region" aria-label="Parts and prices"><table class="parts-table"><caption class="sr-only">Purchasing quantities and editable unit prices in US dollars</caption><thead><tr><th scope="col">Have it</th><th scope="col">Part / purchase unit</th><th scope="col">Qty</th><th scope="col">Unit price</th><th scope="col">Subtotal</th></tr></thead><tbody id="parts-body"></tbody></table></div><p class="table-note">“Source price” means a price checked at the linked supplier. “Recorded price” is from the project’s earlier sourcing notes. All other prices are editable planning estimates. Your changes stay in this browser.</p><p id="storage-note" class="table-note" hidden></p>
-    <details class="manifest accessory-list"><summary><span>Accessory list: check your parts bin first</span><span id="accessory-count"></span></summary><p>Things most builders already have: wire and terminals, filament, screws, nuts, washers, inserts and setup items. Buy only what is missing. Not in the total above.</p><div class="table-scroll" tabindex="0" role="region" aria-label="Accessory list"><table><thead><tr><th scope="col">Item</th><th scope="col">Qty</th><th scope="col">Unit price</th><th scope="col">Subtotal</th></tr></thead><tbody id="accessory-body"></tbody></table></div></details>
-    <details class="manifest accessory-list"><summary><span>No CNC? Have the metal parts made</span><span id="outsourced-count"></span></summary><p>The budget above assumes you cut the plates and drum parts yourself. Without a CNC or laser, an instant-priced cutting service makes them from the DXF files; the welding is still yours. Not in the total above.</p><div class="table-scroll" tabindex="0" role="region" aria-label="Metal parts if you have them made"><table><thead><tr><th scope="col">Item</th><th scope="col">Qty</th><th scope="col">Unit price</th><th scope="col">Subtotal</th></tr></thead><tbody id="outsourced-body"></tbody></table></div></details><noscript><p>The interactive budget needs JavaScript. <a href="data/parts.csv">Download the itemized parts CSV</a> or <a href="docs/BOM.html">read the reference BOM</a>.</p></noscript>
+  <!-- A. hero: the film is the image -->
+  <section class="hero" aria-labelledby="hero-title">
+    <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="media/launch/hero-poster.webp" aria-hidden="true">
+      <source src="media/launch/hero-loop.mp4" type="video/mp4">
+    </video>
+    <div class="wrap">
+      <p class="status-tag">Open hardware · in development</p>
+      <h1 id="hero-title">A programmable smart gym you can eventually build yourself.</h1>
+      <p class="lede">Kinetiq Gym is an open-hardware digital resistance platform in development. Follow the physical build, testing, software, and verified CAD release.</p>
+      <div class="actions">
+        <a class="button primary" href="#join">Follow the Build</a>
+        <button class="button ghost" type="button" data-watch><span class="play-icon" aria-hidden="true"></span>Watch the 1-minute concept</button>
+      </div>
+      <p class="render-note">Renders of the engineered design. The first physical prototype is being built now.</p>
+    </div>
   </section>
 
-  <section id="files" class="section fabrication"><div class="container"><div class="section-heading"><div><p class="section-kicker">Make the parts</p><h2>From file to workbench.</h2></div><p>Updated CAD models are upcoming. The CAD, plate profiles and print files will be released together with the confirmed parts list and build instructions.</p></div><p class="release-notice"><span class="pill">Upcoming release</span> CAD downloads are pending: they open with the next release, once the design is validated.</p><div class="file-links"><div class="file-pending" aria-disabled="true"><span>Editable FreeCAD</span><small>Released with the validated design</small><em class="pill">Pending</em></div><div class="file-pending" aria-disabled="true"><span>STEP models</span><small>Released with the validated design</small><em class="pill">Pending</em></div><div class="file-pending" aria-disabled="true"><span>DXF profiles</span><small>Plate profiles for laser cutting</small><em class="pill">Pending</em></div><div class="file-pending" aria-disabled="true"><span>STL + fit coupons</span><small>Print files and fit guidance</small><em class="pill">Pending</em></div></div><p class="release-notice kit-notice"><span class="pill">Coming soon</span> <strong>Plate &amp; weldment kits.</strong> Laser-cut, tapped and countersunk 6061 plate sets, or the welded and ground frame, rack mount and drum, made by the KINETIQ maker. Available once the design is validated and load-tested.</p>
-    <details class="manifest"><summary><span>3D printed parts manifest</span><span id="print-count"></span></summary><p>Materials and orientations below follow the packaged print manifest. Shared printed parts are still used with the CNC base. Print fit coupons first; the published list is a release snapshot, not a claim that every pending revision is exported.</p><div class="table-scroll" tabindex="0" role="region" aria-label="3D print manifest"><table><thead><tr><th>File</th><th>Qty</th><th>Material</th><th>Size, mm</th><th>Orientation</th></tr></thead><tbody id="print-body"></tbody></table></div></details>
-    <details class="manifest"><summary><span>Metal & CNC parts manifest</span><span>Both manufacturing paths</span></summary><div id="metal-manifest"></div><p>Use STEP for 3D geometry and DXF for profiles. Confirm material, thickness, tapped holes, countersinks and weld details with your fabricator. A profile alone is not a complete manufacturing drawing.</p></details><a class="text-link" href="docs/printing.html">Read print settings and fit guidance ↗</a></div></section>
-
-  <section id="modify" class="section container"><div class="section-heading"><div><p class="section-kicker">Make it yours</p><h2>Change the interfaces.<br>Keep the system in view.</h2></div><p>Start from a copy of the reference assembly. Adapt the mechanical envelope and mounting features together with the electrical configuration.</p></div>
-    <div class="mod-tabs" role="tablist" aria-label="Modification guide"><button role="tab" id="battery-tab" aria-selected="true" aria-controls="battery-panel" tabindex="0" data-mod="battery">Different batteries</button><button role="tab" id="motor-tab" aria-selected="false" aria-controls="motor-panel" tabindex="-1" data-mod="motor">Different motor</button></div>
-    <div id="battery-panel" class="mod-panel" role="tabpanel" aria-labelledby="battery-tab"><img src="media/battery-interface.svg" width="620" height="350" loading="lazy" alt="Battery envelope sketch showing length, width, pack height, padding and connector clearance"><div><h3>Measure the pack, then the bay.</h3><ol><li>Measure the real pack’s length, width and height, including leads and connectors.</li><li>Open the battery saddles and cover in FreeCAD. Edit the relevant feature dimensions, or create a constrained sketch around the new envelope.</li><li>Keep space for padding, lead bends, the BMS and a straight removal path. Check both packs together in the assembly.</li><li>Re-export STEP/STL and a revised BOM. Reassess the series count, BMS, charger and regenerative current limits before any powered test.</li></ol><p class="quiet">The reference uses two 5S packs in series (10S, 42 V fully charged). A larger pack is not automatically electrically compatible.</p></div></div>
-    <div id="motor-panel" class="mod-panel" role="tabpanel" aria-labelledby="motor-tab" hidden><img src="media/motor-interface.svg" width="620" height="350" loading="lazy" alt="Motor face sketch showing shaft center, pilot diameter, bolt circle and envelope depth"><div><h3>Preserve the shaft centerline.</h3><ol><li>Measure shaft diameter and projection, pilot diameter, bolt pattern, body diameter and length.</li><li>In <code>V43_METAL_motor_face_4mm</code>, edit the mounting features or add a constrained face sketch for the new pilot and bolt circle.</li><li>Update the coupling’s motor-side bore; check the gussets, covers and phase-lead exit against the new motor envelope.</li><li>Recompute the assembly and check full motion. Recalculate torque-to-cable-force and update motor, encoder, current and thermal settings before testing.</li></ol><p class="quiet">The drive is direct: cable force ≈ motor torque ÷ effective drum radius. A different Kv or larger motor does not by itself establish a safe resistance rating.</p></div></div>
-    <p class="cad-note">FreeCAD files currently contain editable feature histories. Fully sketch-parametric parts are planned. STEP files are solids; add sketches and features in your CAD tool to modify them.</p><a class="text-link" href="docs/modifying.html">Open the full modification reference ↗</a>
+  <!-- B. what it does -->
+  <section class="section" id="what" aria-labelledby="what-title">
+    <div class="wrap what">
+      <div>
+        <p class="kicker" id="what-title">What Kinetiq does</p>
+        <p class="positioning">A programmable digital-resistance platform, built as open hardware for people who want to train with it, build it, modify it, and program it.</p>
+      </div>
+      <ol class="features">
+        <li><span class="n">01</span><div><strong>Programmable resistance</strong><span class="d">A motor and a cable drum stand in for the weight stack, so the load is set in software.</span></div></li>
+        <li><span class="n">02</span><div><strong>Adjustable cable position and direction</strong><span class="d">It mounts on a rack upright at the height you want, and the cable exit swivels to follow the pull.</span></div></li>
+        <li><span class="n">03</span><div><strong>Software-defined training modes</strong><span class="d">Eccentric, chain-style and band-style resistance are designed as modes, not attachments.</span></div></li>
+        <li><span class="n">04</span><div><strong>Customizable hardware</strong><span class="d">A printed or CNC frame, a choice of motors and battery sizes, and documented interfaces for your own.</span></div></li>
+        <li><span class="n">05</span><div><strong>Local, hackable architecture</strong><span class="d">Designed to run on its own controller and a Raspberry Pi, with no account or cloud service in the loop.</span></div></li>
+      </ol>
+    </div>
   </section>
 
-  <section id="software" class="section software-section"><div class="container"><div class="section-heading"><div><p class="section-kicker">Your gym. Your interface.</p><h2>The app is taking shape.</h2></div><p>Preview the phone interface from the film. The app and programs are upcoming; these screens show the intended experience.</p></div><div class="app-showcase"><div class="app-copy"><span class="pill">App concept · software upcoming</span><h3 id="app-title">Set your resistance.</h3><p id="app-description">Adjust the load, choose a resistance profile and configure return resistance from your phone.</p><div id="app-views" class="app-picker" role="group" aria-label="Phone app concept screens"></div><p class="quiet">The small built-in screen keeps resistance, rep graph and essential controls close. The Bluetooth companion is planned for deeper settings and training history.</p></div><figure class="phone-preview"><div class="phone-shell"><img id="app-image" src="media/project/app-train.webp" width="600" height="1200" loading="lazy" alt="Phone app concept: resistance slider, mode selection and return resistance"></div><figcaption id="app-caption">Train · phone app concept</figcaption></figure></div><div class="software-grid"><article><span class="pill">Upcoming</span><h3>Touchscreen app</h3><p>Resistance, rep graph, modes and essential controls.</p><span class="unavailable">Raspberry Pi program & setup pending</span></article><article><span class="pill">Upcoming</span><h3>Control firmware</h3><p>Machine control, position limits and motor-driver communication.</p><span class="unavailable">Teensy program & configuration pending</span></article><article><span class="pill">Upcoming</span><h3>Phone companion</h3><p>Bluetooth settings, workouts, profiles and training data.</p><span class="unavailable">App code & connection setup pending</span></article></div><p class="software-footnote">The ODrive Pro is a third-party controller with its own firmware and terms. Its firmware is separate from the project’s future application code.</p></div></section>
+  <!-- C. the film -->
+  <section class="section film" id="film" aria-labelledby="film-title">
+    <div class="wrap">
+      <div class="film-head">
+        <div><p class="kicker">Watch the design in action</p><h2 id="film-title">One minute. The whole machine.</h2></div>
+      </div>
+      <div class="player">
+        <video controls preload="none" playsinline poster="media/launch/unit.webp">
+          <source src="media/launch/kinetiq-film.mp4" type="video/mp4">
+          <a href="media/launch/kinetiq-film.mp4">Watch the 1-minute concept</a>
+        </video>
+      </div>
+      <p class="caption">This animation shows the current engineered design and planned user experience. The next step is proving the architecture in the full physical prototype.</p>
+    </div>
+  </section>
 
-  <section id="support" class="section container support-section"><div><p class="section-kicker">Help turn the design into tested hardware</p><h2>A workshop for<br>the next prototype.</h2><p class="support-lead">Support goes toward a Carvera Air CNC machine, prototype parts and the equipment needed to measure and test the build.</p><div class="funding-goals"><article><span>01</span><div><h3>Carvera Air CNC machine</h3><p>Make aluminum plates and iterate on fit, mounts and fabrication.</p></div></article><article><span>02</span><div><h3>Prototype testing</h3><p>Build prototypes and measure the mechanism, thermal behavior and repeatability.</p></div></article></div><p class="quiet">Project support is a voluntary contribution, not a product order. Progress and test results will be shared as development continues.</p></div><aside class="support-panel"><p class="section-kicker">Support KINETIQ</p><h3>Help fund the next build.</h3><p>Every prototype makes the design easier to understand, refine and share.</p><a id="donate-link" class="button primary" hidden>Support the project ↗</a><p id="donation-pending" class="setup-note">Donation link coming soon.</p><p id="donation-description" class="quiet">Funds are intended for CNC equipment and prototype testing.</p><hr><h3>Bring an idea or a skill.</h3><p>Have a fabrication proposal, a testing offer, or an idea for the app?</p><a id="proposal-email" class="text-link" hidden>Email a proposal ↗</a><p id="proposal-pending" class="quiet">Direct email contact is being set up. You can propose an idea on GitHub now.</p><a class="text-link" data-repo="issues/new?template=proposal.yml" href="https://github.com/TrentIndeed/kinetiqgym/issues/new?template=proposal.yml">Propose an idea on GitHub ↗</a></aside></section>
+  <!-- D. build status -->
+  <section class="section" id="status" aria-labelledby="status-title">
+    <div class="wrap">
+      <p class="kicker">Current build status</p>
+      <h2 id="status-title">What is real today, and what comes next.</h2>
+      <ol class="track">
+        <li class="done"><span class="dot" aria-hidden="true"></span><span class="state">Finalizing</span><h3>Design and animation</h3><p>The printed and CNC builds in CAD, and the 1-minute animation of how the machine is meant to work.</p></li>
+        <li class="now"><span class="dot" aria-hidden="true"></span><span class="state">Parts on order · build next</span><h3>Full 3D-printed prototype</h3><p>Proves the mechanics, cable routing, force control, safety and assembly before any metal is cut.</p></li>
+        <li><span class="dot" aria-hidden="true"></span><span class="state">After printed validation</span><h3>CNC and welded prototype</h3><p>Machined aluminium plates, a welded frame, and the real battery and BMS.</p></li>
+        <li><span class="dot" aria-hidden="true"></span><span class="state">After testing</span><h3>Verified open files and documentation</h3><p>CAD, parts list, firmware, software, and assembly and safety guides, released together.</p></li>
+      </ol>
+      <p class="track-note">Each stage is posted as it happens, failures and redesigns included. The build list gets the results first.</p>
+    </div>
+  </section>
 
-  <section id="open-source" class="section container open-source"><div><p class="section-kicker">Build in the open</p><h2>A useful project<br>gets better together.</h2><p>Share an idea, improve an instruction, contribute a motor mount, or help write the app. Community changes go through a pull request so maintainers can decide whether they improve the project before merging.</p><div class="actions"><a class="button primary" id="repo-button" data-repo="" href="#repo-status">View project on GitHub ↗</a><a href="docs/CONTRIBUTING.html" class="text-link">How to contribute</a></div><ol class="contribution-flow"><li><strong>Propose</strong><span>Open an issue with the problem and approach.</span></li><li><strong>Contribute</strong><span>Fork the repo and submit a focused pull request.</span></li><li><strong>Review</strong><span>Maintainers check fit, evidence and documentation before merging.</span></li></ol><p id="repo-status" class="quiet">Checking the public repository link…</p></div><div class="release-status"><h3>Release status</h3><dl><div><dt>CAD & fabrication files</dt><dd>Updated release upcoming</dd></div><div><dt>Assembly & wiring references</dt><dd>Final instructions pending</dd></div><div><dt>Assembly animation</dt><dd>Preview available</dd></div><div><dt>App, Pi & Teensy programs</dt><dd>Upcoming</dd></div><div><dt>Physical validation</dt><dd>Pending</dd></div></dl><p>Hardware: CERN-OHL-S-2.0<br>Documentation: CC BY-SA 4.0<br>Source scripts: GPL-3.0</p><a href="docs/LICENSE.html">License details ↗</a> · <a href="docs/roadmap.html">Project roadmap ↗</a></div></section>
-  <aside class="safety-note container"><strong>Before a powered build</strong><p>This is an untested prototype, not a finished exercise product. Follow the wiring and validation references, verify the full load path, and complete controlled testing before training.</p><a href="docs/SAFETY.html">Read the safety reference ↗</a></aside>
+  <!-- E. why open -->
+  <section class="section film" id="open" aria-labelledby="open-title">
+    <div class="wrap open">
+      <div>
+        <p class="kicker" id="open-title">Why open</p>
+        <blockquote>Most digital resistance systems are closed appliances. Kinetiq is being built so builders and researchers can inspect the mechanics, modify the hardware, write their own training modes, and build on the platform.</blockquote>
+        <p class="after">The files will be published once the physical machine has been built, tested and documented, so what you download is something that has actually worked. Until then, the <a href="/build">design preview</a> shows the current engineering in detail.</p>
+      </div>
+      <figure><img src="media/launch/inside.webp" width="1400" height="788" loading="lazy" alt="Render of the Kinetiq Gym unit with its covers shown see-through: the motor, the cable drum, the lead screw and the electronics inside"></figure>
+    </div>
+  </section>
+
+  <!-- F. build / buy / hire -->
+  <section class="section" id="paths" aria-labelledby="paths-title">
+    <div class="wrap">
+      <p class="kicker">Where this is going</p>
+      <h2 id="paths-title">Build it, buy the hard parts, or work together.</h2>
+      <div class="paths">
+        <article class="path"><span class="label">BUILD IT</span><span class="avail">Planned</span><h3>Verified files and documentation.</h3><p>CAD, the parts list, firmware, software and assembly guides, published after the prototype is tested.</p><a class="button ghost" href="#join" data-interest="build">Get the files when they release</a></article>
+        <article class="path"><span class="label">BUY THE HARD PARTS</span><span class="avail">Not available yet</span><h3>Kits and machined parts, if there is demand.</h3><p>Machined plates, printed parts or complete kits may follow the verified release. Nothing is for sale today.</p><a class="button ghost" href="#join" data-interest="kit">Tell me you would want one</a></article>
+        <article class="path"><span class="label">WORK TOGETHER</span><span class="avail">Open to select projects</span><h3>Custom mechatronics and prototyping.</h3><p>Robotics, motor control and rapid prototyping work, taken on a few projects at a time.</p><a class="button ghost" href="/work">Discuss a project</a></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- G. the builder -->
+  <section class="section film" id="founder" aria-labelledby="founder-title">
+    <div class="wrap founder">
+      <figure><img src="media/launch/gears.webp" width="1400" height="788" loading="lazy" alt="Close-up render of the drum's 81-tooth gear driving the lead screw's 45-tooth gear, with the braided rope wound on the drum"></figure>
+      <div>
+        <p class="kicker">Who is building it</p>
+        <h2 id="founder-title">Designed and built by Trent.</h2>
+        <p>I design Kinetiq Gym end to end and build it in my own workshop: the mechanism and the CAD, the machined and printed parts, the electronics, the motor control and the software that ties them together.</p>
+        <p>The project is shared as it happens, including the parts that don't work the first time.</p>
+        <ul class="skills" aria-label="Disciplines"><li>Mechanical CAD</li><li>CNC machining</li><li>3D printing</li><li>Embedded electronics</li><li>Motor control</li><li>Software</li><li>Physical prototyping</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- the engineering path: present, not dominant -->
+  <section class="section work-band" id="work" aria-labelledby="work-title">
+    <div class="wrap work-grid">
+      <div>
+        <p class="kicker">Engineering</p>
+        <h2 id="work-title">Building something difficult?</h2>
+        <p style="margin-top:20px">Kinetiq Gym combines mechanical design, CNC machining, additive manufacturing, embedded electronics, motor control, real-time software, and rapid prototyping. I take on a limited number of custom engineering projects where that same stack is useful.</p>
+        <div class="actions"><a class="button ghost" href="/work">Discuss a Project</a></div>
+      </div>
+      <ul class="examples" aria-label="Examples">
+        <li>Motorized fitness or rehab equipment</li>
+        <li>Robotics and actuator prototypes</li>
+        <li>Cable-driven mechanisms</li>
+        <li>Custom motor-control systems</li>
+        <li>Prototype hardware that needs CNC, 3D-printed parts and electronics working together</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- H. the build list -->
+  <section class="section join" id="join" aria-labelledby="join-title">
+    <div class="wrap">
+      <div class="join-box">
+        <div>
+          <p class="kicker">The build list</p>
+          <h2 id="join-title">Want the verified files when they are ready?</h2>
+          <p>Join the build list for prototype results, design changes, test data, kit availability, and the eventual verified CAD and software release.</p>
+        </div>
+        <div>
+          <form class="signup" id="signup" novalidate>
+            <label class="sr-only" for="signup-email">Email address</label>
+            <div class="field-row">
+              <input id="signup-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required>
+              <button class="button primary" type="submit">Join the Build List</button>
+            </div>
+            <div class="hp" aria-hidden="true"><label>Website <input name="website" tabindex="-1" autocomplete="off"></label></div>
+            <p class="form-msg" id="signup-msg" role="status" aria-live="polite"></p>
+            <p class="form-note">Build updates and release news only. Unsubscribe at any time. <a href="/privacy">Privacy</a></p>
+          </form>
+          <form class="signup" id="interest" hidden>
+            <fieldset class="interest">
+              <legend>What are you most interested in?</legend>
+              <label class="choice"><input type="radio" name="interest" value="build">Building it yourself</label>
+              <label class="choice"><input type="radio" name="interest" value="kit">Buying a kit</label>
+              <label class="choice"><input type="radio" name="interest" value="complete">Buying a complete machine</label>
+              <label class="choice"><input type="radio" name="interest" value="research">Commercial or research use</label>
+              <label class="choice"><input type="radio" name="interest" value="engineering">Custom engineering or consulting</label>
+            </fieldset>
+            <div class="actions" style="margin-top:6px"><button class="button primary" type="submit">Save my answer</button><button class="link-button" type="button" id="interest-skip">Skip</button></div>
+            <p class="form-msg" id="interest-msg" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
-<footer class="footer container"><a class="brand" href="#main">KINETIQ</a><p>Built to be built.</p><a data-repo="" href="#open-source">GitHub ↗</a><a href="#parts">Parts & cost</a><a href="#support">Support the project</a></footer>
-</body></html>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Kinetiq Gym · Open hardware in development. Renders show the engineered design; specifications may change during validation.</p>
+    <nav aria-label="Footer"><a href="/build">Design preview</a><a href="/docs/roadmap">Roadmap</a><a href="https://github.com/TrentIndeed/kinetiqgym">GitHub</a><a href="/work">Work with me</a><a href="/privacy">Privacy</a></nav>
+  </div>
+</footer>
+
+<dialog class="watch" id="watch" aria-label="Kinetiq Gym, the 1-minute concept">
+  <video controls playsinline preload="none" poster="media/launch/unit.webp"><source src="media/launch/kinetiq-film.mp4" type="video/mp4"></video>
+  <div class="bar"><span>The 1-minute concept: the engineered design, before physical validation.</span><button type="button" id="watch-close">Close</button></div>
+</dialog>
+</body>
+</html>
