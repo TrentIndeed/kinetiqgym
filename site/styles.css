@@ -28,3 +28,27 @@ body{overflow-x:clip}
 
 .motor-choice{display:flex;align-items:center;gap:8px 18px;flex-wrap:wrap;margin-bottom:6px}.motor-choice label{display:flex;align-items:center;gap:12px;font-size:14px;font-weight:600;flex:0 1 auto;min-width:0}.motor-choice select{padding:12px 14px;border:1px solid var(--line);border-radius:6px;background:#fff;color:var(--ink);height:48px;width:min(380px,72vw);min-width:0}.motor-choice small{color:var(--muted);font-size:13px;max-width:60ch}.accessory-list{border:1px solid var(--line);margin-top:28px}
 .builds-compare{margin-block:18px 6px}#parts .builds-compare .table-scroll{max-height:none}.builds-compare table{min-width:760px}.builds-compare td{padding-block:6px}.builds-compare tr.current{background:#f4f8ff}.builds-compare tr.current td:first-child{box-shadow:inset 3px 0 0 var(--blue)}.build-pick{border:0;background:none;padding:0;min-height:44px;font-weight:600;text-align:left;color:var(--ink);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:4px}.build-pick:hover,.build-pick[aria-pressed=true]{color:var(--blue)}
+/* October 13: build cards (one card per motor and power build), importance groups, have-it-made ranges, kit block */
+.build-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px;margin-bottom:26px}
+.build-card{display:flex;flex-direction:column;align-items:flex-start;gap:6px;text-align:left;border:1px solid var(--line);border-radius:8px;background:#fff;padding:18px 18px 16px;min-height:44px;color:var(--ink)}
+.build-card:hover{border-color:var(--blue)}
+.build-card[aria-pressed=true]{border:2px solid var(--blue);padding:17px 17px 15px;background:#f4f8ff}
+.build-card strong{font-size:19px;line-height:1.2}
+.build-force{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--blue)}
+.build-spec{font-size:13px;color:var(--muted);line-height:1.35}
+.build-total{margin-top:auto;padding-top:10px;font-size:30px;font-weight:600;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.build-total small{font-size:12px;font-weight:500;letter-spacing:0;color:var(--muted);margin-left:6px}
+.build-made{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.cost-summary.single{grid-template-columns:1fr 2fr}
+.build-note{font-size:14px;color:var(--muted);margin:-6px 0 22px;max-width:90ch}
+.parts-table .group-row th{background:var(--mist);text-align:left;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:10px 12px}
+.parts-table td.rank{color:var(--muted);font-variant-numeric:tabular-nums;font-size:13px}
+.parts-table th:first-child{width:44px}
+.total-row td{border-top:2px solid var(--line)}
+.kit-block{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:center;margin-block:10px 40px;padding:28px;background:#fff;border:1px solid #c7d6e5;border-radius:10px}
+.kit-block h3{font-size:30px;margin-block:12px}
+.kit-block .button{margin-top:22px}
+.kit-figure img{display:block;width:100%;border-radius:6px;background:var(--mist)}
+.kit-figure figcaption{font-size:12px;color:var(--muted);margin-top:8px}
+@media(max-width:800px){.cost-summary.single{grid-template-columns:1fr}.kit-block{grid-template-columns:1fr;gap:22px;padding:20px}.build-cards{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.build-cards{grid-template-columns:1fr}.build-total{font-size:26px}}

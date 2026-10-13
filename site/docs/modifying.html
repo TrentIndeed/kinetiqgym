@@ -1,104 +1,110 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Modifying the design — KINETIQ</title><link rel="stylesheet" href="../styles.css"><link rel="icon" href="../media/mark.svg"><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet"></head><body><a class="skip" href="#reference">Skip to reference</a><header class="header"><a class="brand" href="../index.html"><img src="../media/mark.svg" width="32" height="32" alt="">KINETIQ</a><a href="../index.html#build">Back to build guide ↗</a></header><main id="reference" class="guide-page section container"><p class="section-kicker">Prototype reference · v0.1</p><h1>Modifying the design</h1>
-<p>The design is meant to be adapted: a different motor, a rotary encoder instead of the touch screen, a different battery.
-This release ships the parts as FreeCAD files with their full feature history and as STEP; fully sketch-based,
-parameter-driven parts are planned for the next release.</p>
-<h2>How the CAD is organised</h2>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Modifying the design — KINETIQ</title><link rel="stylesheet" href="../styles.css"><link rel="icon" href="../media/mark.svg"><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet"></head><body><a class="skip" href="#reference">Skip to reference</a><header class="header"><a class="brand" href="/"><img src="../media/mark.svg" width="32" height="32" alt="">KINETIQ</a><a href="/build#build">Back to the build preview ↗</a></header><main id="reference" class="guide-page section container"><p class="section-kicker">Draft reference · October 2026</p><h1 id="modifying-the-design">Modifying the design</h1>
+<blockquote>
+<p><strong>Draft.</strong> The numbers below are design values for the prototype being built now; they are confirmed or corrected after
+it is load-tested. The editable CAD is released with the verified build files after that. Until then this page describes
+the interfaces in words and numbers.</p>
+</blockquote>
+<p>The design is built to be adapted. The two interfaces most builders will change are the <strong>battery bay</strong> and the <strong>motor
+face</strong>. The <a href="https://kinetiqgym.com/build.html#modify">website adaptation guide</a> illustrates both.</p>
+<h2 id="batteries">Batteries</h2>
+<p>The reference pack is two 5S LiPo packs in series: 10S, 42 V fully charged, about 30 V empty.</p>
+<p><strong>The bay</strong> takes two packs stacked, sliding in from the front through a printed cradle:</p>
 <ul>
-<li><code>cad/freecad/&lt;printed|cnc&gt;/V44_&lt;variant&gt;_assembly.FCStd</code>: the whole machine. Every part is a link to its own file in <code>parts/</code>.
-A part that takes heat-set inserts is a container holding the part and its inserts.</li>
-<li><code>cad/freecad/&lt;variant&gt;/parts/&lt;part&gt;.FCStd</code>: one part with its feature tree (boxes, cylinders, cuts, fuses, fillets, moves).
-Each feature is labelled with the build-script line that made it. Change a size or a placement and recompute.</li>
-<li><code>cad/freecad/&lt;variant&gt;/V44_&lt;variant&gt;_drivetrain_motion.FCStd</code>: Assembly-workbench motion study of the drivetrain.</li>
-<li><code>cad/step/</code>: the same parts as STEP for any CAD program, plus one assembly STEP per variant.</li>
-<li><code>cad/dxf/</code>: 2-D profiles of the flat parts.</li>
-<li>Supplier parts (motor driver, bearings, gears, boards...) are simple placeholders of the right size; get the real CAD
-from <code>cad/vendor/README.md</code>.</li>
-<li><code>source/</code>: the Python (CadQuery) scripts that generate everything. They are the source of truth, but in this release they
-still expect the full design workspace; a self-contained build is planned.</li>
+<li>two Thunder Power TP3300-5SR70 (about 141 x 43 x 33 mm each, by the maker's estimate) fill it: the opening is 44 mm, about
+  0.5 mm a side;</li>
+<li>two TP2700-5SR70 fit on a printed spacer (a 12 mm block at the front and a 4 mm plate on the outer side), so both pairs
+  sit against the same rear rib.</li>
 </ul>
-<p>Variants: <strong>printed</strong> (PA-CF bottom plate with aluminium flat bars under it) and <strong>cnc</strong> (aluminium bottom plate).</p>
-<h2>Swapping the motor</h2>
-<p>What the motor touches:</p>
-<div class="table-scroll" tabindex="0" role="region" aria-label="Reference table"><table>
-<thead>
-<tr>
-  <th>Interface</th>
-  <th>Where</th>
-  <th>Change</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-  <td>Face mount</td>
-  <td>the 4 mm motor face plate (<code>V43_METAL_motor_face_4mm</code>) + two printed gussets</td>
-  <td>hole pattern and pilot bore for your motor</td>
-</tr>
-<tr>
-  <td>Shaft</td>
-  <td>the NBK MSTS-25-10-12 coupling (10 mm motor, 12 mm drum shaft)</td>
-  <td>coupling bore for your shaft</td>
-</tr>
-<tr>
-  <td>Envelope</td>
-  <td>motor body about 80 x 82 mm at the motor end (X -77 to -3)</td>
-  <td>the end cap, covers and the board plate around it</td>
-</tr>
-<tr>
-  <td>Leads</td>
-  <td>three phase leads through a 12 mm grommet in the face plate to the ODrive terminal</td>
-  <td>lead exit and length</td>
-</tr>
-<tr>
-  <td>Electrical</td>
-  <td>ODrive Pro limits (current, voltage), torque constant</td>
-  <td><code>firmware-setup.md</code></td>
-</tr>
-</tbody>
-</table></div>
-<p>Torque at the drum is the motor torque (direct drive): the cable force is about torque / 0.025 m (rope radius on the drum).</p>
-<h2>Swapping the batteries</h2>
+<p>A 1 mm EVA pad under each cradle roof, a 2 mm separator between the packs, and a 2 mm pad inside the right cover's front wall
+hold them. The leads leave from the packs' rear end faces into the back step.</p>
+<p>To use another pack:</p>
 <ol>
-<li>Measure both actual packs, including leads and connector bodies. Record length, width and height; do not rely only on nominal capacity.</li>
-<li>Open a copy of the assembly and the saddle/retainer part files. Edit the relevant feature dimensions. For a STEP-only workflow, import the solids, create a constrained rectangular envelope sketch, and use new additive/subtractive features for your revised mount.</li>
-<li>Add padding and lead-bend clearance to the envelope. Keep the BMS, wires and mounting screws outside the straight removal path. Test both pack envelopes together, including staggered removal.</li>
-<li>Recompute the covers and check intersections and retaining surfaces. Print a fit sample before committing to a full enclosure; export the updated STEP/STL and update the BOM and revision.</li>
-<li>Review series count, fully charged voltage, BMS, charger, fuse/wire sizing and regenerative charge limits as a system before powered testing. Capacity alone does not establish compatibility.</li>
+<li>Measure both real packs, including leads and connector bodies: length, width and height. Do not rely on the nominal
+   capacity or the listed size.</li>
+<li>Compare them with the bay. Keep room for the pads, the lead bends, the BMS (it hangs from the right cover's ceiling) and
+   a straight removal path through the cradle.</li>
+<li>Print the battery fit coupon at your size before you print the end piece and the covers.</li>
+<li>Check the electrical system as a whole:
+   - the full-charge voltage must stay well under the ODrive Pro's 58 V, the regulator's 60 V and the fuses' 58 V rating,
+     with room for regenerative braking (the ODrive's over-voltage trip is set at about 45 V);
+   - the BMS must match the series count and chemistry, and pass charge and regen through one port;
+   - recheck the charger, the fuse and wire sizes, and the regen current limit: it may not exceed the pack's charge rating
+     (39.6 A for the TP3300 pair, 32.4 A for the TP2700 pair).</li>
 </ol>
-<p>The reference is two 5S packs in series (10S, 42 V fully charged). The <a href="https://kinetiqgym.com/#modify">website adaptation guide</a> illustrates the pack envelope and motor interfaces. Its diagrams are measurement guides, not dimensioned manufacturing drawings.</p>
-<h2>Rotary encoder instead of the touch screen</h2>
-<p>What the screen touches:</p>
+<p>A pack that fits is not automatically electrically compatible.</p>
+<h2 id="motors">Motors</h2>
+<p>The drive is direct: the motor turns the drum through a rigid clamp coupling, with no belt or gear between them.</p>
+<p><strong>The motor face plate</strong> (0.250 in 6061, welded to the frame) carries two bolt circles and a Ø16 mm shaft hole:</p>
+<ul>
+<li>4 x M5 on Ø56 mm, on the 45° diagonals: the MP80100 and the APS C80100;</li>
+<li>4 x M5 on Ø59 mm: the APS 8072S.</li>
+</ul>
+<p>A different motor needs its own pattern on the same centerline (the drum axis), clear of the existing holes and the welds.</p>
 <div class="table-scroll" tabindex="0" role="region" aria-label="Reference table"><table>
 <thead>
 <tr>
-  <th>Interface</th>
-  <th>Where</th>
-  <th>Change</th>
+<th>Interface</th>
+<th>Reference</th>
+<th>What to check</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <td>Front window</td>
-  <td>the left cover (<code>V44_PRINT_cover_left_screen</code>), 4 in window</td>
-  <td>replace the window with a panel hole for the encoder (and a small display if wanted)</td>
+<td>Face mount</td>
+<td>the face plate's two bolt circles; M5 spacers 3 mm long (APS 8072S) or 10 mm long (MP80100, C80100)</td>
+<td>bolt pattern, pilot, and a spacer length that puts the shaft into the coupling</td>
 </tr>
 <tr>
-  <td>Screen frame</td>
-  <td><code>MOUNT_screen_rear_retaining_frame_printed</code> + 2 x M3 legs into inserts</td>
-  <td>not needed</td>
+<td>Shaft</td>
+<td>Ruland MCLX one-piece steel clamp coupling, 105 N·m: 12 mm on the drum side, 10 mm (MCLX-12-10-F) or 12 mm (MCLX-12-12-F) on the motor side</td>
+<td>the motor-side bore, about 20 mm of shaft in the clamp, and a rating of at least 1.5 x the peak drum torque</td>
 </tr>
 <tr>
-  <td>Pi + DSI ribbon</td>
-  <td>Raspberry Pi 4 hanging from the cover ceiling, ribbon to the screen</td>
-  <td>optional: the Teensy can run the machine alone</td>
+<td>Rear shaft</td>
+<td>the 80100 motors' bell-end shaft is cut to a 10 mm stub</td>
+<td>what sticks out behind the motor</td>
 </tr>
 <tr>
-  <td>Encoder</td>
-  <td>quadrature A/B + push switch to free Teensy pins, 3.3 V</td>
-  <td>firmware</td>
+<td>Body</td>
+<td>80 mm diameter outrunners; the motor bay is sized for each motor (builds about 400, 429 and 444 mm long)</td>
+<td>the covers and end cap, with 3 mm of spin clearance to the end cap</td>
+</tr>
+<tr>
+<td>Leads</td>
+<td>three phase leads through a 12 mm grommet in the face plate, along the notches in the corner brackets, to the controller</td>
+<td>lead exit, gauge and length</td>
+</tr>
+<tr>
+<td>Controller</td>
+<td>ODrive Pro: 70 A continuous, 100 A for 3 s, 58 V maximum. ODrive S1 (Lite): 40 A continuous, 80 A peak</td>
+<td>the current your motor needs at your target force</td>
 </tr>
 </tbody>
 </table></div>
-<h2>Contributing changes back</h2>
-<p>The hardware is CERN-OHL-S-2.0 (share-alike): if you distribute a modified version, publish your modified design files under
-the same licence. Pull requests and issues are welcome: see <code>CONTRIBUTING.md</code>.</p>
-<p class="table-note">This is a draft design reference. Physical validation and Pi/Teensy software are pending.</p><a class="text-link" href="modifying.md" download>Download Markdown source ↗</a></main><footer class="footer container"><a class="brand" href="../index.html">KINETIQ</a><a href="../index.html#parts">Parts & cost</a><a href="../index.html#files">CAD & fabrication</a></footer></body></html>
+<p>How to judge a motor:</p>
+<ul>
+<li><strong>Cable force ≈ motor torque ÷ drum rope radius</strong> (17.5 mm). 158 lb (703 N) needs about 12.3 N·m; 220 lb (979 N) needs
+  about 17.1 N·m.</li>
+<li><strong>Current ≈ torque ÷ torque constant</strong>, with the torque constant about 8.27 ÷ Kv N·m per amp. At 50 Kv, 17.1 N·m takes
+  about 103 A, more than the ODrive Pro's 70 A continuous. That is why the 220 lb builds use about 25-29 Kv windings (about
+  52-63 A).</li>
+<li><strong>Felt inertia:</strong> through the 17.5 mm radius, a rotor's inertia J (kg·m²) feels like about 3,265 x J kg at the rope. A
+  lighter rotor feels better; the firmware can cancel part of it, but not all.</li>
+<li>Prefer low-voltage (48 V or less) DC brushless motors with a high pole count, close to the reference size. Avoid
+  high-voltage AC servos: at this torque they are far larger and heavier than the body, or they need a reduction stage,
+  which spoils the back-drive feel.</li>
+<li>A larger motor or a different Kv does not by itself make a safe resistance rating. The shared parts (frame, drum,
+  level-wind, exit and rack side) are sized by calculation for the 220 lb peak builds; nothing is checked above that, and
+  none of it is tested yet.</li>
+</ul>
+<p>After a motor change, update the motor, encoder, current and thermal settings before any powered test
+(<a href="firmware-setup.html">firmware-setup.md</a>).</p>
+<h2 id="a-knob-instead-of-the-touch-screen">A knob instead of the touch screen</h2>
+<p>The Lite build already does this: an EC11 rotary encoder with a push button goes through the left cover where the screen
+window was, and a phone app (Bluetooth, through a XIAO ESP32-C3) handles the settings. On a battery build the same change
+closes the screen window and drops the screen and its frame. Whether the Raspberry Pi can also be left out depends on the
+control software, which is not released yet.</p>
+<h2 id="sharing-your-changes">Sharing your changes</h2>
+<p>With the verified release the hardware is licensed CERN-OHL-S-2.0 (share-alike): if you distribute a modified version,
+publish your modified design files under the same license. The KINETIQ and Kinetiq Gym names and logo are not licensed.
+Contributions to the project open with the verified release.</p><p class="table-note">A draft reference: the prototype is being built and tested, and the CAD, build files and software are released after testing.</p><a class="text-link" href="modifying.md" download>Download Markdown source ↗</a></main><footer class="footer container"><a class="brand" href="/">KINETIQ</a><a href="/build#parts">Builds & cost</a><a href="/build#files">Files & kits</a><a href="/#join">Kit waitlist</a></footer></body></html>

@@ -1,34 +1,61 @@
 # Project roadmap
 
-KINETIQ is a prototype design. The repository contains an earlier development snapshot. Updated CAD, confirmed build instructions and parts list, app code and control programs are upcoming.
+> **Status, October 13, 2026:** the design is complete in CAD and the printed fit test is done. Parts for the aluminum
+> prototype are on order, and the prototype build is next. Everything published so far is a draft until that prototype has
+> been built and load-tested.
 
-| Area | Available now | Next milestone |
-|---|---|---|
-| Hardware | Printed and CNC assemblies; FreeCAD feature histories, STEP, DXF and STL | Reconcile every export and manifest against one revision; prototype fit and load testing |
-| Build guide | Draft references and an illustrated CNC animation preview on the website | Confirmed assembly steps, build photos and measured fit notes |
-| Adaptation | Motor interface guide and battery-envelope sketch | Fully constrained sketch-based parts and a self-contained CAD generation pipeline |
-| Raspberry Pi | Screen concept in the product film | Touchscreen application, reproducible image and installation guide |
-| Teensy | Proposed control architecture and setup reference | Firmware, configuration schema, limits and bench test procedure |
-| Companion | Phone app concept screens in the film and website | Bluetooth protocol, connection flow, mode settings and workout history |
+## Where things stand
 
-## How releases should work
+| Stage | Status |
+|---|---|
+| CAD design: the welded aluminum frame, the drivetrain, the level-wind, the exit, the rack mount and five builds | done |
+| Printed fit test of the whole assembly | done |
+| Prototype parts and metal stock | on order |
+| Aluminum prototype build (main build: APS 8072S, 10S battery) | next |
+| Load testing: static load in steps, then powered tests and thermal checks | after the build |
+| Verified release: CAD, build files and software | after load testing |
+| Plate and weldment kits made by Trent, the project's maker | after the verified release |
 
-Keep one repository for the hardware, website, documentation and control software while the project is small. Each future release should identify a single compatible set of CAD, BOM, wiring and software versions. Do not mix a new part with an older assembly without recording the change.
+## The verified release
 
-For a hardware release, publish the editable FreeCAD sources and neutral STEP alongside STL/DXF exports, an itemized BOM, a changelog and a validation report. Label untested changes explicitly. Large production animations and build recordings belong in release assets or external media storage rather than repeated Git history.
+Nothing is released before the design is proven on real hardware, so nobody builds from an untested revision. When the
+prototype passes its tests, one release will publish a matching set of:
 
-For the Pi and Teensy, add actual source, dependency versions, build commands, configuration defaults and test instructions before advertising a software download. The current film is a UI concept, not evidence of working controls.
+- **CAD:** STEP models of every part and the assembly, DXF profiles of the plates, print files with the fit coupons, and
+  editable CAD;
+- **build files:** the confirmed parts list and hardware counts, the build instructions with photos and measured fit notes,
+  and the wiring;
+- **software:** the Raspberry Pi touchscreen app and its setup, the Teensy control firmware and its configuration, and the
+  phone app (Bluetooth settings, workouts and history);
+- **a validation report:** what was tested, how, and the results.
 
-## Useful contributions
+Each later release names one compatible set of CAD, parts list, wiring and software versions, and marks untested changes as
+untested.
 
-- Build reports: revision, manufacturing method, material, measured fit, photos and unresolved issues.
-- CAD changes: source file, exported geometry, affected hardware and assembly steps.
-- Alternative batteries or motors: interface dimensions, electrical compatibility assumptions and test results.
-- Sourcing: exact part, region, quantity, price, currency, date and supplier link.
-- Documentation: one reproducible step or correction with the affected revision.
+## After the release
 
-See [CONTRIBUTING.md](../CONTRIBUTING.md) and [the license map](../LICENSE.md). Supplier CAD and controller firmware retain their own terms.
+- **Kits:** laser-cut, tapped and countersunk 6061 plates, the machined bearing holders, and the welded frame, drum and rack
+  side, made by Trent. Printed-part sets and complete machines may follow. Nothing is for sale before testing; the website
+  has a kit waitlist.
+- **Contributions** open with the verified release. Until then there is no tested design to contribute to. After it, useful
+  contributions are build reports (revision, materials, settings, measurements and photos), CAD changes with what they
+  affect, alternative batteries and motors with their test results, and documentation fixes.
 
-## Prototype funding
+## Licenses
 
-Project support is intended for a CNC machine, fabrication and prototype test equipment. The website support section explains these goals. A payment link appears only when the owner has configured the chosen donation provider; contributions are not orders for a finished product. No funding total or equipment price is implied by the concept film.
+For the verified release:
+
+- hardware (CAD, drawings, print files): CERN-OHL-S-2.0;
+- documentation and images: CC BY-SA 4.0;
+- software: GPL-3.0.
+
+Anyone will be able to build the design, change it and share their changes under these licenses. The KINETIQ and Kinetiq
+Gym names and logo are not licensed: only the project's maker sells kits and machines under them. Supplier CAD and the
+ODrive firmware keep their own terms.
+
+## Supporting the project
+
+Support is a voluntary contribution, not an order or a kit pre-sale. It goes into building, testing and improving the
+prototype (parts, aluminum stock and the revisions that come out of load testing) and into build support: clear
+instructions and videos, fit coupons and test jigs. The website's support section has the link once a donation provider is
+set up.

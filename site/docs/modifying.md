@@ -1,61 +1,90 @@
 # Modifying the design
 
-The design is meant to be adapted: a different motor, a rotary encoder instead of the touch screen, a different battery.
-This release ships the parts as FreeCAD files with their full feature history and as STEP; fully sketch-based,
-parameter-driven parts are planned for the next release.
+> **Draft.** The numbers below are design values for the prototype being built now; they are confirmed or corrected after
+> it is load-tested. The editable CAD is released with the verified build files after that. Until then this page describes
+> the interfaces in words and numbers.
 
-## How the CAD is organised
+The design is built to be adapted. The two interfaces most builders will change are the **battery bay** and the **motor
+face**. The [website adaptation guide](https://kinetiqgym.com/build.html#modify) illustrates both.
 
-- `cad/freecad/<printed|cnc>/V44_<variant>_assembly.FCStd`: the whole machine. Every part is a link to its own file in `parts/`.
-  A part that takes heat-set inserts is a container holding the part and its inserts.
-- `cad/freecad/<variant>/parts/<part>.FCStd`: one part with its feature tree (boxes, cylinders, cuts, fuses, fillets, moves).
-  Each feature is labelled with the build-script line that made it. Change a size or a placement and recompute.
-- `cad/freecad/<variant>/V44_<variant>_drivetrain_motion.FCStd`: Assembly-workbench motion study of the drivetrain.
-- `cad/step/`: the same parts as STEP for any CAD program, plus one assembly STEP per variant.
-- `cad/dxf/`: 2-D profiles of the flat parts.
-- Supplier parts (motor driver, bearings, gears, boards...) are simple placeholders of the right size; get the real CAD
-  from `cad/vendor/README.md`.
-- `source/`: the Python (CadQuery) scripts that generate everything. They are the source of truth, but in this release they
-  still expect the full design workspace; a self-contained build is planned.
+## Batteries
 
-Variants: **printed** (PA-CF bottom plate with aluminium flat bars under it) and **cnc** (aluminium bottom plate).
+The reference pack is two 5S LiPo packs in series: 10S, 42 V fully charged, about 30 V empty.
 
-## Swapping the motor
+**The bay** takes two packs stacked, sliding in from the front through a printed cradle:
 
-What the motor touches:
+- two Thunder Power TP3300-5SR70 (about 141 x 43 x 33 mm each, by the maker's estimate) fill it: the opening is 44 mm, about
+  0.5 mm a side;
+- two TP2700-5SR70 fit on a printed spacer (a 12 mm block at the front and a 4 mm plate on the outer side), so both pairs
+  sit against the same rear rib.
 
-| Interface | Where | Change |
+A 1 mm EVA pad under each cradle roof, a 2 mm separator between the packs, and a 2 mm pad inside the right cover's front wall
+hold them. The leads leave from the packs' rear end faces into the back step.
+
+To use another pack:
+
+1. Measure both real packs, including leads and connector bodies: length, width and height. Do not rely on the nominal
+   capacity or the listed size.
+2. Compare them with the bay. Keep room for the pads, the lead bends, the BMS (it hangs from the right cover's ceiling) and
+   a straight removal path through the cradle.
+3. Print the battery fit coupon at your size before you print the end piece and the covers.
+4. Check the electrical system as a whole:
+   - the full-charge voltage must stay well under the ODrive Pro's 58 V, the regulator's 60 V and the fuses' 58 V rating,
+     with room for regenerative braking (the ODrive's over-voltage trip is set at about 45 V);
+   - the BMS must match the series count and chemistry, and pass charge and regen through one port;
+   - recheck the charger, the fuse and wire sizes, and the regen current limit: it may not exceed the pack's charge rating
+     (39.6 A for the TP3300 pair, 32.4 A for the TP2700 pair).
+
+A pack that fits is not automatically electrically compatible.
+
+## Motors
+
+The drive is direct: the motor turns the drum through a rigid clamp coupling, with no belt or gear between them.
+
+**The motor face plate** (0.250 in 6061, welded to the frame) carries two bolt circles and a Ø16 mm shaft hole:
+
+- 4 x M5 on Ø56 mm, on the 45° diagonals: the MP80100 and the APS C80100;
+- 4 x M5 on Ø59 mm: the APS 8072S.
+
+A different motor needs its own pattern on the same centerline (the drum axis), clear of the existing holes and the welds.
+
+| Interface | Reference | What to check |
 |---|---|---|
-| Face mount | the 4 mm motor face plate (`V43_METAL_motor_face_4mm`) + two printed gussets | hole pattern and pilot bore for your motor |
-| Shaft | the NBK MSTS-25-10-12 coupling (10 mm motor, 12 mm drum shaft) | coupling bore for your shaft |
-| Envelope | motor body about 80 x 82 mm at the motor end (X -77 to -3) | the end cap, covers and the board plate around it |
-| Leads | three phase leads through a 12 mm grommet in the face plate to the ODrive terminal | lead exit and length |
-| Electrical | ODrive Pro limits (current, voltage), torque constant | `firmware-setup.md` |
+| Face mount | the face plate's two bolt circles; M5 spacers 3 mm long (APS 8072S) or 10 mm long (MP80100, C80100) | bolt pattern, pilot, and a spacer length that puts the shaft into the coupling |
+| Shaft | Ruland MCLX one-piece steel clamp coupling, 105 N·m: 12 mm on the drum side, 10 mm (MCLX-12-10-F) or 12 mm (MCLX-12-12-F) on the motor side | the motor-side bore, about 20 mm of shaft in the clamp, and a rating of at least 1.5 x the peak drum torque |
+| Rear shaft | the 80100 motors' bell-end shaft is cut to a 10 mm stub | what sticks out behind the motor |
+| Body | 80 mm diameter outrunners; the motor bay is sized for each motor (builds about 400, 429 and 444 mm long) | the covers and end cap, with 3 mm of spin clearance to the end cap |
+| Leads | three phase leads through a 12 mm grommet in the face plate, along the notches in the corner brackets, to the controller | lead exit, gauge and length |
+| Controller | ODrive Pro: 70 A continuous, 100 A for 3 s, 58 V maximum. ODrive S1 (Lite): 40 A continuous, 80 A peak | the current your motor needs at your target force |
 
-Torque at the drum is the motor torque (direct drive): the cable force is about torque / 0.025 m (rope radius on the drum).
+How to judge a motor:
 
-## Swapping the batteries
+- **Cable force ≈ motor torque ÷ drum rope radius** (17.5 mm). 158 lb (703 N) needs about 12.3 N·m; 220 lb (979 N) needs
+  about 17.1 N·m.
+- **Current ≈ torque ÷ torque constant**, with the torque constant about 8.27 ÷ Kv N·m per amp. At 50 Kv, 17.1 N·m takes
+  about 103 A, more than the ODrive Pro's 70 A continuous. That is why the 220 lb builds use about 25-29 Kv windings (about
+  52-63 A).
+- **Felt inertia:** through the 17.5 mm radius, a rotor's inertia J (kg·m²) feels like about 3,265 x J kg at the rope. A
+  lighter rotor feels better; the firmware can cancel part of it, but not all.
+- Prefer low-voltage (48 V or less) DC brushless motors with a high pole count, close to the reference size. Avoid
+  high-voltage AC servos: at this torque they are far larger and heavier than the body, or they need a reduction stage,
+  which spoils the back-drive feel.
+- A larger motor or a different Kv does not by itself make a safe resistance rating. The shared parts (frame, drum,
+  level-wind, exit and rack side) are sized by calculation for the 220 lb peak builds; nothing is checked above that, and
+  none of it is tested yet.
 
-1. Measure both actual packs, including leads and connector bodies. Record length, width and height; do not rely only on nominal capacity.
-2. Open a copy of the assembly and the saddle/retainer part files. Edit the relevant feature dimensions. For a STEP-only workflow, import the solids, create a constrained rectangular envelope sketch, and use new additive/subtractive features for your revised mount.
-3. Add padding and lead-bend clearance to the envelope. Keep the BMS, wires and mounting screws outside the straight removal path. Test both pack envelopes together, including staggered removal.
-4. Recompute the covers and check intersections and retaining surfaces. Print a fit sample before committing to a full enclosure; export the updated STEP/STL and update the BOM and revision.
-5. Review series count, fully charged voltage, BMS, charger, fuse/wire sizing and regenerative charge limits as a system before powered testing. Capacity alone does not establish compatibility.
+After a motor change, update the motor, encoder, current and thermal settings before any powered test
+([firmware-setup.md](firmware-setup.md)).
 
-The reference is two 5S packs in series (10S, 42 V fully charged). The [website adaptation guide](https://kinetiqgym.com/#modify) illustrates the pack envelope and motor interfaces. Its diagrams are measurement guides, not dimensioned manufacturing drawings.
+## A knob instead of the touch screen
 
-## Rotary encoder instead of the touch screen
+The Lite build already does this: an EC11 rotary encoder with a push button goes through the left cover where the screen
+window was, and a phone app (Bluetooth, through a XIAO ESP32-C3) handles the settings. On a battery build the same change
+closes the screen window and drops the screen and its frame. Whether the Raspberry Pi can also be left out depends on the
+control software, which is not released yet.
 
-What the screen touches:
+## Sharing your changes
 
-| Interface | Where | Change |
-|---|---|---|
-| Front window | the left cover (`V44_PRINT_cover_left_screen`), 4 in window | replace the window with a panel hole for the encoder (and a small display if wanted) |
-| Screen frame | `MOUNT_screen_rear_retaining_frame_printed` + 2 x M3 legs into inserts | not needed |
-| Pi + DSI ribbon | Raspberry Pi 4 hanging from the cover ceiling, ribbon to the screen | optional: the Teensy can run the machine alone |
-| Encoder | quadrature A/B + push switch to free Teensy pins, 3.3 V | firmware |
-
-## Contributing changes back
-
-The hardware is CERN-OHL-S-2.0 (share-alike): if you distribute a modified version, publish your modified design files under
-the same licence. Pull requests and issues are welcome: see `CONTRIBUTING.md`.
+With the verified release the hardware is licensed CERN-OHL-S-2.0 (share-alike): if you distribute a modified version,
+publish your modified design files under the same license. The KINETIQ and Kinetiq Gym names and logo are not licensed.
+Contributions to the project open with the verified release.

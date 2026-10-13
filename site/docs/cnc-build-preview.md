@@ -1,33 +1,56 @@
-# CNC build: illustrated preview
+# The build, illustrated
 
-**Build instructions and updated CAD are upcoming.** These stills are taken from the CNC assembly segment of the KINETIQ Blender animation. They explain the proposed layout; they are not a confirmed fabrication or assembly procedure. The earlier prototype files in the repository and this film may show different revisions.
+Stills from the build animation of the current design: the welded aluminum frame, the drum and level-wind, the motor, the
+electronics, the covers and the rack mount. They show the layout and the build order; they are not a confirmed fabrication or
+assembly procedure. The written [build order](build.md) has the steps. Both are drafts until the prototype has been built and
+load-tested.
 
-## 1. Aluminum structure and welded joints
+## 1. The welded frame
 
-![Flat CNC base, rear plate and rack mount from the assembly animation](../media/project/base.webp)
+![The welded aluminum frame with its printed end pieces on the rack](../media/project/stage-frame.webp)
 
-The bottom and rear plates are aluminum. Separate plate connections and the rack-mount cheeks are shown as weld steps. The mount is attached before the hitch pin enters the rack. Final drawings, weld specifications and inspection details are pending.
+The base, motor face and rear plates are 6061 aluminum, welded into one frame that carries every load. The printed motor-end
+and battery-end pieces bolt to it, with the main fuse block and the quick-release corner brackets.
 
-## 2. Drum, bearings and fairlead
+## 2. The drum and the level-wind
 
-![Drum, rope and fairlead assembled in their installed locations](../media/project/drum.webp)
+![The drum with its blue rope on two bearing holders, the lead screw and the level-wind in front of it](../media/project/stage-drum.webp)
 
-The drum and fairlead assemble at their installed positions. The illustration shows the shaft, bearing supports, transmission and wound rope together. Updated drum dimensions and fairlead geometry will be documented with the coordinated CAD release.
+The level-wind rail and traveller go on the base plate first. The drum is built on the bench (hub, rope laced and clamped,
+shaft, gear, coupling) and lowered in on its two machined bearing holders. The drum's gear drives the lead screw, which moves
+the traveller so the rope lays evenly.
 
-## 3. Motor, electronics and power
+## 3. The motor
 
-![Motor, controller and electronics on the CNC base](../media/project/electronics.webp)
+![The motor mounted on the face plate at the end of the drum](../media/project/stage-motor.webp)
 
-The drive and electronics surround the rope mechanism. The proposed battery removal path slides the packs into their saddles. Final wiring, fastener details, control firmware and validation procedures are still being developed. See the [draft wiring reference](wiring.md) for the earlier prototype.
+The motor bolts to the face plate and drives the drum directly through one clamp coupling: no belt and no gearbox.
 
-## 4. Printed enclosure and touchscreen
+## 4. Electronics, battery and wiring
 
-![Assembled CNC trainer with a light gray printed cover](../media/project/cover.webp)
+![The open trainer with the motor, the controller, the boards and the batteries in place](../media/project/stage-electronics.webp)
 
-The printed cover and carry handle complete the aluminum build. The touchscreen in the animation is an interface concept. Fit, clearances and installation details remain part of prototype development.
+The ODrive sits on its bracket, the control boards on the front plate, and the two battery packs slide into their cradle. The
+harness goes in last, fuses first. See the [wiring reference](wiring.md).
 
-## Follow the next release
+## 5. Covers, screen and exit
 
-View the [public repository](https://github.com/TrentIndeed/kinetiqgym), [contribution guide](CONTRIBUTING.md) and [project roadmap](roadmap.md). The confirmed parts list, build instructions, updated models, Pi app and Teensy programs will be published as they become ready.
+![The finished unit with its dark printed covers, touchscreen and the cable exit with the rope](../media/project/stage-covers.webp)
 
-Animation imagery © KINETIQ project, shared with the project documentation under CC BY-SA 4.0. Depictions of third-party components identify their role in the concept; they do not imply endorsement.
+The screen, Raspberry Pi, BMS and fan hang from the covers, which lower over the frame. The swivelling exit and the rope go on
+last. The screen content in the animation is an interface concept.
+
+## 6. On the rack
+
+![Close-up of the rack side on the upright, the pull ring and the latch on the back of the unit](../media/project/stage-rack.webp)
+
+The rack side bolts round a 3 in rack upright. The unit hangs on it and a spring latch locks it in place; pull the ring to lift
+it off.
+
+## What comes next
+
+The CAD, build files and software are released together after the prototype is tested. Follow the
+[roadmap](roadmap.md), or join the build list and kit waitlist at [kinetiqgym.com](https://kinetiqgym.com/#join).
+
+Animation imagery from the Kinetiq Gym project, shared with the documentation under CC BY-SA 4.0. Third-party components are
+shown for their role in the design; this does not imply endorsement.

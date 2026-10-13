@@ -1,1 +1,9 @@
-blank_issues_enabled: true
+# Contributions open with the verified release (see CONTRIBUTING.md). Until then, questions go through the website.
+blank_issues_enabled: false
+contact_links:
+  - name: Follow the build / kit waitlist
+    url: https://kinetiqgym.com/#join
+    about: Prototype results, design changes, the release date and kit availability.
+  - name: Engineering projects
+    url: https://kinetiqgym.com/work
+    about: Custom mechatronics, motor control and prototyping work.

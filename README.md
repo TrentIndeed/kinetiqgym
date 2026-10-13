@@ -1,74 +1,79 @@
-<p align="center"><a href="https://kinetiqgym.com"><img src="images/kinetiqgym.gif" alt="KinetiqGym: covers off, the drivetrain turning" width="100%"></a></p>
+<p align="center"><a href="https://kinetiqgym.com"><img src="site/media/launch/hero-poster.webp" alt="The Kinetiq Gym unit on a rack upright" width="100%"></a></p>
 
-<h1 align="center">KinetiqGym</h1>
-<p align="center"><b>An open-source, battery-powered cable trainer you can print, build and modify.</b><br>
-<a href="https://kinetiqgym.com">kinetiqgym.com</a> · <a href="docs/build.md">Build</a> · <a href="docs/wiring.md">Wiring</a> · <a href="bom/BOM.md">Parts</a> · <a href="cad/">CAD</a> · <a href="images/animation.mp4">Video</a></p>
+<h1 align="center">Kinetiq Gym</h1>
+<p align="center"><b>A programmable smart gym, built as open hardware.</b><br>
+<a href="https://kinetiqgym.com">kinetiqgym.com</a> · <a href="https://kinetiqgym.com/build">Build preview</a> · <a href="https://kinetiqgym.com/build#parts">Builds &amp; cost</a> · <a href="docs/roadmap.md">Roadmap</a> · <a href="https://kinetiqgym.com/#join">Build list &amp; kit waitlist</a></p>
 
-A direct-drive motor turns a rope drum, a geared level-wind fairlead lays the rope, and the controller sets the resistance.
-Designed to be 3D printed (with two drilled aluminium bars) or machined, and to be adapted: other motors, other batteries,
-a rotary encoder instead of the touch screen.
+A direct-drive motor turns a rope drum, a geared level-wind lays the rope, and the controller sets the resistance in software.
+It mounts on a rack upright. The design is built to be trained with, built, modified and programmed.
 
-> **Status: v0.1.0, prototype design. Not yet built or load-tested.** Read [SAFETY.md](SAFETY.md) before building.
-> The control app is not included yet.
+> **Status: open hardware in development.** The design is complete in CAD and the printed fit test is done. The aluminum
+> prototype is being built now. **The CAD, build files and software are released after the prototype has been built and
+> load-tested**, so what you download is something that has actually worked. Until then, this repository holds the website,
+> the documentation and the renders.
 
-**Upcoming:** updated CAD models, the confirmed parts list and build instructions, phone/touchscreen apps, and Pi/Teensy programs. The files here are an earlier prototype snapshot. The website includes an [illustrated CNC build preview](https://kinetiqgym.com/docs/cnc-build-preview.html), mechanism camera views and app concepts from the latest animation.
-
-Want to help? [Propose an improvement](https://github.com/TrentIndeed/kinetiqgym/issues/new?template=proposal.yml), read the [maintainer review process](CONTRIBUTING.md), or visit [project support](https://kinetiqgym.com/#support) for CNC equipment and prototype testing.
-
-<p align="center"><img src="images/06_hero.jpg" alt="KinetiqGym on a rack upright" width="100%"></p>
+<p align="center"><img src="site/media/launch/inside.webp" alt="Render with the covers shown see-through: the motor, the cable drum, the lead screw and the electronics" width="100%"></p>
 
 | | |
 |---|---|
-| ![Covers off](images/03_covers_off.jpg) | ![The mechanism](images/04_mechanism.jpg) |
-| ![The fairlead exit](images/01_macro.jpg) | ![Mounted on a rack](images/02_mounted.jpg) |
-| ![The CAD, covers on](images/hero.png) | ![The CAD, covers off](images/inside.png) |
+| ![The drum's gear driving the level-wind](site/media/launch/gears.webp) | ![The unit on the rack](site/media/launch/rack.webp) |
+| ![The touchscreen](site/media/launch/screen.webp) | ![The planned plate and weldment kit](site/media/launch/kit.webp) |
 
-<sub>Renders: Blender (Eevee) from the CAD in this repository, the mechanism moving at its real gear ratios; the display
-content is illustrative. Bottom row: the FreeCAD assembly.</sub>
+<sub>Renders of the engineered design (Blender). The display content is illustrative.</sub>
 
-## At a glance
+## What it does
 
-| | |
+- **Programmable resistance:** a motor and a cable drum stand in for the weight stack, so the load is set in software.
+- **Adjustable position:** it hangs on a rack upright at the height you want, and the cable exit swivels to follow the pull.
+- **Training modes in software:** eccentric, chain-style and band-style resistance are designed as modes, not attachments.
+- **Customizable hardware:** one welded aluminum frame, five motor and power builds, two battery sizes.
+- **Local and hackable:** its own controller and a Raspberry Pi, with no account or cloud service in the loop.
+
+## The five builds
+
+All five share the welded 6061 aluminum frame, the drum, the level-wind and the exit. The drive is direct: no belt or gear
+between the motor and the drum. Current parts lists and prices for each are on the
+[build preview](https://kinetiqgym.com/build#parts).
+
+| Build | Max rope force | Controller | Power | Size |
+|---|---|---|---|---|
+| APS 8072S 50 Kv (main build) | 158 lb | ODrive Pro | 10S battery (2 x 5S LiPo) | 400 x 227 x 103 mm |
+| Lite: APS 8072S ~25 Kv | 158 lb | ODrive S1 | 36 V wall supply inside | 400 x 227 x 103 mm |
+| MP80100 50 Kv | 158 lb | ODrive Pro | 10S battery | 444 x 227 x 103 mm |
+| MP80100 rewired wye, ~29 Kv | 220 lb peak | ODrive Pro | 10S battery | 444 x 227 x 103 mm |
+| APS C80100, custom ~25 Kv | 220 lb peak | ODrive Pro | 10S battery | 429 x 227 x 103 mm |
+
+Every rating is a design target until the prototype is load-tested.
+
+## In this repository
+
+| Path | What |
 |---|---|
-| Drive | direct-drive outrunner (reference: about 50 Kv, 13 N·m peak) on an ODrive Pro |
-| Resistance | 100 lbf sustained design target; physical load and thermal validation pending |
-| Rope | 3.175 mm (1/8 in), 2.11 m tracked payout + 3 dead wraps; design load 890 N (200 lbf) |
-| Fairlead | worm-driven carrier (1/53 of a turn per drum turn) with a sheave and a U625ZZ pulley exit |
-| Battery | 2 x 5S LiPo (Thunder Power TP2700-5SR70) in series, 30-42 V, JBD 10S BMS; regenerative braking charges it |
-| Controls | Raspberry Pi 4 + 4 in touch screen, Teensy 4.0 on CAN to the ODrive |
-| Size | about 371 x 143 x 112 mm, about 6 L, about 5.6 kg (estimate) |
-| Parts | 28 printed parts, 136 screws / nuts / washers / inserts, about 55 purchased components |
+| `site/` | kinetiqgym.com: the front page, the build preview, the parts data (`site/data/`) and the reference docs (`site/docs/`) |
+| `src/worker.js` | the Cloudflare Worker behind the site: the build list and the project form |
+| `docs/` | build order, wiring, printing, modifying, setup and roadmap (drafts until testing) |
+| `bom/BOM.md` | the bill of materials |
+| `SAFETY.md` | read before building or powering anything |
+| `LICENSE.md`, `LICENSES/` | the licences, and the reserved name and logo |
 
-## What is in this repository
+**Not here yet:** CAD (STEP, DXF, editable source), print files, and the Pi, Teensy and phone software. They are released
+together after testing.
 
-| Folder | Contents |
-|---|---|
-| [`cad/freecad/`](cad/freecad/) | FreeCAD 1.x: the assembly, one file per part **with its full feature history**, and a drivetrain motion study |
-| [`cad/step/`](cad/step/) | every part as STEP, plus one assembly STEP per variant |
-| [`cad/dxf/`](cad/dxf/) | 2-D profiles of the flat parts |
-| [`cad/vendor/`](cad/vendor/) | where to download the supplier CAD (bearings, gears, boards...) that cannot be redistributed |
-| [`print/`](print/) | STL for every printed part, with material, orientation and inserts; fit coupons |
-| [`bom/`](bom/) | bill of materials: purchased parts, hardware counts, metal |
-| [`docs/`](docs/) | [build](docs/build.md), [wiring](docs/wiring.md), [electronics and firmware setup](docs/firmware-setup.md), [printing](docs/printing.md), [modifying](docs/modifying.md) |
-| [`site/`](site/) | Website, editable itemized budget and reference pages |
-| [`software/`](software/) | Pi, Teensy and companion software status (implementation pending) |
-| [`source/`](source/) | the Python (CadQuery) scripts that generate the CAD |
+## Kits
 
-Two variants share the same enclosure: **printed** (PA-CF bottom plate on two aluminium flat bars) and **cnc**
-(aluminium bottom plate).
+Plate and weldment kits (the laser-cut and machined 6061 parts and the welded frame, drum and rack side) are planned once the
+prototype passes load testing. Nothing is for sale yet. [Join the kit waitlist](https://kinetiqgym.com/#join).
 
-## Licences
+## Support and contributions
 
-- Hardware (CAD, drawings, print files): **CERN-OHL-S-2.0**
-- Documentation and images: **CC BY-SA 4.0**
-- Software and scripts (`source/`): **GPL-3.0**
+The CNC machine is already in the workshop; support now goes to prototype iterations and build support
+([support the project](https://kinetiqgym.com/build#support)). **Contributions are closed until the verified release**: see
+[CONTRIBUTING.md](CONTRIBUTING.md).
 
-See [LICENSE.md](LICENSE.md). Supplier CAD is not included; each supplier's own terms apply to the files you download.
+## Licence
 
-## Contributing
+For the verified release: hardware under CERN-OHL-S-2.0, documentation under CC BY-SA 4.0, software under GPL-3.0. The
+**KINETIQ** and **Kinetiq Gym** names and logo are not licensed: only the maker sells kits and machines under them. Details in
+[LICENSE.md](LICENSE.md).
 
-Issues and pull requests are welcome: see [CONTRIBUTING.md](CONTRIBUTING.md).
-
-## Development status and budget
-
-See [the roadmap](docs/roadmap.md) for release milestones and [the website](https://kinetiqgym.com/#parts) for itemized purchasing prices, dated sources and editable fabrication allowances. The budget is a planning estimate, excluding tax, shipping, tools, labor and the rack.
+**This is an untested prototype, not a finished exercise product.** Read [SAFETY.md](SAFETY.md).
