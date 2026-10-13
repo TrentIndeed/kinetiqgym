@@ -1,5 +1,3 @@
-cad/freecad/.built.json
-*.FCBak
 __pycache__/
 
 # Local deployment credentials, internal notes and review artifacts

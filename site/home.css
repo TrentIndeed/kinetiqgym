@@ -192,3 +192,22 @@ form.contact label span.opt { font-weight: 400; color: var(--faint) }
   .top { background: rgb(10 14 19 / .92) }
   body { font-size: 17px }
 }
+
+/* October 13: what you will see next, the kit block, the kit waitlist line */
+.next { margin-top: 64px; border-top: 1px solid var(--line); padding-top: 36px }
+.next h3 { font-size: 26px; margin-bottom: 20px }
+.next-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px 28px; counter-reset: next }
+.next-list li { counter-increment: next; display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 2px 10px; align-items: baseline }
+.next-list li::before { content: counter(next, decimal-leading-zero); grid-row: span 2; font-family: var(--display); font-weight: 700; color: var(--accent-strong); font-size: 15px }
+.next-list strong { font-weight: 600 }
+.next-list span { color: var(--muted); font-size: 15px }
+.kit { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 56px); align-items: center; margin-top: 56px; scroll-margin-top: 90px }
+.kit figure { margin: 0 }
+.kit img { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--line) }
+.kit figcaption { margin-top: 10px; font-size: 13px; color: var(--faint) }
+.kit h3 { font-size: 30px; margin: 6px 0 12px }
+.kit p { color: var(--muted) }
+.kit .note { margin-top: 12px; font-size: 15px; color: var(--faint) }
+.kit .actions { margin-top: 24px }
+.join-kit { margin-top: 14px; color: var(--muted); font-size: 16px }
+@media (max-width: 960px) { .kit { grid-template-columns: minmax(0, 1fr) } }

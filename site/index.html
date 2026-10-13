@@ -20,7 +20,7 @@
   <a class="brand" href="/" aria-label="Kinetiq Gym home"><img src="media/mark.svg" width="28" height="28" alt="">KINETIQ</a>
   <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
   <nav id="site-nav" aria-label="Main">
-    <a href="#film">Watch</a><a href="#status">Build status</a><a href="#open">Why open</a><a href="/build">Design preview</a><a href="/work">Work with me</a>
+    <a href="#film">Watch</a><a href="#status">Build status</a><a href="#kits">Kits</a><a href="/build">Build preview</a><a href="/work">Work with me</a>
     <a class="button primary" href="#join">Follow the Build</a>
   </nav>
 </header>
@@ -55,7 +55,7 @@
         <li><span class="n">01</span><div><strong>Programmable resistance</strong><span class="d">A motor and a cable drum stand in for the weight stack, so the load is set in software.</span></div></li>
         <li><span class="n">02</span><div><strong>Adjustable cable position and direction</strong><span class="d">It mounts on a rack upright at the height you want, and the cable exit swivels to follow the pull.</span></div></li>
         <li><span class="n">03</span><div><strong>Software-defined training modes</strong><span class="d">Eccentric, chain-style and band-style resistance are designed as modes, not attachments.</span></div></li>
-        <li><span class="n">04</span><div><strong>Customizable hardware</strong><span class="d">A printed or CNC frame, a choice of motors and battery sizes, and documented interfaces for your own.</span></div></li>
+        <li><span class="n">04</span><div><strong>Customizable hardware</strong><span class="d">One welded aluminum frame, five motor and power builds, two battery sizes, and documented interfaces for your own.</span></div></li>
         <li><span class="n">05</span><div><strong>Local, hackable architecture</strong><span class="d">Designed to run on its own controller and a Raspberry Pi, with no account or cloud service in the loop.</span></div></li>
       </ol>
     </div>
@@ -83,15 +83,27 @@
       <p class="kicker">Current build status</p>
       <h2 id="status-title">What is real today, and what comes next.</h2>
       <ol class="track">
-        <li class="done"><span class="dot" aria-hidden="true"></span><span class="state">Finalizing</span><h3>Design and animation</h3><p>The printed and CNC builds in CAD, and the 1-minute animation of how the machine is meant to work.</p></li>
-        <li class="now"><span class="dot" aria-hidden="true"></span><span class="state">Parts on order · build next</span><h3>Full 3D-printed prototype</h3><p>Proves the mechanics, cable routing, force control, safety and assembly before any metal is cut.</p></li>
-        <li><span class="dot" aria-hidden="true"></span><span class="state">After printed validation</span><h3>CNC and welded prototype</h3><p>Machined aluminium plates, a welded frame, and the real battery and BMS.</p></li>
-        <li><span class="dot" aria-hidden="true"></span><span class="state">After testing</span><h3>Verified open files and documentation</h3><p>CAD, parts list, firmware, software, and assembly and safety guides, released together.</p></li>
+        <li class="done"><span class="dot" aria-hidden="true"></span><span class="state">Finalizing</span><h3>Design and animation</h3><p>The aluminum build in CAD with five motor and power options, and the 1-minute animation of how the machine is meant to work.</p></li>
+        <li class="done"><span class="dot" aria-hidden="true"></span><span class="state">Done</span><h3>Printed fit test</h3><p>Every part printed and fitted against the design, to catch CAD mistakes before any metal is cut.</p></li>
+        <li class="now"><span class="dot" aria-hidden="true"></span><span class="state">Parts on order · build next</span><h3>Aluminum prototype</h3><p>The machined and welded 6061 frame with the real battery and BMS. Proves the mechanics, cable routing, force control, safety and assembly.</p></li>
+        <li><span class="dot" aria-hidden="true"></span><span class="state">After testing</span><h3>Verified open files, then kits</h3><p>CAD, parts list, firmware, software, and assembly and safety guides, released together. Kits follow if there is demand.</p></li>
       </ol>
       <div class="bench">
         <figure><img src="media/launch/bench-first-parts.webp" width="1380" height="777" loading="lazy" alt="Photo of the first real parts on a workbench: the black brushless motor, a silver clamp coupling and a 12 mm steel shaft running into a bearing"></figure>
-        <div><p class="kicker">From the bench</p><h3>The printed prototype has started.</h3><p>The first parts are in: the motor, its clamp coupling and a 12 mm shaft. Next come the printed frame, the drum and the level-wind.</p>
+        <div><p class="kicker">From the bench</p><h3>The prototype has started.</h3><p>The first parts are in: the motor, its clamp coupling and a 12 mm shaft. Next come the aluminum frame, machined in-house, then the drum and the level-wind.</p>
         <p class="track-note">Each stage is posted as it happens, failures and redesigns included. The build list gets the results first.</p></div>
+      </div>
+      <div class="next">
+        <h3>What you will see next</h3>
+        <ol class="next-list">
+          <li><strong>Build updates</strong><span>Parts arriving, machining, wiring, motor tests, the rope and level-wind, failures and revisions.</span></li>
+          <li><strong>First resistance demo</strong><span>A real person pulling real, programmable resistance.</span></li>
+          <li><strong>Technical presentation</strong><span>About 20 minutes: architecture, mechanics, controls, safety, results and lessons.</span></li>
+          <li><strong>Workout video</strong><span>The aluminum prototype in real training, with load and durability testing.</span></li>
+          <li><strong>Developer preview</strong><span>A small group of builders tests the documentation, sourcing and reproducibility.</span></li>
+          <li><strong>Verified open release</strong><span>The complete package at once: CAD, build files, software, assembly and safety guides.</span></li>
+          <li><strong>Small batches</strong><span>Kits and hard-to-source parts, against real demand.</span></li>
+        </ol>
       </div>
     </div>
   </section>
@@ -102,7 +114,7 @@
       <div>
         <p class="kicker" id="open-title">Why open</p>
         <blockquote>Most digital resistance systems are closed appliances. Kinetiq is being built so builders and researchers can inspect the mechanics, modify the hardware, write their own training modes, and build on the platform.</blockquote>
-        <p class="after">The files will be published once the physical machine has been built, tested and documented, so what you download is something that has actually worked. Until then, the <a href="/build">design preview</a> shows the current engineering in detail.</p>
+        <p class="after">The files will be published once the physical machine has been built, tested and documented, so what you download is something that has actually worked. Until then, the <a href="/build">build preview</a> shows the current engineering in detail.</p>
       </div>
       <figure><img src="media/launch/inside.webp" width="1400" height="788" loading="lazy" alt="Render of the Kinetiq Gym unit with its covers shown see-through: the motor, the cable drum, the lead screw and the electronics inside"></figure>
     </div>
@@ -117,6 +129,16 @@
         <article class="path"><span class="label">BUILD IT</span><span class="avail">Planned</span><h3>Verified files and documentation.</h3><p>CAD, the parts list, firmware, software and assembly guides, published after the prototype is tested.</p><a class="button ghost" href="#join" data-interest="build">Get the files when they release</a></article>
         <article class="path"><span class="label">BUY THE HARD PARTS</span><span class="avail">Not available yet</span><h3>Kits and machined parts, if there is demand.</h3><p>Machined plates, printed parts or complete kits may follow the verified release. Nothing is for sale today.</p><a class="button ghost" href="#join" data-interest="kit">Tell me you would want one</a></article>
         <article class="path"><span class="label">WORK TOGETHER</span><span class="avail">Open to select projects</span><h3>Custom mechatronics and prototyping.</h3><p>Robotics, motor control and rapid prototyping work, taken on a few projects at a time.</p><a class="button ghost" href="/work">Discuss a project</a></article>
+      </div>
+      <div class="kit" id="kits">
+        <figure><img src="media/launch/kit.webp" width="1600" height="900" loading="lazy" alt="Render of the planned plate and weldment kit laid out flat: the welded frame, drum and rack side, two machined bearing holders, three corner brackets and the cut plates"><figcaption>The planned plate and weldment kit · render, not a product photo</figcaption></figure>
+        <div>
+          <p class="kicker">Kits · planned</p>
+          <h3>The hard parts, made for you.</h3>
+          <p>The laser-cut, tapped and countersunk plates, the machined bearing holders, and the welded frame, drum and rack side: the parts most builders cannot make at home. Printed-part sets and complete machines may follow.</p>
+          <p class="note">Not for sale yet. Kits open only after the prototype passes load testing, and the waitlist hears first.</p>
+          <div class="actions"><a class="button primary" href="#join" data-interest="kit">Join the kit waitlist</a><a class="button ghost" href="/build#parts">See the parts and costs</a></div>
+        </div>
       </div>
     </div>
   </section>
@@ -159,9 +181,10 @@
     <div class="wrap">
       <div class="join-box">
         <div>
-          <p class="kicker">The build list</p>
+          <p class="kicker">The build list · early access</p>
           <h2 id="join-title">Want the verified files when they are ready?</h2>
           <p>Join the build list for prototype results, design changes, test data, kit availability, and the eventual verified CAD and software release.</p>
+          <p class="join-kit">Want a kit? This is also the kit waitlist: pick <strong>Buying a kit</strong> after you join, and you hear first when kits open.</p>
         </div>
         <div>
           <form class="signup" id="signup" novalidate>
@@ -195,7 +218,7 @@
 <footer>
   <div class="wrap">
     <p>© 2026 Kinetiq Gym · Open hardware in development. Renders show the engineered design; specifications may change during validation.</p>
-    <nav aria-label="Footer"><a href="/build">Design preview</a><a href="/docs/roadmap">Roadmap</a><a href="https://github.com/TrentIndeed/kinetiqgym">GitHub</a><a href="/work">Work with me</a><a href="/privacy">Privacy</a></nav>
+    <nav aria-label="Footer"><a href="/build">Build preview</a><a href="/docs/roadmap">Roadmap</a><a href="https://github.com/TrentIndeed/kinetiqgym">GitHub</a><a href="/work">Work with me</a><a href="/privacy">Privacy</a></nav>
   </div>
 </footer>
 
