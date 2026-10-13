@@ -1,59 +1,83 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Project roadmap — KINETIQ</title><link rel="stylesheet" href="../styles.css"><link rel="icon" href="../media/mark.svg"><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet"></head><body><a class="skip" href="#reference">Skip to reference</a><header class="header"><a class="brand" href="../index.html"><img src="../media/mark.svg" width="32" height="32" alt="">KINETIQ</a><a href="../index.html#build">Back to build guide ↗</a></header><main id="reference" class="guide-page section container"><p class="section-kicker">Prototype reference · v0.1</p><h1>Project roadmap</h1>
-<p>KINETIQ is a prototype design. The repository contains an earlier development snapshot. Updated CAD, confirmed build instructions and parts list, app code and control programs are upcoming.</p>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Project roadmap — KINETIQ</title><link rel="stylesheet" href="../styles.css"><link rel="icon" href="../media/mark.svg"><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet"></head><body><a class="skip" href="#reference">Skip to reference</a><header class="header"><a class="brand" href="/"><img src="../media/mark.svg" width="32" height="32" alt="">KINETIQ</a><a href="/build#build">Back to the build preview ↗</a></header><main id="reference" class="guide-page section container"><p class="section-kicker">Draft reference · October 2026</p><h1 id="project-roadmap">Project roadmap</h1>
+<blockquote>
+<p><strong>Status, October 13, 2026:</strong> the design is complete in CAD and the printed fit test is done. Parts for the aluminum
+prototype are on order, and the prototype build is next. Everything published so far is a draft until that prototype has
+been built and load-tested.</p>
+</blockquote>
+<h2 id="where-things-stand">Where things stand</h2>
 <div class="table-scroll" tabindex="0" role="region" aria-label="Reference table"><table>
 <thead>
 <tr>
-  <th>Area</th>
-  <th>Available now</th>
-  <th>Next milestone</th>
+<th>Stage</th>
+<th>Status</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <td>Hardware</td>
-  <td>Printed and CNC assemblies; FreeCAD feature histories, STEP, DXF and STL</td>
-  <td>Reconcile every export and manifest against one revision; prototype fit and load testing</td>
+<td>CAD design: the welded aluminum frame, the drivetrain, the level-wind, the exit, the rack mount and five builds</td>
+<td>done</td>
 </tr>
 <tr>
-  <td>Build guide</td>
-  <td>Draft references and an illustrated CNC animation preview on the website</td>
-  <td>Confirmed assembly steps, build photos and measured fit notes</td>
+<td>Printed fit test of the whole assembly</td>
+<td>done</td>
 </tr>
 <tr>
-  <td>Adaptation</td>
-  <td>Motor interface guide and battery-envelope sketch</td>
-  <td>Fully constrained sketch-based parts and a self-contained CAD generation pipeline</td>
+<td>Prototype parts and metal stock</td>
+<td>on order</td>
 </tr>
 <tr>
-  <td>Raspberry Pi</td>
-  <td>Screen concept in the product film</td>
-  <td>Touchscreen application, reproducible image and installation guide</td>
+<td>Aluminum prototype build (main build: APS 8072S, 10S battery)</td>
+<td>next</td>
 </tr>
 <tr>
-  <td>Teensy</td>
-  <td>Proposed control architecture and setup reference</td>
-  <td>Firmware, configuration schema, limits and bench test procedure</td>
+<td>Load testing: static load in steps, then powered tests and thermal checks</td>
+<td>after the build</td>
 </tr>
 <tr>
-  <td>Companion</td>
-  <td>Phone app concept screens in the film and website</td>
-  <td>Bluetooth protocol, connection flow, mode settings and workout history</td>
+<td>Verified release: CAD, build files and software</td>
+<td>after load testing</td>
+</tr>
+<tr>
+<td>Plate and weldment kits made by Trent, the project's maker</td>
+<td>after the verified release</td>
 </tr>
 </tbody>
 </table></div>
-<h2>How releases should work</h2>
-<p>Keep one repository for the hardware, website, documentation and control software while the project is small. Each future release should identify a single compatible set of CAD, BOM, wiring and software versions. Do not mix a new part with an older assembly without recording the change.</p>
-<p>For a hardware release, publish the editable FreeCAD sources and neutral STEP alongside STL/DXF exports, an itemized BOM, a changelog and a validation report. Label untested changes explicitly. Large production animations and build recordings belong in release assets or external media storage rather than repeated Git history.</p>
-<p>For the Pi and Teensy, add actual source, dependency versions, build commands, configuration defaults and test instructions before advertising a software download. The current film is a UI concept, not evidence of working controls.</p>
-<h2>Useful contributions</h2>
+<h2 id="the-verified-release">The verified release</h2>
+<p>Nothing is released before the design is proven on real hardware, so nobody builds from an untested revision. When the
+prototype passes its tests, one release will publish a matching set of:</p>
 <ul>
-<li>Build reports: revision, manufacturing method, material, measured fit, photos and unresolved issues.</li>
-<li>CAD changes: source file, exported geometry, affected hardware and assembly steps.</li>
-<li>Alternative batteries or motors: interface dimensions, electrical compatibility assumptions and test results.</li>
-<li>Sourcing: exact part, region, quantity, price, currency, date and supplier link.</li>
-<li>Documentation: one reproducible step or correction with the affected revision.</li>
+<li><strong>CAD:</strong> STEP models of every part and the assembly, DXF profiles of the plates, print files with the fit coupons, and
+  editable CAD;</li>
+<li><strong>build files:</strong> the confirmed parts list and hardware counts, the build instructions with photos and measured fit notes,
+  and the wiring;</li>
+<li><strong>software:</strong> the Raspberry Pi touchscreen app and its setup, the Teensy control firmware and its configuration, and the
+  phone app (Bluetooth settings, workouts and history);</li>
+<li><strong>a validation report:</strong> what was tested, how, and the results.</li>
 </ul>
-<p>See <a href="CONTRIBUTING.html">CONTRIBUTING.md</a> and <a href="LICENSE.html">the license map</a>. Supplier CAD and controller firmware retain their own terms.</p>
-<h2>Prototype funding</h2>
-<p>Project support is intended for a CNC machine, fabrication and prototype test equipment. The website support section explains these goals. A payment link appears only when the owner has configured the chosen donation provider; contributions are not orders for a finished product. No funding total or equipment price is implied by the concept film.</p>
-<p class="table-note">This is a draft design reference. Physical validation and Pi/Teensy software are pending.</p><a class="text-link" href="roadmap.md" download>Download Markdown source ↗</a></main><footer class="footer container"><a class="brand" href="../index.html">KINETIQ</a><a href="../index.html#parts">Parts & cost</a><a href="../index.html#files">CAD & fabrication</a></footer></body></html>
+<p>Each later release names one compatible set of CAD, parts list, wiring and software versions, and marks untested changes as
+untested.</p>
+<h2 id="after-the-release">After the release</h2>
+<ul>
+<li><strong>Kits:</strong> laser-cut, tapped and countersunk 6061 plates, the machined bearing holders, and the welded frame, drum and rack
+  side, made by Trent. Printed-part sets and complete machines may follow. Nothing is for sale before testing; the website
+  has a kit waitlist.</li>
+<li><strong>Contributions</strong> open with the verified release. Until then there is no tested design to contribute to. After it, useful
+  contributions are build reports (revision, materials, settings, measurements and photos), CAD changes with what they
+  affect, alternative batteries and motors with their test results, and documentation fixes.</li>
+</ul>
+<h2 id="licenses">Licenses</h2>
+<p>For the verified release:</p>
+<ul>
+<li>hardware (CAD, drawings, print files): CERN-OHL-S-2.0;</li>
+<li>documentation and images: CC BY-SA 4.0;</li>
+<li>software: GPL-3.0.</li>
+</ul>
+<p>Anyone will be able to build the design, change it and share their changes under these licenses. The KINETIQ and Kinetiq
+Gym names and logo are not licensed: only the project's maker sells kits and machines under them. Supplier CAD and the
+ODrive firmware keep their own terms.</p>
+<h2 id="supporting-the-project">Supporting the project</h2>
+<p>Support is a voluntary contribution, not an order or a kit pre-sale. It goes into building, testing and improving the
+prototype (parts, aluminum stock and the revisions that come out of load testing) and into build support: clear
+instructions and videos, fit coupons and test jigs. The website's support section has the link once a donation provider is
+set up.</p><p class="table-note">A draft reference: the prototype is being built and tested, and the CAD, build files and software are released after testing.</p><a class="text-link" href="roadmap.md" download>Download Markdown source ↗</a></main><footer class="footer container"><a class="brand" href="/">KINETIQ</a><a href="/build#parts">Builds & cost</a><a href="/build#files">Files & kits</a><a href="/#join">Kit waitlist</a></footer></body></html>

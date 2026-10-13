@@ -1,127 +1,228 @@
 # Bill of materials
 
-Quantities are for one machine (printed variant). Links are examples checked in September 2026: pick by reviews and check the
-specs. Nothing here is endorsed by the suppliers.
+> **Draft.** This is the parts list for the prototype being built now (October 2026). It is confirmed, with exact hardware
+> counts, in the verified release after the prototype has been load-tested. Links are examples checked in October 2026;
+> prices and stock change. Nothing here is endorsed by the suppliers.
 
-## Drive and fairlead
+The [website budget](https://kinetiqgym.com/build.html#parts) has the same list with dated prices, per-build totals and
+editable prices.
 
-| Qty | Part | Notes / example |
+**How the list is organized.** The **main list** is what a builder has to buy, in order of importance, from motor and
+controller to adhesives. It assumes you make the metal and printed parts yourself (laser cutting or CNC, a TIG welder and a
+3D printer). The **accessory list** is what many builders already have. The last section gives typical costs for having
+the metal made.
+
+**What the builds share.** Every build uses the same welded 6061 aluminum frame, drum, level-wind, exit and rack side. The
+shared parts are sized for the 220 lb peak builds. Direct drive only: the motor turns the drum through a clamp coupling,
+with no belt or gear between them.
+
+## The five builds
+
+| Build | Peak rope force | Motor | Controller | Power | Size (about) |
+|---|---|---|---|---|---|
+| **Main** | 158 lb | APS 8072S outrunner, 50 Kv | ODrive Pro | 10S battery (2 x 5S LiPo) | 400 x 227 x 103 mm |
+| **Lite** | 158 lb | APS 8072S, wound to about 25 Kv | ODrive S1 | 36 V wall supply inside | 400 x 227 x 103 mm |
+| **MP80100** | 158 lb | MP80100 outrunner, 50 Kv | ODrive Pro | 10S battery | 444 x 227 x 103 mm |
+| **MP80100 wye** | 220 lb peak | MP80100 rewired wye, about 29 Kv | ODrive Pro | 10S battery | 444 x 227 x 103 mm |
+| **C80100** | 220 lb peak | APS C80100, wound to about 25 Kv | ODrive Pro | 10S battery | 429 x 227 x 103 mm |
+
+- **Main:** the reference build. A light rotor (about 2.5 kg felt at the rope before compensation), about 13 N·m.
+- **Lite:** the low-cost build on the main build's frame, mount and motor body, plugged into the wall. A Mean Well 36 V,
+  600 W supply inside, an ODrive S1 with two brake resistors on the base plate, and a phone app (Bluetooth) and a knob in
+  place of the battery, the Raspberry Pi and the touchscreen. At about 25 Kv, 158 lb takes 37-45 A.
+- **MP80100:** the same frame with a 44 mm longer motor bay. About 4 kg felt at the rope; ships from China.
+- **MP80100 wye:** if the 50 Kv motor is wound delta, re-terminating it in wye gives about 29 Kv, so 220 lb takes about
+  60 A (the ODrive Pro gives 70 A continuous). Ask the seller how it is wound before buying for 220 lb.
+- **C80100:** wound to order at about 25 Kv, so 220 lb takes about 52-63 A on the ODrive Pro. The motor is 15 mm shorter
+  than the MP80100.
+
+**Motor mounting parts by build:**
+
+| Builds | Coupling | Spacers and screws | Before fitting |
+|---|---|---|---|
+| Main, Lite | Ruland MCLX-12-10-F (10 mm motor, 12 mm drum) | 4 x M5 spacers 10 x 3 mm, 4 x M5 x 14 (Ø59 mm circle) | - |
+| MP80100, MP80100 wye, C80100 | Ruland MCLX-12-12-F (12 mm motor, 12 mm drum) | 4 x M5 spacers Ø10 x 10 mm, 4 x M5 x 25 (Ø56 mm circle) | cut the bell-end shaft to a 10 mm stub |
+
+In the tables below, **Battery builds** means Main, MP80100, MP80100 wye and C80100.
+
+## Main list
+
+### Motor and controller
+
+| Qty | Part | Builds | Notes |
+|---|---|---|---|
+| 1 | APS 8072S outrunner, 50 Kv | Main | Alien Power Systems (UK). Sensored, 10 mm keyed shaft. |
+| 1 | [MP80100 outrunner, 50 Kv, sensored](https://www.aliexpress.us/item/3256805081566856.html) | MP80100, MP80100 wye | Ships from China (3-4 weeks). For 220 lb, ask the seller whether it is wound delta. |
+| 1 | [APS C80100 outrunner, sensored, custom ~25 Kv](https://alienpowersystem.com) | C80100 | Alien Power Systems (UK): ask for the ~25 Kv winding and its price. Ø80 x 92 mm, 4 x M5 on Ø56, 12 mm keyed shaft. |
+| 1 | APS 8072S outrunner, custom ~25 Kv | Lite | Wound to order. Same body, mount and 10 mm keyed shaft as the main build's motor. |
+| 1 | [ODrive Pro](https://shop.odriverobotics.com/products/odrive-pro) | Battery builds | Controller only; the heat spreader is separate. 70 A continuous. |
+| 1 | [ODrive S1, solder-pad version](https://shop.odriverobotics.com/products/odrive-s1) | Lite | 40 A continuous on its heat spreader, 80 A peak, 12-50.5 V, on-board magnetic encoder. Screws to a 6061 plate you make; the ODrive bracket stays. |
+| 1 | [ODrive Pro heat spreader](https://shop.odriverobotics.com/) | Battery builds | |
+
+### Battery and power
+
+| Qty | Part | Builds | Notes |
+|---|---|---|---|
+| 2 | [Thunder Power TP2700-5SR70](https://www.thunderpowerrc.com/products/tp2700-5sr70) | Battery builds | 5S 2.7 Ah LiPo, EC5 leads. Two in series on the printed spacer. For more charge the bay also takes 2 x TP3300-5SR70 (122 Wh a pair against 100 Wh, regen up to 39.6 A; no spacer). Built to order in the US. |
+| 1 | [Mean Well LOP-600-36 power supply](https://www.jameco.com/z/LOP-600-36-MEAN-WELL-600W-Low-Profile-Energy-Efficient-Medical-Open-Frame-Power-Supply-36V-11-1A-Convection-16-7A-with-Fan_2410207.html) | Lite | 36 V open frame: 400 W by convection, 600 W with airflow, 150 % for 3 s. About a 3-week lead time. |
+| 1 | [JBD 10-17S 80 A smart BMS, same port, Bluetooth](https://www.ebay.com/itm/398016908803) | Battery builds | US-stocked. Same port, so regen charges through it; NTC probe. The bay is sized for its 102 x 65 x 12 mm board. Set over-charge to 4.20-4.25 V per cell. |
+| 1 | [Blue Sea 5191 MRBF terminal fuse block](https://www.amazon.com/dp/B0019ZBTV4) | Battery builds | 58 V DC; stands on a printed insulating pad. |
+| 2 | [Blue Sea 5176 MRBF 40 A fuse](https://www.amazon.com/dp/B0016HTXAY) | Battery builds | 58 V DC; one spare. |
+| 1 | [50 W 1 Ω aluminum-housed resistors, 5-pack](https://www.amazon.com/dp/B0F43QWVM3) | Lite | Two in series (2 Ω) as the S1's brake resistor, screwed flat to the base plate, which is their heatsink. |
+| 2 | [MINI 58 V 10 A fuse (Littelfuse 0997010.WXN)](https://www.digikey.com/en/products/result?keywords=0997010.WXN) | Battery builds | The charge-port line; one spare. |
+| 2 | [MINI 58 V 3 A fuse (Littelfuse 0997003.WXN)](https://www.digikey.com/en/products/result?keywords=0997003.WXN) | All | The 5 V regulator feed; one spare. Ordinary MINI blades are 32 V. |
+| 2 | [Inline MINI fuse holder, 58 V DC (Littelfuse 0FHM0003ZXJS)](https://www.digikey.com/en/products/detail/littelfuse-commercial-vehicle-products/0FHM0003ZXJS/29571868) | All | 20 A, 18 AWG leads, rated 58 V DC (most inline holders are 32 V). |
+| 1 | [C14 panel-mount inlet, 10 A, 2-pack](https://www.amazon.com/dp/B07PVP7GL2) | Lite | The mains inlet, snapped into the back step. |
+| 1 | [KCD1 rocker switch, 10 A 125 V / 6 A 250 V](https://www.amazon.com/dp/B0DX1JY5BW) | Lite | Mains on/off in the line lead, beside the inlet. |
+
+### Drum and rope
+
+| Qty | Part | Builds | Notes |
+|---|---|---|---|
+| 1 | [Ruland MCLX-12-10-F clamp coupling](https://www.ruland.com) | Main, Lite | One-piece steel, 10 mm motor / 12 mm drum, 105 N·m. The drum needs up to 17.1 N·m (25.7 with the 1.5x margin). Check a distributor before ordering. |
+| 1 | [Ruland MCLX-12-12-F clamp coupling](https://www.ruland.com) | MP80100, MP80100 wye, C80100 | One-piece steel, 12 mm motor / 12 mm drum, 105 N·m. |
+| 1 | 12 mm steel drum shaft, 200 mm | All | Round (a 12 mm linear shaft), used uncut. |
+| 1 | [6001-2RS bearings, 2-pack](https://www.amazon.com/dp/B07GVN7GQ7) | All | The drum shaft, in the two machined holders. |
+| 2 | [goBILDA 1301-0016-0012 clamping hub, 12 mm round bore](https://www.servocity.com) | All | The drum hub and the 81T gear hub. |
+| 1 | 1/8 in UHMWPE rope | All | About 3 m. |
+
+### Level-wind and exit
+
+| Qty | Part | Builds | Notes |
+|---|---|---|---|
+| 1 | [MGN15H rail 200 mm with block, 2 sets](https://www.amazon.com/dp/B0D7CLND4B) | All | The traveller rail (one spare set). |
+| 1 | [Tr8 x 2 lead screw, 200 mm, 2-pack](https://www.amazon.com/dp/B0B8RKSDJV) | All | With brass flange nuts; used uncut. Pick "200mm / 2pcs Tr8X2". |
+| 1 | [goBILDA 1309-0016-0008 Sonic Hub, 8 mm bore](https://www.gobilda.com/1309-series-sonic-hub-8mm-bore/) | All | The 45T screw gear's hub. Not the 8 mm REX version. |
+| 1 | [626ZZ bearings, 10-pack](https://www.amazon.com/dp/B07JHKBG4X) | All | The travelling and fixed rollers; 8 used. |
+| 1 | [688ZZ bearings, 5-pack](https://www.amazon.com/dp/B08199J4RJ) | All | The lead screw's far end, in the printed stand. |
+| 1 | [MR128ZZ bearings, 10-pack](https://www.amazon.com/dp/B089GG2YCT) | All | The lead screw's fixed end, in the tower wall. |
+| 1 | [F8-16M thrust bearings, 4-pack](https://www.amazon.com/dp/B07QLTXJDH) | All | The lead screw's fixed end, both directions. |
+| 1 | [8 mm set-screw shaft collars, 10-pack](https://www.amazon.com/dp/B08SK2LNNV) | All | Preloads the thrust pair. |
+| 1 | [ISO 7379 shoulder bolts 6 x 16, M5, 6-pack](https://www.amazon.com/dp/B0DP6ZRSTT) | All | The four roller axles. |
+| 1 | [16008-2RS bearings 40 x 68 x 9, 2-pack](https://www.amazon.com/dp/B0CMXGZMG8) | All | The exit swivel pair. |
+| 1 | [F6001-2RS flanged bearings, 4-pack](https://www.amazon.com/dp/B09BVV9BYZ) | All | The exit pulleys: the rope runs on the outer ring. |
+| 1 | [ISO 7379 shoulder bolts 12 x 25, M10, 2-pack](https://www.amazon.com/dp/B077GX5R3H) | All | The exit pulley axles. |
+| 1 | [M12 flat washers, DIN 125A 13 x 24 x 2.5, 25 pcs](https://www.amazon.com/dp/B0FQHCTQ5N) | All | Two on each exit axle shoulder, so the nut still clamps the pulleys. 2.5 mm thick: thinner ones leave the shoulder proud. |
+| 1 | [Dowel pins 5 x 60 mm, 304 stainless, 24-pack](https://www.amazon.com/dp/B0FZHR1NP3) | All | The exit's side rails. |
+
+### Controls and screen
+
+| Qty | Part | Builds | Notes |
+|---|---|---|---|
+| 1 | [Teensy 4.0](https://www.pjrc.com/store/teensy40.html) | Battery builds | Machine control. |
+| 1 | [Waveshare SN65HVD230 CAN board](https://www.amazon.com/dp/B00KM6XMXO) | All | 3.3 V CAN transceiver. |
+| 1 | [Pololu D42V55F5 regulator (#5571)](https://www.pololu.com/product/5571) | All | 5 V output, 60 V maximum input. Not the D36V50F5: it is rated to 38 V and a full pack is 42 V. |
+| 1 | [Seeed XIAO ESP32-C3](https://www.amazon.com/dp/B0B94JZ2YF) | Lite | Bluetooth link to the phone app and the knob; talks to the S1 over CAN through the CAN board. |
+| 1 | [EC11 rotary encoders with push button and knob caps, 5-pack](https://www.amazon.com/dp/B08728K3YB) | Lite | The resistance knob, through the left cover. |
+| 1 | [Raspberry Pi 4 Model B](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/) | Battery builds | The budget assumes 2 GB. |
+| 1 | [Waveshare 4 inch DPI LCD (C)](https://www.waveshare.com/product/4inch-dpi-lcd-c.htm) | Battery builds | 720 x 720 capacitive touch display. |
+| 1 | [Noctua NF-A4x10 5V fan](https://www.amazon.com/dp/B00NEMGCIA) | All | Cools the ODrive. |
+| 1 | [Right-angle micro-USB cable, pack](https://www.amazon.com/dp/B08BZD66H4) | Battery builds | Teensy to Pi. |
+
+### Connectors and charging
+
+| Qty | Part | Builds | Notes |
+|---|---|---|---|
+| 1 | [42 V 2 A charger (10S)](https://www.amazon.com/dp/B08JYSZX78) | Battery builds | Fit an XT60 male plug (about 1.5 h per charge). |
+| 1 | [Amass XT60E-F, 10-pack](https://www.amazon.com/dp/B09SL2MNN1) | Battery builds | The panel charge socket; one used. |
+| 1 | [EC5 connectors, 10 pairs](https://www.amazon.com/dp/B08GPR7SVR) | Battery builds | Pack and BMS connections. |
+| 1 | [5S JST-XH balance leads, 10-pack](https://www.amazon.com/dp/B073ZGF8D9) | Battery builds | Pack-to-BMS balance leads. |
+| 1 | [WAGO 221-615, 15-pack](https://www.amazon.com/dp/B07CJR8MH4) | Battery builds | Five-port lever nut for 10 AWG, the switched negative junction; one used. |
+| 1 | [APIELE 12 mm latching switch, 2-pack](https://www.amazon.com/dp/B083QMF2J1) | Battery builds | The power button: a signal to the BMS soft-switch input. |
+
+### Adhesives and spacers
+
+| Qty | Part | Builds | Notes |
+|---|---|---|---|
+| 1 | [Loctite 638 retaining compound, 50 mL](https://www.amazon.com/dp/B000O01EV0) | All | Bonds the drum hub and the drum flanges to the round shaft. |
+| 1 | [Loctite 641 bearing retainer](https://www.amazon.com/dp/B01MQJ92VM) | All | Holds the drum bearings' inner rings on the shaft (the rope load turns with the shaft, so a loose ring creeps) and the bearings in their seats (drum holders, MR128ZZ, 688ZZ). Medium strength: heat to take apart. |
+| 1 | [M5 aluminum spacers 10 x 3 mm, 20-pack](https://www.amazon.com/dp/B0CQ2R5GDW) | All | The 3 mm spacers under the APS 8072S face. |
+
+### Small parts for the latch, rack side and encoder
+
+| Qty | Part | Used for |
 |---|---|---|
-| 1 | Outrunner motor, about 80 mm diameter, about 50 Kv, about 13 N·m peak, 10 mm shaft | the reference design; see `docs/modifying.md` to use another |
-| 1 | ODrive Pro motor controller (with its heat spreader) | odriverobotics.com |
-| 1 | NBK MSTS-25-10-12 slit coupling (10 mm motor / 12 mm drum shaft) | or any 25 mm clamp coupling 10-12 |
-| 1 | 12 mm round steel shaft, cut to 176 mm | drum shaft |
-| 2 | 6001-2RS bearing (12 x 28 x 8) | drum shaft, in the printed cartridges |
-| 2 | goBILDA 1301-0016-0012 12 mm round-bore hub | drum hubs (4 mounting holes drilled 4.4 mm) |
-| 2 | goBILDA 2302-0014-0060 60T MOD 0.8 gear | drum gear + shaft-2 gear (48 mm centres) |
-| 1 | goBILDA 2303-4008-0020 20T MOD 0.8 pinion, 8 mm REX | [gobilda.com](https://www.gobilda.com/2303-series-steel-mod-0-8-pinion-gear-8mm-rex-bore-20-tooth/) |
-| 1 | goBILDA 2303-1006-0020 20T MOD 0.8 pinion, 6 mm D-bore | [gobilda.com](https://www.gobilda.com/pinion-gears/) |
-| 1 | goBILDA 2106-4008-0560 8 mm REX shaft 56 mm with e-clip | [gobilda.com](https://www.gobilda.com/2106-series-stainless-steel-rex-shaft-8mm-diameter-56mm-length/) |
-| 2 | goBILDA 1611-0514-4008 flanged bearing 8 mm REX x 14 x 5 | [gobilda.com](https://www.gobilda.com/1611-series-flanged-ball-bearing-8mm-rex-id-x-14mm-od-5mm-thickness-2-pack/) |
-| 1 | ServoCity 6 mm stainless D-shaft, 60 mm | [servocity.com](https://www.servocity.com/6mm-stainless-steel-d-shafting/) |
-| 2 | goBILDA 1601 flanged bearing 6 x 14 x 5 | [gobilda.com](https://www.gobilda.com/1601-series-flanged-ball-bearing-6mm-id-x-14mm-od-5mm-thickness-2-pack/) |
-| 1 | KHK SW0.8-R1 steel worm, module 0.8, single start, right hand | [khkgears.us](https://catalog.khkgears.us/item/worm-gears/steel-worms-sw/sw0-8-r1) |
-| 1 | 6809-2RS bearing 45 x 58 x 7 (carrier pivot) | e.g. [Amazon](https://www.amazon.com/dp/B07RVJJPVG) |
-| 2 | 6808-2RS bearing 40 x 52 x 7 (exit swivel) | |
-| 2 | 625ZZ bearing 5 x 16 x 5 (rope-turn roller) | e.g. [Amazon](https://www.amazon.com/dp/B07MXCQSMD) |
-| 2 | 688ZZ bearing 8 x 16 x 5 (top sheave) | |
-| 2 | uxcell U625ZZ nylon U-groove pulley 5 x 20 x 7 (exit) | |
-| 2 | ISO 7379 shoulder bolt 5 x 25, M4 + 4 x M5 2 mm shims | exit pulley axles |
-| 1 | 8 mm axle / bolt for the sheave, 5 mm shoulder screw for the roller | see the fairlead parts |
-| - | Rope, 3.175 mm (1/8 in), about 3 m | e.g. UHMWPE; rated well above the 890 N design load |
+| 4 | Shoulder screw ISO 7379, 12 x 12 mm, M10 x 16 thread, 12.9 steel | the rack side's four studs |
+| 4 | Shim washer 12 x 18 x 2 mm (DIN 988) | under each stud head |
+| 2 | Dowel pin 4 x 16 mm, hardened (ISO 8734) | latch slider guides |
+| 1 | Dowel pin 8 x 16 mm, hardened (ISO 8734) | latch anvil |
+| 2 | Dowel pin 3 x 18 mm, hardened (ISO 8734) | trigger-link guides |
+| 1 | Compression spring 0.35 mm wire x 3 mm OD x 45 mm, stainless | latch return; to be chosen and tested on the prototype |
+| 1 | Stainless rod 1.2 mm, cut to 39.4 mm | the spring's guide rod |
+| 2 | Round spacer M2.5 x 3 mm, 5 mm OD, aluminum | between the trigger link and the slider |
+| 3 + 6 | M5 countersunk screws, 18 mm and 22 mm, with 9 M5 nyloc nuts and 9 washers | the three corner brackets |
+| 4 | M2 x 5 countersunk screws | the service lid |
+| 1 | Diametric magnet 6 x 5 mm (N45SH) | the encoder, glued into the drum shaft end |
 
-## Power
+## Accessory list: check your parts bin first
 
-| Qty | Part | Example |
+Not in the main list's total. Buy only what is missing.
+
+| Qty | Item | Builds | Notes |
+|---|---|---|---|
+| 1 | 6061-T6 stock for machining the metal yourself | All | Only if you machine the metal yourself: plate for the frame, the drum flanges, the latch and the rack side, bar or plate for the bearing holders and corner brackets, sheet for the trigger link, and the drum tube. |
+| 1 | [USB isolator](https://shop.odriverobotics.com/) | All | Protects the PC when you set up the ODrive over USB. |
+| 1 | [Super Lube synthetic grease, 3 oz](https://www.amazon.com/dp/B000XBH9HI) | All | The lead screw and the gears. |
+| 1 | Silicone wire, mixed gauges | All | 10 to 24 AWG; lengths in [wiring.md](https://kinetiqgym.com/docs/wiring.html). |
+| 1 | [Ring terminals, pack](https://www.amazon.com/dp/B0DM8FW4LV) | Battery builds | 10 AWG M5 (pack +), 16 AWG M5 (charge +), 10 AWG 5/16 in (ODrive DC+), 18 AWG 5/16 in (regulator feed). |
+| 1 | Ferrules and heat-shrink | All | |
+| 1 | IEC C13 mains cord | Lite | Any standard computer or monitor power cord. |
+| 1 | 6.3 mm insulated female quick-disconnects | Lite | For the inlet and rocker switch tabs. |
+| 1 | Power supply mating connectors (CN1, CN2) | Lite | The AC input and 12 V auxiliary housings with crimps, as listed in the LOP-600 datasheet. |
+| 1 | Ring terminals, M3.5 and M4, 10-16 AWG | Lite | The supply's DC screws, its earth screw and the earth stud in the base plate. |
+| 1 | Thermal pad, 0.5 mm, 6 W/mK | Lite | Between the S1 and its plate. |
+| 1 | JST GH 4-pin cable | Lite | CAN from the CAN board to the S1. |
+| 1 | [Low-profile female header strips](https://www.amazon.com/dp/B0948H7FPP) | All | The Teensy socket: 2 x 14-pin low-profile machined-pin female. |
+| 1 | [Prototype perfboards, pack](https://www.amazon.com/dp/B072Z7Y19F) | All | Three small boards (controller, CAN, regulator). |
+| 1 | MicroSD card | Battery builds | For the Raspberry Pi. |
+| 2 | [PAHT-CF filament, 1 kg spool](https://www.amazon.com/dp/B0F37YW223) | All | The end pieces, level-wind, exit, tower, gears and brackets. |
+| 1 | PETG-CF filament, 1 kg spool | All | The covers. |
+| 1 | [1 mm EVA foam roll](https://www.amazon.com/dp/B0BXJHVH5M) | Battery builds | Battery pads; or print them in TPU 95A. |
+| 1 | [2 mm EVA foam sheet](https://www.amazon.com/dp/B08YXYN327) | Battery builds | Battery pads; or print them in TPU 95A. |
+| 1 | Cable ties and thread locker (Loctite 243) | All | |
+| 1 | [1 in steel hitch pin](https://www.amazon.com/dp/B08974F734) | All | Or your rack's own 1 in pin: at least 92 mm between the head and the clip hole. |
+| 1 | [3DZWMAN heat-set insert kit, 380 pcs (M2 to M8, with tips)](https://www.amazon.com/dp/B0D2R955CL) | All | The insert pockets in every printed part are cut for this kit: M2 3 x 3.2, M2.5 4 x 4.0, M3 4 x 4.2, M4 5 x 5.0, M5 5 x 7.0 mm (length x outer diameter). Other brands may not grip. |
+| 1 | [Metric socket screw assortment](https://www.amazon.com/dp/B0FJFVG31G) | All | |
+| 1 | [M4 button-head assortment](https://www.amazon.com/dp/B0BJQ4M7D5) | All | |
+| 1 | [M3 flat-head assortment](https://www.amazon.com/dp/B0GS8FZLTK) | All | |
+| 1 | [M3 x 25 flat-head screws, pack](https://www.amazon.com/dp/B0H5JVF4K4) | All | |
+| 1 | [M4 x 10 flat-head screws, pack](https://www.amazon.com/dp/B0956VQVJ2) | All | |
+| 1 | [M4 flat-head assortment](https://www.amazon.com/dp/B0CW5Y4RQY) | All | |
+| 1 | [M2.5 x 5 flat-head screws, pack](https://www.amazon.com/dp/B0CG1NVX6J) | All | |
+| 1 | [M2.5 socket screw assortment](https://www.amazon.com/dp/B0FG2BYJSR) | All | |
+| 1 | [M2.5 x 5 socket screws, pack](https://www.amazon.com/dp/B0GM84W3X8) | All | |
+| 1 | M3 x 40 countersunk screws, pack | All | The exit clamp, 4 needed. |
+| 1 | M3 x 10 low-head socket screws (DIN 7984), pack | All | The lead screw nut's flange, 4 needed. |
+| 1 | M10 nyloc nuts and washers | All | The exit pulley axles, 2 of each. |
+| 1 | [Lock-nut and washer assortment](https://www.amazon.com/dp/B0F1FGKC1C) | All | |
+| 1 | [Plain hex-nut assortment](https://www.amazon.com/dp/B097N3SGCD) | All | |
+
+The exact screw sizes and counts come with the verified build files.
+
+## No CNC or welder? Have the metal made
+
+Typical costs for having every metal part made for one machine. Prices depend on the shop, the quantity and the lead time,
+so get quotes. Not in the main list's total. Ready-made plate and weldment kits are planned after testing.
+
+| Item | Typical cost (USD) | Notes |
 |---|---|---|
-| 2 | Thunder Power TP2700-5SR70 5S LiPo (EC5 leads) | in series = 10S |
-| 1 | JBD / LLT SP17S005 10S BMS, 60 A, with soft switch and NTC | |
-| 1 | Littelfuse 04980921GXM5 MIDI 58 V fuse holder, M5 studs | [Waytek](https://www.waytekwire.com/product/littelfuse-inline-midi-fuse-holder-04980921gxm5) |
-| 1 (+1) | Littelfuse BF1 142.5631.5402 40 A 58 V fuse | [National Fuse](https://nationalfuse.com/shop/142-5631-5402/) |
-| 2 (+2) | Littelfuse 997 MINI 58 V fuses: 3 A (0997003.WXN) and 7.5 A | [Newark](https://www.newark.com/littelfuse/0997003-wxn/automotive-fuse-fast-acting-3a/dp/79J5391) |
-| 2 | Inline MINI fuse holder with cover, 16 AWG | e.g. [VANTRONIK](https://www.amazon.com/dp/B07MQZ9Q8L) |
-| 1 | WAGO 221-615 5-port lever nut | e.g. [WAGO 15-pack](https://www.amazon.com/dp/B07CJR8MH4) |
-| 1 | AMASS XT60E-F female panel socket (charge port) | e.g. [Amass](https://www.amazon.com/dp/B09SL2MNN1) |
-| 1 | 12 mm latching push switch with ring LED (power button) | e.g. [APIELE](https://www.amazon.com/dp/B083QMF2J1) |
-| - | EC5 connector pairs, 5S JST-XH balance leads | e.g. [EC5](https://www.amazon.com/dp/B08GPR7SVR), [XH leads](https://www.amazon.com/dp/B073ZGF8D9) |
-| - | Silicone wire 10 / 12 / 16 / 18 / 20 / 22 / 24 AWG, ferrules, M5 ring terminals | see `docs/wiring.md` for lengths |
-| 1 | Charger: 10S Li-ion/LiPo, XT60, 4 A | |
+| [Laser-cut plate set, 6061-T6, tapped and countersunk](https://sendcutsend.com) | 300-550 | The frame, rack-side and drum-flange plates, plus the four 2 mm steel bearing cheeks, from an instant-priced laser service. Tapping and countersinking are charged per hole. |
+| Machined parts: 2 drum bearing holders and 3 corner brackets | 250-700 | Small 6061-T6 parts with a 28 H7 bearing bore and reamed and tapped holes, from an online CNC service. One-off US quotes sit at the top of the range; overseas services cost less and take two to three weeks. |
+| [Drum tube, 6061, 1-1/4 in OD x 0.250 in wall, 100 mm](https://www.amazon.com/dp/B0BFGLLHXC) | 15-30 | Cut to length; ask for T6. |
+| TIG welding: the frame, the drum and the rack-side weldment | 200-500 | At a local fabrication shop, by quote (ER4043, fillets as drawn, then dressed). Shops charge a one-hour minimum and fixture time; the drum flanges must stay square to the shaft. |
 
-## Electronics
+## Printed parts
 
-| Qty | Part |
-|---|---|
-| 1 | Raspberry Pi 4 Model B |
-| 1 | Waveshare 4 in DPI LCD (C), 720 x 720 touch, with its 15-way FFC |
-| 1 | Teensy 4.0 + 2 x 14-pin low-profile female headers |
-| 1 | Waveshare SN65HVD230 CAN board |
-| 1 | Pololu D42V55F5 5 V 5.5 A regulator (#5571) |
-| 1 | Noctua NF-A4x10 5V fan |
-| 3 | Perfboards (Teensy, CAN, regulator), cut to the outlines in the CAD |
-| 1 | Right-angle micro-USB to right-angle USB-A cable, short |
+Printed for every build (materials and settings in [printing.md](https://kinetiqgym.com/docs/printing.html)):
 
-## Structure and consumables
+- **PAHT-CF:** the 81T drum gear, the 45T screw gear, the traveller frame, the fixed roller bracket, the top tie, the
+  far-end screw stand, the screw-end tower, the rope clamp ring, the exit bearing housing, the exit carrier, its retainers
+  and rail caps.
+- **PA-CF:** the motor-end and battery-end pieces, the ODrive bracket, the latch finger bar and the service lid.
+- **PETG-CF:** the two covers (end caps printed in) and the rear I/O panel.
+- **PETG:** the screen frame, the front board plate and its standoffs, the WAGO bracket, the fan duct, and the TP2700
+  battery spacer (only with the TP2700 pair).
+- **TPU 95A or EVA foam:** the three battery pads.
 
-| Qty | Part |
-|---|---|
-| 2 | 6061 aluminium flat bar 1 x 1/4 x 12 in (drilled, used uncut) |
-| - | PA-CF filament about 1 kg; PETG-CF or PA-CF for the covers about 0.5 kg (see `print/README.md`) |
-| - | 1 mm and 2 mm EVA foam sheet (battery pads) |
-| - | Cable ties, thread-locker |
-
-## Screws, nuts and heat-set inserts
-
-Generated by `print-v44/hardware_summary.py` from the model (every F44_* screw / nut / washer / insert, plus the exit
-axles, ceiling standoffs and Teensy socket headers). Counts are exact for each build; buy packs (assortment kits cover most
-screws). Printed = the PA-CF / PETG prototype; CNC = the aluminium-plate build. Nothing is ordered.
-
-| Item | Printed | CNC |
-|---|---:|---:|
-| M2.5 heat-set insert L4 (Ruthex RX) | 10 | 10 |
-| M3 heat-set insert L4 (Ruthex RX) | 22 | 24 |
-| M4 heat-set insert L4 (Ruthex RX) | 18 | 4 |
-| M2.5x4 socket head (ISO 4762) | 3 | 3 |
-| M2.5x5 countersunk (ISO 10642) | 6 | 6 |
-| M2.5x5 socket head (ISO 4762) | 2 | 2 |
-| M2.5x6 socket head (ISO 4762) | 1 | 1 |
-| M2.5x10 socket head (ISO 4762) | 4 | 4 |
-| M2.5x12 socket head (ISO 4762) | 6 | 6 |
-| M3x6 socket head (ISO 4762) | 2 | 2 |
-| M3x8 countersunk (ISO 10642) | 12 | 15 |
-| M3x8 socket head (ISO 4762) | 2 | - |
-| M3x10 countersunk (ISO 10642) | 5 | 9 |
-| M3x10 socket head (ISO 4762) | - | 2 |
-| M3x12 countersunk (ISO 10642) | 4 | 4 |
-| M3x16 countersunk (ISO 10642) | 1 | - |
-| M3x25 countersunk (ISO 10642) | 4 | 4 |
-| M4x10 countersunk (ISO 10642) | 16 | 4 |
-| M4x12 socket head (ISO 4762) | 4 | 4 |
-| M4x16 countersunk (ISO 10642) | 2 | - |
-| M6x16 countersunk (ISO 10642) | - | 4 |
-| uxcell U625ZZ nylon U-groove pulley bearing 5 x 20 x 7 | 2 | 2 |
-| M2.5 female-female brass hex standoff 3 mm | 4 | 4 |
-| M3 female-female brass hex standoff / spacer 2 mm | 4 | 4 |
-| M3 nyloc nut (ISO 10511) | 4 | 4 |
-| M3 washer (ISO 7089) | 4 | 4 |
-| M4 hex nut (ISO 4032), in its pocket | 4 | 4 |
-| M4 nyloc nut (ISO 10511) | 2 | 2 |
-| M4 washer (ISO 7089) | 2 | 2 |
-| M5 spacer / shim washer 2 mm (5.2 ID) | 4 | 4 |
-| 2.54 mm 14-pin female socket header, low profile (Teensy on the perfboard) | 2 | 2 |
-| Shoulder bolt ISO 7379, 5 mm shoulder x 25, M4 thread | 2 | 2 |
-| **Total pieces** | **158** | **142** |
-
-## Shopping by kit (printed build)
-
-- **M2.5 countersunk screws:** 6 x 5 mm
-- **M2.5 socket head screws:** 3 x 4 mm, 2 x 5 mm, 1 x 6 mm, 4 x 10 mm, 6 x 12 mm
-- **M3 countersunk screws:** 12 x 8 mm, 5 x 10 mm, 4 x 12 mm, 1 x 16 mm, 4 x 25 mm
-- **M3 socket head screws:** 2 x 6 mm, 2 x 8 mm
-- **M4 countersunk screws:** 16 x 10 mm, 2 x 16 mm
-- **M4 socket head screws:** 4 x 12 mm
-- **heat-set inserts (Ruthex RX, L4):** 22 x M3, 18 x M4, 10 x M2.5
-- **nuts / washers:** 4 x M3 nyloc nut (ISO 10511), 4 x M3 washer (ISO 7089), 4 x M4 hex nut (ISO 4032), in its pocket, 2 x M4 nyloc nut (ISO 10511), 2 x M4 washer (ISO 7089), 4 x M5 spacer / shim washer 2 mm (5.2 ID)
-
-Hole sizes the model is cut to (tune with `fit-coupons/`): inserts M2.5 3.6 / M3 4.0 / M4 5.6 mm, printed clearance
-M2.5 2.9 / M3 3.6 / M4 4.7 / M6 6.8 mm, self-tap pilots M2.5 2.2 / M3 2.6 mm.
-
+The Lite adds a printed tray for its power supply and leaves out the battery parts, the screen frame and the rear I/O
+panel.

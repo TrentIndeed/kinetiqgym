@@ -1,26 +1,92 @@
 # Printing
 
-All printed parts are in `print/` (STL, in the assembly frame: orient them in the slicer, see the "face down" column in
-`print/README.md`). Every hole is already at its final size for the inserts and screws.
+> **Draft.** These settings and hole sizes are for the prototype being built now. They have not been validated by a load
+> test. The print files are released with the verified CAD after the prototype is tested.
+
+The welded 6061 aluminum frame, the drum and the rack side carry the rope load. The printed parts bolt to that frame: the
+two end pieces, the level-wind, the exit, the screw-end tower, the gears, the brackets and the covers. Every part fits a
+256 x 256 mm bed. The print files come in the assembly's orientation: turn each part in the slicer as listed below.
 
 ## Materials
 
-- **Structural** (bottom plates, fairlead carrier and back plate, ODrive bracket, bearing cartridges, gussets): PA-CF
-  (PAHT-CF), dried before printing.
-- **Covers and end caps:** PETG-CF or PA-CF.
-- **Light brackets** (screen frame, board plate, WAGO bracket, fan duct): PETG is fine.
+| Material | Parts |
+|---|---|
+| **PAHT-CF**, dried before printing | load-path parts: the 81T drum gear and the 45T screw gear, the traveller frame, the fixed roller bracket, the top tie, the far-end screw stand, the screw-end tower, the rope clamp ring, the exit bearing housing, the exit carrier, its retainers and rail caps |
+| **PA-CF** (or PAHT-CF), dried | the motor-end and battery-end pieces, the ODrive bracket, the latch finger bar and the service lid |
+| **PETG-CF** (or PA-CF) | the two covers (each with its end cap printed in) and the rear I/O panel |
+| **PETG** | the screen frame, the front board plate and its standoffs, the WAGO bracket, the fan duct, and the battery spacer for the TP2700 pair |
+| **TPU 95A** (optional) | the three battery pads, flat, 15-20 % gyroid; or cut them from 1 mm and 2 mm EVA foam sheet |
 
-Suggested settings for the structural parts (not yet validated by a load test): 0.2 mm layers, 5-6 walls, 6 top/bottom layers,
-40-50 % gyroid infill, print the bottom plates flat on their underside. All parts fit a 256 mm bed (Bambu P2S class).
+The carbon-fiber filaments wear brass nozzles: use a hardened nozzle.
+
+## Settings
+
+Suggested for the structural parts (PAHT-CF and PA-CF), not yet validated by a load test:
+
+- 0.2 mm layers;
+- 5-6 walls;
+- 6 top and 6 bottom layers;
+- 40-50 % gyroid infill.
+
+## Orientation
+
+| Part | Face on the bed |
+|---|---|
+| Screw-end tower | **on its side, web flat on the bed.** Its bending then runs along the layers. Never print it upright. |
+| Top tie | on its side, so the layers run along the bar |
+| End pieces | underside down |
+| Covers | top down (the wire loops bridge; no supports) |
+| Rope clamp ring | outer face down (grooves and knot pocket up) |
+| 81T drum gear | gear face down |
+| 45T screw gear | hub face up |
+| Fixed roller bracket | flange face down |
+| Traveller frame | carriage plate down |
+| Far-end screw stand | foot down |
+| Front board plate | back face down |
+| Rear I/O panel | outer face down |
+| Battery pads | flat |
+| TP2700 battery spacer | side plate down |
+
+The bearing seats, the nut bore and the screw holes in the level-wind parts run horizontally. A hole printed on its side
+can droop at the top: check each against its fit coupon before assembly.
+
+## Heat-set inserts
+
+The pockets are cut for the **3DZWMAN 380-piece insert kit**. Other brands' inserts have other sizes and may not grip.
+
+| Thread | Insert (length x outer Ø) | Pocket hole |
+|---|---|---|
+| M2 | 3 x 3.2 mm | 2.9 mm |
+| M2.5 | 4 x 4.0 mm | 3.6 mm |
+| M3 | 4 x 4.2 mm | 4.0 mm |
+| M4 | 5 x 5.0 mm | 4.6 mm |
+| M5 | 5 x 7.0 mm | 6.4 mm |
+
+Pockets are one millimeter deeper than the insert, with a 0.5 mm lead-in. Press each insert in square to the face with a
+soldering iron and an insert tip, and let it cool before loading it.
+
+Other printed holes: clearance M2.5 2.9 / M3 3.6 / M4 4.7 mm; self-tapping pilots M2.5 2.2 / M3 2.6 mm.
 
 ## Fit coupons first
 
-`print/fit-coupons/` tests the tolerances in your material before the big prints:
+Print the fit coupons in the same material and on the same printer before the large parts. Each one tests a few sizes
+around the design value:
 
-1. Insert pockets M2.5 / M3 / M4 at -0.15 / nominal / +0.15 mm (Ruthex RX, pockets 3.6 / 4.0 / 5.6 mm).
-2. Clearance holes M2.5 / M3 / M4 and the 5.2 mm pulley axle at -0.2 / nominal / +0.2 mm.
-3. A 10 mm slice of the battery saddle (40.0 mm inside): slide a pack through it.
-4. The exit pulley axles, 21.13 mm apart, with the carrier walls.
-5. The 6809 bearing seat (58 mm): the bearing should press in by hand.
+1. **Insert pockets** M2.5 / M3 / M4 at -0.15 / nominal / +0.15 mm. Press an insert into each and use the size that goes
+   in straight and holds a tightened screw.
+2. **Clearance holes** M2.5 / M3 / M4 at -0.2 / nominal / +0.2 mm. The screw should slide through the nominal hole without
+   forcing.
+3. **Battery slice:** a 10 mm slice of the battery cradle (44.0 mm opening: the TP3300's 43 mm plus 0.5 mm a side). Slide a
+   real pack through it both ways. A TP2700 pack goes in on its printed spacer.
+4. **688 bearing seat:** slices of the screw-end tower wall with 15.90 to 16.20 mm bores (the design uses 16.10). Use the
+   tightest that seats the bearing flush by hand or in a vise without splitting the ring.
+5. **Roller shoulder holes:** 6.0 to 6.3 mm (the design uses 6.2) with the 10.4 mm head counterbore. The shoulder should
+   slide in without wobble and the head should sit below the face.
+6. **M5 and M4 inserts:** M5 pockets at 6.25 / 6.40 / 6.55 mm and M4 pockets at -0.15 / nominal / +0.15 mm.
+7. **T8 nut seat:** bores of 10.4 to 10.8 mm (the design uses 10.8) for the brass nut's 10.2 mm body, with the flange's M3
+   insert pockets. Check that the bore stays round with the inserts set: only 0.6-0.75 mm is left between them.
+8. **Lead-screw clearance:** 8.6 / 8.9 / 9.2 mm (the design uses 9.2). The screw must turn freely: the nut is the only
+   contact.
 
-If your printer needs different sizes, adjust the holes in the FreeCAD parts (or the `source/` scripts) and re-export.
+If a different size works best in your material, note it. Hole sizes are easy to change in the editable CAD, which is
+released with the verified build files.
