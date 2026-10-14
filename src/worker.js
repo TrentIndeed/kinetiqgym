@@ -18,9 +18,77 @@ export default {
       return url.pathname === '/api/subscribe' ? subscribe(body, env, request) : contact(body, env, request);
     }
     if (url.pathname.startsWith('/api/')) return reply({ error: 'Not found.' }, 404);
+    if (MEDIA.test(url.pathname)) return media(request, env);
     return env.ASSETS.fetch(request);
   },
 };
+
+// Video and audio: the assets binding answers a Range request with the whole file (200), and a browser cannot seek (scrub) a video
+// without 206 Partial Content. Media files are served here with byte ranges: the asset is streamed and only the asked-for slice is sent.
+const MEDIA = /\.(mp4|m4v|webm|mov|mp3|m4a|wav|ogg)$/i;
+
+async function media(request, env) {
+  const range = request.headers.get('range');
+  if (!range) {                                                          // plain requests (and 304 revalidations) as before, plus Accept-Ranges
+    const res = await env.ASSETS.fetch(request);
+    const headers = new Headers(res.headers); headers.set('accept-ranges', 'bytes');
+    return new Response(res.body, { status: res.status, statusText: res.statusText, headers });
+  }
+  const res = await env.ASSETS.fetch(new Request(request.url, { method: 'GET' }));
+  const m = /^bytes=(\d*)-(\d*)$/.exec(range.trim());
+  const size = res.ok && res.body && m ? await assetSize(request.url, res, env) : 0;
+  if (!size || (m[1] === '' && m[2] === '')) return res;                 // not something to slice: the whole file
+  let start, end;
+  if (m[1] === '') { start = Math.max(size - Number(m[2]), 0); end = size - 1; }        // the last N bytes
+  else { start = Number(m[1]); end = m[2] === '' ? size - 1 : Math.min(Number(m[2]), size - 1); }
+  const headers = new Headers(res.headers); headers.set('accept-ranges', 'bytes');
+  if (start >= size || start > end) {
+    await res.body.cancel();
+    headers.set('content-range', `bytes */${size}`); headers.delete('content-length');
+    return new Response(null, { status: 416, headers });
+  }
+  const n = end - start + 1;
+  headers.set('content-range', `bytes ${start}-${end}/${size}`); headers.set('content-length', String(n));
+  if (request.method === 'HEAD') { await res.body.cancel(); return new Response(null, { status: 206, headers }); }
+  let body = slice(res.body, start, end + 1);
+  if (typeof FixedLengthStream === 'function') { const f = new FixedLengthStream(n); body.pipeTo(f.writable); body = f.readable; }   // a real Content-Length
+  return new Response(body, { status: 206, headers });
+}
+
+// The asset response inside the Worker carries no Content-Length, so the size comes from a HEAD or, failing that, one counting pass;
+// it is kept per isolate, keyed by the asset's ETag (a new deploy has new ETags).
+const SIZES = new Map();
+async function assetSize(url, res, env) {
+  const key = `${url}|${res.headers.get('etag') || ''}`;
+  if (SIZES.has(key)) return SIZES.get(key);
+  let n = Number(res.headers.get('content-length')) || 0;
+  if (!n) n = Number((await env.ASSETS.fetch(new Request(url, { method: 'HEAD' }))).headers.get('content-length')) || 0;
+  if (!n) {
+    const reader = (await env.ASSETS.fetch(new Request(url, { method: 'GET' }))).body.getReader();
+    for (;;) { const { done, value } = await reader.read(); if (done) break; n += value.byteLength; }
+  }
+  if (n) SIZES.set(key, n);
+  return n;
+}
+
+function slice(body, start, stop) {                                      // bytes [start, stop) of a stream, read chunk by chunk
+  const reader = body.getReader(); let pos = 0;
+  return new ReadableStream({
+    async pull(ctrl) {
+      for (;;) {
+        const { done, value } = await reader.read();
+        if (done) { ctrl.close(); return; }
+        const a = pos; pos += value.byteLength;
+        if (pos <= start) continue;
+        const s = Math.max(start - a, 0), e = Math.min(stop - a, value.byteLength);
+        if (s < e) ctrl.enqueue(value.subarray(s, e));
+        if (pos >= stop) { ctrl.close(); await reader.cancel(); }
+        return;
+      }
+    },
+    cancel(reason) { return reader.cancel(reason); },
+  });
+}
 
 async function subscribe(body, env, request) {
   const email = clean(body.email, 254).toLowerCase();
