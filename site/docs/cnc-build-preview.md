@@ -1,16 +1,17 @@
 # The build, illustrated
 
-Stills from the build animation of the current design: the welded aluminum frame, the drum and level-wind, the motor, the
+Stills from the build animation of the current design: the bolted aluminum frame, the drum and level-wind, the motor, the
 electronics, the covers and the rack mount. They show the layout and the build order; they are not a confirmed fabrication or
 assembly procedure. The written [build order](build.md) has the steps. Both are drafts until the prototype has been built and
 load-tested.
 
-## 1. The welded frame
+## 1. The bolted frame
 
-![The welded aluminum frame with its printed end pieces on the rack](../media/project/stage-frame.webp)
+![The bolted aluminum frame with its printed end pieces on the rack](../media/project/stage-frame.webp)
 
-The base, motor face and rear plates are 6061 aluminum, welded into one frame that carries every load. The printed motor-end
-and battery-end pieces bolt to it, with the main fuse block and the quick-release corner brackets.
+The base, rear and motor face plates are 6061 aluminum and screw together into one frame that carries every load, with
+three machined corner brackets at the rear joint. The printed motor-end and battery-end pieces bolt to it, with the main
+fuse block.
 
 ## 2. The drum and the level-wind
 

@@ -7,11 +7,12 @@ prices and stock change. Nothing here is endorsed by the suppliers.</p>
 <p>The <a href="https://kinetiqgym.com/build.html#parts">website budget</a> has the same list with dated prices, per-build totals and
 editable prices.</p>
 <p><strong>How the list is organized.</strong> The <strong>main list</strong> is what a builder has to buy, in order of importance, from motor and
-controller to adhesives. It assumes you make the metal and printed parts yourself (laser cutting or CNC, a TIG welder and a
-3D printer). The <strong>accessory list</strong> is what many builders already have. The last section gives typical costs for having
+controller to adhesives. It assumes you make the metal and printed parts yourself (laser cutting or CNC, a drill with taps,
+and a 3D printer). The <strong>accessory list</strong> is what many builders already have. The last section gives typical costs for having
 the metal made.</p>
-<p><strong>What the builds share.</strong> Every build uses the same welded 6061 aluminum frame, drum, level-wind, exit and rack side. The
-shared parts are sized for the 220 lb peak builds. Direct drive only: the motor turns the drum through a clamp coupling,
+<p><strong>What the builds share.</strong> Every build uses the same bolted 6061 aluminum frame, drum, level-wind, exit and rack side.
+The shared parts are sized for the 220 lb peak builds: in the load study every member passes 1.5x at 220 lb, to be
+confirmed by load testing. Direct drive only: the motor turns the drum through a clamp coupling,
 with no belt or gear between them.</p>
 <h2 id="the-five-builds">The five builds</h2>
 <div class="table-scroll" tabindex="0" role="region" aria-label="Reference table"><table>
@@ -435,9 +436,27 @@ with no belt or gear between them.</p>
 </tr>
 <tr>
 <td>1</td>
-<td><a href="https://www.waveshare.com/product/4inch-dpi-lcd-c.htm">Waveshare 4 inch DPI LCD (C)</a></td>
+<td><a href="https://www.amazon.com/dp/B09QKR364V">Waveshare 4 inch HDMI LCD (C)</a></td>
 <td>Battery builds</td>
-<td>720 x 720 capacitive touch display.</td>
+<td>720 x 720 square capacitive touch display: HDMI video, USB-C touch.</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B0HGXD92P2">Flat HDMI cable kit, HDMI to 90-degree micro-HDMI, 10 cm</a></td>
+<td>Battery builds</td>
+<td>Screen to the Pi's HDMI 0. You assemble it.</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B0FG7Z6QLX">Right-angle USB-C cable, 1 ft, 2-pack</a></td>
+<td>Battery builds</td>
+<td>The screen's touch and power, to a Pi USB port.</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B0C7V37X25">90-degree USB-A adapters, 4-pack</a></td>
+<td>Battery builds</td>
+<td>The right angle at the Pi's USB port.</td>
 </tr>
 <tr>
 <td>1</td>
@@ -589,6 +608,31 @@ with no belt or gear between them.</p>
 <td>the three corner brackets</td>
 </tr>
 <tr>
+<td>6</td>
+<td>M4 x 18 countersunk screws</td>
+<td>the rear plate to the base plate</td>
+</tr>
+<tr>
+<td>4</td>
+<td>M4 x 12 countersunk screws</td>
+<td>the motor face plate brackets</td>
+</tr>
+<tr>
+<td>2</td>
+<td>M3 x 18 countersunk screws</td>
+<td>the rear plate into the motor face plate's back edge</td>
+</tr>
+<tr>
+<td>8</td>
+<td>M3 x 12 countersunk screws</td>
+<td>the drum flanges to the tube</td>
+</tr>
+<tr>
+<td>6</td>
+<td>M4 x 25 countersunk screws</td>
+<td>the mating plate into the rack cheeks</td>
+</tr>
+<tr>
 <td>4</td>
 <td>M2 x 5 countersunk screws</td>
 <td>the service lid</td>
@@ -614,9 +658,15 @@ with no belt or gear between them.</p>
 <tbody>
 <tr>
 <td>1</td>
-<td>6061-T6 stock for machining the metal yourself</td>
+<td>6061-T6 stock for machining it yourself</td>
 <td>All</td>
-<td>Only if you machine the metal yourself: plate for the frame, the drum flanges, the latch and the rack side, bar or plate for the bearing holders and corner brackets, sheet for the trigger link, and the drum tube.</td>
+<td>Only if you machine the metal yourself: 0.250, 0.375 and 0.750 in plate, a short bar for the bearing holders, 1 x 1 x 1/4 in angle for the motor face plate brackets, and the drum tube, from a local metal shop. About $160 for one build.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Taps and drills for the edge holes</td>
+<td>All</td>
+<td>M3 and M4 taps with a tap handle, and 2.5 and 3.3 mm drills: the edge holes are drilled by hand through the printed guides.</td>
 </tr>
 <tr>
 <td>1</td>
@@ -831,9 +881,9 @@ with no belt or gear between them.</p>
 </tbody>
 </table></div>
 <p>The exact screw sizes and counts come with the verified build files.</p>
-<h2 id="no-cnc-or-welder-have-the-metal-made">No CNC or welder? Have the metal made</h2>
-<p>Typical costs for having every metal part made for one machine. Prices depend on the shop, the quantity and the lead time,
-so get quotes. Not in the main list's total. Ready-made plate and weldment kits are planned after testing.</p>
+<h2 id="no-cnc-have-the-metal-made">No CNC? Have the metal made</h2>
+<p>Typical costs for having the metal parts made for one machine: about $565-1,280 in all. Prices depend on the shop, the
+quantity and the lead time, so get quotes. Not in the main list's total. Ready-made metal kits are planned after testing.</p>
 <div class="table-scroll" tabindex="0" role="region" aria-label="Reference table"><table>
 <thead>
 <tr>
@@ -845,26 +895,23 @@ so get quotes. Not in the main list's total. Ready-made plate and weldment kits 
 <tbody>
 <tr>
 <td><a href="https://sendcutsend.com">Laser-cut plate set, 6061-T6, tapped and countersunk</a></td>
-<td>300-550</td>
-<td>The frame, rack-side and drum-flange plates, plus the four 2 mm steel bearing cheeks, from an instant-priced laser service. Tapping and countersinking are charged per hole.</td>
+<td>250-450</td>
+<td>The base, rear and motor face plates, the rack cheeks and the drum flanges, plus the four 2 mm steel bearing cheeks, from an instant-priced laser service. Tapping and countersinking are charged per hole.</td>
 </tr>
 <tr>
-<td>Machined parts: 2 drum bearing holders and 3 corner brackets</td>
-<td>250-700</td>
-<td>Small 6061-T6 parts with a 28 H7 bearing bore and reamed and tapped holes, from an online CNC service. One-off US quotes sit at the top of the range; overseas services cost less and take two to three weeks.</td>
+<td>Machined parts: bearing holders, brackets and the mating plate</td>
+<td>300-800</td>
+<td>Two drum bearing holders (28 H7 bore), three corner brackets and the 3/4 in mating plate (M10 threads, cheek slots) from an online CNC service. One-off US quotes sit at the top of the range; overseas services cost less and take two to three weeks.</td>
 </tr>
 <tr>
-<td><a href="https://www.amazon.com/dp/B0BFGLLHXC">Drum tube, 6061, 1-1/4 in OD x 0.250 in wall, 100 mm</a></td>
+<td>Drum tube, 6061, 1-1/4 in OD x 0.250 in wall, 100 mm</td>
 <td>15-30</td>
-<td>Cut to length; ask for T6.</td>
-</tr>
-<tr>
-<td>TIG welding: the frame, the drum and the rack-side weldment</td>
-<td>200-500</td>
-<td>At a local fabrication shop, by quote (ER4043, fillets as drawn, then dressed). Shops charge a one-hour minimum and fixture time; the drum flanges must stay square to the shaft.</td>
+<td>From a local metal shop, cut square; ask for T6.</td>
 </tr>
 </tbody>
 </table></div>
+<p>The holes in the plate edges and the tube ends are drilled and tapped by hand through the printed drill guides, and the
+two motor face plate brackets are cut from 1 x 1 x 1/4 in 6061 angle (see the build instructions).</p>
 <h2 id="printed-parts">Printed parts</h2>
 <p>Printed for every build (materials and settings in <a href="https://kinetiqgym.com/docs/printing.html">printing.md</a>):</p>
 <ul>
@@ -876,6 +923,7 @@ so get quotes. Not in the main list's total. Ready-made plate and weldment kits 
 <li><strong>PETG:</strong> the screen frame, the front board plate and its standoffs, the WAGO bracket, the fan duct, and the TP2700
   battery spacer (only with the TP2700 pair).</li>
 <li><strong>TPU 95A or EVA foam:</strong> the three battery pads.</li>
+<li><strong>PETG or PLA:</strong> the five drill guides for the edge holes (tools, not parts of the machine).</li>
 </ul>
 <p>The Lite adds a printed tray for its power supply and leaves out the battery parts, the screen frame and the rear I/O
 panel.</p><p class="table-note">A draft reference: the prototype is being built and tested, and the CAD, build files and software are released after testing.</p><a class="text-link" href="BOM.md" download>Download Markdown source ↗</a></main><footer class="footer container"><a class="brand" href="/">KINETIQ</a><a href="/build#parts">Builds & cost</a><a href="/build#files">Files & kits</a><a href="/#join">Kit waitlist</a></footer></body></html>

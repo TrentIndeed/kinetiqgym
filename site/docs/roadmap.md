@@ -8,13 +8,13 @@
 
 | Stage | Status |
 |---|---|
-| CAD design: the welded aluminum frame, the drivetrain, the level-wind, the exit, the rack mount and five builds | done |
+| CAD design: the bolted aluminum frame, the drivetrain, the level-wind, the exit, the rack mount and five builds | done |
 | Printed fit test of the whole assembly | done |
 | Prototype parts and metal stock | on order |
 | Aluminum prototype build (main build: APS 8072S, 10S battery) | next |
 | Load testing: static load in steps, then powered tests and thermal checks | after the build |
 | Verified release: CAD, build files and software | after load testing |
-| Plate and weldment kits made by Trent, the project's maker | after the verified release |
+| Metal kits made by Trent, the project's maker | after the verified release |
 
 ## The verified release
 
@@ -34,8 +34,8 @@ untested.
 
 ## After the release
 
-- **Kits:** laser-cut, tapped and countersunk 6061 plates, the machined bearing holders, and the welded frame, drum and rack
-  side, made by Trent. Printed-part sets and complete machines may follow. Nothing is for sale before testing; the website
+- **Metal kits:** the laser-cut, tapped and countersunk 6061 plates, the machined bearing holders, corner brackets and
+  mating plate, and the drum parts, made by Trent. Printed-part sets and complete machines may follow. Nothing is for sale before testing; the website
   has a kit waitlist.
 - **Contributions** open with the verified release. Until then there is no tested design to contribute to. After it, useful
   contributions are build reports (revision, materials, settings, measurements and photos), CAD changes with what they

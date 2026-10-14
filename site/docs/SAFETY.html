@@ -4,8 +4,9 @@ every number here as a design value until your own build has passed the tests be
 <h2 id="what-can-hurt-you">What can hurt you</h2>
 <ul>
 <li><strong>Cable load.</strong> The main build is rated for a 158 lb (703 N) peak pull on the cable; the 220 lb builds for a 220 lb
-  (979 N) peak. The load-path parts are sized by calculation for a 1.5x margin at those peaks (one exception: the level-wind
-  rail, about 1.3x at 220 lb on the last few wraps). None of it is tested yet.
+  (979 N) peak. In the load study every member of the bolted frame, the drum and the rack side passes 1.5x at 220 lb (the
+  weakest, the rack cheek screws, at 2.9x); the level-wind rail is the one part below that, at about 1.3x on the last few
+  wraps. These are calculations, to be confirmed by load testing.
   A rope, its clamp, a roller, the exit or the rack mount that fails under load releases that energy at the handle.
   Inspect the rope, the rope clamp, the rollers and the exit before every session, and replace a frayed rope at once.</li>
 <li><strong>Rack mount.</strong> The unit hangs on four studs on the rack side and is held by a spring latch. The rack side clamps round a
@@ -33,7 +34,9 @@ every number here as a design value until your own build has passed the tests be
 <li><strong>Keep the 3 dead wraps</strong> of rope on the drum at full payout. Never run the rope off the drum.</li>
 <li><strong>Fuses rated 58 V DC:</strong> the 40 A MRBF main fuse, the 3 A regulator fuse and the 10 A charge fuse, in holders rated
    58 V. Common 32 V automotive fuses and holders are not rated for this pack voltage.</li>
-<li><strong>Let the adhesives cure.</strong> The drum hub and flanges are bonded to the shaft with Loctite 638: no load for 24 h.</li>
+<li><strong>Bolted joints and adhesives.</strong> Loctite 243 on every screw into the frame's, drum's and rack cheeks' tapped edge holes.
+   The drum flanges are bonded to the tube, and the hub and flanges to the shaft, with Loctite 638: no load for 24 h. Check
+   the frame and rack-side screws after the load test.</li>
 <li><strong>First power-up</strong> with the rope unloaded and nobody in its path: check the inrush at the power button (the BMS may
    trip; lengthen its short-circuit delay in the BMS app if it does), the drum's direction, the payout window, the
    over-voltage trip and the regen limit.</li>
