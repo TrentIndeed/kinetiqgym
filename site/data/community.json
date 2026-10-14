@@ -1,5 +1,5 @@
 {
-  "donationUrl": "https://www.paypal.com/donate/?business=XFB4JBBVTRW8U&no_recurring=0&item_name=Support+Kinetiq+Gym+prototype+iterations+and+build+support&currency_code=USD",
+  "donationUrl": "https://www.paypal.com/donate/?business=XFB4JBBVTRW8U&no_recurring=0&item_name=Support+Kinetiq+Gym%3A+help+fund+the+next+build.+Every+iteration+makes+the+design+safer%2C+easier+to+build+and+easier+to+share.&currency_code=USD",
   "donationProvider": "PayPal",
   "fundingPurpose": "Prototype iterations (parts, stock, test revisions) and build support (instructions, videos, fit coupons, jigs)",
   "reviewPolicy": "Contributions open with the verified release"
