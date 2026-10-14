@@ -687,14 +687,14 @@
     },
     {
       "id": "p045",
-      "name": "Waveshare 4 inch DPI LCD (C)",
+      "name": "Waveshare 4 inch HDMI LCD (C)",
       "category": "Controls & screen",
       "qty": 1,
-      "price": 54.99,
-      "note": "720 x 720 square capacitive display.",
-      "url": "https://www.waveshare.com/product/4inch-dpi-lcd-c.htm",
+      "price": 78.99,
+      "note": "720 x 720 square capacitive display: HDMI video, USB-C touch.",
+      "url": "https://www.amazon.com/dp/B09QKR364V",
       "status": "Source price",
-      "date": "Checked Oct 2, 2026",
+      "date": "Checked Oct 13, 2026",
       "motor": [
         "aps8072s",
         "mp80100",
@@ -702,6 +702,60 @@
         "c80100_220"
       ],
       "rank": 45
+    },
+    {
+      "id": "p142",
+      "name": "Flat HDMI cable kit, HDMI to 90-degree micro-HDMI, 10 cm",
+      "category": "Controls & screen",
+      "qty": 1,
+      "price": 7.98,
+      "note": "Screen to the Pi's HDMI 0, under the Pi's edge. You assemble it (the plugs and the flat cable ship separately).",
+      "url": "https://www.amazon.com/dp/B0HGXD92P2",
+      "status": "Source price",
+      "date": "Checked Oct 13, 2026",
+      "motor": [
+        "aps8072s",
+        "mp80100",
+        "mp80100_220",
+        "c80100_220"
+      ],
+      "rank": 46
+    },
+    {
+      "id": "p143",
+      "name": "Right-angle USB-C cable, 1 ft, 2-pack",
+      "category": "Controls & screen",
+      "qty": 1,
+      "price": 7.89,
+      "note": "The screen's touch and power, to a Pi USB port.",
+      "url": "https://www.amazon.com/dp/B0FG7Z6QLX",
+      "status": "Source price",
+      "date": "Checked Oct 13, 2026",
+      "motor": [
+        "aps8072s",
+        "mp80100",
+        "mp80100_220",
+        "c80100_220"
+      ],
+      "rank": 47
+    },
+    {
+      "id": "p144",
+      "name": "90-degree USB-A adapters, 4-pack",
+      "category": "Controls & screen",
+      "qty": 1,
+      "price": 7.59,
+      "note": "The right angle at the Pi's USB port.",
+      "url": "https://www.amazon.com/dp/B0C7V37X25",
+      "status": "Source price",
+      "date": "Checked Oct 13, 2026",
+      "motor": [
+        "aps8072s",
+        "mp80100",
+        "mp80100_220",
+        "c80100_220"
+      ],
+      "rank": 48
     },
     {
       "id": "p050",
@@ -713,7 +767,7 @@
       "url": "https://www.amazon.com/dp/B00NEMGCIA",
       "status": "Estimate",
       "date": "",
-      "rank": 46
+      "rank": 49
     },
     {
       "id": "p052",
@@ -731,7 +785,7 @@
         "mp80100_220",
         "c80100_220"
       ],
-      "rank": 47
+      "rank": 50
     },
     {
       "id": "p107",
@@ -749,7 +803,7 @@
         "mp80100_220",
         "c80100_220"
       ],
-      "rank": 48
+      "rank": 51
     },
     {
       "id": "p035",
@@ -767,7 +821,7 @@
         "mp80100_220",
         "c80100_220"
       ],
-      "rank": 49
+      "rank": 52
     },
     {
       "id": "p037",
@@ -785,7 +839,7 @@
         "mp80100_220",
         "c80100_220"
       ],
-      "rank": 50
+      "rank": 53
     },
     {
       "id": "p038",
@@ -803,7 +857,7 @@
         "mp80100_220",
         "c80100_220"
       ],
-      "rank": 51
+      "rank": 54
     },
     {
       "id": "p034",
@@ -821,7 +875,7 @@
         "mp80100_220",
         "c80100_220"
       ],
-      "rank": 52
+      "rank": 55
     },
     {
       "id": "p036",
@@ -839,7 +893,7 @@
         "mp80100_220",
         "c80100_220"
       ],
-      "rank": 53
+      "rank": 56
     },
     {
       "id": "p088",
@@ -851,7 +905,7 @@
       "url": "https://www.amazon.com/dp/B000O01EV0",
       "status": "Source price",
       "date": "Checked Oct 12, 2026",
-      "rank": 54
+      "rank": 57
     },
     {
       "id": "p135",
@@ -863,7 +917,7 @@
       "url": "https://www.amazon.com/dp/B01MQJ92VM",
       "status": "Source price",
       "date": "Checked Oct 11, 2026",
-      "rank": 55
+      "rank": 58
     },
     {
       "id": "p089",
@@ -875,7 +929,7 @@
       "url": "https://www.amazon.com/dp/B0CQ2R5GDW",
       "status": "Source price",
       "date": "Checked Oct 12, 2026",
-      "rank": 56
+      "rank": 59
     }
   ],
   "accessories": [
@@ -884,8 +938,19 @@
       "name": "6061-T6 stock for machining it yourself",
       "category": "Accessories",
       "qty": 1,
-      "price": 150,
-      "note": "Only if you machine the metal yourself: 0.250 and 0.375 in plate for the frame, rack side and drum flanges, a short 1-3/4 x 2-1/4 in bar for the bearing holders, and the drum tube.",
+      "price": 160,
+      "note": "Only if you machine the metal yourself: 0.250, 0.375 and 0.750 in plate, a short bar for the bearing holders, 1 x 1 x 1/4 in angle for the motor face brackets and the drum tube, from a local metal shop. About $160 for one build.",
+      "url": "",
+      "status": "Estimate",
+      "date": ""
+    },
+    {
+      "id": "p141",
+      "name": "Taps and drills for the edge holes",
+      "category": "Accessories",
+      "qty": 1,
+      "price": 25,
+      "note": "M3 and M4 taps with a tap handle, and 2.5 and 3.3 mm drills: the edge holes are drilled by hand through the printed guides.",
       "url": "",
       "status": "Estimate",
       "date": ""
@@ -1285,17 +1350,6 @@
       "date": ""
     },
     {
-      "id": "p085",
-      "name": "M6 x 16 countersunk screws, pack",
-      "category": "Accessories",
-      "qty": 1,
-      "price": 8,
-      "note": "Rack mount: M6 x 22 (4) and M6 x 30 (2).",
-      "url": "",
-      "status": "Estimate",
-      "date": ""
-    },
-    {
       "id": "p111",
       "name": "M10 nyloc nuts and washers",
       "category": "Accessories",
@@ -1335,21 +1389,21 @@
       "name": "Laser-cut plate set, 6061-T6, tapped and countersunk",
       "category": "Fabrication",
       "qty": 1,
-      "low": 300,
-      "high": 550,
-      "note": "The frame, rack-side and drum-flange plates (0.250 and 0.375 in), plus the four 2 mm steel bearing cheeks, cut from the DXF files at an instant-priced laser service such as SendCutSend. Tapping and countersinking are charged per hole.",
+      "low": 250,
+      "high": 450,
+      "note": "The base, rear and motor face plates, the rack cheeks and the drum flanges (0.250 and 0.375 in), plus the four 2 mm steel bearing cheeks, cut from the DXF files at an instant-priced laser service such as SendCutSend. Tapping and countersinking are charged per hole.",
       "url": "https://sendcutsend.com",
       "status": "Estimate",
       "date": ""
     },
     {
       "id": "p136",
-      "name": "Machined parts: 2 drum bearing holders and 3 corner brackets",
+      "name": "Machined parts: bearing holders, brackets and the mating plate",
       "category": "Fabrication",
       "qty": 1,
-      "low": 250,
-      "high": 700,
-      "note": "Small 6061-T6 parts with a 28 H7 bearing bore, reamed and tapped holes, from an online CNC service. One-off US quotes sit at the top of the range; overseas services cost less and take two to three weeks.",
+      "low": 300,
+      "high": 800,
+      "note": "Two drum bearing holders (28 H7 bore), three corner brackets and the 3/4 in mating plate (M10 threads, cheek slots) from an online CNC service. One-off US quotes sit at the top of the range; overseas services cost less and take two to three weeks.",
       "url": "",
       "status": "Estimate",
       "date": ""
@@ -1361,19 +1415,7 @@
       "qty": 1,
       "low": 15,
       "high": 30,
-      "note": "Cut to length; ask for T6.",
-      "url": "https://www.amazon.com/dp/B0BFGLLHXC",
-      "status": "Estimate",
-      "date": ""
-    },
-    {
-      "id": "p054",
-      "name": "TIG welding: the frame, the drum and the rack-side weldment",
-      "category": "Fabrication",
-      "qty": 1,
-      "low": 200,
-      "high": 500,
-      "note": "At a local fabrication shop, by quote (ER4043, fillets as drawn, then dressed). Shops charge a one-hour minimum and fixture time; the drum flanges must stay square to the shaft.",
+      "note": "From a local metal shop, cut square; ask for T6.",
       "url": "",
       "status": "Estimate",
       "date": ""

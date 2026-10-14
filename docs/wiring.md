@@ -80,7 +80,8 @@ current flows back through the 40 A fuse and the BMS into the pack.
 | Teensy to CAN board | 4 x 26 AWG | Teensy CAN TX/RX, 3.3 V and GND to the CAN transceiver board (short bundle on the board plate) | 24 mm |
 | CAN bus | twisted pair | CAN H, CAN L and GND (twisted pair and drain) from the CAN board terminal to the ODrive CAN header (4-pin JST-GH plug) | 347 mm |
 | USB | cable | Teensy (right-angle micro-USB) to the Pi's upper USB-A port (right-angle plug) | 177 mm |
-| Screen ribbon | 15-way FFC | Screen connector, behind the screen stand, to the Pi | - |
+| Screen video | flat HDMI cable | The screen's HDMI socket (its connector edge is at the top) back under the Pi's edge to the Pi's HDMI 0 | about 40 mm |
+| Screen touch and power | USB-C cable | The screen's USB-C (right-angle plug) to the Pi's second USB stack, lower port (90-degree USB-A adapter) | - |
 | Balance lead, pack A | 5S JST-XH | Cells 1-5 to the BMS balance header | 207 mm |
 | Balance lead, pack B | 5S JST-XH | Cells 6-10 to the BMS balance header | 140 mm |
 | BMS NTC | lead | BMS NTC lead to the 10 k probe taped to pack B's rear end face | 127 mm |

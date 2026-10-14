@@ -41,12 +41,14 @@ A pack that fits is not automatically electrically compatible.
 
 The drive is direct: the motor turns the drum through a rigid clamp coupling, with no belt or gear between them.
 
-**The motor face plate** (0.250 in 6061, welded to the frame) carries two bolt circles and a Ø16 mm shaft hole:
+**The motor face plate** (0.250 in 6061) is bolted to the frame: it stands on two small angle brackets on the base plate and
+is screwed through the rear plate into its back edge. It carries two bolt circles and a Ø16 mm shaft hole:
 
 - 4 x M5 on Ø56 mm, on the 45° diagonals: the MP80100 and the APS C80100;
 - 4 x M5 on Ø59 mm: the APS 8072S.
 
-A different motor needs its own pattern on the same centerline (the drum axis), clear of the existing holes and the welds.
+A different motor needs its own pattern on the same centerline (the drum axis), clear of the existing holes and of the two
+brackets under the plate (their legs are 16 mm tall, under the reference motors' screw heads).
 
 | Interface | Reference | What to check |
 |---|---|---|

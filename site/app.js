@@ -3,7 +3,7 @@ const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const money=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(n);
 const whole=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n);
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-// One build path (the welded aluminum frame); a "build" is a motor and power choice. Only the chosen build and your own prices are kept.
+// One build path (the bolted aluminum frame); a "build" is a motor and power choice. Only the chosen build and your own prices are kept.
 const state={prices:{},search:'',category:'all',motor:''};
 let data;
 try {const saved=JSON.parse(localStorage.getItem('kinetiq-budget-v1')||'{}'); if(saved && typeof saved==='object'){if(typeof saved.motor==='string')state.motor=saved.motor; if(saved.prices && typeof saved.prices==='object' && !Array.isArray(saved.prices))state.prices=saved.prices;}}catch{}
@@ -29,8 +29,8 @@ const link=p=>p.url?`<a href="${esc(p.url)}" target="_blank" rel="noopener noref
 function initBuild(){const ms=data.motors||[];const q=new URLSearchParams(location.search).get('motor');if(ms.some(m=>m.id===q))state.motor=q;if(!ms.some(m=>m.id===state.motor))state.motor=(ms.find(m=>m.default)||ms[0]||{}).id||'';const m=motorOf();$('#motor-note').textContent=m?m.note:'';}
 const chapters=[
 ['Order the parts, read the safety notes','Pick a build above and order its main list. Read the safety reference before anything is powered. The CAD and confirmed build files follow the tested prototype.','SAFETY.md','Read the safety reference'],
-['Make the metal and print the parts','Laser-cut the 6061 plates and the steel bearing cheeks, machine the two drum bearing holders and three corner brackets, then TIG-weld the frame, the drum and the rack side. Print the end pieces, level-wind, exit and covers; print the fit coupons first.','build.md#1-make-the-metal-and-print-the-parts','Metal and printing'],
-['Frame and end pieces','Bolt the printed motor-end and battery-end pieces to the welded frame, with the main fuse block, the WAGO bracket and the quick-release corner brackets in place.','build.md#2-frame-and-end-pieces','Frame and end pieces'],
+['Make the metal and print the parts','Laser-cut the 6061 plates and the steel bearing cheeks and machine the bearing holders and brackets. Drill and tap the few edge holes by hand through the printed drill guides: nothing is welded. Print the end pieces, level-wind, exit and covers; print the fit coupons first.','build.md#1-make-the-metal-and-print-the-parts','Metal and printing'],
+['Frame and end pieces','Screw the rear plate onto the base plate and the motor face plate onto its two brackets, then bolt the printed motor-end and battery-end pieces to the frame, with the main fuse block, the WAGO bracket and the corner brackets in place.','build.md#2-frame-and-end-pieces','Frame and end pieces'],
 ['Level-wind rail and drum','Fit the rail and traveller on the base plate. Build the drum on the bench (hub, rope laced and clamped, shaft, gear, coupling), then lower it in on its two bearing holders.','build.md#3-level-wind-rail-and-traveller','Rail and drum'],
 ['Motor, lead screw and exit','Mount the front board plate, then the motor on the face plate into the coupling. Fit the lead screw with its gear and thrust bearings, time the level-wind to the drum, then the fixed-roller bracket and the top tie.','build.md#6-motor','Motor and level-wind'],
 ['Electronics, battery and wiring','The ODrive on its bracket, the battery packs in the cradle, then the harness: fuses in first, every lead on its drawn route.','wiring.md','Open the wiring reference'],
@@ -47,7 +47,7 @@ function selectMod(id,focus=false){$$('[data-mod]').forEach(b=>{const active=b.d
 $$('[data-mod]').forEach(b=>{b.addEventListener('click',()=>selectMod(b.dataset.mod));b.addEventListener('keydown',e=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();selectMod(e.key==='Home'?'battery':e.key==='End'?'motor':b.dataset.mod==='battery'?'motor':'battery',true);}});});
 if(new URLSearchParams(location.search).get('modify')==='motor')selectMod('motor');renderChapters();
 const assemblyStages=[
- {image:'stage-frame',title:'Start with the welded frame.',description:'The base, motor face and rear plates are welded into one 6061 frame. The printed motor-end and battery-end pieces bolt to it.',alt:'The welded aluminum frame with its printed end pieces on the rack'},
+ {image:'stage-frame',title:'Start with the bolted frame.',description:'The base, rear and motor face plates screw together into one 6061 frame, with no welding. The printed motor-end and battery-end pieces bolt to it.',alt:'The bolted aluminum frame with its printed end pieces on the rack'},
  {image:'stage-drum',title:'The drum and the level-wind.',description:'The level-wind rail goes on the base plate, then the drum is built on the bench and lowered in on its two bearing holders. A gear on the drum drives the lead screw.',alt:'The drum with its blue rope on two bearing holders, the lead screw and the level-wind in front of it'},
  {image:'stage-motor',title:'The motor drives the drum directly.',description:'The motor bolts to the face plate and turns the drum through one clamp coupling: no belt, no gearbox.',alt:'The motor mounted on the face plate at the end of the drum'},
  {image:'stage-electronics',title:'Electronics, battery and harness.',description:'The ODrive on its bracket, the control boards, the battery packs in their cradle, then the wiring with its fuses.',alt:'The open trainer with the motor, the controller, the boards and the batteries in place'},

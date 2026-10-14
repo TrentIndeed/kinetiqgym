@@ -8,12 +8,13 @@ The [website budget](https://kinetiqgym.com/build.html#parts) has the same list 
 editable prices.
 
 **How the list is organized.** The **main list** is what a builder has to buy, in order of importance, from motor and
-controller to adhesives. It assumes you make the metal and printed parts yourself (laser cutting or CNC, a TIG welder and a
-3D printer). The **accessory list** is what many builders already have. The last section gives typical costs for having
+controller to adhesives. It assumes you make the metal and printed parts yourself (laser cutting or CNC, a drill with taps,
+and a 3D printer). The **accessory list** is what many builders already have. The last section gives typical costs for having
 the metal made.
 
-**What the builds share.** Every build uses the same welded 6061 aluminum frame, drum, level-wind, exit and rack side. The
-shared parts are sized for the 220 lb peak builds. Direct drive only: the motor turns the drum through a clamp coupling,
+**What the builds share.** Every build uses the same bolted 6061 aluminum frame, drum, level-wind, exit and rack side.
+The shared parts are sized for the 220 lb peak builds: in the load study every member passes 1.5x at 220 lb, to be
+confirmed by load testing. Direct drive only: the motor turns the drum through a clamp coupling,
 with no belt or gear between them.
 
 ## The five builds
@@ -115,7 +116,10 @@ In the tables below, **Battery builds** means Main, MP80100, MP80100 wye and C80
 | 1 | [Seeed XIAO ESP32-C3](https://www.amazon.com/dp/B0B94JZ2YF) | Lite | Bluetooth link to the phone app and the knob; talks to the S1 over CAN through the CAN board. |
 | 1 | [EC11 rotary encoders with push button and knob caps, 5-pack](https://www.amazon.com/dp/B08728K3YB) | Lite | The resistance knob, through the left cover. |
 | 1 | [Raspberry Pi 4 Model B](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/) | Battery builds | The budget assumes 2 GB. |
-| 1 | [Waveshare 4 inch DPI LCD (C)](https://www.waveshare.com/product/4inch-dpi-lcd-c.htm) | Battery builds | 720 x 720 capacitive touch display. |
+| 1 | [Waveshare 4 inch HDMI LCD (C)](https://www.amazon.com/dp/B09QKR364V) | Battery builds | 720 x 720 square capacitive touch display: HDMI video, USB-C touch. |
+| 1 | [Flat HDMI cable kit, HDMI to 90-degree micro-HDMI, 10 cm](https://www.amazon.com/dp/B0HGXD92P2) | Battery builds | Screen to the Pi's HDMI 0. You assemble it. |
+| 1 | [Right-angle USB-C cable, 1 ft, 2-pack](https://www.amazon.com/dp/B0FG7Z6QLX) | Battery builds | The screen's touch and power, to a Pi USB port. |
+| 1 | [90-degree USB-A adapters, 4-pack](https://www.amazon.com/dp/B0C7V37X25) | Battery builds | The right angle at the Pi's USB port. |
 | 1 | [Noctua NF-A4x10 5V fan](https://www.amazon.com/dp/B00NEMGCIA) | All | Cools the ODrive. |
 | 1 | [Right-angle micro-USB cable, pack](https://www.amazon.com/dp/B08BZD66H4) | Battery builds | Teensy to Pi. |
 
@@ -151,6 +155,11 @@ In the tables below, **Battery builds** means Main, MP80100, MP80100 wye and C80
 | 1 | Stainless rod 1.2 mm, cut to 39.4 mm | the spring's guide rod |
 | 2 | Round spacer M2.5 x 3 mm, 5 mm OD, aluminum | between the trigger link and the slider |
 | 3 + 6 | M5 countersunk screws, 18 mm and 22 mm, with 9 M5 nyloc nuts and 9 washers | the three corner brackets |
+| 6 | M4 x 18 countersunk screws | the rear plate to the base plate |
+| 4 | M4 x 12 countersunk screws | the motor face plate brackets |
+| 2 | M3 x 18 countersunk screws | the rear plate into the motor face plate's back edge |
+| 8 | M3 x 12 countersunk screws | the drum flanges to the tube |
+| 6 | M4 x 25 countersunk screws | the mating plate into the rack cheeks |
 | 4 | M2 x 5 countersunk screws | the service lid |
 | 1 | Diametric magnet 6 x 5 mm (N45SH) | the encoder, glued into the drum shaft end |
 
@@ -160,7 +169,8 @@ Not in the main list's total. Buy only what is missing.
 
 | Qty | Item | Builds | Notes |
 |---|---|---|---|
-| 1 | 6061-T6 stock for machining the metal yourself | All | Only if you machine the metal yourself: plate for the frame, the drum flanges, the latch and the rack side, bar or plate for the bearing holders and corner brackets, sheet for the trigger link, and the drum tube. |
+| 1 | 6061-T6 stock for machining it yourself | All | Only if you machine the metal yourself: 0.250, 0.375 and 0.750 in plate, a short bar for the bearing holders, 1 x 1 x 1/4 in angle for the motor face plate brackets, and the drum tube, from a local metal shop. About $160 for one build. |
+| 1 | Taps and drills for the edge holes | All | M3 and M4 taps with a tap handle, and 2.5 and 3.3 mm drills: the edge holes are drilled by hand through the printed guides. |
 | 1 | [USB isolator](https://shop.odriverobotics.com/) | All | Protects the PC when you set up the ODrive over USB. |
 | 1 | [Super Lube synthetic grease, 3 oz](https://www.amazon.com/dp/B000XBH9HI) | All | The lead screw and the gears. |
 | 1 | Silicone wire, mixed gauges | All | 10 to 24 AWG; lengths in [wiring.md](https://kinetiqgym.com/docs/wiring.html). |
@@ -199,17 +209,19 @@ Not in the main list's total. Buy only what is missing.
 
 The exact screw sizes and counts come with the verified build files.
 
-## No CNC or welder? Have the metal made
+## No CNC? Have the metal made
 
-Typical costs for having every metal part made for one machine. Prices depend on the shop, the quantity and the lead time,
-so get quotes. Not in the main list's total. Ready-made plate and weldment kits are planned after testing.
+Typical costs for having the metal parts made for one machine: about $565-1,280 in all. Prices depend on the shop, the
+quantity and the lead time, so get quotes. Not in the main list's total. Ready-made metal kits are planned after testing.
 
 | Item | Typical cost (USD) | Notes |
 |---|---|---|
-| [Laser-cut plate set, 6061-T6, tapped and countersunk](https://sendcutsend.com) | 300-550 | The frame, rack-side and drum-flange plates, plus the four 2 mm steel bearing cheeks, from an instant-priced laser service. Tapping and countersinking are charged per hole. |
-| Machined parts: 2 drum bearing holders and 3 corner brackets | 250-700 | Small 6061-T6 parts with a 28 H7 bearing bore and reamed and tapped holes, from an online CNC service. One-off US quotes sit at the top of the range; overseas services cost less and take two to three weeks. |
-| [Drum tube, 6061, 1-1/4 in OD x 0.250 in wall, 100 mm](https://www.amazon.com/dp/B0BFGLLHXC) | 15-30 | Cut to length; ask for T6. |
-| TIG welding: the frame, the drum and the rack-side weldment | 200-500 | At a local fabrication shop, by quote (ER4043, fillets as drawn, then dressed). Shops charge a one-hour minimum and fixture time; the drum flanges must stay square to the shaft. |
+| [Laser-cut plate set, 6061-T6, tapped and countersunk](https://sendcutsend.com) | 250-450 | The base, rear and motor face plates, the rack cheeks and the drum flanges, plus the four 2 mm steel bearing cheeks, from an instant-priced laser service. Tapping and countersinking are charged per hole. |
+| Machined parts: bearing holders, brackets and the mating plate | 300-800 | Two drum bearing holders (28 H7 bore), three corner brackets and the 3/4 in mating plate (M10 threads, cheek slots) from an online CNC service. One-off US quotes sit at the top of the range; overseas services cost less and take two to three weeks. |
+| Drum tube, 6061, 1-1/4 in OD x 0.250 in wall, 100 mm | 15-30 | From a local metal shop, cut square; ask for T6. |
+
+The holes in the plate edges and the tube ends are drilled and tapped by hand through the printed drill guides, and the
+two motor face plate brackets are cut from 1 x 1 x 1/4 in 6061 angle (see the build instructions).
 
 ## Printed parts
 
@@ -223,6 +235,7 @@ Printed for every build (materials and settings in [printing.md](https://kinetiq
 - **PETG:** the screen frame, the front board plate and its standoffs, the WAGO bracket, the fan duct, and the TP2700
   battery spacer (only with the TP2700 pair).
 - **TPU 95A or EVA foam:** the three battery pads.
+- **PETG or PLA:** the five drill guides for the edge holes (tools, not parts of the machine).
 
 The Lite adds a printed tray for its power supply and leaves out the battery parts, the screen frame and the rear I/O
 panel.

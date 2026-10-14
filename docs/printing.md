@@ -3,7 +3,7 @@
 > **Draft.** These settings and hole sizes are for the prototype being built now. They have not been validated by a load
 > test. The print files are released with the verified CAD after the prototype is tested.
 
-The welded 6061 aluminum frame, the drum and the rack side carry the rope load. The printed parts bolt to that frame: the
+The bolted 6061 aluminum frame, the drum and the rack side carry the rope load. The printed parts bolt to that frame: the
 two end pieces, the level-wind, the exit, the screw-end tower, the gears, the brackets and the covers. Every part fits a
 256 x 256 mm bed. The print files come in the assembly's orientation: turn each part in the slicer as listed below.
 
@@ -15,6 +15,7 @@ two end pieces, the level-wind, the exit, the screw-end tower, the gears, the br
 | **PA-CF** (or PAHT-CF), dried | the motor-end and battery-end pieces, the ODrive bracket, the latch finger bar and the service lid |
 | **PETG-CF** (or PA-CF) | the two covers (each with its end cap printed in) and the rear I/O panel |
 | **PETG** | the screen frame, the front board plate and its standoffs, the WAGO bracket, the fan duct, and the battery spacer for the TP2700 pair |
+| **PETG or PLA** | the drill guides (see below) |
 | **TPU 95A** (optional) | the three battery pads, flat, 15-20 % gyroid; or cut them from 1 mm and 2 mm EVA foam sheet |
 
 The carbon-fiber filaments wear brass nozzles: use a hardened nozzle.
@@ -66,6 +67,24 @@ Pockets are one millimeter deeper than the insert, with a 0.5 mm lead-in. Press 
 soldering iron and an insert tip, and let it cool before loading it.
 
 Other printed holes: clearance M2.5 2.9 / M3 3.6 / M4 4.7 mm; self-tapping pilots M2.5 2.2 / M3 2.6 mm.
+
+## Drill guides
+
+The frame is bolted together, and a few of its holes go into the edge of a plate or the end of the drum tube, where a laser
+cutter cannot reach. Printed drill guides make them accurate by hand. Each guide is a cap that slips over the edge, with an
+end stop that locates the holes, and guide bores 20 mm long sized for the tap drill (drill + 0.15 mm).
+
+| Guide | Holes | Drill | Located by |
+|---|---|---|---|
+| Rear plate, bottom edge | 6 | 3.3 mm (M4) | an end stop on the plate's motor end |
+| Motor face plate, back edge | 2 | 2.5 mm (M3) | an end stop on the plate's bottom edge |
+| Rack cheek, front edge (one guide per cheek) | 3 | 3.3 mm (M4) | an end stop on the cheek's bottom edge |
+| Drum tube end (use it on both ends) | 4 | 2.5 mm (M3) | a boss that centers it in the bore |
+
+- Print them in PETG or PLA, cap face down so the bores print vertical, with 100 % infill round the bores.
+- Clamp the part in a vise edge up, push the guide against its end stop, drill through the bores, then tap by hand. The
+  depths are in the [build instructions](build.md).
+- A worn guide is reprinted.
 
 ## Fit coupons first
 

@@ -26,12 +26,12 @@ It mounts on a rack upright. The design is built to be trained with, built, modi
 - **Programmable resistance:** a motor and a cable drum stand in for the weight stack, so the load is set in software.
 - **Adjustable position:** it hangs on a rack upright at the height you want, and the cable exit swivels to follow the pull.
 - **Training modes in software:** eccentric, chain-style and band-style resistance are designed as modes, not attachments.
-- **Customizable hardware:** one welded aluminum frame, five motor and power builds, two battery sizes.
+- **Customizable hardware:** one bolted aluminum frame, five motor and power builds, two battery sizes.
 - **Local and hackable:** its own controller and a Raspberry Pi, with no account or cloud service in the loop.
 
 ## The five builds
 
-All five share the welded 6061 aluminum frame, the drum, the level-wind and the exit. The drive is direct: no belt or gear
+All five share the bolted 6061 aluminum frame (no welding), the drum, the level-wind and the exit. The drive is direct: no belt or gear
 between the motor and the drum. Current parts lists and prices for each are on the
 [build preview](https://kinetiqgym.com/build#parts).
 
@@ -61,7 +61,7 @@ together after testing.
 
 ## Kits
 
-Plate and weldment kits (the laser-cut and machined 6061 parts and the welded frame, drum and rack side) are planned once the
+Metal kits (the laser-cut and machined 6061 parts, the drum and the rack side, ready to bolt together) are planned once the
 prototype passes load testing. Nothing is for sale yet. [Join the kit waitlist](https://kinetiqgym.com/#join).
 
 ## Support and contributions
