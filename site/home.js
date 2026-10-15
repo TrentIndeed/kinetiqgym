@@ -1,6 +1,6 @@
 'use strict';
 // Old links into the builder content (kinetiqgym.com/#parts and the like) now live on build.html.
-const MOVED = ['build', 'parts', 'files', 'modify', 'software', 'support', 'open-source', 'mechanism', 'repo-status'];
+const MOVED = ['build', 'parts', 'files', 'modify', 'software', 'open-source', 'mechanism', 'repo-status'];
 if (MOVED.includes(location.hash.slice(1))) location.replace('/build' + location.hash);
 
 const $ = s => document.querySelector(s);
@@ -79,3 +79,12 @@ if (contact) contact.addEventListener('submit', async e => {
     contact.innerHTML = '<p class="form-msg ok" role="status">Thanks. Your message is in, and I will reply by email.</p>';
   } catch (err) { msg.classList.add('err'); msg.textContent = err.message; btn.disabled = false; btn.textContent = 'Send'; }
 });
+
+// the Support section's PayPal button (data/community.json, as on the build page)
+const donate = $('#donate-link');
+if (donate) fetch('data/community.json').then(r => { if (!r.ok) throw Error('Community settings unavailable'); return r.json(); }).then(c => {
+  if (!c.donationUrl) { if (c.donationProvider) $('#donation-pending').textContent = `${c.donationProvider} donation link coming soon.`; return; }
+  const url = new URL(c.donationUrl); if (url.protocol !== 'https:') return;
+  donate.href = url.href; donate.target = '_blank'; donate.rel = 'noopener noreferrer'; donate.hidden = false; $('#donation-pending').hidden = true;
+  if (c.donationProvider) $('#donation-description').textContent = `Secure checkout via ${c.donationProvider}. Goes to prototype iterations and build support.`;
+}).catch(() => { /* the page works without the donation link */ });
