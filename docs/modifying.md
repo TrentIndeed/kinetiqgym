@@ -5,7 +5,7 @@
 > the interfaces in words and numbers.
 
 The design is built to be adapted. The two interfaces most builders will change are the **battery bay** and the **motor
-face**. The [website adaptation guide](https://kinetiqgym.com/build.html#modify) illustrates both.
+face**. The [website adaptation guide](https://kinetiqgym.com/build#modify) illustrates both.
 
 ## Batteries
 
