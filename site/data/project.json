@@ -4,9 +4,20 @@
     "repoVerified": true,
     "revision": "v0.1.0 prototype",
     "currency": "USD",
-    "date": "2026-10-13"
+    "date": "2026-10-14"
   },
   "motors": [
+    {
+      "id": "lite150",
+      "load": "150 lb",
+      "label": "Lite: APS 8072S ~25 Kv on wall power",
+      "note": "The low-cost build: the main build's frame, mount and motor body (400 x 227 x 103 mm), plugged into the wall. A Mean Well 36 V 600 W supply inside, an ODrive S1 with two brake resistors on the base plate, and a phone app (Bluetooth) and a knob instead of the battery, Raspberry Pi and touchscreen. The motor is wound ~25 Kv to order, so 158 lb takes 37-45 A.",
+      "force": "158 lb",
+      "controller": "ODrive S1",
+      "power": "36 V wall supply inside",
+      "size": "400 x 227 x 103 mm",
+      "lead": true
+    },
     {
       "id": "aps8072s",
       "load": "150 lb",
@@ -16,16 +27,6 @@
       "force": "158 lb",
       "controller": "ODrive Pro",
       "power": "10S battery (2 x 5S LiPo)",
-      "size": "400 x 227 x 103 mm"
-    },
-    {
-      "id": "lite150",
-      "load": "150 lb",
-      "label": "Lite: APS 8072S ~25 Kv on wall power",
-      "note": "The low-cost build: the main build's frame, mount and motor body (400 x 227 x 103 mm), plugged into the wall. A Mean Well 36 V 600 W supply inside, an ODrive S1 with two brake resistors on the base plate, and a phone app (Bluetooth) and a knob instead of the battery, Raspberry Pi and touchscreen. The motor is wound ~25 Kv to order, so 158 lb takes 37-45 A.",
-      "force": "158 lb",
-      "controller": "ODrive S1",
-      "power": "36 V wall supply inside",
       "size": "400 x 227 x 103 mm"
     },
     {
@@ -348,14 +349,14 @@
     },
     {
       "id": "p114",
-      "name": "Ruland MCLX-12-10-F clamp coupling",
+      "name": "McMaster-Carr 2469K23 clamp coupling",
       "category": "Drum & rope",
       "qty": 1,
-      "price": 101.9,
-      "note": "One-piece steel, 10 mm motor / 12 mm drum. Ruland web store: $101.90 ($96.80 after its web discount), in stock. The CNC build's coupling (the drum needs 17.1 N\u00b7m at 220 lb, 25.7 with the 1.5x margin); check a distributor (Digi-Key, RS, Motion) before ordering.",
-      "url": "https://www.ruland.com",
+      "price": 73.02,
+      "note": "One-piece steel, 10 mm motor / 12 mm drum, 29 mm OD x 45 mm, 925 in\u00b7lbf (104 N\u00b7m), made in the US: the same size and rating as the Ruland MCLX-12-10-F, which is $101.90. The drum needs up to 17.1 N\u00b7m (25.7 with the 1.5x margin).",
+      "url": "https://www.mcmaster.com/2469K23/",
       "status": "Source price",
-      "date": "Checked Oct 12, 2026",
+      "date": "Checked Oct 15, 2026",
       "motor": [
         "aps8072s",
         "lite150"
@@ -367,11 +368,11 @@
       "name": "Ruland MCLX-12-12-F clamp coupling",
       "category": "Drum & rope",
       "qty": 1,
-      "price": 100,
-      "note": "One-piece steel, 12 mm motor / 12 mm drum, 105 N\u00b7m. About \u00a322 ex VAT in the UK; US price at ruland.com. Same series as the MCLX-12-10-F ($101.90 at Ruland on Oct 12).",
-      "url": "https://www.ruland.com",
-      "status": "Estimate",
-      "date": "",
+      "price": 50.33,
+      "note": "One-piece steel, 12 mm motor / 12 mm drum, 29 mm OD x 45 mm, 105 N\u00b7m. Ruland web store: $50.33 (registered users get 5% off).",
+      "url": "https://www.ruland.com/mclx-12-12-f.html",
+      "status": "Source price",
+      "date": "Checked Oct 15, 2026",
       "motor": [
         "mp80100",
         "mp80100_220",
@@ -930,20 +931,21 @@
       "status": "Source price",
       "date": "Checked Oct 12, 2026",
       "rank": 59
+    },
+    {
+      "id": "p140",
+      "name": "6061-T6 aluminum plate and drum tube, to cut yourself",
+      "category": "Aluminum frame stock",
+      "qty": 1,
+      "price": 180,
+      "note": "0.250, 0.375 and 0.750 in plate and the 1-1/4 in drum tube from a local metal shop, enough for one build. You cut and drill it (CNC router or laser, a drill and taps, the printed drill guides). No CNC: have the metal made instead (below).",
+      "url": "",
+      "status": "Estimate",
+      "date": "",
+      "rank": 60
     }
   ],
   "accessories": [
-    {
-      "id": "p140",
-      "name": "6061-T6 stock for machining it yourself",
-      "category": "Accessories",
-      "qty": 1,
-      "price": 160,
-      "note": "Only if you machine the metal yourself: 0.250, 0.375 and 0.750 in plate, a short bar for the bearing holders, 1 x 1 x 1/4 in angle for the motor face brackets and the drum tube, from a local metal shop. About $160 for one build.",
-      "url": "",
-      "status": "Estimate",
-      "date": ""
-    },
     {
       "id": "p141",
       "name": "Taps and drills for the edge holes",
@@ -1386,24 +1388,24 @@
   "outsourced": [
     {
       "id": "p102",
-      "name": "Laser-cut plate set, 6061-T6, tapped and countersunk",
+      "name": "Laser-cut plate set, 6061-T6",
       "category": "Fabrication",
       "qty": 1,
-      "low": 250,
-      "high": 450,
-      "note": "The base, rear and motor face plates, the rack cheeks and the drum flanges (0.250 and 0.375 in), plus the four 2 mm steel bearing cheeks, cut from the DXF files at an instant-priced laser service such as SendCutSend. Tapping and countersinking are charged per hole.",
+      "low": 200,
+      "high": 300,
+      "note": "The base, rear and motor face plates, the rack cheeks and the drum flanges (0.250 and 0.375 in), plus the four 2 mm steel bearing cheeks, cut from the DXF files at an instant-priced laser service such as SendCutSend. The prototype's plates came to about $200-300 at SendCutSend (October 2026). Tapping and countersinking are extra, charged per hole.",
       "url": "https://sendcutsend.com",
-      "status": "Estimate",
-      "date": ""
+      "status": "Recorded price",
+      "date": "Oct 2026"
     },
     {
       "id": "p136",
-      "name": "Machined parts: bearing holders, brackets and the mating plate",
+      "name": "Thick plate parts: drum holders, corner gussets and the mating plate",
       "category": "Fabrication",
       "qty": 1,
-      "low": 300,
-      "high": 800,
-      "note": "Two drum bearing holders (28 H7 bore), three corner brackets and the 3/4 in mating plate (M10 threads, cheek slots) from an online CNC service. One-off US quotes sit at the top of the range; overseas services cost less and take two to three weeks.",
+      "low": 75,
+      "high": 175,
+      "note": "The two 3/8 in drum bearing holders, the three 1/4 in corner gussets and the 3/4 in mating plate, cut from plate like the rest (no machined blocks). The 28 mm bearing bores are finished to H7 and the M10 threads tapped after cutting.",
       "url": "",
       "status": "Estimate",
       "date": ""

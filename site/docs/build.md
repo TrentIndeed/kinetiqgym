@@ -194,7 +194,7 @@ Build the drum module on the bench and lower it in as one piece.
     within it.
 11. Drum 81T gear on its hub (the second 1301 hub) onto the right shaft end, after the right holder. It drives the lead
     screw at 81T : 45T, 3.6 mm of traverse per drum turn.
-12. Ruland coupling onto the left shaft end, loose.
+12. The coupling onto the left shaft end, loose.
 13. Lower the module onto the base. The holder feet sit over their eight holes.
 14. 8 x M4 x 10 countersunk up through the base plate into the tapped holder feet, **Loctite 243**, heads flush underneath.
     Snug them only: the shafts are lined up when the motor goes in (section 6).
@@ -216,7 +216,7 @@ through the coupling, with no belt or gear between them.
 
 | Motor | Spacers | Screws | Coupling |
 |---|---|---|---|
-| APS 8072S (main, Lite) | 4 x M5, 10 x 3 mm | 4 x M5 x 14 on the Ø59 mm circle | Ruland MCLX-12-10-F |
+| APS 8072S (main, Lite) | 4 x M5, 10 x 3 mm | 4 x M5 x 14 on the Ø59 mm circle | McMaster-Carr 2469K23 |
 | MP80100, APS C80100 | 4 x M5, Ø10 x 10 mm | 4 x M5 x 25 on the Ø56 mm circle | Ruland MCLX-12-12-F |
 
 1. MP80100 and C80100 only: on the bench, cut the bell-end shaft (Ø12 mm, threaded M12) to a 10 mm stub. A bimetal

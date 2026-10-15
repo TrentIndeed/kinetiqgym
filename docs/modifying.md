@@ -53,7 +53,7 @@ brackets under the plate (their legs are 16 mm tall, under the reference motors'
 | Interface | Reference | What to check |
 |---|---|---|
 | Face mount | the face plate's two bolt circles; M5 spacers 3 mm long (APS 8072S) or 10 mm long (MP80100, C80100) | bolt pattern, pilot, and a spacer length that puts the shaft into the coupling |
-| Shaft | Ruland MCLX one-piece steel clamp coupling, 105 N·m: 12 mm on the drum side, 10 mm (MCLX-12-10-F) or 12 mm (MCLX-12-12-F) on the motor side | the motor-side bore, about 20 mm of shaft in the clamp, and a rating of at least 1.5 x the peak drum torque |
+| Shaft | One-piece steel clamp coupling, 29 mm OD x 45 mm, about 105 N·m: 12 mm on the drum side, 10 mm (McMaster-Carr 2469K23) or 12 mm (Ruland MCLX-12-12-F) on the motor side | the motor-side bore, about 20 mm of shaft in the clamp, and a rating of at least 1.5 x the peak drum torque |
 | Rear shaft | the 80100 motors' bell-end shaft is cut to a 10 mm stub | what sticks out behind the motor |
 | Body | 80 mm diameter outrunners; the motor bay is sized for each motor (builds about 400, 429 and 444 mm long) | the covers and end cap, with 3 mm of spin clearance to the end cap |
 | Leads | three phase leads through a 12 mm grommet in the face plate, along the notches in the corner brackets, to the controller | lead exit, gauge and length |
