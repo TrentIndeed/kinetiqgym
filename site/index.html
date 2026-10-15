@@ -20,9 +20,10 @@
   <a class="brand" href="/" aria-label="Kinetiq Gym home"><img src="media/mark.svg" width="28" height="28" alt="">KINETIQ</a>
   <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
   <nav id="site-nav" aria-label="Main">
-    <a href="#film">Watch</a><a href="#status">Build status</a><a href="#kits">Kits</a><a href="/build">Build preview</a><a href="/work">Work with me</a>
-    <a class="button primary" href="#join">Follow the Build</a>
-  </nav>
+      <a href="/#film">Watch</a><a href="/build">The build</a><a href="/build#parts">Parts &amp; cost</a><a href="/build#software">App</a><a href="/work">Work with me</a>
+      <a class="button ghost" href="/#support">Support</a>
+      <a class="button primary" href="/#join">Follow the Build</a>
+    </nav>
 </header>
 
 <main id="main">
@@ -38,6 +39,7 @@
       <div class="actions">
         <a class="button primary" href="#join">Follow the Build</a>
         <button class="button ghost" type="button" data-watch><span class="play-icon" aria-hidden="true"></span>Watch the 1-minute concept</button>
+        <a class="text-link" href="#support">Support the project <span aria-hidden="true">→</span></a>
       </div>
       <p class="render-note">Renders of the engineered design. The first physical prototype is being built now.</p>
     </div>
@@ -143,6 +145,29 @@
     </div>
   </section>
 
+  <!-- support: one click from the header on every page (October 14) -->
+  <section class="section support" id="support" aria-labelledby="support-title">
+    <div class="wrap support-grid">
+      <div>
+        <p class="kicker">Support the project</p>
+        <h2 id="support-title">Help turn the design into tested hardware.</h2>
+        <p class="lede">The CNC machine is already in the workshop. Support goes into building, testing and improving the prototype, and into making the machine easier for others to build.</p>
+        <ul class="support-goals">
+          <li><span class="n">01</span><div><strong>Prototype iterations</strong><p>Parts, aluminum stock and the revisions that come out of load testing, measurement and real training.</p></div></li>
+          <li><span class="n">02</span><div><strong>Build support</strong><p>Clear build instructions and videos, fit coupons, test jigs, and help for the people building their own.</p></div></li>
+        </ul>
+      </div>
+      <aside class="support-card">
+        <h3>Help fund the next build.</h3>
+        <p>Every iteration makes the design safer, easier to build and easier to share.</p>
+        <a id="donate-link" class="button primary" hidden>Support the project <span aria-hidden="true">↗</span></a>
+        <p id="donation-pending" class="form-note">Donation link coming soon.</p>
+        <p id="donation-description" class="form-note">Funds go to prototype iterations and build support.</p>
+        <p class="form-note">A voluntary contribution, not a product order or a kit pre-sale. Progress and test results are shared as the build continues.</p>
+      </aside>
+    </div>
+  </section>
+
   <!-- G. the builder -->
   <section class="section film" id="founder" aria-labelledby="founder-title">
     <div class="wrap founder">
@@ -218,7 +243,7 @@
 <footer>
   <div class="wrap">
     <p>© 2026 Kinetiq Gym · Open hardware in development. Renders show the engineered design; specifications may change during validation.</p>
-    <nav aria-label="Footer"><a href="/build">Build preview</a><a href="/docs/roadmap">Roadmap</a><a href="https://github.com/TrentIndeed/kinetiqgym">GitHub</a><a href="/work">Work with me</a><a href="/privacy">Privacy</a></nav>
+    <nav aria-label="Footer"><a href="/">Home</a><a href="/build">The build</a><a href="/build#parts">Parts &amp; cost</a><a href="/#support">Support the project</a><a href="/docs/roadmap">Roadmap</a><a href="https://github.com/TrentIndeed/kinetiqgym">GitHub</a><a href="/work">Work with me</a><a href="/privacy">Privacy</a></nav>
   </div>
 </footer>
 
