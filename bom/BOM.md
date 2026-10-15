@@ -4,7 +4,7 @@
 > counts, in the verified release after the prototype has been load-tested. Links are examples checked in October 2026;
 > prices and stock change. Nothing here is endorsed by the suppliers.
 
-The [website budget](https://kinetiqgym.com/build.html#parts) has the same list with dated prices, per-build totals and
+The [website budget](https://kinetiqgym.com/build#parts) has the same list with dated prices, per-build totals and
 editable prices.
 
 **How the list is organized.** The **main list** is what a builder has to buy, in order of importance, from motor and

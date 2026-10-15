@@ -2,7 +2,7 @@
 
 <h1 align="center">Kinetiq Gym</h1>
 <p align="center"><b>A programmable smart gym, built as open hardware.</b><br>
-<a href="https://kinetiqgym.com">kinetiqgym.com</a> · <a href="https://kinetiqgym.com/build">Build preview</a> · <a href="https://kinetiqgym.com/build#parts">Builds &amp; cost</a> · <a href="docs/roadmap.md">Roadmap</a> · <a href="https://kinetiqgym.com/#join">Build list &amp; kit waitlist</a></p>
+<a href="https://kinetiqgym.com">kinetiqgym.com</a> · <a href="https://kinetiqgym.com/build">The build</a> · <a href="https://kinetiqgym.com/build#parts">Parts &amp; cost</a> · <a href="https://kinetiqgym.com/build#software">App</a> · <a href="https://kinetiqgym.com/#support">Support</a> · <a href="docs/roadmap.md">Roadmap</a> · <a href="https://kinetiqgym.com/#join">Follow the build &amp; kit waitlist</a></p>
 
 A direct-drive motor turns a rope drum, a geared level-wind lays the rope, and the controller sets the resistance in software.
 It mounts on a rack upright. The design is built to be trained with, built, modified and programmed.
@@ -67,7 +67,7 @@ prototype passes load testing. Nothing is for sale yet. [Join the kit waitlist](
 ## Support and contributions
 
 The CNC machine is already in the workshop; support now goes to prototype iterations and build support
-([support the project](https://kinetiqgym.com/build#support)). **Contributions are closed until the verified release**: see
+([support the project](https://kinetiqgym.com/#support)). **Contributions are closed until the verified release**: see
 [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Licence

@@ -10,8 +10,8 @@ pull requests, design proposals or build reports.
 
 - **Follow the build:** join the build list at [kinetiqgym.com](https://kinetiqgym.com/#join) for prototype results, design
   changes and the release date. It is also the kit waitlist.
-- **Support the project:** contributions to prototype iterations and build support are on the
-  [build preview](https://kinetiqgym.com/build#support).
+- **Support the project:** contributions to prototype iterations and build support are in the
+  [Support section](https://kinetiqgym.com/#support) of kinetiqgym.com.
 - **Engineering work:** for custom mechatronics, motor-control or prototyping projects, use the
   [project form](https://kinetiqgym.com/work).
 
