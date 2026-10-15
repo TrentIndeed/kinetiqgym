@@ -41,7 +41,7 @@ with no belt or gear between them.
 
 | Builds | Coupling | Spacers and screws | Before fitting |
 |---|---|---|---|
-| Main, Lite | Ruland MCLX-12-10-F (10 mm motor, 12 mm drum) | 4 x M5 spacers 10 x 3 mm, 4 x M5 x 14 (Ø59 mm circle) | - |
+| Main, Lite | McMaster-Carr 2469K23 (10 mm motor, 12 mm drum) | 4 x M5 spacers 10 x 3 mm, 4 x M5 x 14 (Ø59 mm circle) | - |
 | MP80100, MP80100 wye, C80100 | Ruland MCLX-12-12-F (12 mm motor, 12 mm drum) | 4 x M5 spacers Ø10 x 10 mm, 4 x M5 x 25 (Ø56 mm circle) | cut the bell-end shaft to a 10 mm stub |
 
 In the tables below, **Battery builds** means Main, MP80100, MP80100 wye and C80100.
@@ -80,8 +80,8 @@ In the tables below, **Battery builds** means Main, MP80100, MP80100 wye and C80
 
 | Qty | Part | Builds | Notes |
 |---|---|---|---|
-| 1 | [Ruland MCLX-12-10-F clamp coupling](https://www.ruland.com) | Main, Lite | One-piece steel, 10 mm motor / 12 mm drum, 105 N·m. The drum needs up to 17.1 N·m (25.7 with the 1.5x margin). Check a distributor before ordering. |
-| 1 | [Ruland MCLX-12-12-F clamp coupling](https://www.ruland.com) | MP80100, MP80100 wye, C80100 | One-piece steel, 12 mm motor / 12 mm drum, 105 N·m. |
+| 1 | [McMaster-Carr 2469K23 clamp coupling](https://www.mcmaster.com/2469K23/) | Main, Lite | One-piece steel, 10 mm motor / 12 mm drum, 29 mm OD x 45 mm, 104 N·m. The drum needs up to 17.1 N·m (25.7 with the 1.5x margin). |
+| 1 | [Ruland MCLX-12-12-F clamp coupling](https://www.ruland.com/mclx-12-12-f.html) | MP80100, MP80100 wye, C80100 | One-piece steel, 12 mm motor / 12 mm drum, 105 N·m. |
 | 1 | 12 mm steel drum shaft, 200 mm | All | Round (a 12 mm linear shaft), used uncut. |
 | 1 | [6001-2RS bearings, 2-pack](https://www.amazon.com/dp/B07GVN7GQ7) | All | The drum shaft, in the two machined holders. |
 | 2 | [goBILDA 1301-0016-0012 clamping hub, 12 mm round bore](https://www.servocity.com) | All | The drum hub and the 81T gear hub. |
@@ -163,13 +163,18 @@ In the tables below, **Battery builds** means Main, MP80100, MP80100 wye and C80
 | 4 | M2 x 5 countersunk screws | the service lid |
 | 1 | Diametric magnet 6 x 5 mm (N45SH) | the encoder, glued into the drum shaft end |
 
+### Aluminum frame stock (cut it yourself)
+
+| Qty | Part | Builds | Notes |
+|---|---|---|---|
+| 1 | 6061-T6 aluminum plate and drum tube, to cut yourself | All | 0.250, 0.375 and 0.750 in plate and the 1-1/4 in drum tube from a local metal shop, enough for one build. You cut and drill it (CNC router or laser, a drill and taps, the printed drill guides). No CNC: have the metal made instead (below). About $180. |
+
 ## Accessory list: check your parts bin first
 
 Not in the main list's total. Buy only what is missing.
 
 | Qty | Item | Builds | Notes |
 |---|---|---|---|
-| 1 | 6061-T6 stock for machining it yourself | All | Only if you machine the metal yourself: 0.250, 0.375 and 0.750 in plate, a short bar for the bearing holders, 1 x 1 x 1/4 in angle for the motor face plate brackets, and the drum tube, from a local metal shop. About $160 for one build. |
 | 1 | Taps and drills for the edge holes | All | M3 and M4 taps with a tap handle, and 2.5 and 3.3 mm drills: the edge holes are drilled by hand through the printed guides. |
 | 1 | [USB isolator](https://shop.odriverobotics.com/) | All | Protects the PC when you set up the ODrive over USB. |
 | 1 | [Super Lube synthetic grease, 3 oz](https://www.amazon.com/dp/B000XBH9HI) | All | The lead screw and the gears. |
@@ -211,17 +216,16 @@ The exact screw sizes and counts come with the verified build files.
 
 ## No CNC? Have the metal made
 
-Typical costs for having the metal parts made for one machine: about $565-1,280 in all. Prices depend on the shop, the
-quantity and the lead time, so get quotes. Not in the main list's total. Ready-made metal kits are planned after testing.
+Typical costs for having the metal parts made for one machine: about $290-505 in all. Prices depend on the shop, the
+quantity and the lead time, so get quotes. This replaces the aluminum line in the main list. Ready-made metal kits are planned after testing.
 
 | Item | Typical cost (USD) | Notes |
 |---|---|---|
-| [Laser-cut plate set, 6061-T6, tapped and countersunk](https://sendcutsend.com) | 250-450 | The base, rear and motor face plates, the rack cheeks and the drum flanges, plus the four 2 mm steel bearing cheeks, from an instant-priced laser service. Tapping and countersinking are charged per hole. |
-| Machined parts: bearing holders, brackets and the mating plate | 300-800 | Two drum bearing holders (28 H7 bore), three corner brackets and the 3/4 in mating plate (M10 threads, cheek slots) from an online CNC service. One-off US quotes sit at the top of the range; overseas services cost less and take two to three weeks. |
+| [Laser-cut plate set, 6061-T6](https://sendcutsend.com) | 200-300 | The base, rear and motor face plates, the rack cheeks and the drum flanges, plus the four 2 mm steel bearing cheeks, from an instant-priced laser service. The prototype's plates came to about $200-300 at SendCutSend (October 2026). Tapping and countersinking are extra, charged per hole. |
+| Thick plate parts: drum holders, corner gussets and the mating plate | 75-175 | The two 3/8 in drum bearing holders, the three 1/4 in corner gussets and the 3/4 in mating plate, cut from plate like the rest (no machined blocks). The 28 mm bearing bores are finished to H7 and the M10 threads tapped after cutting. |
 | Drum tube, 6061, 1-1/4 in OD x 0.250 in wall, 100 mm | 15-30 | From a local metal shop, cut square; ask for T6. |
 
-The holes in the plate edges and the tube ends are drilled and tapped by hand through the printed drill guides, and the
-two motor face plate brackets are cut from 1 x 1 x 1/4 in 6061 angle (see the build instructions).
+The holes in the plate edges and the tube ends are drilled and tapped by hand through the printed drill guides.
 
 ## Printed parts
 
