@@ -2,12 +2,18 @@
 //   POST /api/subscribe  { email, interest?, source? }   build-list signup; a second call with the same email adds the interest answer
 //   POST /api/contact    { name, email, company?, message }  "Discuss a project"
 // Records live in the SIGNUPS namespace: sub:<email> and msg:<time>:<id>. Export them with tools/export-signups.mjs.
+import { agentFeedback } from './agent-feedback.js';
+
 const INTERESTS = ['build', 'kit', 'complete', 'research', 'engineering'];
 const EMAIL = /^[^\s@]{1,64}@[^\s@]{1,190}\.[^\s@]{2,24}$/;
 
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    if (url.pathname === '/api/agent-feedback' || url.pathname.startsWith('/api/owner/agent-feedback') || url.pathname.startsWith('/owner/agent-replies')) {
+      const response = await agentFeedback(request, env);
+      if (response) return response;
+    }
     if (url.pathname === '/api/subscribe' || url.pathname === '/api/contact') {
       if (request.method !== 'POST') return reply({ error: 'Use POST.' }, 405);
       if (!env.SIGNUPS) return reply({ error: 'The list is not connected yet. Please try again later.' }, 503);

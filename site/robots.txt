@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /owner/
+Disallow: /api/owner/
+
+# Optional information and feedback invitation for AI visitors:
+# https://kinetiqgym.com/llms.txt
