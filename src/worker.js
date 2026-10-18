@@ -1,7 +1,8 @@
-// KinetiqGym.com: static site (./site) plus two form endpoints that keep the build list and project enquiries in Workers KV.
+// KinetiqGym.com: static site (./site) plus two form endpoints that keep the build list and project enquiries in D1.
 //   POST /api/subscribe  { email, interest?, source? }   build-list signup; a second call with the same email adds the interest answer
 //   POST /api/contact    { name, email, company?, message }  "Discuss a project"
-// Records live in the SIGNUPS namespace: sub:<email> and msg:<time>:<id>. Export them with tools/export-signups.mjs.
+// Tables (db/schema.sql): signups, enquiries, and rate (hashed per-address counters for the forms). They moved from Workers KV, whose
+// free tier allows 1,000 writes a day; a signup took about four. Export with tools/export-signups.mjs. The agent inbox stays in KV.
 import { agentFeedback } from './agent-feedback.js';
 
 const INTERESTS = ['build', 'kit', 'complete', 'research', 'engineering'];
@@ -16,7 +17,7 @@ export default {
     }
     if (url.pathname === '/api/subscribe' || url.pathname === '/api/contact') {
       if (request.method !== 'POST') return reply({ error: 'Use POST.' }, 405);
-      if (!env.SIGNUPS) return reply({ error: 'The list is not connected yet. Please try again later.' }, 503);
+      if (!env.DB) return reply({ error: 'The list is not connected yet. Please try again later.' }, 503);
       let body;
       try { body = await readBody(request); } catch { return reply({ error: 'That request could not be read.' }, 400); }
       if (body.website) return reply({ ok: true });                       // honeypot: bots fill the hidden field
@@ -100,14 +101,13 @@ async function subscribe(body, env, request) {
   const email = clean(body.email, 254).toLowerCase();
   if (!EMAIL.test(email)) return reply({ error: 'Enter a valid email address.' }, 400);
   const interest = INTERESTS.includes(body.interest) ? body.interest : null;
-  const key = `sub:${email}`;
   const now = new Date().toISOString();
-  const old = await env.SIGNUPS.get(key, 'json');
-  const record = old || { email, created: now, source: clean(body.source, 40) || 'home', country: request.cf?.country || null };
-  record.updated = now;
-  if (interest) record.interest = interest;
-  await env.SIGNUPS.put(key, JSON.stringify(record));
-  return reply({ ok: true, returning: Boolean(old) });
+  const row = await env.DB.prepare(
+    `INSERT INTO signups (email, interest, source, country, created, updated) VALUES (?1, ?2, ?3, ?4, ?5, ?5)
+     ON CONFLICT (email) DO UPDATE SET updated = excluded.updated, interest = COALESCE(excluded.interest, signups.interest)
+     RETURNING created`,
+  ).bind(email, interest, clean(body.source, 40) || 'home', request.cf?.country || null, now).first();
+  return reply({ ok: true, returning: row.created !== now });   // the first signup keeps its date, page and country
 }
 
 async function contact(body, env, request) {
@@ -118,7 +118,8 @@ async function contact(body, env, request) {
   if (message.length < 20) return reply({ error: 'Tell me a little more about the project (a few sentences is plenty).' }, 400);
   const now = new Date().toISOString();
   const id = crypto.randomUUID().slice(0, 8);
-  await env.SIGNUPS.put(`msg:${now}:${id}`, JSON.stringify({ name, email, company, message, created: now, country: request.cf?.country || null }));
+  await env.DB.prepare('INSERT INTO enquiries (id, created, name, email, company, message, country) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7)')
+    .bind(`${now}:${id}`, now, name, email, company, message, request.cf?.country || null).run();
   return reply({ ok: true });
 }
 
@@ -129,13 +130,23 @@ async function readBody(request) {
   return Object.fromEntries(await request.formData());
 }
 
+// 20 signups or 5 enquiries per address per clock hour. One row per hashed address, reset when the hour changes; old rows are cleared now
+// and then (2 % of calls), so the table stays small.
 async function limited(env, request, path) {
   const ip = request.headers.get('cf-connecting-ip') || 'unknown';
-  const key = `rate:${path}:${ip}`;
-  const n = Number(await env.SIGNUPS.get(key)) || 0;
-  if (n >= (path === '/api/contact' ? 5 : 20)) return true;
-  await env.SIGNUPS.put(key, String(n + 1), { expirationTtl: 3600 });
-  return false;
+  const hour = new Date().toISOString().slice(0, 13);
+  const row = await env.DB.prepare(
+    `INSERT INTO rate (key, hour, n) VALUES (?1, ?2, 1)
+     ON CONFLICT (key) DO UPDATE SET n = CASE WHEN rate.hour = excluded.hour THEN rate.n + 1 ELSE 1 END, hour = excluded.hour
+     RETURNING n`,
+  ).bind(await hash(`${path}|${ip}`), hour).first();
+  if (Math.random() < 0.02) await env.DB.prepare('DELETE FROM rate WHERE hour < ?1').bind(new Date(Date.now() - 3 * 3600e3).toISOString().slice(0, 13)).run();
+  return row.n > (path === '/api/contact' ? 5 : 20);
+}
+
+async function hash(text) {
+  const d = new Uint8Array(await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text)));
+  return [...d.slice(0, 16)].map(b => b.toString(16).padStart(2, '0')).join('');
 }
 
 const clean = (v, max) => String(v ?? '').replace(/[\u0000-\u001f\u007f]/g, ' ').trim().slice(0, max);
