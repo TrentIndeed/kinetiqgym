@@ -3,12 +3,13 @@
   <link rel="alternate" type="text/plain" href="/llms.txt" title="Optional information for AI visitors"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Modifying the design — KINETIQ</title><link rel="stylesheet" href="../styles.css"><link rel="icon" href="../media/mark.svg"><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/community.css">
 </head><body><a class="skip" href="#reference">Skip to reference</a><header class="header"><a class="brand" href="/"><img src="../media/mark.svg" width="32" height="32" alt="">KINETIQ</a><a href="/build#build">Back to the build preview ↗</a></header><main id="reference" class="guide-page section container"><p class="section-kicker">Draft reference · October 2026</p><h1 id="modifying-the-design">Modifying the design</h1>
 <blockquote>
-<p><strong>Draft.</strong> The numbers below are design values for the prototype being built now; they are confirmed or corrected after
-it is load-tested. The editable CAD is released with the verified build files after that. Until then this page describes
-the interfaces in words and numbers.</p>
+<p><strong>Draft.</strong> The numbers below are design values for the main build as designed now; they are confirmed or corrected after
+the prototype is load-tested. The editable CAD is released with the verified build files after that. Until then this
+page describes the interfaces in words and numbers.</p>
 </blockquote>
 <p>The design is built to be adapted. The two interfaces most builders will change are the <strong>battery bay</strong> and the <strong>motor
-face</strong>. The <a href="https://kinetiqgym.com/build#modify">website adaptation guide</a> illustrates both.</p>
+face</strong>. The <a href="https://kinetiqgym.com/build#modify">website adaptation guide</a> illustrates both. This page describes the main
+build; the budget build runs from the wall and has no battery bay.</p>
 <h2 id="batteries">Batteries</h2>
 <p>The reference pack is two 5S LiPo packs in series: 10S, 42 V fully charged, about 30 V empty.</p>
 <p><strong>The bay</strong> takes two packs stacked, sliding in from the front through a printed cradle:</p>
@@ -36,15 +37,12 @@ hold them. The leads leave from the packs' rear end faces into the back step.</p
 </ol>
 <p>A pack that fits is not automatically electrically compatible.</p>
 <h2 id="motors">Motors</h2>
-<p>The drive is direct: the motor turns the drum through a rigid clamp coupling, with no belt or gear between them.</p>
-<p><strong>The motor face plate</strong> (0.250 in 6061) is bolted to the frame: it stands on two small angle brackets on the base plate and
-is screwed through the rear plate into its back edge. It carries two bolt circles and a Ø16 mm shaft hole:</p>
-<ul>
-<li>4 x M5 on Ø56 mm, on the 45° diagonals: the MP80100 and the APS C80100;</li>
-<li>4 x M5 on Ø59 mm: the APS 8072S.</li>
-</ul>
-<p>A different motor needs its own pattern on the same centerline (the drum axis), clear of the existing holes and of the two
-brackets under the plate (their legs are 16 mm tall, under the reference motors' screw heads).</p>
+<p>The drive is direct: the motor turns the drum through a rigid clamp coupling, with no belt or gear between them. Both
+builds use an off-the-shelf motor, the Freerchobby MP8085 50 Kv: no custom windings.</p>
+<p><strong>The motor face plate</strong> (0.250 in 6061) stands on two tabs in slots in the base plate and is bolted to the base and rear
+plates into nuts in its windows. It carries the MP8085's pattern, 4 x M5 on Ø56 mm on the 45° diagonals, and a Ø16 mm shaft
+hole. A different motor needs its own pattern on the same centerline (the drum axis), clear of the existing holes and the
+nut windows.</p>
 <div class="table-scroll" tabindex="0" role="region" aria-label="Reference table"><table>
 <thead>
 <tr>
@@ -56,59 +54,66 @@ brackets under the plate (their legs are 16 mm tall, under the reference motors'
 <tbody>
 <tr>
 <td>Face mount</td>
-<td>the face plate's two bolt circles; M5 spacers 3 mm long (APS 8072S) or 10 mm long (MP80100, C80100)</td>
-<td>bolt pattern, pilot, and a spacer length that puts the shaft into the coupling</td>
+<td>4 x M5 x 25 on Ø56 mm through four Ø10 x 10 mm spacers, into the motor's own threads</td>
+<td>bolt pattern, pilot, thread depth, and a spacer length that puts the shaft into the coupling</td>
 </tr>
 <tr>
 <td>Shaft</td>
-<td>One-piece steel clamp coupling, 29 mm OD x 45 mm, about 105 N·m: 12 mm on the drum side, 10 mm (McMaster-Carr 2469K23) or 12 mm (Ruland MCLX-12-12-F) on the motor side</td>
-<td>the motor-side bore, about 20 mm of shaft in the clamp, and a rating of at least 1.5 x the peak drum torque</td>
+<td>Ruland MCLX-12-12-F one-piece steel clamp coupling, 12 mm both sides, 29 mm OD x 45 mm, 105 N·m; about 21 mm of shaft in the clamp</td>
+<td>the motor-side bore, the clamp length, and a rating of at least 1.5 x the peak drum torque</td>
 </tr>
 <tr>
 <td>Rear shaft</td>
-<td>the 80100 motors' bell-end shaft is cut to a 10 mm stub</td>
+<td>the MP8085's rear prop shaft is cut flush with its rear hub</td>
 <td>what sticks out behind the motor</td>
 </tr>
 <tr>
 <td>Body</td>
-<td>80 mm diameter outrunners; the motor bay is sized for each motor (builds about 400, 429 and 444 mm long)</td>
+<td>Ø80 x 92 mm outrunner; the main build is about 515 mm long</td>
 <td>the covers and end cap, with 3 mm of spin clearance to the end cap</td>
 </tr>
 <tr>
 <td>Leads</td>
-<td>three phase leads through a 12 mm grommet in the face plate, along the notches in the corner brackets, to the controller</td>
+<td>three phase leads and the thermistor leads through a 12 mm grommet in the face plate, along the notches in the corner gussets, to the controller</td>
 <td>lead exit, gauge and length</td>
 </tr>
 <tr>
+<td>Temperature</td>
+<td>a 10 k NTC on the stator to the controller's thermistor input</td>
+<td>that your motor has room for it, or its own sensor</td>
+</tr>
+<tr>
 <td>Controller</td>
-<td>ODrive Pro: 70 A continuous, 100 A for 3 s, 58 V maximum. ODrive S1 (Lite): 40 A continuous, 80 A peak</td>
-<td>the current your motor needs at your target force</td>
+<td>ODrive Pro: 80 A with active cooling (datasheet), 100 A for 3 s, 58 V maximum. ODESC V4.2 (budget build): 70 A by the seller, unverified</td>
+<td>the current your motor needs at your target force, held through a set</td>
 </tr>
 </tbody>
 </table></div>
 <p>How to judge a motor:</p>
 <ul>
-<li><strong>Cable force ≈ motor torque ÷ drum rope radius</strong> (17.5 mm). 158 lb (703 N) needs about 12.3 N·m; 220 lb (979 N) needs
-  about 17.1 N·m.</li>
-<li><strong>Current ≈ torque ÷ torque constant</strong>, with the torque constant about 8.27 ÷ Kv N·m per amp. At 50 Kv, 17.1 N·m takes
-  about 103 A, more than the ODrive Pro's 70 A continuous. That is why the 220 lb builds use about 25-29 Kv windings (about
-  52-63 A).</li>
-<li><strong>Felt inertia:</strong> through the 17.5 mm radius, a rotor's inertia J (kg·m²) feels like about 3,265 x J kg at the rope. A
-  lighter rotor feels better; the firmware can cancel part of it, but not all.</li>
-<li>Prefer low-voltage (48 V or less) DC brushless motors with a high pole count, close to the reference size. Avoid
-  high-voltage AC servos: at this torque they are far larger and heavier than the body, or they need a reduction stage,
-  which spoils the back-drive feel.</li>
+<li><strong>Cable force ≈ motor torque ÷ drum rope radius</strong> (12.7 mm on the main build's 7/8 in drum). 220 lb (979 N) needs about
+  12.4 N·m.</li>
+<li><strong>Current ≈ torque ÷ torque constant</strong>, with the torque constant about 8.27 ÷ Kv N·m per amp. At 50 Kv, 12.4 N·m takes
+  about 75 A: inside the ODrive Pro's 80 A. A smaller drum lowers the current but raises the felt mass.</li>
+<li><strong>Felt inertia:</strong> through the 12.7 mm radius, a rotor's inertia J (kg·m²) feels like about 6,200 x J kg at the rope. A
+  lighter rotor feels better; the firmware can cancel part of it, but not all. The 10 lb minimum should feel like 10 lb:
+  keep the felt mass under about 6.4 kg before compensation (no more than about 30 % for the firmware to cancel).</li>
+<li><strong>Heat:</strong> the rating is held through a 20-30 s set. Check the motor's copper loss at that current and how many sets it
+  takes to reach the thermistor's limit.</li>
+<li>Prefer low-voltage (48 V or less) DC brushless motors with a high pole count, close to the reference size. Avoid hub
+  motors (their rotors feel like a flywheel) and high-voltage AC servos: at this torque they are far larger and heavier than
+  the body, or they need a reduction stage, which spoils the back-drive feel.</li>
 <li>A larger motor or a different Kv does not by itself make a safe resistance rating. The shared parts (frame, drum,
-  level-wind, exit and rack side) are sized by calculation for the 220 lb peak builds; nothing is checked above that, and
-  none of it is tested yet.</li>
+  level-wind, exit and rack side) are sized by calculation for 220 lb, and the drum and level-wind for 234 lb (the most the
+  ODrive's 80 A can pull); nothing is checked above that, and none of it is tested yet.</li>
 </ul>
 <p>After a motor change, update the motor, encoder, current and thermal settings before any powered test
 (<a href="firmware-setup.html">firmware-setup.md</a>).</p>
 <h2 id="a-knob-instead-of-the-touch-screen">A knob instead of the touch screen</h2>
-<p>The Lite build already does this: an EC11 rotary encoder with a push button goes through the left cover where the screen
-window was, and a phone app (Bluetooth, through a XIAO ESP32-C3) handles the settings. On a battery build the same change
-closes the screen window and drops the screen and its frame. Whether the Raspberry Pi can also be left out depends on the
-control software, which is not released yet.</p>
+<p>The budget build already does this: an EC11 rotary encoder with a push button and a flush start/stop button, and a phone
+app (Bluetooth, through a XIAO ESP32-C3) handles the settings. On the main build the same change closes the screen window
+and drops the screen and its frame. Whether the Raspberry Pi can also be left out depends on the control software, which is
+not released yet.</p>
 <h2 id="sharing-your-changes">Sharing your changes</h2>
 <p>With the verified release the hardware is licensed CERN-OHL-S-2.0 (share-alike): if you distribute a modified version,
 publish your modified design files under the same license. The KINETIQ and Kinetiq Gym names and logo are not licensed.

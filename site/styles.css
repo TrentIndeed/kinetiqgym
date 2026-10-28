@@ -33,6 +33,7 @@ body{overflow-x:clip}
 .build-card{display:flex;flex-direction:column;align-items:flex-start;gap:6px;text-align:left;border:1px solid var(--line);border-radius:8px;background:var(--surface);padding:18px 18px 16px;min-height:44px;color:var(--ink)}
 .build-card:hover{border-color:var(--blue)}
 .build-card[aria-pressed=true]{border:2px solid var(--blue);padding:17px 17px 15px;background:var(--tint)}
+.build-card.planned{border-style:dashed;background:transparent;color:var(--muted)}.build-card.planned:hover{border-color:var(--line)}.build-card.planned strong{color:var(--ink)}
 .build-card strong{font-size:19px;line-height:1.2}
 .build-force{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--blue)}
 .build-spec{font-size:13px;color:var(--muted);line-height:1.35}

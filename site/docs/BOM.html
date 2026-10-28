@@ -3,112 +3,76 @@
   <link rel="alternate" type="text/plain" href="/llms.txt" title="Optional information for AI visitors"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bill of materials — KINETIQ</title><link rel="stylesheet" href="../styles.css"><link rel="icon" href="../media/mark.svg"><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/community.css">
 </head><body><a class="skip" href="#reference">Skip to reference</a><header class="header"><a class="brand" href="/"><img src="../media/mark.svg" width="32" height="32" alt="">KINETIQ</a><a href="/build#build">Back to the build preview ↗</a></header><main id="reference" class="guide-page section container"><p class="section-kicker">Draft reference · October 2026</p><h1 id="bill-of-materials">Bill of materials</h1>
 <blockquote>
-<p><strong>Draft.</strong> This is the parts list for the prototype being built now (October 2026). It is confirmed, with exact hardware
-counts, in the verified release after the prototype has been load-tested. Links are examples checked in October 2026;
+<p><strong>Draft.</strong> This is the parts list for the builds as designed now (October 2026). It is confirmed, with exact hardware
+counts, in the verified release after a prototype has been load-tested. Links are examples checked in October 2026;
 prices and stock change. Nothing here is endorsed by the suppliers.</p>
 </blockquote>
 <p>The <a href="https://kinetiqgym.com/build#parts">website budget</a> has the same list with dated prices, per-build totals and
 editable prices.</p>
 <p><strong>How the list is organized.</strong> The <strong>main list</strong> is what a builder has to buy, in order of importance, from motor and
-controller to adhesives. It assumes you make the metal and printed parts yourself (laser cutting or CNC, a drill with taps,
-and a 3D printer). The <strong>accessory list</strong> is what many builders already have. The last section gives typical costs for having
-the metal made.</p>
-<p><strong>What the builds share.</strong> Every build uses the same bolted 6061 aluminum frame, drum, level-wind, exit and rack side.
-The shared parts are sized for the 220 lb peak builds: in the load study every member passes 1.5x at 220 lb, to be
-confirmed by load testing. Direct drive only: the motor turns the drum through a clamp coupling,
-with no belt or gear between them.</p>
-<h2 id="the-five-builds">The five builds</h2>
+controller to hardware and metal stock. Fasteners and small bulk parts are counted by the pieces used; the note gives the
+pack. The <strong>accessory list</strong> is what many builders already have. The last section gives typical costs for having the main
+build's metal made.</p>
+<h2 id="the-builds">The builds</h2>
 <div class="table-scroll" tabindex="0" role="region" aria-label="Reference table"><table>
 <thead>
 <tr>
 <th>Build</th>
-<th>Peak rope force</th>
+<th>Max rope force, held through a set</th>
 <th>Motor</th>
 <th>Controller</th>
 <th>Power</th>
-<th>Size (about)</th>
+<th>Frame</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Main</strong></td>
-<td>158 lb</td>
-<td>APS 8072S outrunner, 50 Kv</td>
+<td>220 lb</td>
+<td>Freerchobby MP8085, 50 Kv</td>
 <td>ODrive Pro</td>
 <td>10S battery (2 x 5S LiPo)</td>
-<td>400 x 227 x 103 mm</td>
+<td>bolted 6061 plate frame, about 515 mm long</td>
 </tr>
 <tr>
-<td><strong>Lite</strong></td>
-<td>158 lb</td>
-<td>APS 8072S, wound to about 25 Kv</td>
-<td>ODrive S1</td>
-<td>36 V wall supply inside</td>
-<td>400 x 227 x 103 mm</td>
+<td><strong>Budget</strong></td>
+<td>180 lb</td>
+<td>Freerchobby MP8085, 50 Kv, in an outside pod</td>
+<td>ODESC V4.2</td>
+<td>48 V wall supply in a floor box</td>
+<td>plate and angle bought near size, about 480 mm across</td>
 </tr>
 <tr>
-<td><strong>MP80100</strong></td>
-<td>158 lb</td>
-<td>MP80100 outrunner, 50 Kv</td>
-<td>ODrive Pro</td>
-<td>10S battery</td>
-<td>444 x 227 x 103 mm</td>
-</tr>
-<tr>
-<td><strong>MP80100 wye</strong></td>
-<td>220 lb peak</td>
-<td>MP80100 rewired wye, about 29 Kv</td>
-<td>ODrive Pro</td>
-<td>10S battery</td>
-<td>444 x 227 x 103 mm</td>
-</tr>
-<tr>
-<td><strong>C80100</strong></td>
-<td>220 lb peak</td>
-<td>APS C80100, wound to about 25 Kv</td>
-<td>ODrive Pro</td>
-<td>10S battery</td>
-<td>429 x 227 x 103 mm</td>
+<td><strong>Wall</strong></td>
+<td>300 lb</td>
+<td>Hobbywing XRotor V11130</td>
+<td>Flipsky 75200 (VESC)</td>
+<td>1,000 W wall supply</td>
+<td>in design: no parts list yet</td>
 </tr>
 </tbody>
 </table></div>
+<p><strong>Ratings.</strong> Each rating is a design target held through a 20-30 s set (with about 3 minutes' rest), not yet verified. The
+motor's torque against current and the controllers' current ratings are still to be bench-tested, and nothing has been
+load-tested. The 10 lb minimum is designed to feel like 10 lb: the drums are small and light, and the firmware cancels part
+of the motor's inertia (about 29 % of the felt mass on the main build, 24 % on the budget build).</p>
 <ul>
-<li><strong>Main:</strong> the reference build. A light rotor (about 2.5 kg felt at the rope before compensation), about 13 N·m.</li>
-<li><strong>Lite:</strong> the low-cost build on the main build's frame, mount and motor body, plugged into the wall. A Mean Well 36 V,
-  600 W supply inside, an ODrive S1 with two brake resistors on the base plate, and a phone app (Bluetooth) and a knob in
-  place of the battery, the Raspberry Pi and the touchscreen. At about 25 Kv, 158 lb takes 37-45 A.</li>
-<li><strong>MP80100:</strong> the same frame with a 44 mm longer motor bay. About 4 kg felt at the rope; ships from China.</li>
-<li><strong>MP80100 wye:</strong> if the 50 Kv motor is wound delta, re-terminating it in wye gives about 29 Kv, so 220 lb takes about
-  60 A (the ODrive Pro gives 70 A continuous). Ask the seller how it is wound before buying for 220 lb.</li>
-<li><strong>C80100:</strong> wound to order at about 25 Kv, so 220 lb takes about 52-63 A on the ODrive Pro. The motor is 15 mm shorter
-  than the MP80100.</li>
+<li><strong>Main:</strong> the bolted 6061 aluminum frame, the 10S battery and the touchscreen. The drum is 7/8 in OD x 1/8 in wall 6061
+  tube used as bought: 220 lb takes about 75 A from the ODrive Pro. 2.6 m of pull. A machined heatsink and a 40 mm fan cool
+  the ODrive, and a thermistor on the motor's stator lets it roll the current back when the motor runs hot. In the load
+  study every part passes 1.5x: the frame and rack side at 220 lb (the lowest, the rack side's pad bar, at about 1.6x), the
+  level-wind and drum at 234 lb, the most the ODrive's 80 A can pull.</li>
+<li><strong>Budget:</strong> its own simpler frame, cut with a hacksaw and drilled through printed guides, hung on the rack upright with one
+  hitch pin. The motor sits in an outside pod and turns a 1 in drum tube on a 20 mm shaft through a steel clamp coupling.
+  2.0 m of pull. 180 lb takes about 69 A from the ODESC, whose 70 A rating is the seller's and unverified: bench-test it
+  first (if it only holds 53 A, the build tops out near 138 lb). A knob, a start/stop button and a phone app (Bluetooth) take
+  the place of the battery and the screen. In the load study every structural part and bolt passes 1.5x at 180 lb.</li>
+<li><strong>Wall:</strong> for people without a rack: it bolts to wall studs or concrete. It is in design; its parts list follows once the
+  CAD is done.</li>
 </ul>
-<p><strong>Motor mounting parts by build:</strong></p>
-<div class="table-scroll" tabindex="0" role="region" aria-label="Reference table"><table>
-<thead>
-<tr>
-<th>Builds</th>
-<th>Coupling</th>
-<th>Spacers and screws</th>
-<th>Before fitting</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Main, Lite</td>
-<td>McMaster-Carr 2469K23 (10 mm motor, 12 mm drum)</td>
-<td>4 x M5 spacers 10 x 3 mm, 4 x M5 x 14 (Ø59 mm circle)</td>
-<td>-</td>
-</tr>
-<tr>
-<td>MP80100, MP80100 wye, C80100</td>
-<td>Ruland MCLX-12-12-F (12 mm motor, 12 mm drum)</td>
-<td>4 x M5 spacers Ø10 x 10 mm, 4 x M5 x 25 (Ø56 mm circle)</td>
-<td>cut the bell-end shaft to a 10 mm stub</td>
-</tr>
-</tbody>
-</table></div>
-<p>In the tables below, <strong>Battery builds</strong> means Main, MP80100, MP80100 wye and C80100.</p>
+<p>Direct drive only: the motor turns the drum through a clamp coupling, with no belt or gear between them. Nothing is welded
+or turned on a lathe: round parts are bought at their final size and cut to length. Every load-bearing joint is a bolt and
+a nut.</p>
 <h2 id="main-list">Main list</h2>
 <h3 id="motor-and-controller">Motor and controller</h3>
 <div class="table-scroll" tabindex="0" role="region" aria-label="Reference table"><table>
@@ -123,49 +87,49 @@ with no belt or gear between them.</p>
 <tbody>
 <tr>
 <td>1</td>
-<td>APS 8072S outrunner, 50 Kv</td>
+<td><a href="https://www.freerchobby.cc/products/mp-8085-kv270-outrunner-brushless-motor-for-e-skateboard-bike-rc-drone?variant=34635792810145">Freerchobby MP8085 outrunner, 50 Kv, sensored</a></td>
+<td>Both</td>
+<td>Both builds' motor, off the shelf: Ø80 x 92 mm, 12 mm keyed shaft, 1.5 kg, 4 x M5 on Ø56 mm. $145 at the maker's store plus about $30 DHL/UPS shipping (shown only at checkout, so an estimate; a US tariff may apply); ships in about 4-5 days. Cut its rear prop shaft flush with the rear hub. Its torque against current is still to be measured: the ratings depend on it.</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://shop.odriverobotics.com/products/odrive-pro">ODrive Pro ODv44-ST</a></td>
 <td>Main</td>
-<td>Alien Power Systems (UK). Sensored, 10 mm keyed shaft.</td>
-</tr>
-<tr>
-<td>1</td>
-<td><a href="https://www.aliexpress.us/item/3256805081566856.html">MP80100 outrunner, 50 Kv, sensored</a></td>
-<td>MP80100, MP80100 wye</td>
-<td>Ships from China (3-4 weeks). For 220 lb, ask the seller whether it is wound delta.</td>
-</tr>
-<tr>
-<td>1</td>
-<td><a href="https://alienpowersystem.com">APS C80100 outrunner, sensored, custom ~25 Kv</a></td>
-<td>C80100</td>
-<td>Alien Power Systems (UK): ask for the ~25 Kv winding and its price. Ø80 x 92 mm, 4 x M5 on Ø56, 12 mm keyed shaft.</td>
-</tr>
-<tr>
-<td>1</td>
-<td>APS 8072S outrunner, custom ~25 Kv</td>
-<td>Lite</td>
-<td>Wound to order. Same body, mount and 10 mm keyed shaft as the main build's motor.</td>
-</tr>
-<tr>
-<td>1</td>
-<td><a href="https://shop.odriverobotics.com/products/odrive-pro">ODrive Pro</a></td>
-<td>Battery builds</td>
-<td>Controller only; the heat spreader is separate. 70 A continuous.</td>
-</tr>
-<tr>
-<td>1</td>
-<td><a href="https://shop.odriverobotics.com/products/odrive-s1">ODrive S1, solder-pad version</a></td>
-<td>Lite</td>
-<td>40 A continuous on its heat spreader, 80 A peak, 12-50.5 V, on-board magnetic encoder. Screws to a 6061 plate you make; the ODrive bracket stays.</td>
+<td>Controller only; the heat spreader is separate. 220 lb takes about 75 A through a set (current limit 75.5 A): inside the datasheet's 80 A with active cooling. Still to be bench-tested.</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://shop.odriverobotics.com/">ODrive Pro heat spreader</a></td>
-<td>Battery builds</td>
-<td></td>
+<td>Main</td>
+<td>The machined heatsink and the fan mount on it (ODrive's own heatsink-and-fan kit does not fit the bay).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B0FH9DXFG7">ODESC V4.2 56 V controller (SEQURE)</a></td>
+<td>Budget</td>
+<td>180 lb takes about 69 A through a 30 s set. The seller's 70 A continuous rating is unverified: bench-test it (68 A for 30 s, three times, 3 min rest) before relying on it; if it only holds 53 A, the budget build tops out near 138 lb. 4.2 stars (5 ratings) on Amazon; SEQURE direct is $43.99 plus shipping and duties.</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B0F3X2G4D2">NTC thermistors, 10 k, B3950, 10-pack (TIEXYE)</a></td>
+<td>Both</td>
+<td>One glued to the motor's stator, read by the controller's thermistor input: it rolls the current back when the motor runs hot. Priced by the piece: 1 of a 10-pack ($7.99). The listing says 3590B, likely a typo for 3950: measure one.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Thermally conductive adhesive tape, 0.25 mm (3M 8810 or equal), one sheet</td>
+<td>Main</td>
+<td>Holds the machined 6061 heatsink on the ODrive's heat spreader.</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B09V53W559">Thermal pad, 100 x 100 x 0.5 mm (ARCTIC TP-3)</a></td>
+<td>Budget</td>
+<td>Between the ODESC and its aluminum heat spreader. 4.7 stars (2,791).</td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="battery-and-power">Battery and power</h3>
+<h3 id="power-and-battery">Power and battery</h3>
 <div class="table-scroll" tabindex="0" role="region" aria-label="Reference table"><table>
 <thead>
 <tr>
@@ -179,68 +143,74 @@ with no belt or gear between them.</p>
 <tr>
 <td>2</td>
 <td><a href="https://www.thunderpowerrc.com/products/tp2700-5sr70">Thunder Power TP2700-5SR70</a></td>
-<td>Battery builds</td>
-<td>5S 2.7 Ah LiPo, EC5 leads. Two in series on the printed spacer. For more charge the bay also takes 2 x TP3300-5SR70 (122 Wh a pair against 100 Wh, regen up to 39.6 A; no spacer). Built to order in the US.</td>
+<td>Main</td>
+<td>5S 2.7 Ah LiPo, EC5 leads. Two packs in series, on the printed TP2700 spacer. For more charge, the bay also takes 2 x TP3300-5SR70 (3.3 Ah, 122 Wh a pair against 100 Wh, regen to 39.6 A; $134.99 each, no spacer).</td>
 </tr>
 <tr>
 <td>1</td>
-<td><a href="https://www.jameco.com/z/LOP-600-36-MEAN-WELL-600W-Low-Profile-Energy-Efficient-Medical-Open-Frame-Power-Supply-36V-11-1A-Convection-16-7A-with-Fan_2410207.html">Mean Well LOP-600-36 power supply</a></td>
-<td>Lite</td>
-<td>36 V open frame: 400 W by convection, 600 W with airflow, 150 % for 3 s. About a 3-week lead time.</td>
-</tr>
-<tr>
-<td>1</td>
-<td><a href="https://www.ebay.com/itm/398016908803">JBD 10-17S 80 A smart BMS, same port, Bluetooth</a></td>
-<td>Battery builds</td>
-<td>US-stocked. Same port, so regen charges through it; NTC probe. The bay is sized for its 102 x 65 x 12 mm board. Set over-charge to 4.20-4.25 V per cell.</td>
+<td><a href="https://www.ebay.com/itm/398016908803">JBD 10-17S 80 A smart BMS (same port, Bluetooth)</a></td>
+<td>Main</td>
+<td>US-stocked (a California eBay seller, 2-4 day delivery). Same port, so regen charges through it; NTC probe. The CAD is sized for its 102 x 65 x 12 mm board. Set over-charge to 4.20-4.25 V per cell in its app.</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B0019ZBTV4">Blue Sea 5191 MRBF terminal fuse block</a></td>
-<td>Battery builds</td>
-<td>58 V DC; stands on a printed insulating pad.</td>
+<td>Main</td>
+<td>58 V DC; upright on a printed insulating pad.</td>
 </tr>
 <tr>
 <td>2</td>
 <td><a href="https://www.amazon.com/dp/B0016HTXAY">Blue Sea 5176 MRBF 40 A fuse</a></td>
-<td>Battery builds</td>
+<td>Main</td>
 <td>58 V DC; one spare.</td>
-</tr>
-<tr>
-<td>1</td>
-<td><a href="https://www.amazon.com/dp/B0F43QWVM3">50 W 1 Ω aluminum-housed resistors, 5-pack</a></td>
-<td>Lite</td>
-<td>Two in series (2 Ω) as the S1's brake resistor, screwed flat to the base plate, which is their heatsink.</td>
 </tr>
 <tr>
 <td>2</td>
 <td><a href="https://www.digikey.com/en/products/result?keywords=0997010.WXN">MINI 58 V 10 A fuse (Littelfuse 0997010.WXN)</a></td>
-<td>Battery builds</td>
-<td>The charge-port line; one spare.</td>
+<td>Main</td>
+<td>The charge-port line (charging the packs). 10 A in place of the 7.5 A 099707.5WXN, out of stock with no date; it still protects the 16 AWG charge lead.</td>
 </tr>
 <tr>
 <td>2</td>
 <td><a href="https://www.digikey.com/en/products/result?keywords=0997003.WXN">MINI 58 V 3 A fuse (Littelfuse 0997003.WXN)</a></td>
-<td>All</td>
-<td>The 5 V regulator feed; one spare. Ordinary MINI blades are 32 V.</td>
+<td>Main</td>
+<td>The 5 V regulator feed. Digi-Key F5004-ND; ordinary MINI blades are 32 V.</td>
 </tr>
 <tr>
 <td>2</td>
 <td><a href="https://www.digikey.com/en/products/detail/littelfuse-commercial-vehicle-products/0FHM0003ZXJS/29571868">Inline MINI fuse holder, 58 V DC (Littelfuse 0FHM0003ZXJS)</a></td>
-<td>All</td>
-<td>20 A, 18 AWG leads, rated 58 V DC (most inline holders are 32 V).</td>
+<td>Main</td>
+<td>20 A, 18 AWG leads, rated 58 V DC (the Amazon holders are 32 V).</td>
 </tr>
 <tr>
 <td>1</td>
-<td><a href="https://www.amazon.com/dp/B07PVP7GL2">C14 panel-mount inlet, 10 A, 2-pack</a></td>
-<td>Lite</td>
-<td>The mains inlet, snapped into the back step.</td>
+<td><a href="https://www.trcelectronics.com/products/mean-well-lrs-600n2-48">Mean Well LRS-600N2-48 power supply</a></td>
+<td>Budget</td>
+<td>48 V, 600 W (1,200 W for 5 s), in the floor box: the budget build runs from the wall. From TRC Electronics, a US distributor, tariff included (a cheaper unrated Amazon listing may not be genuine). Holding 180 lb takes about 394 W.</td>
 </tr>
 <tr>
 <td>1</td>
-<td><a href="https://www.amazon.com/dp/B0DX1JY5BW">KCD1 rocker switch, 10 A 125 V / 6 A 250 V</a></td>
-<td>Lite</td>
-<td>Mains on/off in the line lead, beside the inlet.</td>
+<td><a href="https://www.amazon.com/dp/B09DRLYD2Z">Mains inlet, pre-wired with fuse and lit rocker switch (10 A 125 V)</a></td>
+<td>Budget</td>
+<td>The floor box's mains inlet and on/off switch. 4.7 stars (164).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B003KQ0O9S">Wall cord, C13 to NEMA 5-15P, 16 AWG, 10 ft (Monoprice)</a></td>
+<td>Budget</td>
+<td>The floor box to a 120 V outlet. 4.7 stars (180).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B077ZMFZM6">Brake resistors, 1 Ω 100 W aluminum, 5-pack (Comidox)</a></td>
+<td>Budget</td>
+<td>Two wired in series (2 Ω, the ODESC's value) on the inner plate: the wall supply cannot take braking energy, so it goes into them. Priced by the piece: 2 of a 5-pack ($9.99). 4.6 stars (140).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B0B9JBG1SH">Power cable, 14 AWG 2-core silicone, tinned copper, 10 ft (Haerkn)</a></td>
+<td>Budget</td>
+<td>From the floor box up the rack to the unit, cut to length. 4.6 stars (335).</td>
 </tr>
 </tbody>
 </table></div>
@@ -257,39 +227,63 @@ with no belt or gear between them.</p>
 <tbody>
 <tr>
 <td>1</td>
-<td><a href="https://www.mcmaster.com/2469K23/">McMaster-Carr 2469K23 clamp coupling</a></td>
-<td>Main, Lite</td>
-<td>One-piece steel, 10 mm motor / 12 mm drum, 29 mm OD x 45 mm, 104 N·m. The drum needs up to 17.1 N·m (25.7 with the 1.5x margin).</td>
-</tr>
-<tr>
-<td>1</td>
 <td><a href="https://www.ruland.com/mclx-12-12-f.html">Ruland MCLX-12-12-F clamp coupling</a></td>
-<td>MP80100, MP80100 wye, C80100</td>
-<td>One-piece steel, 12 mm motor / 12 mm drum, 105 N·m.</td>
+<td>Main</td>
+<td>One-piece steel, 12 mm motor / 12 mm drum, 29 mm OD x 45 mm, 105 N·m: 5.6x the drum's torque at 1.5 x 220 lb. The motor's key comes out; McMaster-Carr 2469K73 ($69.98) is the keyed version. Ruland web store (registered users get 5% off).</td>
 </tr>
 <tr>
 <td>1</td>
-<td>12 mm steel drum shaft, 200 mm</td>
-<td>All</td>
-<td>Round (a 12 mm linear shaft), used uncut.</td>
+<td><a href="https://www.mcmaster.com/2469K52/">McMaster-Carr 2469K52 clamp coupling, 20 x 12 mm</a></td>
+<td>Budget</td>
+<td>Steel, Ø42 x 65 mm, 350 N·m: the motor's shaft (key out) to the 20 mm drum shaft. Next-day from McMaster-Carr; the Ruland MCLX-20-12-F is the same part. No rated aluminum coupling in this bore pair was found.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>12 mm round steel shaft, 300 mm</td>
+<td>Main</td>
+<td>The drum shaft (a 12 mm linear shaft), cut to 262 mm with a cut-off wheel.</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://us.misumi-ec.com/vona2/result/?Keyword=NSFHR20-255">Drum shaft, 20 mm h7 ground 1045 steel, cut to 258 mm (Misumi NSFHR20-258)</a></td>
+<td>Budget</td>
+<td>Not hardened, so it can be drilled for the two cross bolts. Misumi USA cuts it to length (the 260 mm price; shipping not shown).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.metalsupermarkets.com/product/aluminum-round-tube-6061/">Drum tube, 6061-T6 round tube, 1 in OD x .065 in wall, 12 in</a></td>
+<td>Budget</td>
+<td>Cut into the drum barrel (110 mm) and the two mount spacers (78 mm each). A common size at metal suppliers such as Metal Supermarkets (online price, October 27) or Online Metals. Used as bought: no lathe.</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B07GVN7GQ7">6001-2RS bearings, 2-pack</a></td>
-<td>All</td>
-<td>The drum shaft, in the two machined holders.</td>
+<td>Main</td>
+<td>Two bearings required.</td>
 </tr>
 <tr>
 <td>2</td>
-<td><a href="https://www.servocity.com">goBILDA 1301-0016-0012 clamping hub, 12 mm round bore</a></td>
-<td>All</td>
+<td><a href="https://www.servocity.com">goBILDA 1301-0016-0012 hub</a></td>
+<td>Main</td>
 <td>The drum hub and the 81T gear hub.</td>
 </tr>
 <tr>
 <td>1</td>
-<td>1/8 in UHMWPE rope</td>
-<td>All</td>
-<td>About 3 m.</td>
+<td><a href="https://www.amazon.com/dp/B0BHZKD6Q8">SHF20 shaft supports, 4-pack (HiPicco)</a></td>
+<td>Budget</td>
+<td>One used, on the drum adapter. 4.5 stars (26).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B0F3D8BG1X">KFL004 flange bearings, 20 mm, 2-pack (S SYDIEN)</a></td>
+<td>Budget</td>
+<td>Both used: the drum's left end on the inner plate, its right end on the right plate. 4.3 stars (195).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B0B8WKH8L1">AmSteel-Blue rope, 1/8 in x 25 ft (2,300 lb)</a></td>
+<td>Both</td>
+<td>One rope in use (about 3.5-4 m) and the rest for the next one. The main build's 7/8 in drum bends it tighter than the usual 8:1, by choice: inspect it every ~20 sessions and replace it when fuzzy, glazed, flat, stiff or a strand is broken, or after about 6 months of use. 4.8 stars (378).</td>
 </tr>
 </tbody>
 </table></div>
@@ -306,87 +300,160 @@ with no belt or gear between them.</p>
 <tbody>
 <tr>
 <td>1</td>
-<td><a href="https://www.amazon.com/dp/B0D7CLND4B">MGN15H rail 200 mm with block, 2 sets</a></td>
-<td>All</td>
-<td>The traveller rail (one spare set).</td>
+<td>MGW15 rail, 250 mm, with an MGW15H block</td>
+<td>Main</td>
+<td>The traveller rail, cut to 213 mm with an abrasive cut-off wheel and deburred. Estimate: about $5 more than a 200 mm MGN15 set; the listing is still to be picked.</td>
 </tr>
 <tr>
 <td>1</td>
-<td><a href="https://www.amazon.com/dp/B0B8RKSDJV">Tr8 x 2 lead screw, 200 mm, 2-pack</a></td>
-<td>All</td>
-<td>With brass flange nuts; used uncut. Pick "200mm / 2pcs Tr8X2".</td>
+<td><a href="https://www.amazon.com/dp/B0D7CLND4B">MGN15 rails, 200 mm, with MGN15H blocks, 2-pack (Coavoo)</a></td>
+<td>Budget</td>
+<td>One rail and block used, uncut: the guide. Priced by the piece: 1 of the 2-pack ($49.99). 4.7 stars (7).</td>
 </tr>
 <tr>
 <td>1</td>
-<td><a href="https://www.gobilda.com/1309-series-sonic-hub-8mm-bore/">goBILDA 1309-0016-0008 Sonic Hub, 8 mm bore</a></td>
-<td>All</td>
-<td>The 45T screw gear's hub. Not the 8 mm REX version.</td>
+<td>Tr8 x 2 lead screw, 250 mm, with brass flange nut</td>
+<td>Main</td>
+<td>Single start (a 3D-printer Z screw), cut to 245 mm. Estimate: the 200 mm 2-pack is $11.99.</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B0B8RKSDJV">Tr8 x 2 lead screw, 200 mm, brass nut, 2-pack (Vichan)</a></td>
+<td>Budget</td>
+<td>Used uncut. Pick "200mm / 2pcs Tr8X2". 4.4 stars (468).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.gobilda.com/1309-series-sonic-hub-8mm-bore/">goBILDA 1309-0016-0008 Sonic Hub, 8 mm</a></td>
+<td>Main</td>
+<td>The 45T screw gear hub. goBILDA has it in stock (ServoCity showed it sold out on Oct 12); not the 8 mm REX version.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>NATR6-PP track rollers, 6 mm bore</td>
+<td>Main</td>
+<td>The two travelling and two fixed rollers, one each, on the 6 x 16 mm shoulder bolts. Estimate per roller.</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B07JHKBG4X">626ZZ bearings, 10-pack</a></td>
-<td>All</td>
-<td>The travelling and fixed rollers; 8 used.</td>
+<td>Budget</td>
+<td>The guide and fixed rollers. 4.7 stars (759).</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B08199J4RJ">688ZZ bearings, 5-pack</a></td>
-<td>All</td>
-<td>The lead screw's far end, in the printed stand.</td>
+<td>Main</td>
+<td>Lead screw far end, in the printed stand.</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B089GG2YCT">MR128ZZ bearings, 10-pack</a></td>
-<td>All</td>
-<td>The lead screw's fixed end, in the tower wall.</td>
+<td>Main</td>
+<td>Lead screw fixed end, in the tower wall.</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B07QLTXJDH">F8-16M thrust bearings, 4-pack</a></td>
-<td>All</td>
-<td>The lead screw's fixed end, both directions.</td>
+<td>Main</td>
+<td>Lead screw fixed end, both directions.</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B07PMRH7NJ">F8-16M thrust ball bearings, 2-pack (uxcell)</a></td>
+<td>Budget</td>
+<td>The lead screw's fixed end, both directions (3.0 kN static). 4.7 stars (94).</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B08SK2LNNV">8 mm set-screw shaft collars, 10-pack</a></td>
-<td>All</td>
-<td>Preloads the thrust pair.</td>
+<td>Main</td>
+<td>Holds the screw against the thrust pair. Priced by the piece: 1 of a 10-pack ($8.89).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B08SK2LNNV">8 mm shaft collars, 10-pack</a></td>
+<td>Budget</td>
+<td>The lead screw's ends. Priced by the piece: 2 of a 10-pack ($8.89). 4.7 stars (229).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B0F4QWGCTV">F608ZZ flanged bearings, 4-pack</a></td>
+<td>Budget</td>
+<td>The lead screw's two bearings. 4.5 stars (59).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B0DDGMJ6YS">M12 flat washers, 304, 25-pack (uxcell)</a></td>
+<td>Budget</td>
+<td>Two on the lead screw and one under the low mount spacer bolt's nut. Priced by the piece: 3 of a 25-pack ($6.99).</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B0DP6ZRSTT">ISO 7379 shoulder bolts 6 x 16, M5, 6-pack</a></td>
-<td>All</td>
-<td>The four roller axles.</td>
+<td>Main</td>
+<td>The four roller axles. Priced by the piece: 4 of a 6-pack ($8.99).</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B0CMXGZMG8">16008-2RS bearings 40 x 68 x 9, 2-pack</a></td>
-<td>All</td>
-<td>The exit swivel pair.</td>
+<td>Both</td>
+<td>The exit swivel pair. uxcell 2-pack. 4.7 stars (7).</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B09BVV9BYZ">F6001-2RS flanged bearings, 4-pack</a></td>
-<td>All</td>
-<td>The exit pulleys: the rope runs on the outer ring.</td>
+<td>Both</td>
+<td>Exit pulleys: the rope runs on the outer ring.</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B077GX5R3H">ISO 7379 shoulder bolts 12 x 25, M10, 2-pack</a></td>
-<td>All</td>
-<td>The exit pulley axles.</td>
+<td>Main</td>
+<td>Exit pulley axles; next-day delivery (12 x 20 ships in two weeks). Two M12 washers go on each shoulder.</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B0FDQZJQY1">Shoulder bolts 12 x 25 mm, M10, 304, 2-pack (MECCANIXITY)</a></td>
+<td>Budget</td>
+<td>The exit pulley axles. 4.9 stars (17).</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B0FQHCTQ5N">M12 flat washers, DIN 125A 13 x 24 x 2.5, 25 pcs</a></td>
-<td>All</td>
-<td>Two on each exit axle shoulder, so the nut still clamps the pulleys. 2.5 mm thick: thinner ones leave the shoulder proud.</td>
+<td>Main</td>
+<td>Two on each exit axle shoulder, so the nut still clamps the pulleys. 2.5 mm thick (thinner ones leave the shoulder proud). Priced by the piece: 4 of 25 ($8.39).</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B0FZHR1NP3">Dowel pins 5 x 60 mm, 304 stainless, 24-pack</a></td>
-<td>All</td>
-<td>The exit's side rails.</td>
+<td>Both</td>
+<td>The exit's two side rails. Priced by the piece: 2 of a 24-pack ($8.49).</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="rack-side-and-latch">Rack side and latch</h3>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Reference table"><table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Part</th>
+<th>Builds</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><a href="https://www.destaco.com/clamping/manual/straight-line-action-clamps/straight-line-action-clamps-630/productdetails.630-M.html">DE-STA-CO 630-M straight-line toggle clamp, flange base</a></td>
+<td>Main</td>
+<td>The lever that locks the rack side to the upright (2,500 lbf holding): hang the plate, push the hitch pin through, push the lever over center. To take it off: lift the lever, pull the pin. FreerTool $69.63, Zoro $102.99 (October 2026). Its spindle is an M10 x 40 hex bolt (8.8) with two jam nuts.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Rear mount and latch small parts</td>
+<td>Main</td>
+<td>Four ISO 7379 12 x 12 mm shoulder screws (M10 x 16, 12.9) with four DIN 439 M10 thin nuts and 12 x 18 mm shim washers, two M10 x 19 ball spring plungers, the latch's hardened dowel pins (2 x 3 x 18, 2 x 4 x 16, 1 x 8 x 16 mm), its 0.5 x 4 x 40 mm stainless spring, 1.2 mm stainless rod and two M2.5 x 3 mm spacers. Estimate for the set.</td>
 </tr>
 </tbody>
 </table></div>
@@ -404,74 +471,110 @@ with no belt or gear between them.</p>
 <tr>
 <td>1</td>
 <td><a href="https://www.pjrc.com/store/teensy40.html">Teensy 4.0</a></td>
-<td>Battery builds</td>
-<td>Machine control.</td>
+<td>Main</td>
+<td>Board allowance; use non-lockable reference.</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B00KM6XMXO">Waveshare SN65HVD230 CAN board</a></td>
-<td>All</td>
+<td>Main</td>
 <td>3.3 V CAN transceiver.</td>
 </tr>
 <tr>
 <td>1</td>
-<td><a href="https://www.pololu.com/product/5571">Pololu D42V55F5 regulator (#5571)</a></td>
-<td>All</td>
-<td>5 V output, 60 V maximum input. Not the D36V50F5: it is rated to 38 V and a full pack is 42 V.</td>
-</tr>
-<tr>
-<td>1</td>
-<td><a href="https://www.amazon.com/dp/B0B94JZ2YF">Seeed XIAO ESP32-C3</a></td>
-<td>Lite</td>
-<td>Bluetooth link to the phone app and the knob; talks to the S1 over CAN through the CAN board.</td>
-</tr>
-<tr>
-<td>1</td>
-<td><a href="https://www.amazon.com/dp/B08728K3YB">EC11 rotary encoders with push button and knob caps, 5-pack</a></td>
-<td>Lite</td>
-<td>The resistance knob, through the left cover.</td>
+<td><a href="https://www.pololu.com/product/5571">Pololu D42V55F5 regulator</a></td>
+<td>Main</td>
+<td>#5571, 5 V output, 60 V maximum input.</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.raspberrypi.com/products/raspberry-pi-4-model-b/">Raspberry Pi 4 Model B</a></td>
-<td>Battery builds</td>
-<td>The budget assumes 2 GB.</td>
+<td>Main</td>
+<td>2 GB reference budget; actual memory variant/retailer may differ.</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B09QKR364V">Waveshare 4 inch HDMI LCD (C)</a></td>
-<td>Battery builds</td>
-<td>720 x 720 square capacitive touch display: HDMI video, USB-C touch.</td>
+<td>Main</td>
+<td>720 x 720 square capacitive display: HDMI video, USB-C touch.</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B0HGXD92P2">Flat HDMI cable kit, HDMI to 90-degree micro-HDMI, 10 cm</a></td>
-<td>Battery builds</td>
-<td>Screen to the Pi's HDMI 0. You assemble it.</td>
+<td>Main</td>
+<td>Screen to the Pi's HDMI 0, under the Pi's edge. You assemble it (the plugs and the flat cable ship separately).</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B0FG7Z6QLX">Right-angle USB-C cable, 1 ft, 2-pack</a></td>
-<td>Battery builds</td>
+<td>Main</td>
 <td>The screen's touch and power, to a Pi USB port.</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B0C7V37X25">90-degree USB-A adapters, 4-pack</a></td>
-<td>Battery builds</td>
+<td>Main</td>
 <td>The right angle at the Pi's USB port.</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B00NEMGCIA">Noctua NF-A4x10 5V fan</a></td>
-<td>All</td>
-<td>Cools the ODrive.</td>
+<td>Both</td>
+<td>Main build: cools the ODrive through its duct and the machined heatsink. Budget build: blows across the ODESC. Both run from the 5 V regulator. 4.8 stars (3,969).</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B08BZD66H4">Right-angle micro-USB cable, pack</a></td>
-<td>Battery builds</td>
-<td>Teensy to Pi.</td>
+<td>Main</td>
+<td>Short setup/board cable.</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B0B94JZ2YF">Seeed XIAO ESP32-C3</a></td>
+<td>Budget</td>
+<td>On the perfboard by the ODESC: Bluetooth to the phone app, the knob and the start button, UART to the ODESC. 4.7 stars (386).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B0C6Q67V97">EC11 push-button rotary encoders with knob caps, 6-pack</a></td>
+<td>Budget</td>
+<td>The dial on the motor's front: turn it to set the weight. 4.7 stars (71).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.pololu.com/product/5267">Pololu APM81815 5 V regulator carrier (#5267)</a></td>
+<td>Budget</td>
+<td>5.05-72 V in, 1.1 A: runs the XIAO and the fan from 48 V, on the perfboard. Plus shipping (not sold on Amazon).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B0H15G7NPX">AS5047P encoder board (Autoro)</a></td>
+<td>Budget</td>
+<td>Reads the drum's position for the controller. 5.0 stars (5).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B0H1578MWG">Diametric magnets, 6 x 2.5 mm, 50-pack (KuntaiMag)</a></td>
+<td>Budget</td>
+<td>The encoder's magnet, in the drum's end. Priced by the piece: 1 of 50 ($20.98).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B01E38OS7K">Tactile switches, 12 x 12 x 7.3 mm, 25-pack (Gikfun)</a></td>
+<td>Budget</td>
+<td>One, behind the flush start/stop button. Priced by the piece: 1 of 25 ($9.78). 4.7 stars (362).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B0D78NSH96">Capacitors, 47 µF 63 V, 10-pack (JCCON)</a></td>
+<td>Budget</td>
+<td>One across the regulator's input. Priced by the piece: 1 of 10 ($4.99).</td>
+</tr>
+<tr>
+<td>1</td>
+<td>10 kΩ resistor and 1 µF ceramic capacitor</td>
+<td>Budget</td>
+<td>The motor thermistor's divider at the ODESC; from any kit.</td>
 </tr>
 </tbody>
 </table></div>
@@ -489,38 +592,62 @@ with no belt or gear between them.</p>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B08JYSZX78">42 V 2 A charger (10S)</a></td>
-<td>Battery builds</td>
+<td>Main</td>
 <td>Fit an XT60 male plug (about 1.5 h per charge).</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B09SL2MNN1">Amass XT60E-F, 10-pack</a></td>
-<td>Battery builds</td>
-<td>The panel charge socket; one used.</td>
+<td>Both</td>
+<td>Main build: the panel charge socket. Budget build: the floor box's output. One used.</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B08GPR7SVR">EC5 connectors, 10 pairs</a></td>
-<td>Battery builds</td>
-<td>Pack and BMS connections.</td>
+<td>Main</td>
+<td>Retail pack for pack and BMS connections.</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B073ZGF8D9">5S JST-XH balance leads, 10-pack</a></td>
-<td>Battery builds</td>
-<td>Pack-to-BMS balance leads.</td>
+<td>Main</td>
+<td>Pack-to-BMS sense harness.</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B07CJR8MH4">WAGO 221-615, 15-pack</a></td>
-<td>Battery builds</td>
-<td>Five-port lever nut for 10 AWG, the switched negative junction; one used.</td>
+<td>Main</td>
+<td>Five-port 10 AWG connector; one used.</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B083QMF2J1">APIELE 12 mm latching switch, 2-pack</a></td>
-<td>Battery builds</td>
-<td>The power button: a signal to the BMS soft-switch input.</td>
+<td>Main</td>
+<td>BMS signal switch; LED not wired in reference.</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B07BF8154S">XT60 pairs with 14 AWG silicone leads, 2-pack</a></td>
+<td>Budget</td>
+<td>The power cable's ends. 4.7 stars (311).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B07YJMCDC3">Amass XT60E-M panel plugs, 10-pack</a></td>
+<td>Budget</td>
+<td>The unit's rear power port; one used. 4.8 stars (144).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B07YV6B8VL">5.5 mm gold bullet connectors, 6 pairs (OliRC)</a></td>
+<td>Budget</td>
+<td>Three pairs on the motor's phase leads. Priced by the piece: 3 of 6 pairs ($7.99).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B0BKSNM7NF">JST-PH 2.0 6-pin plug and socket pairs, 150 mm, 20 pairs</a></td>
+<td>Budget</td>
+<td>Extends the motor's Hall sensor cable (check its plug first). Priced by the piece: 2 of 20 ($9.59).</td>
 </tr>
 </tbody>
 </table></div>
@@ -538,116 +665,24 @@ with no belt or gear between them.</p>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B000O01EV0">Loctite 638 retaining compound, 50 mL</a></td>
-<td>All</td>
-<td>Bonds the drum hub and the drum flanges to the round shaft.</td>
+<td>Main</td>
+<td>Bonds the drum flanges to the tube ends and the drum hub to the round shaft. The 10 mL listing is gone; the 50 mL bottle costs less.</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B01MQJ92VM">Loctite 641 bearing retainer</a></td>
-<td>All</td>
-<td>Holds the drum bearings' inner rings on the shaft (the rope load turns with the shaft, so a loose ring creeps) and the bearings in their seats (drum holders, MR128ZZ, 688ZZ). Medium strength: heat to take apart.</td>
+<td>Main</td>
+<td>Holds the drum bearings' inner rings on the shaft (the rope load turns with the shaft, so a loose ring creeps) and the bearings in their seats (drum holders, MR128ZZ, 688ZZ). Medium strength: heat to take apart. Ships from Amazon.</td>
 </tr>
 <tr>
 <td>1</td>
-<td><a href="https://www.amazon.com/dp/B0CQ2R5GDW">M5 aluminum spacers 10 x 3 mm, 20-pack</a></td>
-<td>All</td>
-<td>The 3 mm spacers under the APS 8072S face.</td>
+<td>M5 aluminum spacers, Ø10 x 10 mm (5.2 mm bore)</td>
+<td>Main</td>
+<td>Four, between the MP8085's face and the motor face plate (4 x M5 x 25 through them). Estimate: about $6 for a 20-pack, priced by the piece.</td>
 </tr>
 </tbody>
 </table></div>
-<h3 id="small-parts-for-the-latch-rack-side-and-encoder">Small parts for the latch, rack side and encoder</h3>
-<div class="table-scroll" tabindex="0" role="region" aria-label="Reference table"><table>
-<thead>
-<tr>
-<th>Qty</th>
-<th>Part</th>
-<th>Used for</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>4</td>
-<td>Shoulder screw ISO 7379, 12 x 12 mm, M10 x 16 thread, 12.9 steel</td>
-<td>the rack side's four studs</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Shim washer 12 x 18 x 2 mm (DIN 988)</td>
-<td>under each stud head</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Dowel pin 4 x 16 mm, hardened (ISO 8734)</td>
-<td>latch slider guides</td>
-</tr>
-<tr>
-<td>1</td>
-<td>Dowel pin 8 x 16 mm, hardened (ISO 8734)</td>
-<td>latch anvil</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Dowel pin 3 x 18 mm, hardened (ISO 8734)</td>
-<td>trigger-link guides</td>
-</tr>
-<tr>
-<td>1</td>
-<td>Compression spring 0.35 mm wire x 3 mm OD x 45 mm, stainless</td>
-<td>latch return; to be chosen and tested on the prototype</td>
-</tr>
-<tr>
-<td>1</td>
-<td>Stainless rod 1.2 mm, cut to 39.4 mm</td>
-<td>the spring's guide rod</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Round spacer M2.5 x 3 mm, 5 mm OD, aluminum</td>
-<td>between the trigger link and the slider</td>
-</tr>
-<tr>
-<td>3 + 6</td>
-<td>M5 countersunk screws, 18 mm and 22 mm, with 9 M5 nyloc nuts and 9 washers</td>
-<td>the three corner brackets</td>
-</tr>
-<tr>
-<td>6</td>
-<td>M4 x 18 countersunk screws</td>
-<td>the rear plate to the base plate</td>
-</tr>
-<tr>
-<td>4</td>
-<td>M4 x 12 countersunk screws</td>
-<td>the motor face plate brackets</td>
-</tr>
-<tr>
-<td>2</td>
-<td>M3 x 18 countersunk screws</td>
-<td>the rear plate into the motor face plate's back edge</td>
-</tr>
-<tr>
-<td>8</td>
-<td>M3 x 12 countersunk screws</td>
-<td>the drum flanges to the tube</td>
-</tr>
-<tr>
-<td>6</td>
-<td>M4 x 25 countersunk screws</td>
-<td>the mating plate into the rack cheeks</td>
-</tr>
-<tr>
-<td>4</td>
-<td>M2 x 5 countersunk screws</td>
-<td>the service lid</td>
-</tr>
-<tr>
-<td>1</td>
-<td>Diametric magnet 6 x 5 mm (N45SH)</td>
-<td>the encoder, glued into the drum shaft end</td>
-</tr>
-</tbody>
-</table></div>
-<h3 id="aluminum-frame-stock-cut-it-yourself">Aluminum frame stock (cut it yourself)</h3>
+<h3 id="hardware">Hardware</h3>
 <div class="table-scroll" tabindex="0" role="region" aria-label="Reference table"><table>
 <thead>
 <tr>
@@ -660,9 +695,280 @@ with no belt or gear between them.</p>
 <tbody>
 <tr>
 <td>1</td>
-<td>6061-T6 aluminum plate and drum tube, to cut yourself</td>
-<td>All</td>
-<td>0.250, 0.375 and 0.750 in plate and the 1-1/4 in drum tube from a local metal shop, enough for one build. You cut and drill it (CNC router or laser, a drill and taps, the printed drill guides). No CNC: have the metal made instead (below). About $180.</td>
+<td><a href="https://www.amazon.com/dp/B00BBCV4RO">1/2-13 x 8 in hex cap screws, grade 8, 10-pack (Hard-to-Find Fastener)</a></td>
+<td>Budget</td>
+<td>The two mount spacer bolts through the drum-side handle's posts. Priced by the piece: 2 of 10 ($31.20).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B0D362QFSM">1/2-13 hex nuts, grade 8, 25-pack (Makers Bolt)</a></td>
+<td>Budget</td>
+<td>The mount spacer bolts' nuts. Priced by the piece: 2 of 25 ($8.97).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B0D65L42PZ">1/2 in SAE flat washers, grade 8, 100-pack (Makers Bolt)</a></td>
+<td>Budget</td>
+<td>Three on the mount spacer bolts. Priced by the piece: 3 of 100 ($16.97).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B08VGB9L94">3/8-16 x 5 in socket head cap screws, 12.9, 6 pcs</a></td>
+<td>Budget</td>
+<td>The motor bay's three spacer bolts (grade 5 or 8 hex bolts from a hardware store work too). Priced by the piece: 3 of 6 ($11.99).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B0GQB93PG8">3/8 in nuts and washers kit</a></td>
+<td>Budget</td>
+<td>For the spacer bolts. Priced by the piece: 7 of 60 ($9.99).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B0GPXBPR31">M8 screw kit, class 12.9, 72 pcs (M8 x 30 socket heads, nuts, washers)</a></td>
+<td>Budget</td>
+<td>The KFL004 bearings' bolts and nuts. Priced by the piece: 6 of 72 ($9.99).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B0CWTP62N8">Bolt kit M3-M6, 900 pcs</a></td>
+<td>Budget</td>
+<td>Screws 8-20 mm, nuts and washers: the base plate strips, the motor and its pod, the fan. Priced by the piece: 116 of 900 ($18.99).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B0F61WKT6R">Lock nuts M3-M12, 170 pcs</a></td>
+<td>Budget</td>
+<td>All the nylocs. Priced by the piece: 8 of 170 ($9.99).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B0CZQQX1TZ">M3 countersunk screw assortment, 30-50 mm</a></td>
+<td>Budget</td>
+<td>The swivel housing's four and the two M3 x 50 stack bolts. Priced by the piece: 6 of 75 ($9.69).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B0734Q7DDG">Flat-head socket screw kit, M3/M4/M5, 304, 510 pcs with nuts (Glarks)</a></td>
+<td>Budget</td>
+<td>The covers, trays, rope clamp and start button. Priced by the piece: 47 of 510 ($15.99).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B081JQZDF6">M4 x 16 button-head socket screws, 304, 100 pcs</a></td>
+<td>Budget</td>
+<td>The corner brackets. Priced by the piece: 15 of 100 ($8.99).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B0D46D9D42">M3 button-head screw kit, 304, 580 pcs</a></td>
+<td>Budget</td>
+<td>The encoder board and the floor box. Priced by the piece: 18 of 580 ($4.99).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B0DJP6TK7T">M3 x 30 socket head screws with nuts, 100 sets</a></td>
+<td>Budget</td>
+<td>The guide nut's four. Priced by the piece: 4 of 100 ($7.99).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B085M34WJL">M6 x 20 flat-head socket cap screws, 10.9, 25 pcs</a></td>
+<td>Budget</td>
+<td>The base strips through the plates, flush (14 N·m). Priced by the piece: 8 of 25 ($8.99).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B0FY5TFKPB">M6 x 16 button-head socket cap screws, 10.9, 80 pcs</a></td>
+<td>Budget</td>
+<td>The base strips up through the base plate (14 N·m). Priced by the piece: 8 of 80 ($8.54).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B0FGJB2283">M5 x 45 hex bolts with nuts, 304, 10 sets (MECCANIXITY)</a></td>
+<td>Budget</td>
+<td>The drum's two cross bolts (one hacksawn to 32 mm). Priced by the piece: 2 of 10 ($7.69).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B012T9NG0K">M6 x 40 socket screws, part-threaded, 12.9, 10-pack (uxcell)</a></td>
+<td>Budget</td>
+<td>The roller axles. Priced by the piece: 4 of 10 ($7.49).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B0CTB9CF3V">M5 x 12 flat-head socket screws, 304, 25-pack</a></td>
+<td>Budget</td>
+<td>The roller brackets. Priced by the piece: 4 of 25 ($5.99).</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="frame-stock">Frame stock</h3>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Reference table"><table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Part</th>
+<th>Builds</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>6061-T6 aluminum plate, drum tube and heatsink stock, to cut yourself</td>
+<td>Main</td>
+<td>0.250, 0.375, 0.500 and 0.750 in plate, a 1/2 in offcut for the ODrive heatsink and the 7/8 in OD x 1/8 in wall drum tube (cut to 162 mm and used as bought), from a metal supplier, enough for one build. You cut and drill it: a CNC router or laser, a drill and the printed drill guides; no lathe. No CNC: have the metal made instead (below).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B0DGWZBNS2">6061 plate, 6 x 6 in (6.0 mm), single (PATIKIL)</a></td>
+<td>Budget</td>
+<td>The inner plate. 4.7 stars (41).</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="https://www.amazon.com/dp/B0GYXY2BJN">6061 plate, 6 x 8 in (6.0 mm, Uxney)</a></td>
+<td>Budget</td>
+<td>The right plate, and the exit plate cut to 188 mm. 4.6 stars (16).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B0GFNBPJB3">6061 flat bar, 1/4 x 4 x 8 in</a></td>
+<td>Budget</td>
+<td>The cheek, hacksawn to 6 in. 4.8 stars (30).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B0FM29RL2V">Steel angle, 1.6 x 1.6 x 0.18 in, A36, 12 in (Rocaris)</a></td>
+<td>Budget</td>
+<td>Hacksawn into four 19 mm corner brackets for the exit plate and the 44 mm cheek strip. 4.6 stars (14).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B0BZPL1D4K">6061-T651 sheet, 12 x 12 x 1/8 in</a></td>
+<td>Budget</td>
+<td>The base plate, the left plate, the heat spreader and the drum flange, all from this one sheet, drilled through printed stand-ins. 4.6 stars (134).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B0DXF1MMN4">Aluminum angle, 1 x 1 x 1/8 in, 6061-T6, 12 in, 3 pcs (YLJNGUS)</a></td>
+<td>Budget</td>
+<td>The inner, right and exit strips, 58, 43 and 110 mm, from one piece. 4.5 stars (66).</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="load-path-screws-and-small-parts-main-build">Load-path screws and small parts (main build)</h3>
+<p>Every screw the rope load passes through goes to a nut: a nut in a window cut through the plate, in a pocket, or keyed in a
+notch in the drum tube's end. The exact counts come with the verified build files; these are the ones that matter.</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Reference table"><table>
+<thead>
+<tr>
+<th>Qty</th>
+<th>Part</th>
+<th>Used for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6</td>
+<td>M4 countersunk screws, nuts in the rear plate's windows</td>
+<td>the rear plate to the base plate</td>
+</tr>
+<tr>
+<td>5</td>
+<td>M3 countersunk screws, nuts in windows</td>
+<td>the motor face plate (3 through the base plate, 2 through the rear plate)</td>
+</tr>
+<tr>
+<td>12</td>
+<td>M3 countersunk screws, nuts in windows</td>
+<td>the three corner gussets (2 up through the base plate and 2 through the rear plate each)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>M4 countersunk screws, nuts in windows</td>
+<td>the two drum bearing holders</td>
+</tr>
+<tr>
+<td>8</td>
+<td>M4 hex nuts, keyed in notches sawn in the drum tube's ends</td>
+<td>the drum flanges and hub</td>
+</tr>
+<tr>
+<td>4 + 4</td>
+<td>M4 x 12 countersunk and M4 x 20 button head screws</td>
+<td>the right flange; the hub and left flange</td>
+</tr>
+<tr>
+<td>4</td>
+<td>M3 x 14 countersunk screws, nuts in the printed clamp ring</td>
+<td>the rope clamp</td>
+</tr>
+<tr>
+<td>10</td>
+<td>M4 x 6 socket head screws, nuts in pockets under the base plate</td>
+<td>the MGW15 rail</td>
+</tr>
+<tr>
+<td>4</td>
+<td>M5 x 25 socket head screws through the Ø10 x 10 mm spacers</td>
+<td>the motor, into its own M5 threads</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Shoulder screws ISO 7379, 12 x 12 mm, M10 x 16, 12.9, each into a DIN 439 M10 thin nut</td>
+<td>the rear mount's four studs</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Shim washers 12 x 18 mm (DIN 988), 0.3 and 0.1 mm</td>
+<td>under the stud heads, fitted at assembly</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Ball spring plungers, M10 x 19, 6 mm ball</td>
+<td>keep the rear plate on the stud heads</td>
+</tr>
+<tr>
+<td>6</td>
+<td>M5 x 35 countersunk screws, nuts in windows</td>
+<td>the two rack cheeks to the mating plate</td>
+</tr>
+<tr>
+<td>4</td>
+<td>M6 x 25 socket head screws, nuts in pockets</td>
+<td>the toggle clamp</td>
+</tr>
+<tr>
+<td>1</td>
+<td>M10 x 40 hex bolt (8.8) and 2 M10 jam nuts</td>
+<td>the toggle clamp's spindle</td>
+</tr>
+<tr>
+<td>2 + 1 + 2</td>
+<td>Dowel pins 4 x 16, 8 x 16 and 3 x 18 mm, hardened (ISO 8734)</td>
+<td>the latch slider guides, the latch anvil, the trigger-link guides</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Compression spring, 0.5 mm wire x 4 mm OD x 40 mm, 302 stainless</td>
+<td>the latch return</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Stainless rod 1.2 mm, cut to 39.4 mm</td>
+<td>the spring's guide rod</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Round spacers M2.5 x 3 mm, 5 mm OD, aluminum</td>
+<td>between the trigger link and the slider</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Diametric magnet 6 x 5 mm (N45SH)</td>
+<td>the encoder, glued into the drum shaft's end</td>
 </tr>
 </tbody>
 </table></div>
@@ -680,226 +986,227 @@ with no belt or gear between them.</p>
 <tbody>
 <tr>
 <td>1</td>
-<td>Taps and drills for the edge holes</td>
-<td>All</td>
-<td>M3 and M4 taps with a tap handle, and 2.5 and 3.3 mm drills: the edge holes are drilled by hand through the printed guides.</td>
+<td>Drills and taps</td>
+<td>Main</td>
+<td>3.4 and 4.5 mm drills for the edge holes (drilled by hand through the printed guides into the nut windows), and M2.5, M3 and M10 taps with a handle for the few holes that are still threaded (the fuse-block pad, the latch slider, the two ball plungers) if your service does not tap them.</td>
 </tr>
 <tr>
 <td>1</td>
-<td><a href="https://shop.odriverobotics.com/">USB isolator</a></td>
-<td>All</td>
-<td>Protects the PC when you set up the ODrive over USB.</td>
+<td><a href="https://shop.odriverobotics.com/">USB isolator for controller setup</a></td>
+<td>Both</td>
+<td>Protects the PC when you set up the ODrive or the ODESC over USB.</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B000XBH9HI">Super Lube synthetic grease, 3 oz</a></td>
-<td>All</td>
-<td>The lead screw and the gears.</td>
+<td>Both</td>
+<td>Lead screw and gears.</td>
 </tr>
 <tr>
 <td>1</td>
 <td>Silicone wire, mixed gauges</td>
-<td>All</td>
-<td>10 to 24 AWG; lengths in <a href="https://kinetiqgym.com/docs/wiring.html">wiring.md</a>.</td>
+<td>Main</td>
+<td>10 to 24 AWG; lengths in the wiring reference.</td>
 </tr>
 <tr>
 <td>1</td>
-<td><a href="https://www.amazon.com/dp/B0DM8FW4LV">Ring terminals, pack</a></td>
-<td>Battery builds</td>
-<td>10 AWG M5 (pack +), 16 AWG M5 (charge +), 10 AWG 5/16 in (ODrive DC+), 18 AWG 5/16 in (regulator feed).</td>
+<td><a href="https://www.amazon.com/dp/B01AQU3ST8">Silicone wire 12 AWG, red and black, 3 ft each (BNTECHGO)</a></td>
+<td>Budget</td>
+<td>The motor's three phase leads extended to the ODESC (measure the leads first).</td>
 </tr>
 <tr>
 <td>1</td>
-<td>Ferrules and heat-shrink</td>
-<td>All</td>
-<td></td>
+<td><a href="https://www.amazon.com/dp/B0DM8FW4LV">M5 ring terminals, pack</a></td>
+<td>Main</td>
+<td>12–10 AWG terminals; verify selected listing.</td>
 </tr>
 <tr>
 <td>1</td>
-<td>IEC C13 mains cord</td>
-<td>Lite</td>
-<td>Any standard computer or monitor power cord.</td>
-</tr>
-<tr>
-<td>1</td>
-<td>6.3 mm insulated female quick-disconnects</td>
-<td>Lite</td>
-<td>For the inlet and rocker switch tabs.</td>
-</tr>
-<tr>
-<td>1</td>
-<td>Power supply mating connectors (CN1, CN2)</td>
-<td>Lite</td>
-<td>The AC input and 12 V auxiliary housings with crimps, as listed in the LOP-600 datasheet.</td>
-</tr>
-<tr>
-<td>1</td>
-<td>Ring terminals, M3.5 and M4, 10-16 AWG</td>
-<td>Lite</td>
-<td>The supply's DC screws, its earth screw and the earth stud in the base plate.</td>
-</tr>
-<tr>
-<td>1</td>
-<td>Thermal pad, 0.5 mm, 6 W/mK</td>
-<td>Lite</td>
-<td>Between the S1 and its plate.</td>
-</tr>
-<tr>
-<td>1</td>
-<td>JST GH 4-pin cable</td>
-<td>Lite</td>
-<td>CAN from the CAN board to the S1.</td>
+<td>Ferrules &amp; heat-shrink</td>
+<td>Both</td>
+<td>Consumables allowance; crimping tools excluded.</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B0948H7FPP">Low-profile female header strips</a></td>
-<td>All</td>
-<td>The Teensy socket: 2 x 14-pin low-profile machined-pin female.</td>
+<td>Main</td>
+<td>Teensy socket: 2 x 14-pin low-profile machined-pin female.</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B072Z7Y19F">Prototype perfboards, pack</a></td>
-<td>All</td>
-<td>Three small boards (controller, CAN, regulator).</td>
+<td>Both</td>
+<td>Main build: three small boards (Teensy, CAN, regulator). Budget build: one (the XIAO and the regulator).</td>
 </tr>
 <tr>
 <td>1</td>
 <td>MicroSD card</td>
-<td>Battery builds</td>
+<td>Main</td>
 <td>For the Raspberry Pi.</td>
 </tr>
 <tr>
 <td>2</td>
 <td><a href="https://www.amazon.com/dp/B0F37YW223">PAHT-CF filament, 1 kg spool</a></td>
-<td>All</td>
+<td>Main</td>
 <td>The end pieces, level-wind, exit, tower, gears and brackets.</td>
 </tr>
 <tr>
 <td>1</td>
 <td>PETG-CF filament, 1 kg spool</td>
-<td>All</td>
+<td>Main</td>
 <td>The covers.</td>
 </tr>
 <tr>
 <td>1</td>
+<td><a href="https://www.amazon.com/dp/B0D41Y3WWZ">PETG filament, 1 kg x 2 (ELEGOO)</a></td>
+<td>Budget</td>
+<td>The budget build's printed parts and covers. 4.6 stars (2,386).</td>
+</tr>
+<tr>
+<td>1</td>
 <td><a href="https://www.amazon.com/dp/B0BXJHVH5M">1 mm EVA foam roll</a></td>
-<td>Battery builds</td>
-<td>Battery pads; or print them in TPU 95A.</td>
+<td>Main</td>
+<td>Battery pads: or print them in TPU 95A.</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B08YXYN327">2 mm EVA foam sheet</a></td>
-<td>Battery builds</td>
-<td>Battery pads; or print them in TPU 95A.</td>
+<td>Main</td>
+<td>Battery pads: or print them in TPU 95A.</td>
 </tr>
 <tr>
 <td>1</td>
-<td>Cable ties and thread locker (Loctite 243)</td>
-<td>All</td>
-<td></td>
+<td>Cable ties &amp; thread locker</td>
+<td>Both</td>
+<td>Assembly consumables allowance.</td>
 </tr>
 <tr>
 <td>1</td>
-<td><a href="https://www.amazon.com/dp/B08974F734">1 in steel hitch pin</a></td>
-<td>All</td>
-<td>Or your rack's own 1 in pin: at least 92 mm between the head and the clip hole.</td>
+<td><a href="https://www.amazon.com/dp/B0DRF883JL">Hitch pin, 1 x 5 in, with R-clip, 2-pack (YuGtcen)</a></td>
+<td>Both</td>
+<td>One used. Or your rack's own 1 in pin: the main build's rack side needs about 5 in usable between the head and the clip hole.</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B09LXKGBHM">Steel snap hook, 396 lb (seller's rating)</a></td>
+<td>Both</td>
+<td>Clips the handle to the rope. 4.8 stars (170).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B00FX34KDW">D-handle, 880 lb (Yes4All)</a></td>
+<td>Both</td>
+<td>Or any cable attachment you have. 4.8 stars (2,589).</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B0D2R955CL">3DZWMAN heat-set insert kit, 380 pcs (M2 to M8, with tips)</a></td>
-<td>All</td>
+<td>Main</td>
 <td>The insert pockets in every printed part are cut for this kit: M2 3 x 3.2, M2.5 4 x 4.0, M3 4 x 4.2, M4 5 x 5.0, M5 5 x 7.0 mm (length x outer diameter). Other brands may not grip.</td>
 </tr>
 <tr>
 <td>1</td>
+<td><a href="https://www.amazon.com/dp/B0D2R955CL">Heat-set inserts, 380-piece kit (3DZWMAN)</a></td>
+<td>Budget</td>
+<td>20 M3 for the covers, the motor tray, the floor box lid and the encoder cap. Priced by the piece: 20 of 380 ($18.99).</td>
+</tr>
+<tr>
+<td>1</td>
+<td><a href="https://www.amazon.com/dp/B01MQJ92VM">Loctite 641 bearing retainer</a></td>
+<td>Budget</td>
+<td>The lead screw's two flanged 608 bearings.</td>
+</tr>
+<tr>
+<td>1</td>
 <td><a href="https://www.amazon.com/dp/B0FJFVG31G">Metric socket screw assortment</a></td>
-<td>All</td>
-<td></td>
+<td>Main</td>
+<td>Purchase pack; the exact sizes and counts come with the build files.</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B0BJQ4M7D5">M4 button-head assortment</a></td>
-<td>All</td>
-<td></td>
+<td>Main</td>
+<td>Purchase pack; the exact sizes and counts come with the build files.</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B0GS8FZLTK">M3 flat-head assortment</a></td>
-<td>All</td>
-<td></td>
+<td>Main</td>
+<td>Purchase pack; the exact sizes and counts come with the build files.</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B0H5JVF4K4">M3 x 25 flat-head screws, pack</a></td>
-<td>All</td>
-<td></td>
+<td>Main</td>
+<td>Purchase pack; the exact sizes and counts come with the build files.</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B0956VQVJ2">M4 x 10 flat-head screws, pack</a></td>
-<td>All</td>
-<td></td>
+<td>Main</td>
+<td>Purchase pack; the exact sizes and counts come with the build files.</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B0CW5Y4RQY">M4 flat-head assortment</a></td>
-<td>All</td>
-<td></td>
+<td>Main</td>
+<td>Purchase pack; the exact sizes and counts come with the build files.</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B0CG1NVX6J">M2.5 x 5 flat-head screws, pack</a></td>
-<td>All</td>
-<td></td>
+<td>Main</td>
+<td>Purchase pack; the exact sizes and counts come with the build files.</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B0FG2BYJSR">M2.5 socket screw assortment</a></td>
-<td>All</td>
-<td></td>
+<td>Main</td>
+<td>Purchase pack; the exact sizes and counts come with the build files.</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B0GM84W3X8">M2.5 x 5 socket screws, pack</a></td>
-<td>All</td>
-<td></td>
+<td>Main</td>
+<td>Purchase pack; the exact sizes and counts come with the build files.</td>
 </tr>
 <tr>
 <td>1</td>
 <td>M3 x 40 countersunk screws, pack</td>
-<td>All</td>
-<td>The exit clamp, 4 needed.</td>
+<td>Main</td>
+<td>Exit clamp, 4 needed.</td>
 </tr>
 <tr>
 <td>1</td>
 <td>M3 x 10 low-head socket screws (DIN 7984), pack</td>
-<td>All</td>
-<td>The lead screw nut's flange, 4 needed.</td>
+<td>Main</td>
+<td>Lead screw nut flange, 4 needed.</td>
 </tr>
 <tr>
 <td>1</td>
 <td>M10 nyloc nuts and washers</td>
-<td>All</td>
-<td>The exit pulley axles, 2 of each.</td>
+<td>Main</td>
+<td>Exit pulley axles, 2 of each.</td>
 </tr>
 <tr>
 <td>1</td>
-<td><a href="https://www.amazon.com/dp/B0F1FGKC1C">Lock-nut and washer assortment</a></td>
-<td>All</td>
-<td></td>
+<td><a href="https://www.amazon.com/dp/B0F1FGKC1C">Lock-nut &amp; washer assortment</a></td>
+<td>Main</td>
+<td>Purchase pack; the exact sizes and counts come with the build files.</td>
 </tr>
 <tr>
 <td>1</td>
 <td><a href="https://www.amazon.com/dp/B097N3SGCD">Plain hex-nut assortment</a></td>
-<td>All</td>
-<td></td>
+<td>Main</td>
+<td>Purchase pack; the exact sizes and counts come with the build files.</td>
 </tr>
 </tbody>
 </table></div>
 <p>The exact screw sizes and counts come with the verified build files.</p>
 <h2 id="no-cnc-have-the-metal-made">No CNC? Have the metal made</h2>
-<p>Typical costs for having the metal parts made for one machine: about $290-505 in all. Prices depend on the shop, the
-quantity and the lead time, so get quotes. This replaces the aluminum line in the main list. Ready-made metal kits are planned after testing.</p>
+<p>Main build. Typical costs for having the metal parts made for one machine: about $310-545 in all. Prices depend on the shop, the
+quantity and the lead time, so get quotes. This replaces the aluminum line in the main list. Ready-made metal kits are planned after testing.
+The budget build needs no CNC: its plate and angle are bought near size and cut with a hacksaw.</p>
 <div class="table-scroll" tabindex="0" role="region" aria-label="Reference table"><table>
 <thead>
 <tr>
@@ -912,23 +1219,24 @@ quantity and the lead time, so get quotes. This replaces the aluminum line in th
 <tr>
 <td><a href="https://sendcutsend.com">Laser-cut plate set, 6061-T6</a></td>
 <td>200-300</td>
-<td>The base, rear and motor face plates, the rack cheeks and the drum flanges, plus the four 2 mm steel bearing cheeks, from an instant-priced laser service. The prototype's plates came to about $200-300 at SendCutSend (October 2026). Tapping and countersinking are extra, charged per hole.</td>
+<td>The base, rear and motor face plates (with their nut windows), the drum flanges and the latch slider (0.250 and 0.375 in), plus the four 2 mm steel bearing cheeks, cut from the DXF files at an instant-priced laser service such as SendCutSend. The prototype's plates came to about $200-300 at SendCutSend (October 2026). Countersinking is extra, charged per hole.</td>
 </tr>
 <tr>
-<td>Thick plate parts: drum holders, corner gussets and the mating plate</td>
-<td>75-175</td>
-<td>The two 3/8 in drum bearing holders, the three 1/4 in corner gussets and the 3/4 in mating plate, cut from plate like the rest (no machined blocks). The 28 mm bearing bores are finished to H7 and the M10 threads tapped after cutting.</td>
+<td>Thick plate parts: drum holders, corner gussets, rack side and ODrive heatsink</td>
+<td>100-225</td>
+<td>The two 3/8 in drum bearing holders, the three 1/4 in corner gussets, the rack side's mating plate, its two 1/2 in cheeks and pad bar, and the finned ODrive heatsink, milled from plate (no machined blocks, no lathe). The 28 mm bearing bores are finished to H7.</td>
 </tr>
 <tr>
-<td>Drum tube, 6061, 1-1/4 in OD x 0.250 in wall, 100 mm</td>
-<td>15-30</td>
-<td>From a local metal shop, cut square; ask for T6.</td>
+<td>Drum tube, 6061-T6, 7/8 in OD x 1/8 in wall, 162 mm</td>
+<td>10-20</td>
+<td>From a metal supplier such as Metal Supermarkets or Online Metals, cut square (reference: about $8.50 a foot). Used as bought: no lathe.</td>
 </tr>
 </tbody>
 </table></div>
-<p>The holes in the plate edges and the tube ends are drilled and tapped by hand through the printed drill guides.</p>
+<p>The holes in the plate edges are drilled by hand through the printed drill guides, into nut windows cut through the plates.
+The drum tube's end notches are sawn and filed through a printed tube-end guide.</p>
 <h2 id="printed-parts">Printed parts</h2>
-<p>Printed for every build (materials and settings in <a href="https://kinetiqgym.com/docs/printing.html">printing.md</a>):</p>
+<p>Main build (materials and settings in <a href="https://kinetiqgym.com/docs/printing.html">printing.md</a>):</p>
 <ul>
 <li><strong>PAHT-CF:</strong> the 81T drum gear, the 45T screw gear, the traveller frame, the fixed roller bracket, the top tie, the
   far-end screw stand, the screw-end tower, the rope clamp ring, the exit bearing housing, the exit carrier, its retainers
@@ -938,7 +1246,7 @@ quantity and the lead time, so get quotes. This replaces the aluminum line in th
 <li><strong>PETG:</strong> the screen frame, the front board plate and its standoffs, the WAGO bracket, the fan duct, and the TP2700
   battery spacer (only with the TP2700 pair).</li>
 <li><strong>TPU 95A or EVA foam:</strong> the three battery pads.</li>
-<li><strong>PETG or PLA:</strong> the five drill guides for the edge holes (tools, not parts of the machine).</li>
+<li><strong>PETG or PLA:</strong> the drill guides and the drum tube-end guide (tools, not parts of the machine).</li>
 </ul>
-<p>The Lite adds a printed tray for its power supply and leaves out the battery parts, the screen frame and the rear I/O
-panel.</p><p class="table-note">A draft reference: the prototype is being built and tested, and the CAD, build files and software are released after testing.</p><a class="text-link" href="BOM.md" download>Download Markdown source ↗</a></main><footer class="footer container"><a class="brand" href="/">KINETIQ</a><a href="/build#parts">Builds & cost</a><a href="/build#files">Files & kits</a><a href="/#join">Kit waitlist</a><nav class="community-links" aria-label="Social links"><a href="https://discord.gg/ZMmpJqFHbB" target="_blank" rel="noopener noreferrer">Discord</a><a href="https://www.youtube.com/@trenton_dragon" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://www.instagram.com/mr.dragon2002/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.tiktok.com/@locked_in_dragon" target="_blank" rel="noopener noreferrer">TikTok</a><a href="https://x.com/TIndeed45671" target="_blank" rel="noopener noreferrer">X</a><a href="https://www.reddit.com/r/KinetiqGym/" target="_blank" rel="noopener noreferrer">Reddit</a><a href="https://github.com/TrentIndeed/kinetiqgym" target="_blank" rel="noopener noreferrer">GitHub</a></nav></footer></body></html>
+<p>The budget build prints its covers, motor pod, floor box, gears and smaller parts in PETG (about 2 kg); its print list comes
+with its verified files.</p><p class="table-note">A draft reference: the prototype is being built and tested, and the CAD, build files and software are released after testing.</p><a class="text-link" href="BOM.md" download>Download Markdown source ↗</a></main><footer class="footer container"><a class="brand" href="/">KINETIQ</a><a href="/build#parts">Builds & cost</a><a href="/build#files">Files & kits</a><a href="/#join">Kit waitlist</a><nav class="community-links" aria-label="Social links"><a href="https://discord.gg/ZMmpJqFHbB" target="_blank" rel="noopener noreferrer">Discord</a><a href="https://www.youtube.com/@trenton_dragon" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://www.instagram.com/mr.dragon2002/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.tiktok.com/@locked_in_dragon" target="_blank" rel="noopener noreferrer">TikTok</a><a href="https://x.com/TIndeed45671" target="_blank" rel="noopener noreferrer">X</a><a href="https://www.reddit.com/r/KinetiqGym/" target="_blank" rel="noopener noreferrer">Reddit</a><a href="https://github.com/TrentIndeed/kinetiqgym" target="_blank" rel="noopener noreferrer">GitHub</a></nav></footer></body></html>

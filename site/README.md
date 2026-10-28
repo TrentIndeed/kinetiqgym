@@ -8,8 +8,10 @@ python -m http.server 8770 --directory site
 ```
 
 - `index.html`, `home.css`, `home.js`: the front page, `work.html` and `privacy.html`.
-- `build.html`, `styles.css`, `app.js`: the build preview. The parts list reads `data/project.json`: the five builds (`motors`),
-  the main list ranked by importance (`parts`), the accessory list and the have-it-made ranges (`outsourced`). Prices are planning
+- `build.html`, `styles.css`, `app.js`: the build preview. The parts list reads `data/project.json`: the selectable builds (`motors`;
+  `lead` marks the lowest-cost one, `default` the main build), builds still in design (`planned`, shown without a total), the main list
+  ranked by importance (`parts`; a `motor` list limits a part to those builds), the accessory list and the have-it-made ranges
+  (`outsourced`, per build). Prices are planning
   figures, not live inventory or quotes. A visitor's own prices and chosen build stay in their browser's local storage.
 - `data/parts.csv`: the same lists as a download.
 - `data/community.json`: the donation checkout link. Payments are handled by the provider, never on this site.

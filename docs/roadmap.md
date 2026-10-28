@@ -1,17 +1,20 @@
 # Project roadmap
 
-> **Status, October 13, 2026:** the design is complete in CAD and the printed fit test is done. Parts for the aluminum
-> prototype are on order, and the prototype build is next. Everything published so far is a draft until that prototype has
-> been built and load-tested.
+> **Status, October 27, 2026:** the builds moved to an off-the-shelf motor. The main build (220 lb) and the budget build
+> (180 lb) are drawn in CAD; the wall build (300 lb) is in design. Next come bench tests of the motor and the controllers and
+> the aluminum prototype of the main build. Everything published so far is a draft until a prototype has been built and
+> load-tested.
 
 ## Where things stand
 
 | Stage | Status |
 |---|---|
-| CAD design: the bolted aluminum frame, the drivetrain, the level-wind, the exit, the rack mount and five builds | done |
-| Printed fit test of the whole assembly | done |
-| Prototype parts and metal stock | on order |
-| Aluminum prototype build (main build: APS 8072S, 10S battery) | next |
+| CAD design, main build: the bolted aluminum frame, the drivetrain, the level-wind, the exit and the rack side, on the MP8085 | done, draft |
+| CAD design, budget build: its own hacksaw-cut frame on wall power, on the MP8085 | done, draft |
+| CAD design, wall build: 300 lb, bolted to wall studs or concrete | in design |
+| Printed fit test of the whole assembly | done, on an earlier revision |
+| Bench tests: the MP8085's torque against current, the ODrive Pro and ODESC currents through a set, motor heat | next |
+| Aluminum prototype build (main build: MP8085, 10S battery) | next |
 | Load testing: static load in steps, then powered tests and thermal checks | after the build |
 | Verified release: CAD, build files and software | after load testing |
 | Metal kits made by Trent, the project's maker | after the verified release |
@@ -34,8 +37,8 @@ untested.
 
 ## After the release
 
-- **Metal kits:** the laser-cut, tapped and countersunk 6061 plates, the machined bearing holders, corner brackets and
-  mating plate, and the drum parts, made by Trent. Printed-part sets and complete machines may follow. Nothing is for sale before testing; the website
+- **Metal kits:** the laser-cut and countersunk 6061 plates, the milled bearing holders, corner gussets and rack side, and
+  the drum parts, made by Trent. Printed-part sets and complete machines may follow. Nothing is for sale before testing; the website
   has a kit waitlist.
 - **Contributions** open with the verified release. Until then there is no tested design to contribute to. After it, useful
   contributions are build reports (revision, materials, settings, measurements and photos), CAD changes with what they

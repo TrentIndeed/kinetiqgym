@@ -1,9 +1,9 @@
 # Wiring
 
-> **Draft.** This is the harness of the prototype being built now. It will be checked on the prototype and corrected before
-> the verified release. Read the [safety reference](https://kinetiqgym.com/docs/SAFETY.html) before working on the battery.
+> **Draft.** This is the harness as designed now. It will be checked on the prototype and corrected before the verified
+> release. Read the [safety reference](https://kinetiqgym.com/docs/SAFETY.html) before working on the battery or the mains.
 
-This page covers the battery builds (main, MP80100 and C80100). The Lite (wall power) is summarized at the end.
+This page covers the main build (battery). The budget build (wall power) is summarized at the end.
 
 Every wire below is routed through the enclosure in the design model with its real insulation diameter, so the lengths are
 routed lengths: add 10-15 % for the terminations. Gauges are minimums.
@@ -18,12 +18,13 @@ routed lengths: add 10-15 % for the terminations. Gauges are minimums.
 | Littelfuse 0997 MINI 58 V fuses, 3 A and 10 A, in 58 V inline holders (Littelfuse 0FHM0003ZXJS) | 3 A: the regulator feed; 10 A: the charge port |
 | WAGO 221-615 lever nut | the P- (switched negative) junction |
 | ODrive Pro with its terminal block | motor controller |
+| 10 k NTC thermistor (B3950) on the motor's stator | motor temperature, to the ODrive's motor-thermistor input |
 | Pololu D42V55F5 regulator | 5 V for the Pi, the Teensy and the fan |
 | Teensy 4.0 and an SN65HVD230 CAN board | controller; CAN to the ODrive |
 | Raspberry Pi 4 and the 4 in 720 x 720 touch screen | user interface |
 | Amass XT60E-F panel socket | charge port |
 | 12 mm latching push switch | power button: a signal to the BMS soft-switch input |
-| Noctua NF-A4x10 5V fan | ODrive cooling |
+| Noctua NF-A4x10 5V fan | ODrive cooling, through the machined heatsink |
 
 ## Power path
 
@@ -56,36 +57,37 @@ current flows back through the 40 A fuse and the BMS into the pack.
 
 | Wire | Gauge | From → to | Length |
 |---|---|---|---|
-| Pack B+ | 10 AWG | Pack B+ (EC5 on the pack lead) to the fuse block's battery-end stud: ring terminal under the M5 fender washer, tongue to the front | 165 mm |
-| Series link | 10 AWG | Pack A+ to pack B- (EC5 pair), in the back step | 53 mm |
+| Pack B+ | 10 AWG | Pack B+ (EC5 on the pack lead) to the fuse block's battery-end stud: ring terminal under the M5 fender washer, tongue to the front | 153 mm |
+| Series link | 10 AWG | Pack A+ to pack B- (EC5 pair), in the back step | 54 mm |
 | Pack A- | 10 AWG | Pack A- (EC5) to the BMS B- pad (soldered) | 141 mm |
-| ODrive DC+ | 10 AWG | Fuse block output stud (first ring, tongue to the right) to ODrive terminal pole 1 (ferrule) | 32 mm |
-| ODrive DC- | 10 AWG | WAGO port 5 to ODrive terminal pole 2 (ferrule) | 95 mm |
-| BMS P- | 10 AWG | BMS P- pad to WAGO port 4 | 141 mm |
-| Motor phase A | 12 AWG | Motor lead exit, through the 12 mm grommet in the face plate, to ODrive terminal pole 3 (ferrule) | 314 mm |
-| Motor phase B | 12 AWG | as phase A, to pole 4 | 315 mm |
-| Motor phase C | 12 AWG | as phase A, to pole 5 | 364 mm |
-| Charge + (port to fuse) | 16 AWG | Charge port + (upper cup, per the panel marking) to the 10 A inline fuse | 39 mm |
-| Charge + (fuse to block) | 16 AWG | 10 A inline fuse to the fuse block's battery-end stud (second ring under the washer) | 118 mm |
-| Charge - | 16 AWG | Charge port - (lower cup) to WAGO port 3 | 127 mm |
-| Regulator feed | 18 AWG | Fuse block output stud (second ring, tongue to the front) to the 3 A inline fuse | 81 mm |
-| Regulator VIN+ | 18 AWG | 3 A inline fuse to the regulator VIN (screw terminal on its perfboard) | 322 mm |
-| Regulator VIN- | 18 AWG | WAGO port 1 to the regulator GND in | 450 mm |
-| Pi 5 V | 20 AWG | Regulator 5 V out to Pi GPIO pin 2 (1 x 3 Dupont housing on pins 2, 4 and 6) | 145 mm |
-| Pi GND | 20 AWG | Regulator GND to Pi GPIO pin 6 | 166 mm |
-| Fan + | 24 AWG | Regulator 5 V out to the ODrive fan (fan lead extended) | 410 mm |
-| Fan - | 24 AWG | Regulator GND to the ODrive fan | 431 mm |
+| ODrive DC+ | 10 AWG | Fuse block output stud (first ring, tongue to the right) to ODrive terminal pole 1 (ferrule) | 34 mm |
+| ODrive DC- | 10 AWG | WAGO port 5 to ODrive terminal pole 2 (ferrule) | 92 mm |
+| BMS P- | 10 AWG | BMS P- pad to WAGO port 4 | 151 mm |
+| Motor phase A | 12 AWG | Motor lead exit, through the 12 mm grommet in the face plate, to ODrive terminal pole 3 (ferrule) | 371 mm |
+| Motor phase B | 12 AWG | as phase A, to pole 4 | 387 mm |
+| Motor phase C | 12 AWG | as phase A, to pole 5 | 378 mm |
+| Motor thermistor | 2-wire lead | The NTC on the stator, along the phase leads, to the ODrive's motor-thermistor input | about the phase leads' length (not yet routed in the model) |
+| Charge + (port to fuse) | 16 AWG | Charge port + (upper cup, per the panel marking) to the 10 A inline fuse | 35 mm |
+| Charge + (fuse to block) | 16 AWG | 10 A inline fuse to the fuse block's battery-end stud (second ring under the washer) | 121 mm |
+| Charge - | 16 AWG | Charge port - (lower cup) to WAGO port 3 | 124 mm |
+| Regulator feed | 18 AWG | Fuse block output stud (second ring, tongue to the front) to the 3 A inline fuse | 96 mm |
+| Regulator VIN+ | 18 AWG | 3 A inline fuse to the regulator VIN (screw terminal on its perfboard) | 330 mm |
+| Regulator VIN- | 18 AWG | WAGO port 1 to the regulator GND in | 493 mm |
+| Pi 5 V | 20 AWG | Regulator 5 V out to Pi GPIO pin 2 (1 x 3 Dupont housing on pins 2, 4 and 6) | 142 mm |
+| Pi GND | 20 AWG | Regulator GND to Pi GPIO pin 6 | 153 mm |
+| Fan + | 24 AWG | Regulator 5 V out to the ODrive fan (fan lead extended) | 491 mm |
+| Fan - | 24 AWG | Regulator GND to the ODrive fan | 492 mm |
 | Teensy VIN | 22 AWG | Regulator 5 V out to Teensy VIN (cut the VIN-VUSB pad) | 78 mm |
 | Teensy GND | 22 AWG | Regulator GND to Teensy GND | 89 mm |
 | Teensy to CAN board | 4 x 26 AWG | Teensy CAN TX/RX, 3.3 V and GND to the CAN transceiver board (short bundle on the board plate) | 24 mm |
-| CAN bus | twisted pair | CAN H, CAN L and GND (twisted pair and drain) from the CAN board terminal to the ODrive CAN header (4-pin JST-GH plug) | 347 mm |
-| USB | cable | Teensy (right-angle micro-USB) to the Pi's upper USB-A port (right-angle plug) | 177 mm |
-| Screen video | flat HDMI cable | The screen's HDMI socket (its connector edge is at the top) back under the Pi's edge to the Pi's HDMI 0 | about 40 mm |
-| Screen touch and power | USB-C cable | The screen's USB-C (right-angle plug) to the Pi's second USB stack, lower port (90-degree USB-A adapter) | - |
-| Balance lead, pack A | 5S JST-XH | Cells 1-5 to the BMS balance header | 207 mm |
+| CAN bus | twisted pair | CAN H, CAN L and GND (twisted pair and drain) from the CAN board terminal to the ODrive CAN header (4-pin JST-GH plug) | 418 mm |
+| USB | cable | Teensy (right-angle micro-USB) to the Pi's upper USB-A port (right-angle plug) | 186 mm |
+| Screen video | flat HDMI cable | The screen's HDMI socket (its connector edge is at the top) back under the Pi's edge to the Pi's HDMI 0 | about 43 mm |
+| Screen touch and power | USB-C cable | The screen's USB-C (right-angle plug) to the Pi's second USB stack, lower port (90-degree USB-A adapter) | 131 mm |
+| Balance lead, pack A | 5S JST-XH | Cells 1-5 to the BMS balance header | 183 mm |
 | Balance lead, pack B | 5S JST-XH | Cells 6-10 to the BMS balance header | 140 mm |
-| BMS NTC | lead | BMS NTC lead to the 10 k probe taped to pack B's rear end face | 127 mm |
-| Power switch | twisted pair | Power switch to the BMS soft-switch input | 130 mm |
+| BMS NTC | lead | BMS NTC lead to the 10 k probe taped to pack B's rear end face | 153 mm |
+| Power switch | twisted pair | Power switch to the BMS soft-switch input | 120 mm |
 
 ## Notes
 
@@ -97,29 +99,36 @@ current flows back through the 40 A fuse and the BMS into the pack.
 - **The EC5 plugs on the pack leads are the service disconnect.** Plug them in with the BMS switched off.
 - **BMS:** configure it for 10S and set over-charge to 4.20-4.25 V per cell in its app (some boards ship with LiFePO4
   settings). Check that your board has the soft-switch connector before you build the harness round it.
-- **WAGO 221-615** is rated about 30 A (UL). The peak battery current is about 28 A for short pulls.
+- **Battery current (design values):** about 14 A while holding 220 lb, and up to 36 A on a fast return at high force:
+  the app caps the reel-in speed so it stays under 90 % of the 40 A fuse. Regenerative current is about 20 A at the most,
+  under the 28 A regen limit. The WAGO 221-615 is rated about 30 A (UL).
 - **Teensy:** cut the VIN-VUSB pad. It is powered by the regulator and also connected to the Pi by USB.
-- **Motor phase leads:** the gauge and exit point depend on your motor. The design assumes 12 AWG through a 12 mm grommet,
-  along the notches in the corner brackets.
+- **Motor phase leads:** 12 AWG through a 12 mm grommet, along the notches in the corner gussets. Measure the MP8085's own
+  leads when it arrives and extend them if they are short.
 - Crimp ferrules on every wire into the ODrive terminal block.
 - **Charger:** 42.0 V (10S) Li-ion/LiPo CC/CV, 2-4 A, with an XT60 male plug. Charge only through the charge port, with the
   BMS connected.
 - First power-up: the ODrive's input capacitors can trip the BMS's short-circuit protection at switch-on. If it does,
   lengthen the BMS short-circuit delay in its app.
 
-## Lite (wall power)
+## Budget build (wall power)
 
-The Lite has no battery, BMS, main fuse block, WAGO, charge port or power button. Its harness (22 wires):
+The budget build has no battery, BMS, main fuse block, WAGO, charge port, Raspberry Pi or screen.
 
-- **Mains:** an IEC C14 inlet in the right cover's back step. Line runs through the rocker switch to the supply's AC input
-  (CN1), neutral straight to CN1. Earth runs from the inlet to the supply's earth screw and on to the M4 earth stud in the
-  base plate. Use insulated 6.3 mm quick-disconnects on the inlet and switch tabs.
-- **DC:** 10 AWG from the Mean Well LOP-600-36 (36 V) to the ODrive S1's DC pads.
-- **Motor:** the three phases along the same floor channel as the battery build, to the S1's phase pads.
-- **Brake resistor:** two 1 Ω, 50 W resistors in series (2 Ω) on the base plate, to the S1's R+ and R- pads. Regenerative
-  energy goes into them, not into the supply.
-- **5 V:** the regulator is fed from the supply's 12 V auxiliary output (CN2) and powers the fan and the XIAO ESP32-C3.
-- **Signals:** the XIAO to the CAN board, CAN from the CAN board to the S1 (4-pin JST-GH), and the knob (EC11) to the XIAO.
+- **Mains:** a floor box holds the Mean Well LRS-600N2-48 (48 V, 600 W) and a pre-wired mains inlet with its own fuse and
+  lit rocker switch; a standard C13 cord goes to the wall. Earth runs from the inlet to the supply's earth terminal.
+- **DC:** the supply's output to an XT60E-F socket on the floor box, up the rack on a 14 AWG two-core silicone cable with
+  XT60 ends, into the XT60E-M port on the back of the unit, then to the ODESC's DC input.
+- **Motor:** the three phase leads, extended in 12 AWG silicone with 5.5 mm bullet connectors, to the ODESC; the motor's
+  Hall cable extended with JST-PH 6-pin leads (check its plug first).
+- **Brake resistor:** two 1 Ω, 100 W resistors in series (2 Ω) on the inner plate, to the ODESC's brake resistor terminals.
+  Braking energy goes into them, not into the supply, and they get hot.
+- **5 V:** a Pololu APM81815 regulator (48 V in, a 47 µF capacitor across its input) on the perfboard powers the XIAO
+  ESP32-C3 and the fan.
+- **Signals:** the XIAO to the ODESC over UART; the knob (EC11) and the start/stop button to the XIAO; the AS5047P encoder
+  board, which reads a magnet in the drum's end, to the ODESC.
+- **Motor thermistor:** the NTC on the stator, with a 10 kΩ resistor and a 1 µF capacitor as its divider, to the ODESC's
+  thermistor input.
 
-Mains wiring can kill. Have it checked by someone qualified, check earth continuity from the inlet's earth pin to the base
-plate and the rear plate, and keep the covers on whenever the unit is plugged in.
+Mains wiring can kill. Have it checked by someone qualified, check earth continuity from the inlet's earth pin, and keep the
+floor box closed whenever it is plugged in.

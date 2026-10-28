@@ -3,118 +3,139 @@
   <link rel="alternate" type="text/plain" href="/llms.txt" title="Optional information for AI visitors"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Build instructions — KINETIQ</title><link rel="stylesheet" href="../styles.css"><link rel="icon" href="../media/mark.svg"><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/community.css">
 </head><body><a class="skip" href="#reference">Skip to reference</a><header class="header"><a class="brand" href="/"><img src="../media/mark.svg" width="32" height="32" alt="">KINETIQ</a><a href="/build#build">Back to the build preview ↗</a></header><main id="reference" class="guide-page section container"><p class="section-kicker">Draft reference · October 2026</p><h1 id="build-instructions">Build instructions</h1>
 <blockquote>
-<p><strong>Draft build order.</strong> This is the assembly order for the aluminum prototype being built now (October 2026). It has not
-been confirmed on hardware yet. Steps, screw lengths and torques will be checked, corrected and photographed on the
+<p><strong>Draft build order.</strong> This is the assembly order for the main build as designed now (October 2026). It has not been
+confirmed on hardware yet. Steps, screw lengths and torques will be checked, corrected and photographed on the
 prototype, then released with the verified CAD and build files. Read the
 <a href="https://kinetiqgym.com/docs/SAFETY.html">safety reference</a> before you start.</p>
 </blockquote>
-<p>Order matters: some parts cannot be reached once others are in. The steps describe the main build (APS 8072S motor, 10S
-battery). Section 6 covers all five motors, and the Lite (wall-power) differences are at the end.</p>
+<p>Order matters: some parts cannot be reached once others are in. The steps describe the main build (Freerchobby MP8085
+motor, ODrive Pro, 10S battery). The budget build is a separate, simpler design: see the end of this page.</p>
 <p><strong>What carries the load.</strong> A bolted 6061 aluminum frame (base plate, rear plate and motor face plate, joined by screws and
-three machined corner brackets) carries the rope load, together with the drum, the two machined bearing holders and the
-rack side. Every joint is bolted. Printed parts bolt to the frame: the two end pieces, the level-wind, the exit, the
-screw-end tower, the gears, the brackets and the covers.</p>
+three corner gussets) carries the rope load, together with the drum, the two bearing holders and the rack side. Nothing is
+welded or turned on a lathe, and every load-bearing screw goes to a nut: a nut in a window cut through the plate, in a
+pocket, or keyed in a notch in the drum tube's end. Printed parts bolt to the frame: the two end pieces, the level-wind,
+the exit, the screw-end tower, the gears, the brackets and the covers.</p>
 <h2 id="0-before-you-start">0. Before you start</h2>
 <ol>
 <li>Read the <a href="https://kinetiqgym.com/docs/SAFETY.html">safety reference</a>. The machine stores energy in the rope, the battery
    and the motor.</li>
-<li>Order the parts for your build from the <a href="https://kinetiqgym.com/docs/BOM.html">parts list</a>. Some motors are wound to
-   order, the battery packs are built to order, and the BMS, fuses and coupling come from different sellers.</li>
+<li>Order the parts for your build from the <a href="https://kinetiqgym.com/docs/BOM.html">parts list</a>. The motor ships from its
+   maker, the battery packs are built to order, and the BMS, fuses and coupling come from different sellers.</li>
 <li>Tools you need:
-   - a drill (a drill press helps), a bench vise, and 2.5 and 3.3 mm drills;
-   - M3 and M4 taps with a tap handle, plus M2.5 and M10 taps if your laser or CNC service does not tap those holes;
+   - a drill (a drill press helps), a bench vise, and 3.4 and 4.5 mm drills for the edge holes;
+   - M2.5, M3 and M10 taps with a tap handle, only if your laser or CNC service does not tap the few holes that are still
+     threaded (the latch slider, the fuse-block pad and the two ball plungers): none of them is in the rope's load path;
    - 3, 4 and 8 mm H7 reamers (unless your service reams the latch-pin holes), and a vise or arbor press for the dowel pins;
+   - a hacksaw, a file and an abrasive cut-off wheel (the shaft, the rail and the motor's rear shaft are cut to length);
    - a 3D printer with a 256 x 256 mm bed that prints PAHT-CF (a hardened nozzle and a filament dryer);
    - a soldering iron with heat-set insert tips;
    - metric hex keys (one ball-end), a 7 mm socket, and a torque driver that reads 75 in-lb;
    - a crimper for ferrules and ring terminals, a soldering iron for the BMS pads, and a multimeter;
-   - calipers, a deburring tool, and (MP80100 and C80100 only) a bimetal hacksaw and a file.</li>
+   - calipers and a deburring tool.</li>
 <li>Print the fit coupons in the material you will use and tune the insert and clearance holes before the large prints
-   (<a href="printing.html">printing.md</a>). Print the drill guides as well: section 1 needs them to drill the metal.</li>
-<li>Measure what you bought: both battery packs (the bay opening is 44 mm), the motor's shaft, bolt pattern and lead exit,
-   and the flange of the F6001 exit bearings (1.5 mm is assumed).</li>
+   (<a href="printing.html">printing.md</a>). Print the drill guides and the tube-end guide as well: section 1 needs them.</li>
+<li>Measure what you bought: both battery packs (the bay opening is 44 mm); the motor's shaft, keyway, rear hub, lead exit and
+   the depth of its four M5 threads; the flange of the F6001 exit bearings (1.5 mm is assumed); and the toggle clamp's flange
+   holes and outline before the rack side's mating plate is cut.</li>
 </ol>
 <h2 id="1-make-the-metal-and-print-the-parts">1. Make the metal and print the parts</h2>
 <h3 id="cut-and-machine">Cut and machine</h3>
 <ol>
 <li>Laser-cut the 6061-T6 plates:
-   - 0.250 in: the base plate (with its two floor ears), the motor face plate (two bolt circles and a Ø16 mm shaft hole),
-     the two drum flanges and the latch slider;
-   - 0.375 in: the rear plate (four keyholes for the rack studs);
-   - 5/16 in: the two rack cheeks (the right one is notched round two stud tips);
+   - 0.250 in: the base plate (with its two floor ears and the slots for the face plate's and holders' tabs), the motor face
+     plate (two tabs, the bolt circles, a Ø16 mm shaft hole and five nut windows), the two drum flanges and the latch slider;
+   - 0.375 in: the rear plate (four keyholes for the rack studs, with V tops and narrow throats, and its nut windows);
    - 1.5 mm (1/16 in) sheet: the trigger link;
    - 2 mm steel: the four bearing cheeks.</li>
-<li>Machine the two drum bearing holders from 6061-T6: an 8.4 mm upright on four 4 mm feet, a 28 H7 bore
-   (28.000-28.021 mm) for the 6001 bearing, two 3.4 mm holes for the cheek bolts, and the four feet tapped M4. Mill the
-   bore after a test cut.</li>
-<li>Machine the three corner brackets (6061-T6, 6.35 mm web, each with a notch for the motor phase leads).</li>
-<li>Machine the rack side's 3/4 in mating plate: 4 x M10 (drilled 8.5 mm and tapped through), a 5 mm deep slot across its
-   back for each cheek, the keeper pocket at its left edge, and three countersunk M4 holes per cheek from its front face.</li>
-<li>Cut the two motor face plate brackets from 1 x 1 x 1/4 in 6061 angle: each 16 mm wide, with the upright leg trimmed to
-   16 mm tall so it stays under every motor's screw heads. Drill and tap one M4 hole in the foot and one in the leg.</li>
-<li>Cut the drum tube (6061-T6, 1-1/4 in OD x 0.250 in wall) square to 100 mm.</li>
-<li>Tap, ream and countersink the plate holes:
-   - base plate: 3 x M3 for the rail and 2 x M3 for the fuse-block pad; countersink every hole a screw enters from below
-     (including the six rear-plate screws and the two face-plate bracket screws);
+<li>Mill on the base plate's underside the ten hex pockets for the rail's M4 nuts, and on its top the 1.5 mm deep pocket for
+   the MGW15 rail.</li>
+<li>Mill the two drum bearing holders from 3/8 in 6061-T6: face them to 8.4 mm, a 28 H7 bore (28.000-28.021 mm) for the
+   6001 bearing, a tab for the slot in the base plate, two nut windows near the bottom edge, and two 3.4 mm holes for the
+   cheek bolts. Mill the bore after a test cut.</li>
+<li>Cut the three corner gussets from 1/4 in 6061-T6, each with four nut windows and a notch for the motor phase leads.</li>
+<li>Mill the rack side:
+   - the 3/4 in mating plate: four stud seats (a 10.2 mm hole with a 12.03 mm counterbore 2 mm deep), a hex pocket in its back
+     for each stud's DIN 439 M10 thin nut, the latch's keeper pocket, a 3 mm slot across its back for each cheek, and the
+     pockets for the toggle clamp's four M6 nuts and its pad bar;
+   - the two 1/2 in cheeks: the 1 in pin hole, three nut windows each, and the three M5 holes from the front edge into them;
+   - the pad bar, 6061, 83 x 34 x 12.7 mm, with a blind hole for the clamp's spindle.</li>
+<li>Mill the ODrive heatsink from a 1/2 in 6061 offcut: 15 fins along the fan's flow, the stepped bore round the drum hub,
+   and a slot in its foot for an M3 nut.</li>
+<li>Cut to length. Nothing is turned: every round part is used at the size it is bought.
+   - the drum tube (6061-T6, 7/8 in OD x 1/8 in wall), square, to 162 mm;
+   - the 12 mm shaft, from 300 mm to 262 mm, with a cut-off wheel;
+   - the MGW15 rail, from 250 mm to 213 mm, with an abrasive cut-off wheel; deburr the end;
+   - the Tr8 lead screw, from 250 mm to 245 mm; clean up the thread's end so the nut starts.</li>
+<li>Drum tube ends: through the printed tube-end guide (a boss centers it in the bore), drill four 4.5 mm holes 6 mm deep
+   into each end on the hub's 16 mm square, then saw and file the four nut notches through the wall to the guide's side
+   marks. The M4 nuts in them key the flanges and hub to the tube: nothing is tapped.</li>
+<li>Finish the plate holes:
    - rear plate: the two 4 mm H7 and one 8 mm H7 latch-pin holes (through), two blind 3 mm holes in its outer face for the
-     trigger-link pins, and two countersunk M3 holes for the face plate's back edge;
-   - motor face plate: two M4 holes countersunk on the motor side, for the bracket legs;
-   - drum flanges: four M3 holes each on a 12.7 mm radius (between the hub's M4 holes), countersunk on the outer face, for
-     the tube screws. The left flange also takes 4 x M4 (hub) and 4 x M3 (rope clamp), tapped, and three 4.5 mm lacing
-     holes: deburr and round both edges of these (about 0.5 mm);
-   - latch slider: 2 x M2.5 for the trigger-link screws.</li>
+     trigger-link pins, and the two M10 threads for the ball plungers;
+   - drum flanges: the countersinks on the outer faces; the left flange also takes three 4.5 mm lacing holes: deburr and
+     round both edges of these (about 0.5 mm);
+   - latch slider: 2 x M2.5 for the trigger-link screws;
+   - base plate: 2 x M3 for the fuse-block pad (there is no room for a nut there; it carries no rope load);
+   - countersink every hole a screw enters flush.</li>
 </ol>
-<h3 id="drill-and-tap-the-edge-holes">Drill and tap the edge holes</h3>
-<p>A few holes go into the edge of a plate or the end of the tube, where a laser cutter cannot reach. Drill them by hand
-through the printed drill guides (<a href="printing.html">printing.md</a>):</p>
+<h3 id="drill-the-edge-holes">Drill the edge holes</h3>
+<p>A few holes go into the edge of a plate, where a laser cutter cannot reach. Each one runs from the edge into a window cut
+through the plate, where its nut sits: nothing in the load path is tapped. Drill them by hand through the printed drill
+guides (<a href="printing.html">printing.md</a>):</p>
 <ol>
 <li>Clamp the part in a vise, edge up.</li>
-<li>Slip the guide over the edge and push it against its end stop (the tube guide is centered by a boss in the bore).</li>
-<li>Drill through each guide bore with the tap drill, at least to the depth in the table.</li>
-<li>Tap by hand with the tap handle, clearing the chips often. Deburr, and check each hole with its screw.</li>
+<li>Slip the guide over the edge and push it against its end stop.</li>
+<li>Drill through each guide bore with the clearance drill, to the depth in the table: into the window.</li>
+<li>Deburr, and check each hole with its screw and nut.</li>
 </ol>
 <div class="table-scroll" tabindex="0" role="region" aria-label="Reference table"><table>
 <thead>
 <tr>
 <th>Part and edge</th>
 <th>Holes</th>
-<th>Drill</th>
-<th>Thread and depth</th>
+<th>Drill and depth</th>
 <th>Guide located by</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Rear plate, bottom edge (0.375 in)</td>
-<td>6</td>
-<td>3.3 mm</td>
-<td>M4, 12 mm deep</td>
+<td>6 x M4</td>
+<td>4.5 mm, 13.6 mm deep</td>
 <td>an end stop on the plate's motor end</td>
 </tr>
 <tr>
 <td>Motor face plate, back edge (0.250 in)</td>
-<td>2</td>
-<td>2.5 mm</td>
-<td>M3, 10 mm deep</td>
+<td>2 x M3</td>
+<td>3.4 mm, 11.8 mm deep</td>
 <td>an end stop on the plate's bottom edge</td>
 </tr>
 <tr>
-<td>Each rack cheek, front edge (5/16 in)</td>
-<td>3</td>
-<td>3.3 mm</td>
-<td>M4, 14 mm deep</td>
-<td>an end stop on the cheek's bottom edge</td>
+<td>Motor face plate, bottom edge (0.250 in)</td>
+<td>3 x M3</td>
+<td>3.4 mm, 11.8 mm deep</td>
+<td>an end stop on its front end; its two tabs sit in pockets in the guide</td>
 </tr>
 <tr>
-<td>Drum tube, each end</td>
-<td>4</td>
-<td>2.5 mm</td>
-<td>M3, 9 mm deep</td>
-<td>a boss that centers it in the bore</td>
+<td>Each drum bearing holder, bottom edge (3/8 in)</td>
+<td>2 x M4</td>
+<td>4.5 mm, 13.6 mm deep</td>
+<td>an end stop on its front end; the tab in a pocket</td>
+</tr>
+<tr>
+<td>Each corner gusset, bottom edge (1/4 in)</td>
+<td>2 x M3</td>
+<td>3.4 mm, 10.8 mm deep</td>
+<td>an end stop on the toe's front end</td>
+</tr>
+<tr>
+<td>Each corner gusset, back edge (1/4 in)</td>
+<td>2 x M3</td>
+<td>3.4 mm, 11.8 mm deep</td>
+<td>the notch's top face</td>
 </tr>
 </tbody>
 </table></div>
-<p>Every screw that goes into these holes gets <strong>Loctite 243</strong> at assembly.</p>
 <h3 id="print">Print</h3>
 <p>Print the parts listed in <a href="printing.html">printing.md</a>: PAHT-CF for the level-wind, exit, tower and gears, PA-CF for the end
 pieces, PETG-CF for the covers, and PETG or PLA for the drill guides. Print the screw-end tower on its side.</p>
@@ -125,17 +146,16 @@ iron and an insert tip. Most go in on the bench before the part is fitted; the s
 <p>The frame is bolted together. Assemble it first:</p>
 <ol>
 <li>Base plate on the bench, top up.</li>
-<li>Rear plate onto the base plate's back edge, flush at the back: 6 x M4 x 18 countersunk up through the base plate into its
-   bottom edge, heads flush underneath, <strong>Loctite 243</strong>. Snug them only. They are tightened in step 18, after the corner
-   brackets are in: the brackets carry the joint's bending.</li>
-<li>Motor face plate brackets: the two angle brackets on the base plate, 1 x M4 x 12 countersunk up through the base plate
-   into each foot.</li>
-<li>Motor face plate down onto the brackets, against the rear plate: 1 x M4 x 12 countersunk from the motor side through the
-   face plate into each bracket leg, and 2 x M3 x 18 countersunk from outside through the rear plate into the face plate's
-   back edge. All flush, <strong>Loctite 243</strong> on all. Square the face plate to the base plate before tightening.</li>
+<li>Rear plate onto the base plate's back edge, flush at the back. An M4 nut into each of the six windows near its bottom edge
+   (from inside), then 6 x M4 countersunk up through the base plate into those nuts, heads flush underneath. Hold each nut
+   with a finger or a 7 mm wrench. Snug them only: they are tightened after the corner gussets are in, which carry the
+   joint's bending.</li>
+<li>Motor face plate down into its two slots in the base plate, against the rear plate. An M3 nut into each of its five
+   windows (from the drum side), then 3 x M3 countersunk up through the base plate and 2 x M3 countersunk through the rear
+   plate into them. All flush. Square the face plate to the base plate before tightening.</li>
 </ol>
 <p>Build the battery-end piece on the bench:</p>
-<ol start="5">
+<ol start="4">
 <li>Push the captive M5 nut into the hex pocket under its floor (for the fuse block's battery-end bolt).</li>
 <li>Main fuse: the Blue Sea 5191 MRBF block on its printed pad (the pad's rails take its raised section), then the 40 A MRBF
    fuse over the stud. The pad insulates the block (pack +) from the aluminum base plate.</li>
@@ -146,83 +166,86 @@ iron and an insert tip. Most go in on the bench before the part is fitted; the s
 <li>Lower the WAGO bracket onto the bay wall from above: 2 x M3. It sits over the fuse stud, so the fuse goes on first.</li>
 </ol>
 <p>Motor end:</p>
-<ol start="11">
+<ol start="10">
 <li>Motor-end piece (floor, rear wall, handle loop and rear housing) against the frame. Its rear housing lies on the outside
     of the rear plate.</li>
-<li>Housing land: 6 x M4 x 25 countersunk through the land and the rear plate, washer and nyloc nut inside. The heads sit
-    flush; the service lid covers them later.</li>
+<li>Housing land: 6 x M4 countersunk through the land and the rear plate, washer and nyloc nut inside. The heads sit flush;
+    the service lid covers them later.</li>
 <li>Heat-set the four M2 inserts for the service lid into the housing land.</li>
 <li>Latch pins. Press the two 3 x 18 mm link pins through the housing land into the blind holes in the rear plate. Press
     the two 4 x 16 mm slider guide pins and the 8 x 16 mm anvil pin through the rear plate from inside, flush with its
     inner face. Support the plate round each hole while pressing.</li>
 </ol>
-<p>Corner brackets (they go in before the bearing holders and the drum, which cover their foot screws):</p>
-<ol start="15">
-<li>Set the three corner brackets in the inside corner beside the lower stud columns, each on the base plate and against
-    the rear plate's inner face. The notch at the corner is for the motor phase leads.</li>
-<li>Feet: 1 x M5 countersunk up from under the base plate through each foot (flush), washer and nut on the foot. Back legs:
-    2 x M5 countersunk from outside through the rear plate and each leg (flush), washer and nut inside. Nothing is tapped.</li>
-<li>Snug the foot nuts, then the back nuts, then tighten all. Each bracket must bear on both plates.</li>
+<p>Corner gussets (they go in before the bearing holders and the drum, which cover their bottom screws):</p>
+<ol start="14">
+<li>An M3 nut into each of a gusset's four windows, then set it in the inside corner beside a lower stud column, on the base
+    plate and against the rear plate's inner face. The notch at the corner is for the motor phase leads. Do the same with
+    the other two.</li>
+<li>Each gusset: 2 x M3 countersunk up from under the base plate into its bottom nuts, and 2 x M3 countersunk from outside
+    through the rear plate into its back nuts, all flush, <strong>Loctite 243</strong>. Snug the bottom screws first, then the back ones,
+    then tighten all: each gusset must bear on both plates.</li>
 <li>Now tighten the six rear-plate screws from step 2.</li>
 </ol>
 <p>Battery end:</p>
-<ol start="19">
+<ol start="17">
 <li>Slide the battery-end piece (floor, step wall, bay wall, saddles, fuse block and WAGO bracket) in from the right against
     the frame. Its lap strip slides along the inside of the rear plate.</li>
 <li>Battery-end lap: 3 x M4 countersunk through the outer top land and the rear plate into the inner lap's inserts.</li>
 <li>Floor ears: one M4 x 18 countersunk up through each base-plate ear and the printed seat over it (head flush
     underneath), then a washer and an M4 nut inside. Tighten with a hex key below and a 7 mm socket above. Do this now:
     the boards, the motor and the screw-end tower cover them later.</li>
-<li>Fuse-block pad: 2 x M3 socket head down through its bosses into the tapped base plate. There is no room for a nut. Do
-    this before the ODrive and the wiring.</li>
+<li>Fuse-block pad: 2 x M3 socket head down through its bosses into the base plate's two threaded holes. Do this before the
+    ODrive and the wiring.</li>
 </ol>
 <h2 id="3-level-wind-rail-and-traveller">3. Level-wind rail and traveller</h2>
 <p>The drum module comes down over the rail, so the rail goes in first.</p>
 <ol>
-<li>MGN15 rail (200 mm) straight on the base plate: 3 x M3 into the tapped holes. Leave its two end holes free: the screw
-   stand and the tower bolt through them later.</li>
-<li>Slide the MGN15H carriage on from the rail's end. Keep its plastic retainer in until it is on the rail, or the balls
+<li>An M4 nut into each of the ten hex pockets under the base plate (a dab of grease holds it).</li>
+<li>MGW15 rail (213 mm) into its pocket in the base plate: 10 x M4 x 6 socket head down through the rail into the nuts.</li>
+<li>Slide the MGW15H block on from the rail's right end. Keep its plastic retainer in until it is on the rail, or the balls
    fall out.</li>
-<li>Printed traveller frame onto the carriage: 4 x M3 x 8 through the access holes (before the rollers).</li>
-<li>Travelling rollers: two 626ZZ per roller, between the frame plates. Each pair rests on its inner ring on a 0.9 mm boss,
-   so the outer rings run clear.</li>
+<li>Printed traveller frame onto the block: 2 x M4 x 10 into the block's front holes (hex key through the access holes,
+   before the rollers). The back pair stays empty: at the ends of the track it passes under the drum flanges.</li>
+<li>Travelling rollers: one NATR6-PP track roller per roller, between the frame plates. Each rests on its inner ring on a
+   0.9 mm boss, so the outer ring runs clear.</li>
 <li>Roller shoulder bolts (ISO 7379, 6 x 16 mm) down from the top, heads sunk.</li>
 <li>T8 brass flange nut into the frame's nut block: 4 x M3 x 10 low-head screws.</li>
 </ol>
 <h2 id="4-drum-module">4. Drum module</h2>
 <p>Build the drum module on the bench and lower it in as one piece.</p>
 <ol>
-<li>Drum: clean the tube's end faces, put <strong>Loctite 638</strong> on both, and set a flange on each end (the left flange is the one
-   with the hub and rope-clamp holes). 4 x M3 x 12 countersunk through each flange into the tapped tube end,
-   <strong>Loctite 243</strong>, flush.</li>
-<li>Square the flanges: slide the 12 mm drum shaft through both flange holes while the 638 is wet, then tighten the flange
-   screws. Slide the shaft back out once they are tight; it goes back in at step 7. The drum needs 24 h before any load.</li>
-<li>Drill the four M4 holes of one goBILDA 1301 hub out to 4.4 mm, so its screws clamp it to the flange.</li>
-<li>Turn that hub over: flat face on the left flange, spigot toward the bearing. 4 x M4 x 12 button head into the tapped
-   flange. The hub drives the drum through these four preloaded screws.</li>
+<li>Drum tube on the bench: an M4 nut into each of the four notches at each end (a dab of grease holds them).</li>
+<li>Flanges: <strong>Loctite 638</strong> on both tube end faces, then the left flange (the one with the lacing holes, the lacing holes up)
+   on one end and the right flange on the other.</li>
+<li>Slide the 12 mm shaft through both flanges so they set square to it, then 4 x M4 x 12 countersunk through the right
+   flange into its nuts, <strong>Loctite 243</strong>, flush. Tighten while the 638 is wet. Slide the shaft back out; it goes back in at
+   step 8. The drum needs 24 h before any load.</li>
+<li>Rope clamp screws: 4 x M3 x 14 countersunk into the left flange from its inner face (they stick out of its outer face).</li>
+<li>One goBILDA 1301 hub, flat face on the left flange, spigot toward the bearing: 4 x M4 x 20 button head through the hub
+   and the flange into the left tube-end nuts, <strong>Loctite 243</strong>. The hub drives the drum through these bolts; the nuts key
+   the tube to the flange.</li>
 <li>Rope termination: from the barrel side, pass the rope end out through lacing hole 1 (above the hub), along the outer
    face and back in through hole 2, across the inner face and out through hole 3. That makes two U-turns round the
    aluminum.</li>
-<li>Rope clamp ring over the hub onto the left flange, both outer runs in its grooves: 4 x M3 x 12 countersunk, flush, into
-   the tapped flange. Snug the screws, pull the rope back through the lacing until it is tight, tie an overhand stopper
+<li>Rope clamp ring over the hub onto the left flange, both outer runs in its grooves and the four screws through it, an M3
+   nut into each pocket. Snug the nuts, pull the rope back through the lacing until it is tight, tie an overhand stopper
    knot (7 mm at most) in the tail, seat it in the pocket at the end of the tail groove, trim, then tighten. The dead wraps
-   and the two metal U-turns leave the clamp about 7 % of the pull.</li>
-<li>Shaft (12 mm round, 200 mm, uncut): slide it through the hub and both flanges with <strong>Loctite 638</strong> in the hub bore and
-   in both flange holes. Set it flush with the gear hub's position at the right end; about 22 mm then sits in the coupling.
-   Tighten the hub clamp. <strong>Leave it 24 h before any load</strong>: a clamp alone slips at about 6-8 N·m, and the drum sees up to
-   17.1 N·m.</li>
+   and the two metal U-turns leave the clamp a small part of the pull.</li>
+<li>Shaft (12 mm round, 262 mm): slide it through the hub and both flanges with <strong>Loctite 638</strong> in the hub bore and in both
+   flange holes. Set it flush with the gear hub's position at the right end; about 21 mm then sits in the coupling.
+   Tighten the hub clamp. <strong>Leave it 24 h before any load</strong>: a clamp alone can slip below the drum's torque at full load.</li>
 <li>Encoder magnet (diametric, 6 x 5 mm) into the right shaft end: epoxy, centered.</li>
 <li>Each bearing holder on the bench: the inner steel cheek; the 6001-2RS into the holder with <strong>Loctite 641</strong> on its outer
-   ring (by hand, or a light press on the outer ring only); the outer cheek; 2 x M3 x 16 with nuts.</li>
+    ring (by hand, or a light press on the outer ring only); the outer cheek; 2 x M3 x 16 with nuts.</li>
 <li>Slide the two holders onto the shaft ends with <strong>Loctite 641 on the shaft under each inner ring</strong>. The rope load turns
-    with the shaft, so a loose inner ring would creep. The 641 gives about 10 minutes of working time: do steps 11-14
+    with the shaft, so a loose inner ring would creep. The 641 gives about 10 minutes of working time: do steps 12-15
     within it.</li>
 <li>Drum 81T gear on its hub (the second 1301 hub) onto the right shaft end, after the right holder. It drives the lead
     screw at 81T : 45T, 3.6 mm of traverse per drum turn.</li>
-<li>The coupling onto the left shaft end, loose.</li>
-<li>Lower the module onto the base. The holder feet sit over their eight holes.</li>
-<li>8 x M4 x 10 countersunk up through the base plate into the tapped holder feet, <strong>Loctite 243</strong>, heads flush underneath.
-    Snug them only: the shafts are lined up when the motor goes in (section 6).</li>
+<li>The Ruland coupling onto the left shaft end, loose.</li>
+<li>Lower the module onto the base: each holder's tab drops into its slot in the base plate.</li>
+<li>An M4 nut into each of the two windows near each holder's bottom edge, then 2 x M4 countersunk up through the base plate
+    into them, heads flush underneath. Snug them only: the shafts are lined up when the motor goes in (section 6).</li>
 </ol>
 <h2 id="5-front-board-plate">5. Front board plate</h2>
 <p>The board plate goes in before the motor, which sits over its screws.</p>
@@ -234,58 +257,35 @@ iron and an insert tip. Most go in on the bench before the part is fitted; the s
    the Teensy.</li>
 </ol>
 <h2 id="6-motor">6. Motor</h2>
-<p>All five builds use the same face plate, which is drilled for both bolt patterns. Direct drive: the motor turns the drum
-through the coupling, with no belt or gear between them.</p>
-<div class="table-scroll" tabindex="0" role="region" aria-label="Reference table"><table>
-<thead>
-<tr>
-<th>Motor</th>
-<th>Spacers</th>
-<th>Screws</th>
-<th>Coupling</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>APS 8072S (main, Lite)</td>
-<td>4 x M5, 10 x 3 mm</td>
-<td>4 x M5 x 14 on the Ø59 mm circle</td>
-<td>McMaster-Carr 2469K23</td>
-</tr>
-<tr>
-<td>MP80100, APS C80100</td>
-<td>4 x M5, Ø10 x 10 mm</td>
-<td>4 x M5 x 25 on the Ø56 mm circle</td>
-<td>Ruland MCLX-12-12-F</td>
-</tr>
-</tbody>
-</table></div>
+<p>Direct drive: the motor turns the drum through the coupling, with no belt or gear between them.</p>
 <ol>
-<li>MP80100 and C80100 only: on the bench, cut the bell-end shaft (Ø12 mm, threaded M12) to a 10 mm stub. A bimetal
-   hacksaw blade (24-32 TPI) does it in a few minutes; if it skates, the shaft is hardened, so use a cut-off wheel. Wrap
-   the motor in tape or a bag first so no filings reach the magnets. Hold the shaft or the finned stator end in a padded
-   vise, never the can (it is the rotor). File the end and pick up any dust with tape.</li>
-<li>Motor spacers against the face plate.</li>
-<li>Motor in from the left, its shaft into the coupling. Lead the three phase leads out through the 12 mm grommet in the
-   face plate.</li>
-<li>Motor screws through the plate and the spacers.</li>
-<li>Line up the shafts. The face plate is bolted to the frame, so the shafts are lined up at the bearing holders: their foot
-   holes give about ±0.35 mm. Snug the holder feet, tighten both coupling clamps, then tighten the holder feet.</li>
+<li>On the bench, cut the motor's rear prop shaft flush with its rear hub (the hub is part of the rotor: it stays). A bimetal
+   hacksaw blade (24-32 TPI) does it; if it skates, the shaft is hardened, so use a cut-off wheel. Wrap the motor in tape
+   or a bag first so no filings reach the magnets. Hold the shaft or the stator end in a padded vise, never the can (it is
+   the rotor). File the end and pick up any dust with tape.</li>
+<li>Take the key out of the front shaft (the Ruland coupling clamps the round shaft).</li>
+<li>Glue the 10 k NTC thermistor to the stator where the leads come out, with its leads alongside the phase leads.</li>
+<li>The four Ø10 x 10 mm spacers against the face plate.</li>
+<li>Motor in from the left, its shaft into the coupling. Lead the three phase leads and the thermistor leads out through the
+   12 mm grommet in the face plate.</li>
+<li>4 x M5 x 25 socket head through the plate and the spacers into the motor's own M5 threads (4 x M5 on the Ø56 mm circle).</li>
+<li>Line up the shafts. The face plate is bolted to the frame, so the shafts are lined up at the bearing holders: their tabs
+   sit in slots with about 0.3 mm of play at each end. Snug the holder screws, tighten both coupling clamps, then tighten
+   the holder screws.</li>
 </ol>
 <h2 id="7-lead-screw-and-timing-the-level-wind">7. Lead screw and timing the level-wind</h2>
 <p>The traveller rides on the rail and is driven by the lead screw, which is geared to the drum (81T : 45T, Tr8 x 2): it moves
 3.6 mm per drum turn and lays the rope side by side on the drum.</p>
 <ol>
-<li>Far-end screw stand: heat-set the M3 insert into its front leg and push an M3 nut into the slot in its foot (from the
-   left). It stands on the rail's left end; its foot is the carriage's hard stop at full payout.</li>
-<li>Stand screws: 2 x M3 countersunk up through the plate, one into the front leg's insert, one through the rail's end hole
-   into the foot's nut.</li>
+<li>Far-end screw stand: heat-set the two M3 inserts into its front leg. It stands behind the screen, its front leg on the
+   plate in front of the rail; its foot is the block's hard stop at full payout.</li>
+<li>Stand screws: 2 x M3 countersunk up through the plate into the leg's inserts.</li>
 <li>688ZZ into the stand from the right, against its lip, with a drop of <strong>Loctite 641</strong> on its outer ring (the seat has one
    lip; the 641 keeps the bearing from walking out). This end floats: radial support only.</li>
-<li>Screw-end tower (printed PAHT-CF, printed on its side): heat-set its four M4 inserts into the foot. It stands on the
-   rail's right end and takes the screw's thrust (about 636 N at 158 lb).</li>
-<li>Tower screws: 4 x M4 countersunk up through the base plate, and 1 x M3 up through the plate, the rail's end hole and the
-   foot, with a washer and nut on top.</li>
+<li>Screw-end tower (printed PAHT-CF, printed on its side): push an M4 nut into the slot at each end of its foot. It stands
+   on the plate past the rail's end and takes the screw's thrust.</li>
+<li>Tower screws: 4 x M4 countersunk up through the base plate: the end two into the slot nuts, the flange two with washers
+   and nuts on top.</li>
 <li>MR128ZZ into the tower wall, centered (Loctite 641 or a press fit). It sits 0.66 mm short of each face, so the thrust
    washers bear on the wall and never on the bearing.</li>
 <li>On the bench, bolt the 45T gear to the goBILDA Sonic Hub: 4 x M4 x 12 button head on the 16 mm pattern, the gear on the
@@ -294,8 +294,8 @@ through the coupling, with no belt or gear between them.</p>
    into mesh with the 81T. Hold them there until the screw is through.</li>
 <li>Inner F8-16M thrust bearing between the hub and the tower: the washer with the larger bore goes against the tower (it
    stays still); the snug one turns with the screw. The outer one goes the same way round.</li>
-<li>Lead screw (Tr8 x 2, 200 mm, uncut) in from the right: through the tower, the thrust bearing and the hub, then turn it
-    through the T8 nut and into the far-end 688. It ends about 25 mm past the stand.</li>
+<li>Lead screw (Tr8 x 2, 245 mm) in from the right: through the tower, the thrust bearing and the hub, then turn it through
+    the T8 nut and into the far-end 688.</li>
 <li>Outer F8-16M and the 8 mm collar: push the collar against the bearing and tighten its set screw.</li>
 <li><strong>Time the level-wind.</strong> Wind the three dead wraps on by hand, side by side, ending one wrap before the start of the
     track. The rope's lead from the anchor crosses the bare barrel behind them. Turn the screw until the traveller's
@@ -307,20 +307,23 @@ through the coupling, with no belt or gear between them.</p>
 <ol>
 <li>Fixed roller bracket on the bench: heat-set its inserts (4 x M3 in the front face, 2 x M5 in the top plate, 2 x M4 in
    the back face); push 3 x M4 nuts into the foot slots from the back.</li>
-<li>Fixed rollers: two 626ZZ per roller into the bracket pockets, each pair on its 0.9 mm boss (inner ring only).</li>
+<li>Fixed rollers: one NATR6-PP track roller per roller into the bracket pockets, each on its 0.9 mm boss (inner ring only).</li>
 <li>Fixed-roller shoulder bolts (6 x 16 mm) up from under the foot, through the access bores, into the top-plate inserts.</li>
 <li>Bracket down onto the front edge of the base plate, in front of the carriage: 3 x M4 countersunk up through the plate
    into the foot nuts. Its flange is the exit's structure.</li>
 <li>Top tie over the traveller and the drum: 2 x M4 down into the bracket's inserts (ball-end hex key from above).</li>
-<li>Tie rear screws: 2 x M4 x 18 countersunk from the back, flush in the rear plate, through the plate and the tie, washer
-   and nut on the tie. The tie carries the exit load to the rear wall, so it is bolted through, not screwed into inserts.</li>
+<li>Tie rear screws: 2 x M4 countersunk from the back, flush in the rear plate, through the plate and the tie, washer and nut
+   on the tie. The tie carries the exit load to the rear wall, so it is bolted through, not screwed into inserts.</li>
 </ol>
 <h2 id="9-electronics-battery-and-harness">9. Electronics, battery and harness</h2>
 <ol>
 <li>ODrive bracket: an M3 nut into the slot in each foot first, then slide it in from the right: 2 x M3 countersunk up
    through the plate into those nuts.</li>
-<li>ODrive Pro with its heat spreader and terminal block: 4 x M4 x 12 through the spreader into the bracket, nuts in the
-   bracket pockets.</li>
+<li>On the bench: the machined heatsink onto the heat spreader's free face with the 0.25 mm thermal tape (clean both faces
+   with alcohol, press for 15 s), its M3 nut slid into the slot in its foot, and a thin film of thermal paste under the foot.</li>
+<li>ODrive Pro with its heat spreader, heatsink and terminal block: 4 x M4 x 12 through the spreader into the bracket, nuts
+   in the bracket pockets. The heatsink's foot rests on the base plate: 1 x M3 countersunk up through the plate into its
+   foot nut.</li>
 <li>WAGO 221-615 lever nut into its bracket.</li>
 <li>Battery bay: stick the 1 mm EVA hold-down pads under the two cradle roofs. For the TP2700 pair, put the printed spacer
    in first (its 4 mm plate against the outer panel, its 12 mm block at the front).</li>
@@ -328,8 +331,9 @@ through the coupling, with no belt or gear between them.</p>
    opening is 44 mm, about 0.5 mm a side for the TP3300 (43 mm by the maker's estimate).</li>
 <li>Wire the harness: follow <a href="wiring.html">wiring.md</a>. At the main fuse, pack + and the charge lead go on ring terminals under
    the battery-end washer (M5, tongues to the front); ODrive DC+ (tongue to the right) and the regulator feed go on the
-   output stud under the M8 nut, <strong>75 in-lb maximum</strong>. Fit the block's insulating cover. Leave the Pi, screen, BMS and fan
-   leads ready to plug in as the covers come down. Plug the pack connectors in only with the BMS switched off.</li>
+   output stud under the M8 nut, <strong>75 in-lb maximum</strong>. Fit the block's insulating cover. The motor thermistor goes to the
+   ODrive's motor-thermistor input. Leave the Pi, screen, BMS and fan leads ready to plug in as the covers come down. Plug
+   the pack connectors in only with the BMS switched off.</li>
 </ol>
 <h2 id="10-covers-exit-and-rope">10. Covers, exit and rope</h2>
 <p>On the bench:</p>
@@ -380,7 +384,8 @@ through the coupling, with no belt or gear between them.</p>
 <ol>
 <li>On the bench, pass the guide rod through the spring and the slider bar. Push the slider toward the motor end to compress
    the spring, lower its arms' slots over the two guide pins, and let go: the spring pushes it home and the tongue rests on
-   the anvil pin. The rod's end drops into its seat in the land.</li>
+   the anvil pin. The rod's end drops into its seat in the land. The slider and the mating plate are hard-anodized: no
+   grease on the tongue.</li>
 <li>Finger-bar nuts: 2 x M2.5 nuts and their washers into the channel in the land, under where the link lies.</li>
 <li>Trigger link onto its two pins: 2 x M2.5 flat head through the link and the 3 mm spacers into the tapped slider bar
    (<strong>Loctite 243</strong>).</li>
@@ -390,53 +395,46 @@ through the coupling, with no belt or gear between them.</p>
 <li>Check: slide the finger bar 12.7 mm toward the motor end and let it go. The slider should snap home.</li>
 </ol>
 <h2 id="12-rack-side-and-hanging-the-unit">12. Rack side and hanging the unit</h2>
-<p>The rack side stays on the rack. It fits a 3 x 3 in upright with 1 in pin holes.</p>
+<p>The rack side stays on the rack. It fits a 3 x 3 in upright with 1 in pin holes in its side faces.</p>
 <ol>
-<li>Rack side, on the bench: stand each cheek's front edge in its slot across the back of the mating plate. 3 x M4 x 25
-   countersunk from the plate's front face into each cheek's edge, <strong>Loctite 243</strong>, heads flush (they lie against the rear
-   plate).</li>
-<li>Screw the four shoulder studs (ISO 7379, 12 x 12 mm, M10 x 16) into the mating plate, a 2 mm shim under each head,
-   <strong>Loctite 243</strong>.</li>
-<li>Rack side onto the rack: its two cheeks round the upright, the rack's 1 in pin through both cheeks and the upright, clip
-   fitted. The mating plate's back face bears on the upright. A hitch pin needs at least 92 mm between its head and its
-   clip hole.</li>
+<li>Studs, on the bench: measure the rear plate at the four keyhole necks and stack the 0.3 and 0.1 mm shims under each stud
+   head for a slip fit (about 0.05-0.1 mm). A DIN 439 M10 thin nut into each hex pocket in the mating plate's back, then the
+   four shoulder studs (ISO 7379, 12 x 12 mm, M10 x 16) through their seats into the nuts. Each shoulder sits in its
+   counterbore, which locates it.</li>
+<li>Cheeks onto the mating plate's back, the front edge of each in its slot: an M5 nut into each of the three windows, then
+   3 x M5 countersunk from the plate's front, <strong>Loctite 243</strong>. Before they are tight, stand the plate on the upright and shim
+   each cheek to it (about 0.05 mm a side), then tighten.</li>
+<li>Toggle clamp (DE-STA-CO 630-M) onto the plate's front face below the unit: 4 x M6 into the nuts in the pockets in its
+   back. Its spindle is an M10 x 40 hex bolt in the plunger's thread with two jam nuts, its end in the pad bar's blind hole.</li>
+<li>Rack side onto the upright: hang it with the cheeks either side, push the 1 in hitch pin through the left cheek, the
+   upright and the right cheek, and clip it. Any pair of side holes at the height you want.</li>
+<li>Push the lever over center: the pad bar presses the upright's face, the plate pivots on the pin and its top band clamps.
+   The first time, set the spindle's length with the jam nuts so the lever goes over center with a firm push.</li>
 <li>Pull the trigger: the finger bar 12.7 mm toward the motor end. The tongue retracts. Hold it there.</li>
 <li>Offer the unit up: the four stud heads through the keyhole entries until the rear plate sits flat on the mating plate.</li>
-<li>Lower the unit 12 mm. The stud necks drop into the keyhole tops.</li>
-<li>Let the trigger go: the spring pushes the tongue into the mating plate's pocket. Check that the unit cannot lift.</li>
+<li>Lower the unit 12 mm. The stud shoulders pass the keyholes' narrow throats and settle in their V tops, centered; the two
+   ball plungers push the plate onto the stud heads.</li>
+<li>Let the trigger go: the spring pushes the tongue into the mating plate's pocket, and its 5° top wedges it there. Check
+   that the unit cannot lift.</li>
 </ol>
-<p>To take the unit off: pull the trigger, lift it 12 mm, and pull it back.</p>
+<p>To take the unit off: pull the trigger, lift it 12 mm, and pull it back. To take the rack side off: lift the lever and pull
+the pin.</p>
 <h2 id="13-before-powering">13. Before powering</h2>
 <p>A finished assembly is not a training-ready machine. Before the motor is powered with the rope attached:</p>
 <ol>
-<li>Work through <a href="firmware-setup.html">firmware-setup.md</a>: limits, calibration, homing and the payout window.</li>
+<li>Work through <a href="firmware-setup.html">firmware-setup.md</a>: limits, calibration, homing, the motor thermistor and the payout
+   window.</li>
 <li>Follow the first power-up and load-test steps in the
    <a href="https://kinetiqgym.com/docs/SAFETY.html">safety reference</a>.</li>
-<li>Wait at least 24 h after the Loctite 638 step before loading the drum.</li>
+<li>Wait at least 24 h after the Loctite 638 steps before loading the drum.</li>
 </ol>
 <p>The control software (Pi app, Teensy firmware, phone app) is released after the prototype has been tested.</p>
-<h2 id="lite-build-differences">Lite build differences</h2>
-<p>The Lite uses the same frame, rack side, drivetrain, level-wind, exit and motor body as the main build. The motor is an
-APS 8072S wound to about 25 Kv, and it runs from the wall.</p>
-<p><strong>Left out:</strong> the battery packs, pads and spacer, the BMS, the main fuse block and its pad, the WAGO and its bracket, the
-charge port, the rear I/O panel, the power switch, the Raspberry Pi, the screen and its frame, the Teensy, and the ODrive Pro
-with its terminal block (its bracket stays).</p>
-<p><strong>Added:</strong></p>
-<ol>
-<li>Section 3, before the rail: the two 50 W, 1 Ω brake resistors flat on the base plate, thermal paste under each,
-   2 x M3 into the tapped plate for each. The base plate is their heatsink.</li>
-<li>Section 3: the earth stud. An M4 ring terminal (the green-yellow leads crimped on) and a star washer, M4 into the tapped
-   base plate. Check continuity from the inlet's earth pin to the base plate and to the rear plate.</li>
-<li>Section 5: the XIAO ESP32-C3 on the perfboard in place of the Teensy.</li>
-<li>Section 9: solder the ODrive S1's power, phase and brake leads to its pads first. Then, on the bench, the S1 on its
-   6061 plate (thermal pad between them, 4 x M3 into the tapped plate), and the plate onto the ODrive bracket with the
-   same 4 x M4 x 12 and nuts.</li>
-<li>Section 9: the power supply tray (heat-set its four M3 inserts and its two floor inserts first) down into the battery
-   bay, 2 x M3 into the floor inserts. Then the Mean Well LOP-600-36 onto the tray bosses, solder side to the tray, with
-   4 x M3 into the tray inserts. The back-bottom screw (the supply's earth) takes a star washer and the two earth ring
-   terminals.</li>
-<li>Section 10: the knob encoder (EC11) through the left cover's front from inside, its M7 nut outside, then the knob. The
-   C14 inlet and the rocker switch snap into the right cover's back step from outside. Put the mains leads on their tabs
-   before the cover is lowered.</li>
-</ol>
-<p>The Lite's mains and DC wiring are summarized in <a href="wiring.html">wiring.md</a>.</p><p class="table-note">A draft reference: the prototype is being built and tested, and the CAD, build files and software are released after testing.</p><a class="text-link" href="build.md" download>Download Markdown source ↗</a></main><footer class="footer container"><a class="brand" href="/">KINETIQ</a><a href="/build#parts">Builds & cost</a><a href="/build#files">Files & kits</a><a href="/#join">Kit waitlist</a><nav class="community-links" aria-label="Social links"><a href="https://discord.gg/ZMmpJqFHbB" target="_blank" rel="noopener noreferrer">Discord</a><a href="https://www.youtube.com/@trenton_dragon" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://www.instagram.com/mr.dragon2002/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.tiktok.com/@locked_in_dragon" target="_blank" rel="noopener noreferrer">TikTok</a><a href="https://x.com/TIndeed45671" target="_blank" rel="noopener noreferrer">X</a><a href="https://www.reddit.com/r/KinetiqGym/" target="_blank" rel="noopener noreferrer">Reddit</a><a href="https://github.com/TrentIndeed/kinetiqgym" target="_blank" rel="noopener noreferrer">GitHub</a></nav></footer></body></html>
+<h2 id="the-budget-build">The budget build</h2>
+<p>The budget build is a separate, simpler design with its own frame: 1/4 in and 1/8 in 6061 plate and aluminum and steel
+angle bought near size, cut with a hacksaw and drilled through printed stand-ins, with every load-bearing screw into a nut.
+It hangs on the rack upright on one 1 in hitch pin. The same MP8085 sits in an outside pod and turns a 1 in drum tube on a
+20 mm shaft, in two flange bearings, through a steel clamp coupling; a printed gear pair drives the level-wind's lead screw,
+and the exit is the main build's swivel. The ODESC, its fan and its heat spreader are on the unit; the 48 V supply, the
+mains inlet and its switch are in a floor box, with one cable up the rack. A knob, a start/stop button and a phone app
+(Bluetooth) set the weight. Its build order is published with its verified files; its parts are in the
+<a href="https://kinetiqgym.com/docs/BOM.html">parts list</a> and its wiring is summarized in <a href="wiring.html">wiring.md</a>.</p><p class="table-note">A draft reference: the prototype is being built and tested, and the CAD, build files and software are released after testing.</p><a class="text-link" href="build.md" download>Download Markdown source ↗</a></main><footer class="footer container"><a class="brand" href="/">KINETIQ</a><a href="/build#parts">Builds & cost</a><a href="/build#files">Files & kits</a><a href="/#join">Kit waitlist</a><nav class="community-links" aria-label="Social links"><a href="https://discord.gg/ZMmpJqFHbB" target="_blank" rel="noopener noreferrer">Discord</a><a href="https://www.youtube.com/@trenton_dragon" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://www.instagram.com/mr.dragon2002/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.tiktok.com/@locked_in_dragon" target="_blank" rel="noopener noreferrer">TikTok</a><a href="https://x.com/TIndeed45671" target="_blank" rel="noopener noreferrer">X</a><a href="https://www.reddit.com/r/KinetiqGym/" target="_blank" rel="noopener noreferrer">Reddit</a><a href="https://github.com/TrentIndeed/kinetiqgym" target="_blank" rel="noopener noreferrer">GitHub</a></nav></footer></body></html>
