@@ -3,10 +3,10 @@
   <link rel="alternate" type="text/plain" href="/llms.txt" title="Optional information for AI visitors"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Wiring — KINETIQ</title><link rel="stylesheet" href="../styles.css"><link rel="icon" href="../media/mark.svg"><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/community.css">
 </head><body><a class="skip" href="#reference">Skip to reference</a><header class="header"><a class="brand" href="/"><img src="../media/mark.svg" width="32" height="32" alt="">KINETIQ</a><a href="/build#build">Back to the build preview ↗</a></header><main id="reference" class="guide-page section container"><p class="section-kicker">Draft reference · October 2026</p><h1 id="wiring">Wiring</h1>
 <blockquote>
-<p><strong>Draft.</strong> This is the harness of the prototype being built now. It will be checked on the prototype and corrected before
-the verified release. Read the <a href="https://kinetiqgym.com/docs/SAFETY.html">safety reference</a> before working on the battery.</p>
+<p><strong>Draft.</strong> This is the harness as designed now. It will be checked on the prototype and corrected before the verified
+release. Read the <a href="https://kinetiqgym.com/docs/SAFETY.html">safety reference</a> before working on the battery or the mains.</p>
 </blockquote>
-<p>This page covers the battery builds (main, MP80100 and C80100). The Lite (wall power) is summarized at the end.</p>
+<p>This page covers the main build (battery). The budget build (wall power) is summarized at the end.</p>
 <p>Every wire below is routed through the enclosure in the design model with its real insulation diameter, so the lengths are
 routed lengths: add 10-15 % for the terminations. Gauges are minimums.</p>
 <h2 id="parts-in-the-harness">Parts in the harness</h2>
@@ -43,6 +43,10 @@ routed lengths: add 10-15 % for the terminations. Gauges are minimums.</p>
 <td>motor controller</td>
 </tr>
 <tr>
+<td>10 k NTC thermistor (B3950) on the motor's stator</td>
+<td>motor temperature, to the ODrive's motor-thermistor input</td>
+</tr>
+<tr>
 <td>Pololu D42V55F5 regulator</td>
 <td>5 V for the Pi, the Teensy and the fan</td>
 </tr>
@@ -64,7 +68,7 @@ routed lengths: add 10-15 % for the terminations. Gauges are minimums.</p>
 </tr>
 <tr>
 <td>Noctua NF-A4x10 5V fan</td>
-<td>ODrive cooling</td>
+<td>ODrive cooling, through the machined heatsink</td>
 </tr>
 </tbody>
 </table></div>
@@ -106,13 +110,13 @@ current flows back through the 40 A fuse and the BMS into the pack.</p>
 <td>Pack B+</td>
 <td>10 AWG</td>
 <td>Pack B+ (EC5 on the pack lead) to the fuse block's battery-end stud: ring terminal under the M5 fender washer, tongue to the front</td>
-<td>165 mm</td>
+<td>153 mm</td>
 </tr>
 <tr>
 <td>Series link</td>
 <td>10 AWG</td>
 <td>Pack A+ to pack B- (EC5 pair), in the back step</td>
-<td>53 mm</td>
+<td>54 mm</td>
 </tr>
 <tr>
 <td>Pack A-</td>
@@ -124,97 +128,103 @@ current flows back through the 40 A fuse and the BMS into the pack.</p>
 <td>ODrive DC+</td>
 <td>10 AWG</td>
 <td>Fuse block output stud (first ring, tongue to the right) to ODrive terminal pole 1 (ferrule)</td>
-<td>32 mm</td>
+<td>34 mm</td>
 </tr>
 <tr>
 <td>ODrive DC-</td>
 <td>10 AWG</td>
 <td>WAGO port 5 to ODrive terminal pole 2 (ferrule)</td>
-<td>95 mm</td>
+<td>92 mm</td>
 </tr>
 <tr>
 <td>BMS P-</td>
 <td>10 AWG</td>
 <td>BMS P- pad to WAGO port 4</td>
-<td>141 mm</td>
+<td>151 mm</td>
 </tr>
 <tr>
 <td>Motor phase A</td>
 <td>12 AWG</td>
 <td>Motor lead exit, through the 12 mm grommet in the face plate, to ODrive terminal pole 3 (ferrule)</td>
-<td>314 mm</td>
+<td>371 mm</td>
 </tr>
 <tr>
 <td>Motor phase B</td>
 <td>12 AWG</td>
 <td>as phase A, to pole 4</td>
-<td>315 mm</td>
+<td>387 mm</td>
 </tr>
 <tr>
 <td>Motor phase C</td>
 <td>12 AWG</td>
 <td>as phase A, to pole 5</td>
-<td>364 mm</td>
+<td>378 mm</td>
+</tr>
+<tr>
+<td>Motor thermistor</td>
+<td>2-wire lead</td>
+<td>The NTC on the stator, along the phase leads, to the ODrive's motor-thermistor input</td>
+<td>about the phase leads' length (not yet routed in the model)</td>
 </tr>
 <tr>
 <td>Charge + (port to fuse)</td>
 <td>16 AWG</td>
 <td>Charge port + (upper cup, per the panel marking) to the 10 A inline fuse</td>
-<td>39 mm</td>
+<td>35 mm</td>
 </tr>
 <tr>
 <td>Charge + (fuse to block)</td>
 <td>16 AWG</td>
 <td>10 A inline fuse to the fuse block's battery-end stud (second ring under the washer)</td>
-<td>118 mm</td>
+<td>121 mm</td>
 </tr>
 <tr>
 <td>Charge -</td>
 <td>16 AWG</td>
 <td>Charge port - (lower cup) to WAGO port 3</td>
-<td>127 mm</td>
+<td>124 mm</td>
 </tr>
 <tr>
 <td>Regulator feed</td>
 <td>18 AWG</td>
 <td>Fuse block output stud (second ring, tongue to the front) to the 3 A inline fuse</td>
-<td>81 mm</td>
+<td>96 mm</td>
 </tr>
 <tr>
 <td>Regulator VIN+</td>
 <td>18 AWG</td>
 <td>3 A inline fuse to the regulator VIN (screw terminal on its perfboard)</td>
-<td>322 mm</td>
+<td>330 mm</td>
 </tr>
 <tr>
 <td>Regulator VIN-</td>
 <td>18 AWG</td>
 <td>WAGO port 1 to the regulator GND in</td>
-<td>450 mm</td>
+<td>493 mm</td>
 </tr>
 <tr>
 <td>Pi 5 V</td>
 <td>20 AWG</td>
 <td>Regulator 5 V out to Pi GPIO pin 2 (1 x 3 Dupont housing on pins 2, 4 and 6)</td>
-<td>145 mm</td>
+<td>142 mm</td>
 </tr>
 <tr>
 <td>Pi GND</td>
 <td>20 AWG</td>
 <td>Regulator GND to Pi GPIO pin 6</td>
-<td>166 mm</td>
+<td>153 mm</td>
 </tr>
 <tr>
 <td>Fan +</td>
 <td>24 AWG</td>
 <td>Regulator 5 V out to the ODrive fan (fan lead extended)</td>
-<td>410 mm</td>
+<td>491 mm</td>
 </tr>
 <tr>
 <td>Fan -</td>
 <td>24 AWG</td>
 <td>Regulator GND to the ODrive fan</td>
-<td>431 mm</td>
+<td>492 mm</td>
 </tr>
 <tr>
 <td>Teensy VIN</td>
@@ -238,31 +248,31 @@ current flows back through the 40 A fuse and the BMS into the pack.</p>
 <td>CAN bus</td>
 <td>twisted pair</td>
 <td>CAN H, CAN L and GND (twisted pair and drain) from the CAN board terminal to the ODrive CAN header (4-pin JST-GH plug)</td>
-<td>347 mm</td>
+<td>418 mm</td>
 </tr>
 <tr>
 <td>USB</td>
 <td>cable</td>
 <td>Teensy (right-angle micro-USB) to the Pi's upper USB-A port (right-angle plug)</td>
-<td>177 mm</td>
+<td>186 mm</td>
 </tr>
 <tr>
 <td>Screen video</td>
 <td>flat HDMI cable</td>
 <td>The screen's HDMI socket (its connector edge is at the top) back under the Pi's edge to the Pi's HDMI 0</td>
-<td>about 40 mm</td>
+<td>about 43 mm</td>
 </tr>
 <tr>
 <td>Screen touch and power</td>
 <td>USB-C cable</td>
 <td>The screen's USB-C (right-angle plug) to the Pi's second USB stack, lower port (90-degree USB-A adapter)</td>
-<td>-</td>
+<td>131 mm</td>
 </tr>
 <tr>
 <td>Balance lead, pack A</td>
 <td>5S JST-XH</td>
 <td>Cells 1-5 to the BMS balance header</td>
-<td>207 mm</td>
+<td>183 mm</td>
 </tr>
 <tr>
 <td>Balance lead, pack B</td>
@@ -274,13 +284,13 @@ current flows back through the 40 A fuse and the BMS into the pack.</p>
 <td>BMS NTC</td>
 <td>lead</td>
 <td>BMS NTC lead to the 10 k probe taped to pack B's rear end face</td>
-<td>127 mm</td>
+<td>153 mm</td>
 </tr>
 <tr>
 <td>Power switch</td>
 <td>twisted pair</td>
 <td>Power switch to the BMS soft-switch input</td>
-<td>130 mm</td>
+<td>120 mm</td>
 </tr>
 </tbody>
 </table></div>
@@ -294,28 +304,35 @@ current flows back through the 40 A fuse and the BMS into the pack.</p>
 <li><strong>The EC5 plugs on the pack leads are the service disconnect.</strong> Plug them in with the BMS switched off.</li>
 <li><strong>BMS:</strong> configure it for 10S and set over-charge to 4.20-4.25 V per cell in its app (some boards ship with LiFePO4
   settings). Check that your board has the soft-switch connector before you build the harness round it.</li>
-<li><strong>WAGO 221-615</strong> is rated about 30 A (UL). The peak battery current is about 28 A for short pulls.</li>
+<li><strong>Battery current (design values):</strong> about 14 A while holding 220 lb, and up to 36 A on a fast return at high force:
+  the app caps the reel-in speed so it stays under 90 % of the 40 A fuse. Regenerative current is about 20 A at the most,
+  under the 28 A regen limit. The WAGO 221-615 is rated about 30 A (UL).</li>
 <li><strong>Teensy:</strong> cut the VIN-VUSB pad. It is powered by the regulator and also connected to the Pi by USB.</li>
-<li><strong>Motor phase leads:</strong> the gauge and exit point depend on your motor. The design assumes 12 AWG through a 12 mm grommet,
-  along the notches in the corner brackets.</li>
+<li><strong>Motor phase leads:</strong> 12 AWG through a 12 mm grommet, along the notches in the corner gussets. Measure the MP8085's own
+  leads when it arrives and extend them if they are short.</li>
 <li>Crimp ferrules on every wire into the ODrive terminal block.</li>
 <li><strong>Charger:</strong> 42.0 V (10S) Li-ion/LiPo CC/CV, 2-4 A, with an XT60 male plug. Charge only through the charge port, with the
   BMS connected.</li>
 <li>First power-up: the ODrive's input capacitors can trip the BMS's short-circuit protection at switch-on. If it does,
   lengthen the BMS short-circuit delay in its app.</li>
 </ul>
-<h2 id="lite-wall-power">Lite (wall power)</h2>
-<p>The Lite has no battery, BMS, main fuse block, WAGO, charge port or power button. Its harness (22 wires):</p>
+<h2 id="budget-build-wall-power">Budget build (wall power)</h2>
+<p>The budget build has no battery, BMS, main fuse block, WAGO, charge port, Raspberry Pi or screen.</p>
 <ul>
-<li><strong>Mains:</strong> an IEC C14 inlet in the right cover's back step. Line runs through the rocker switch to the supply's AC input
-  (CN1), neutral straight to CN1. Earth runs from the inlet to the supply's earth screw and on to the M4 earth stud in the
-  base plate. Use insulated 6.3 mm quick-disconnects on the inlet and switch tabs.</li>
-<li><strong>DC:</strong> 10 AWG from the Mean Well LOP-600-36 (36 V) to the ODrive S1's DC pads.</li>
-<li><strong>Motor:</strong> the three phases along the same floor channel as the battery build, to the S1's phase pads.</li>
-<li><strong>Brake resistor:</strong> two 1 Ω, 50 W resistors in series (2 Ω) on the base plate, to the S1's R+ and R- pads. Regenerative
-  energy goes into them, not into the supply.</li>
-<li><strong>5 V:</strong> the regulator is fed from the supply's 12 V auxiliary output (CN2) and powers the fan and the XIAO ESP32-C3.</li>
-<li><strong>Signals:</strong> the XIAO to the CAN board, CAN from the CAN board to the S1 (4-pin JST-GH), and the knob (EC11) to the XIAO.</li>
+<li><strong>Mains:</strong> a floor box holds the Mean Well LRS-600N2-48 (48 V, 600 W) and a pre-wired mains inlet with its own fuse and
+  lit rocker switch; a standard C13 cord goes to the wall. Earth runs from the inlet to the supply's earth terminal.</li>
+<li><strong>DC:</strong> the supply's output to an XT60E-F socket on the floor box, up the rack on a 14 AWG two-core silicone cable with
+  XT60 ends, into the XT60E-M port on the back of the unit, then to the ODESC's DC input.</li>
+<li><strong>Motor:</strong> the three phase leads, extended in 12 AWG silicone with 5.5 mm bullet connectors, to the ODESC; the motor's
+  Hall cable extended with JST-PH 6-pin leads (check its plug first).</li>
+<li><strong>Brake resistor:</strong> two 1 Ω, 100 W resistors in series (2 Ω) on the inner plate, to the ODESC's brake resistor terminals.
+  Braking energy goes into them, not into the supply, and they get hot.</li>
+<li><strong>5 V:</strong> a Pololu APM81815 regulator (48 V in, a 47 µF capacitor across its input) on the perfboard powers the XIAO
+  ESP32-C3 and the fan.</li>
+<li><strong>Signals:</strong> the XIAO to the ODESC over UART; the knob (EC11) and the start/stop button to the XIAO; the AS5047P encoder
+  board, which reads a magnet in the drum's end, to the ODESC.</li>
+<li><strong>Motor thermistor:</strong> the NTC on the stator, with a 10 kΩ resistor and a 1 µF capacitor as its divider, to the ODESC's
+  thermistor input.</li>
 </ul>
-<p>Mains wiring can kill. Have it checked by someone qualified, check earth continuity from the inlet's earth pin to the base
-plate and the rear plate, and keep the covers on whenever the unit is plugged in.</p><p class="table-note">A draft reference: the prototype is being built and tested, and the CAD, build files and software are released after testing.</p><a class="text-link" href="wiring.md" download>Download Markdown source ↗</a></main><footer class="footer container"><a class="brand" href="/">KINETIQ</a><a href="/build#parts">Builds & cost</a><a href="/build#files">Files & kits</a><a href="/#join">Kit waitlist</a><nav class="community-links" aria-label="Social links"><a href="https://discord.gg/ZMmpJqFHbB" target="_blank" rel="noopener noreferrer">Discord</a><a href="https://www.youtube.com/@trenton_dragon" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://www.instagram.com/mr.dragon2002/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.tiktok.com/@locked_in_dragon" target="_blank" rel="noopener noreferrer">TikTok</a><a href="https://x.com/TIndeed45671" target="_blank" rel="noopener noreferrer">X</a><a href="https://www.reddit.com/r/KinetiqGym/" target="_blank" rel="noopener noreferrer">Reddit</a><a href="https://github.com/TrentIndeed/kinetiqgym" target="_blank" rel="noopener noreferrer">GitHub</a></nav></footer></body></html>
+<p>Mains wiring can kill. Have it checked by someone qualified, check earth continuity from the inlet's earth pin, and keep the
+floor box closed whenever it is plugged in.</p><p class="table-note">A draft reference: the prototype is being built and tested, and the CAD, build files and software are released after testing.</p><a class="text-link" href="wiring.md" download>Download Markdown source ↗</a></main><footer class="footer container"><a class="brand" href="/">KINETIQ</a><a href="/build#parts">Builds & cost</a><a href="/build#files">Files & kits</a><a href="/#join">Kit waitlist</a><nav class="community-links" aria-label="Social links"><a href="https://discord.gg/ZMmpJqFHbB" target="_blank" rel="noopener noreferrer">Discord</a><a href="https://www.youtube.com/@trenton_dragon" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://www.instagram.com/mr.dragon2002/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.tiktok.com/@locked_in_dragon" target="_blank" rel="noopener noreferrer">TikTok</a><a href="https://x.com/TIndeed45671" target="_blank" rel="noopener noreferrer">X</a><a href="https://www.reddit.com/r/KinetiqGym/" target="_blank" rel="noopener noreferrer">Reddit</a><a href="https://github.com/TrentIndeed/kinetiqgym" target="_blank" rel="noopener noreferrer">GitHub</a></nav></footer></body></html>

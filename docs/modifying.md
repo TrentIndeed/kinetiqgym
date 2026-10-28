@@ -1,11 +1,12 @@
 # Modifying the design
 
-> **Draft.** The numbers below are design values for the prototype being built now; they are confirmed or corrected after
-> it is load-tested. The editable CAD is released with the verified build files after that. Until then this page describes
-> the interfaces in words and numbers.
+> **Draft.** The numbers below are design values for the main build as designed now; they are confirmed or corrected after
+> the prototype is load-tested. The editable CAD is released with the verified build files after that. Until then this
+> page describes the interfaces in words and numbers.
 
 The design is built to be adapted. The two interfaces most builders will change are the **battery bay** and the **motor
-face**. The [website adaptation guide](https://kinetiqgym.com/build#modify) illustrates both.
+face**. The [website adaptation guide](https://kinetiqgym.com/build#modify) illustrates both. This page describes the main
+build; the budget build runs from the wall and has no battery bay.
 
 ## Batteries
 
@@ -39,51 +40,51 @@ A pack that fits is not automatically electrically compatible.
 
 ## Motors
 
-The drive is direct: the motor turns the drum through a rigid clamp coupling, with no belt or gear between them.
+The drive is direct: the motor turns the drum through a rigid clamp coupling, with no belt or gear between them. Both
+builds use an off-the-shelf motor, the Freerchobby MP8085 50 Kv: no custom windings.
 
-**The motor face plate** (0.250 in 6061) is bolted to the frame: it stands on two small angle brackets on the base plate and
-is screwed through the rear plate into its back edge. It carries two bolt circles and a Ø16 mm shaft hole:
-
-- 4 x M5 on Ø56 mm, on the 45° diagonals: the MP80100 and the APS C80100;
-- 4 x M5 on Ø59 mm: the APS 8072S.
-
-A different motor needs its own pattern on the same centerline (the drum axis), clear of the existing holes and of the two
-brackets under the plate (their legs are 16 mm tall, under the reference motors' screw heads).
+**The motor face plate** (0.250 in 6061) stands on two tabs in slots in the base plate and is bolted to the base and rear
+plates into nuts in its windows. It carries the MP8085's pattern, 4 x M5 on Ø56 mm on the 45° diagonals, and a Ø16 mm shaft
+hole. A different motor needs its own pattern on the same centerline (the drum axis), clear of the existing holes and the
+nut windows.
 
 | Interface | Reference | What to check |
 |---|---|---|
-| Face mount | the face plate's two bolt circles; M5 spacers 3 mm long (APS 8072S) or 10 mm long (MP80100, C80100) | bolt pattern, pilot, and a spacer length that puts the shaft into the coupling |
-| Shaft | One-piece steel clamp coupling, 29 mm OD x 45 mm, about 105 N·m: 12 mm on the drum side, 10 mm (McMaster-Carr 2469K23) or 12 mm (Ruland MCLX-12-12-F) on the motor side | the motor-side bore, about 20 mm of shaft in the clamp, and a rating of at least 1.5 x the peak drum torque |
-| Rear shaft | the 80100 motors' bell-end shaft is cut to a 10 mm stub | what sticks out behind the motor |
-| Body | 80 mm diameter outrunners; the motor bay is sized for each motor (builds about 400, 429 and 444 mm long) | the covers and end cap, with 3 mm of spin clearance to the end cap |
-| Leads | three phase leads through a 12 mm grommet in the face plate, along the notches in the corner brackets, to the controller | lead exit, gauge and length |
-| Controller | ODrive Pro: 70 A continuous, 100 A for 3 s, 58 V maximum. ODrive S1 (Lite): 40 A continuous, 80 A peak | the current your motor needs at your target force |
+| Face mount | 4 x M5 x 25 on Ø56 mm through four Ø10 x 10 mm spacers, into the motor's own threads | bolt pattern, pilot, thread depth, and a spacer length that puts the shaft into the coupling |
+| Shaft | Ruland MCLX-12-12-F one-piece steel clamp coupling, 12 mm both sides, 29 mm OD x 45 mm, 105 N·m; about 21 mm of shaft in the clamp | the motor-side bore, the clamp length, and a rating of at least 1.5 x the peak drum torque |
+| Rear shaft | the MP8085's rear prop shaft is cut flush with its rear hub | what sticks out behind the motor |
+| Body | Ø80 x 92 mm outrunner; the main build is about 515 mm long | the covers and end cap, with 3 mm of spin clearance to the end cap |
+| Leads | three phase leads and the thermistor leads through a 12 mm grommet in the face plate, along the notches in the corner gussets, to the controller | lead exit, gauge and length |
+| Temperature | a 10 k NTC on the stator to the controller's thermistor input | that your motor has room for it, or its own sensor |
+| Controller | ODrive Pro: 80 A with active cooling (datasheet), 100 A for 3 s, 58 V maximum. ODESC V4.2 (budget build): 70 A by the seller, unverified | the current your motor needs at your target force, held through a set |
 
 How to judge a motor:
 
-- **Cable force ≈ motor torque ÷ drum rope radius** (17.5 mm). 158 lb (703 N) needs about 12.3 N·m; 220 lb (979 N) needs
-  about 17.1 N·m.
-- **Current ≈ torque ÷ torque constant**, with the torque constant about 8.27 ÷ Kv N·m per amp. At 50 Kv, 17.1 N·m takes
-  about 103 A, more than the ODrive Pro's 70 A continuous. That is why the 220 lb builds use about 25-29 Kv windings (about
-  52-63 A).
-- **Felt inertia:** through the 17.5 mm radius, a rotor's inertia J (kg·m²) feels like about 3,265 x J kg at the rope. A
-  lighter rotor feels better; the firmware can cancel part of it, but not all.
-- Prefer low-voltage (48 V or less) DC brushless motors with a high pole count, close to the reference size. Avoid
-  high-voltage AC servos: at this torque they are far larger and heavier than the body, or they need a reduction stage,
-  which spoils the back-drive feel.
+- **Cable force ≈ motor torque ÷ drum rope radius** (12.7 mm on the main build's 7/8 in drum). 220 lb (979 N) needs about
+  12.4 N·m.
+- **Current ≈ torque ÷ torque constant**, with the torque constant about 8.27 ÷ Kv N·m per amp. At 50 Kv, 12.4 N·m takes
+  about 75 A: inside the ODrive Pro's 80 A. A smaller drum lowers the current but raises the felt mass.
+- **Felt inertia:** through the 12.7 mm radius, a rotor's inertia J (kg·m²) feels like about 6,200 x J kg at the rope. A
+  lighter rotor feels better; the firmware can cancel part of it, but not all. The 10 lb minimum should feel like 10 lb:
+  keep the felt mass under about 6.4 kg before compensation (no more than about 30 % for the firmware to cancel).
+- **Heat:** the rating is held through a 20-30 s set. Check the motor's copper loss at that current and how many sets it
+  takes to reach the thermistor's limit.
+- Prefer low-voltage (48 V or less) DC brushless motors with a high pole count, close to the reference size. Avoid hub
+  motors (their rotors feel like a flywheel) and high-voltage AC servos: at this torque they are far larger and heavier than
+  the body, or they need a reduction stage, which spoils the back-drive feel.
 - A larger motor or a different Kv does not by itself make a safe resistance rating. The shared parts (frame, drum,
-  level-wind, exit and rack side) are sized by calculation for the 220 lb peak builds; nothing is checked above that, and
-  none of it is tested yet.
+  level-wind, exit and rack side) are sized by calculation for 220 lb, and the drum and level-wind for 234 lb (the most the
+  ODrive's 80 A can pull); nothing is checked above that, and none of it is tested yet.
 
 After a motor change, update the motor, encoder, current and thermal settings before any powered test
 ([firmware-setup.md](firmware-setup.md)).
 
 ## A knob instead of the touch screen
 
-The Lite build already does this: an EC11 rotary encoder with a push button goes through the left cover where the screen
-window was, and a phone app (Bluetooth, through a XIAO ESP32-C3) handles the settings. On a battery build the same change
-closes the screen window and drops the screen and its frame. Whether the Raspberry Pi can also be left out depends on the
-control software, which is not released yet.
+The budget build already does this: an EC11 rotary encoder with a push button and a flush start/stop button, and a phone
+app (Bluetooth, through a XIAO ESP32-C3) handles the settings. On the main build the same change closes the screen window
+and drops the screen and its frame. Whether the Raspberry Pi can also be left out depends on the control software, which is
+not released yet.
 
 ## Sharing your changes
 

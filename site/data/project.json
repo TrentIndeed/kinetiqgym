@@ -2,125 +2,63 @@
   "project": {
     "repo": "https://github.com/TrentIndeed/kinetiqgym",
     "repoVerified": true,
-    "revision": "v0.1.0 prototype",
+    "revision": "v0.2.0 prototype",
     "currency": "USD",
-    "date": "2026-10-14"
+    "date": "2026-10-27"
   },
   "motors": [
     {
-      "id": "lite150",
-      "load": "150 lb",
-      "label": "Lite: APS 8072S ~25 Kv on wall power",
-      "note": "The low-cost build: the main build's frame, mount and motor body (400 x 227 x 103 mm), plugged into the wall. A Mean Well 36 V 600 W supply inside, an ODrive S1 with two brake resistors on the base plate, and a phone app (Bluetooth) and a knob instead of the battery, Raspberry Pi and touchscreen. The motor is wound ~25 Kv to order, so 158 lb takes 37-45 A.",
-      "force": "158 lb",
-      "controller": "ODrive S1",
-      "power": "36 V wall supply inside",
-      "size": "400 x 227 x 103 mm",
-      "lead": true
+      "id": "budget180",
+      "load": "180 lb",
+      "label": "Budget build: MP8085 on wall power",
+      "lead": true,
+      "note": "The lowest-cost build, with its own simpler frame: plate and angle bought near size, cut with a hacksaw and drilled through printed guides (no CNC), hung on the rack upright with one hitch pin. The MP8085 sits in an outside pod; an ODESC V4.2 with a fan drives it from a Mean Well 48 V supply in a floor box. A knob, a start/stop button and a phone app (Bluetooth) set the weight: no battery, no screen. 2.0 m of pull. 180 lb is a design target held through a 20-30 s set, not yet verified: it takes about 69 A from the ODESC, whose 70 A rating is the seller's, and the motor's torque against current is still to be bench-tested.",
+      "force": "180 lb",
+      "controller": "ODESC V4.2",
+      "power": "48 V wall supply",
+      "size": "About 480 mm across with the motor pod",
+      "made": "Metal bought near size: a hacksaw, a drill and a printer"
     },
     {
-      "id": "aps8072s",
-      "load": "150 lb",
-      "label": "APS 8072S 50 Kv outrunner",
+      "id": "main220",
+      "load": "220 lb",
+      "label": "Main build: MP8085 on battery",
       "default": true,
-      "note": "The main build: 400 x 227 x 103 mm. Light rotor (about 2.5 kg felt at the rope before compensation); 13 N\u00b7m; ODrive Pro.",
-      "force": "158 lb",
+      "note": "The main build: the bolted 6061 aluminum frame, about 515 mm long, a 10S battery and the touchscreen. The 7/8 in drum tube is used as bought (no lathe), and every load-bearing screw goes to a nut. 2.6 m of pull. The rack side goes on with one hitch pin and a lever clamp; the unit lifts off with one pull of the latch. 220 lb is a design target held through a 20-30 s set, not yet verified: it takes about 75 A from the ODrive Pro, and the motor's torque against current is still to be bench-tested.",
+      "force": "220 lb",
       "controller": "ODrive Pro",
       "power": "10S battery (2 x 5S LiPo)",
-      "size": "400 x 227 x 103 mm"
-    },
+      "size": "About 515 mm long"
+    }
+  ],
+  "planned": [
     {
-      "id": "mp80100",
-      "load": "150 lb",
-      "label": "MP80100 50 Kv outrunner",
-      "note": "Same frame with a 44 mm longer motor bay (444 mm). About 4 kg felt at the rope; ODrive Pro; ships from China.",
-      "force": "158 lb",
-      "controller": "ODrive Pro",
-      "power": "10S battery (2 x 5S LiPo)",
-      "size": "444 x 227 x 103 mm"
-    },
-    {
-      "id": "mp80100_220",
-      "load": "220 lb peak",
-      "label": "MP80100 rewired wye, ~29 Kv (check first)",
-      "note": "The 444 mm MP80100 build on the same ODrive Pro. If the 50 Kv motor is wound delta, re-terminating it in wye gives about 29 Kv, so 220 lb takes about 60 A (the ODrive Pro gives 70 A continuous). Ask the seller how it is wound before buying for 220 lb.",
-      "force": "220 lb peak",
-      "controller": "ODrive Pro",
-      "power": "10S battery (2 x 5S LiPo)",
-      "size": "444 x 227 x 103 mm"
-    },
-    {
-      "id": "c80100_220",
-      "load": "220 lb peak",
-      "label": "APS C80100, custom ~25 Kv",
-      "note": "Alien Power Systems winds it to order at about 25 Kv: 220 lb takes about 52-63 A on the same ODrive Pro. Its own build is 429 mm long (the motor is 15 mm shorter than the MP80100).",
-      "force": "220 lb peak",
-      "controller": "ODrive Pro",
-      "power": "10S battery (2 x 5S LiPo)",
-      "size": "429 x 227 x 103 mm"
+      "id": "wall300",
+      "force": "300 lb",
+      "label": "Wall build",
+      "controller": "Flipsky 75200 (VESC)",
+      "power": "Mean Well 1,000 W wall supply",
+      "size": "Bolts to wall studs or concrete, for people without a rack",
+      "motor": "Hobbywing XRotor V11130",
+      "status": "In design: parts list once the CAD is done"
     }
   ],
   "parts": [
     {
-      "id": "p001",
-      "name": "APS 8072S outrunner, 50 Kv",
+      "id": "p150",
+      "name": "Freerchobby MP8085 outrunner, 50 Kv, sensored",
       "category": "Motor & controller",
       "qty": 1,
-      "price": 220,
-      "note": "Alien Power Systems, UK: about \u00a3169 plus shipping. The main build's motor.",
-      "url": "",
-      "status": "Estimate",
-      "date": "",
+      "price": 175.0,
+      "note": "Both builds' motor, off the shelf: \u00d880 x 92 mm, 12 mm keyed shaft, 1.5 kg, 4 x M5 on \u00d856 mm. $145 at the maker's store plus about $30 DHL/UPS shipping (shown only at checkout, so an estimate; a US tariff may apply); ships in about 4-5 days. Cut its rear prop shaft flush with the rear hub. Its torque against current is still to be measured: the ratings depend on it.",
+      "url": "https://www.freerchobby.cc/products/mp-8085-kv270-outrunner-brushless-motor-for-e-skateboard-bike-rc-drone?variant=34635792810145",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
       "motor": [
-        "aps8072s"
+        "main220",
+        "budget180"
       ],
       "rank": 1
-    },
-    {
-      "id": "p086",
-      "name": "MP80100 outrunner, 50 Kv, sensored",
-      "category": "Motor & controller",
-      "qty": 1,
-      "price": 260,
-      "note": "Freerchobby, via AliExpress: $230 + $30 shipping, ships from China (3-4 weeks). Cut its bell-end prop shaft to a 10 mm stub.",
-      "url": "https://www.aliexpress.us/item/3256805081566856.html",
-      "status": "Recorded price",
-      "date": "Checked Oct 7, 2026",
-      "motor": [
-        "mp80100",
-        "mp80100_220"
-      ],
-      "rank": 2
-    },
-    {
-      "id": "p120",
-      "name": "APS C80100 outrunner, sensored, custom ~25 Kv",
-      "category": "Motor & controller",
-      "qty": 1,
-      "price": 290,
-      "note": "Alien Power Systems, UK: stock 50 Kv is \u00a3209 plus shipping (on backorder October 10); ask APS for the ~25 Kv winding and its price before ordering. \u00d880 x 92, 4 x M5 on \u00d856, 12 mm keyed shaft; cut its rear shaft to a 10 mm stub.",
-      "url": "https://alienpowersystem.com",
-      "status": "Estimate",
-      "date": "Checked Oct 10, 2026",
-      "motor": [
-        "c80100_220"
-      ],
-      "rank": 3
-    },
-    {
-      "id": "p121",
-      "name": "APS 8072S outrunner, custom ~25 Kv",
-      "category": "Motor & controller",
-      "qty": 1,
-      "price": 230,
-      "note": "Alien Power Systems winds it to order: ask for about 25 Kv (the stock motor is 50 Kv). Same body, mount and 10 mm keyed shaft as the main build. Not quoted yet.",
-      "url": "",
-      "status": "Estimate",
-      "date": "",
-      "motor": [
-        "lite150"
-      ],
-      "rank": 4
     },
     {
       "id": "p002",
@@ -128,32 +66,14 @@
       "category": "Motor & controller",
       "qty": 1,
       "price": 229,
-      "note": "Controller only; heat spreader is separate. 70 A continuous: the 220 lb choices use a lower-Kv motor to stay inside it.",
+      "note": "Controller only; the heat spreader is separate. 220 lb takes about 75 A through a set (current limit 75.5 A): inside the datasheet's 80 A with active cooling. Still to be bench-tested.",
       "url": "https://shop.odriverobotics.com/products/odrive-pro",
       "status": "Source price",
       "date": "Checked Oct 2, 2026",
       "motor": [
-        "aps8072s",
-        "mp80100",
-        "mp80100_220",
-        "c80100_220"
+        "main220"
       ],
-      "rank": 5
-    },
-    {
-      "id": "p122",
-      "name": "ODrive S1, solder-pad version",
-      "category": "Motor & controller",
-      "qty": 1,
-      "price": 149,
-      "note": "40 A continuous on its heat spreader, 80 A peak, 12-50.5 V, with an onboard magnetic encoder. Screws to a 6061 plate you make; the main build's ODrive bracket stays. In stock at ODrive (US) on Oct 10.",
-      "url": "https://shop.odriverobotics.com/products/odrive-s1",
-      "status": "Source price",
-      "date": "Checked Oct 10, 2026",
-      "motor": [
-        "lite150"
-      ],
-      "rank": 6
+      "rank": 2
     },
     {
       "id": "p003",
@@ -161,22 +81,80 @@
       "category": "Motor & controller",
       "qty": 1,
       "price": 25,
-      "note": "Thermal hardware allowance.",
+      "note": "The machined heatsink and the fan mount on it (ODrive's own heatsink-and-fan kit does not fit the bay).",
       "url": "https://shop.odriverobotics.com/",
       "status": "Estimate",
       "date": "",
       "motor": [
-        "aps8072s",
-        "mp80100",
-        "mp80100_220",
-        "c80100_220"
+        "main220"
+      ],
+      "rank": 3
+    },
+    {
+      "id": "p151",
+      "name": "ODESC V4.2 56 V controller (SEQURE)",
+      "category": "Motor & controller",
+      "qty": 1,
+      "price": 49.99,
+      "note": "180 lb takes about 69 A through a 30 s set. The seller's 70 A continuous rating is unverified: bench-test it (68 A for 30 s, three times, 3 min rest) before relying on it; if it only holds 53 A, the budget build tops out near 138 lb. 4.2 stars (5 ratings) on Amazon; SEQURE direct is $43.99 plus shipping and duties.",
+      "url": "https://www.amazon.com/dp/B0FH9DXFG7",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 4
+    },
+    {
+      "id": "p152",
+      "name": "NTC thermistors, 10 k, B3950, 10-pack (TIEXYE)",
+      "category": "Motor & controller",
+      "qty": 1,
+      "price": 0.8,
+      "note": "One glued to the motor's stator, read by the controller's thermistor input: it rolls the current back when the motor runs hot. Priced by the piece: 1 of a 10-pack ($7.99). The listing says 3590B, likely a typo for 3950: measure one.",
+      "url": "https://www.amazon.com/dp/B0F3X2G4D2",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "main220",
+        "budget180"
+      ],
+      "rank": 5
+    },
+    {
+      "id": "p153",
+      "name": "Thermally conductive adhesive tape, 0.25 mm (3M 8810 or equal), one sheet",
+      "category": "Motor & controller",
+      "qty": 1,
+      "price": 12.0,
+      "note": "Holds the machined 6061 heatsink on the ODrive's heat spreader.",
+      "url": "",
+      "status": "Estimate",
+      "date": "",
+      "motor": [
+        "main220"
+      ],
+      "rank": 6
+    },
+    {
+      "id": "p154",
+      "name": "Thermal pad, 100 x 100 x 0.5 mm (ARCTIC TP-3)",
+      "category": "Motor & controller",
+      "qty": 1,
+      "price": 6.99,
+      "note": "Between the ODESC and its aluminum heat spreader. 4.7 stars (2,791).",
+      "url": "https://www.amazon.com/dp/B09V53W559",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
       ],
       "rank": 7
     },
     {
       "id": "p027",
       "name": "Thunder Power TP2700-5SR70",
-      "category": "Battery & power",
+      "category": "Power & battery",
       "qty": 2,
       "price": 102.99,
       "note": "5S 2.7 Ah LiPo, EC5 leads. Two packs in series, on the printed TP2700 spacer. For more charge, the bay also takes 2 x TP3300-5SR70 (3.3 Ah, 122 Wh a pair against 100 Wh, regen to 39.6 A; $134.99 each, no spacer).",
@@ -184,32 +162,14 @@
       "status": "Source price",
       "date": "Checked Oct 2, 2026",
       "motor": [
-        "aps8072s",
-        "mp80100",
-        "mp80100_220",
-        "c80100_220"
+        "main220"
       ],
       "rank": 8
     },
     {
-      "id": "p123",
-      "name": "Mean Well LOP-600-36 power supply",
-      "category": "Battery & power",
-      "qty": 1,
-      "price": 105.34,
-      "note": "36 V open frame: 400 W by convection, 600 W with airflow, 150 % for 3 s. Jameco: $83.60 plus a 26 % tariff added at checkout; 3-week lead time, non-returnable.",
-      "url": "https://www.jameco.com/z/LOP-600-36-MEAN-WELL-600W-Low-Profile-Energy-Efficient-Medical-Open-Frame-Power-Supply-36V-11-1A-Convection-16-7A-with-Fan_2410207.html",
-      "status": "Source price",
-      "date": "Checked Oct 10, 2026",
-      "motor": [
-        "lite150"
-      ],
-      "rank": 9
-    },
-    {
       "id": "p028",
       "name": "JBD 10-17S 80 A smart BMS (same port, Bluetooth)",
-      "category": "Battery & power",
+      "category": "Power & battery",
       "qty": 1,
       "price": 46.92,
       "note": "US-stocked (a California eBay seller, 2-4 day delivery). Same port, so regen charges through it; NTC probe. The CAD is sized for its 102 x 65 x 12 mm board. Set over-charge to 4.20-4.25 V per cell in its app.",
@@ -217,17 +177,14 @@
       "status": "Source price",
       "date": "Checked Oct 12, 2026",
       "motor": [
-        "aps8072s",
-        "mp80100",
-        "mp80100_220",
-        "c80100_220"
+        "main220"
       ],
-      "rank": 10
+      "rank": 9
     },
     {
       "id": "p104",
       "name": "Blue Sea 5191 MRBF terminal fuse block",
-      "category": "Battery & power",
+      "category": "Power & battery",
       "qty": 1,
       "price": 30.78,
       "note": "58 V DC; upright on a printed insulating pad.",
@@ -235,17 +192,14 @@
       "status": "Recorded price",
       "date": "Checked Oct 3-5, 2026",
       "motor": [
-        "aps8072s",
-        "mp80100",
-        "mp80100_220",
-        "c80100_220"
+        "main220"
       ],
-      "rank": 11
+      "rank": 10
     },
     {
       "id": "p105",
       "name": "Blue Sea 5176 MRBF 40 A fuse",
-      "category": "Battery & power",
+      "category": "Power & battery",
       "qty": 2,
       "price": 19.35,
       "note": "58 V DC; one spare.",
@@ -253,32 +207,14 @@
       "status": "Source price",
       "date": "Checked Oct 12, 2026",
       "motor": [
-        "aps8072s",
-        "mp80100",
-        "mp80100_220",
-        "c80100_220"
+        "main220"
       ],
-      "rank": 12
-    },
-    {
-      "id": "p126",
-      "name": "uxcell 50 W 1 \u03a9 aluminium resistors, 5-pack",
-      "category": "Battery & power",
-      "qty": 1,
-      "price": 8.54,
-      "note": "Two in series (2 \u03a9) as the S1's brake resistor, screwed flat to the base plate, which is their heatsink. 5.0 stars (3 reviews), ships from Amazon.",
-      "url": "https://www.amazon.com/dp/B0F43QWVM3",
-      "status": "Source price",
-      "date": "Checked Oct 10, 2026",
-      "motor": [
-        "lite150"
-      ],
-      "rank": 13
+      "rank": 11
     },
     {
       "id": "p032",
       "name": "MINI 58 V 10 A fuse (Littelfuse 0997010.WXN)",
-      "category": "Battery & power",
+      "category": "Power & battery",
       "qty": 2,
       "price": 1.1,
       "note": "The charge-port line (charging the packs). 10 A in place of the 7.5 A 099707.5WXN, out of stock with no date; it still protects the 16 AWG charge lead.",
@@ -286,80 +222,112 @@
       "status": "Source price",
       "date": "Checked Oct 12, 2026",
       "motor": [
-        "aps8072s",
-        "mp80100",
-        "mp80100_220",
-        "c80100_220"
+        "main220"
       ],
-      "rank": 14
+      "rank": 12
     },
     {
       "id": "p031",
       "name": "MINI 58 V 3 A fuse (Littelfuse 0997003.WXN)",
-      "category": "Battery & power",
+      "category": "Power & battery",
       "qty": 2,
       "price": 1.04,
       "note": "The 5 V regulator feed. Digi-Key F5004-ND; ordinary MINI blades are 32 V.",
       "url": "https://www.digikey.com/en/products/result?keywords=0997003.WXN",
       "status": "Source price",
       "date": "Checked Oct 12, 2026",
-      "rank": 15
+      "motor": [
+        "main220"
+      ],
+      "rank": 13
     },
     {
       "id": "p106",
       "name": "Inline MINI fuse holder, 58 V DC (Littelfuse 0FHM0003ZXJS)",
-      "category": "Battery & power",
+      "category": "Power & battery",
       "qty": 2,
       "price": 6.39,
       "note": "20 A, 18 AWG leads, rated 58 V DC (the Amazon holders are 32 V).",
       "url": "https://www.digikey.com/en/products/detail/littelfuse-commercial-vehicle-products/0FHM0003ZXJS/29571868",
       "status": "Source price",
       "date": "Checked Oct 12, 2026",
+      "motor": [
+        "main220"
+      ],
+      "rank": 14
+    },
+    {
+      "id": "p155",
+      "name": "Mean Well LRS-600N2-48 power supply",
+      "category": "Power & battery",
+      "qty": 1,
+      "price": 84.69,
+      "note": "48 V, 600 W (1,200 W for 5 s), in the floor box: the budget build runs from the wall. From TRC Electronics, a US distributor, tariff included (a cheaper unrated Amazon listing may not be genuine). Holding 180 lb takes about 394 W.",
+      "url": "https://www.trcelectronics.com/products/mean-well-lrs-600n2-48",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 15
+    },
+    {
+      "id": "p156",
+      "name": "Mains inlet, pre-wired with fuse and lit rocker switch (10 A 125 V)",
+      "category": "Power & battery",
+      "qty": 1,
+      "price": 7.99,
+      "note": "The floor box's mains inlet and on/off switch. 4.7 stars (164).",
+      "url": "https://www.amazon.com/dp/B09DRLYD2Z",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
       "rank": 16
     },
     {
-      "id": "p124",
-      "name": "uxcell C14 panel-mount inlet, 10 A, 2-pack",
-      "category": "Battery & power",
+      "id": "p157",
+      "name": "Wall cord, C13 to NEMA 5-15P, 16 AWG, 10 ft (Monoprice)",
+      "category": "Power & battery",
       "qty": 1,
-      "price": 7.89,
-      "note": "The mains inlet, snapped into the back step. 4.8 stars (123), ships from Amazon.",
-      "url": "https://www.amazon.com/dp/B07PVP7GL2",
+      "price": 8.29,
+      "note": "The floor box to a 120 V outlet. 4.7 stars (180).",
+      "url": "https://www.amazon.com/dp/B003KQ0O9S",
       "status": "Source price",
-      "date": "Checked Oct 10, 2026",
+      "date": "Checked Oct 26, 2026",
       "motor": [
-        "lite150"
+        "budget180"
       ],
       "rank": 17
     },
     {
-      "id": "p125",
-      "name": "KCD1 rocker switch, 10 A 125 V / 6 A 250 V",
-      "category": "Battery & power",
+      "id": "p158",
+      "name": "Brake resistors, 1 \u03a9 100 W aluminum, 5-pack (Comidox)",
+      "category": "Power & battery",
       "qty": 1,
-      "price": 3.98,
-      "note": "Mains on/off in the line lead, beside the inlet. 4.3 stars (42), ships from Amazon.",
-      "url": "https://www.amazon.com/dp/B0DX1JY5BW",
+      "price": 4.0,
+      "note": "Two wired in series (2 \u03a9, the ODESC's value) on the inner plate: the wall supply cannot take braking energy, so it goes into them. Priced by the piece: 2 of a 5-pack ($9.99). 4.6 stars (140).",
+      "url": "https://www.amazon.com/dp/B077ZMFZM6",
       "status": "Source price",
-      "date": "Checked Oct 10, 2026",
+      "date": "Checked Oct 26, 2026",
       "motor": [
-        "lite150"
+        "budget180"
       ],
       "rank": 18
     },
     {
-      "id": "p114",
-      "name": "McMaster-Carr 2469K23 clamp coupling",
-      "category": "Drum & rope",
+      "id": "p159",
+      "name": "Power cable, 14 AWG 2-core silicone, tinned copper, 10 ft (Haerkn)",
+      "category": "Power & battery",
       "qty": 1,
-      "price": 73.02,
-      "note": "One-piece steel, 10 mm motor / 12 mm drum, 29 mm OD x 45 mm, 925 in\u00b7lbf (104 N\u00b7m), made in the US: the same size and rating as the Ruland MCLX-12-10-F, which is $101.90. The drum needs up to 17.1 N\u00b7m (25.7 with the 1.5x margin).",
-      "url": "https://www.mcmaster.com/2469K23/",
+      "price": 9.98,
+      "note": "From the floor box up the rack to the unit, cut to length. 4.6 stars (335).",
+      "url": "https://www.amazon.com/dp/B0B9JBG1SH",
       "status": "Source price",
-      "date": "Checked Oct 15, 2026",
+      "date": "Checked Oct 26, 2026",
       "motor": [
-        "aps8072s",
-        "lite150"
+        "budget180"
       ],
       "rank": 19
     },
@@ -369,28 +337,74 @@
       "category": "Drum & rope",
       "qty": 1,
       "price": 50.33,
-      "note": "One-piece steel, 12 mm motor / 12 mm drum, 29 mm OD x 45 mm, 105 N\u00b7m. Ruland web store: $50.33 (registered users get 5% off).",
+      "note": "One-piece steel, 12 mm motor / 12 mm drum, 29 mm OD x 45 mm, 105 N\u00b7m: 5.6x the drum's torque at 1.5 x 220 lb. The motor's key comes out; McMaster-Carr 2469K73 ($69.98) is the keyed version. Ruland web store (registered users get 5% off).",
       "url": "https://www.ruland.com/mclx-12-12-f.html",
       "status": "Source price",
       "date": "Checked Oct 15, 2026",
       "motor": [
-        "mp80100",
-        "mp80100_220",
-        "c80100_220"
+        "main220"
       ],
       "rank": 20
     },
     {
+      "id": "p160",
+      "name": "McMaster-Carr 2469K52 clamp coupling, 20 x 12 mm",
+      "category": "Drum & rope",
+      "qty": 1,
+      "price": 92.33,
+      "note": "Steel, \u00d842 x 65 mm, 350 N\u00b7m: the motor's shaft (key out) to the 20 mm drum shaft. Next-day from McMaster-Carr; the Ruland MCLX-20-12-F is the same part. No rated aluminum coupling in this bore pair was found.",
+      "url": "https://www.mcmaster.com/2469K52/",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 21
+    },
+    {
       "id": "p006",
-      "name": "12 mm steel drum shaft",
+      "name": "12 mm round steel shaft, 300 mm",
       "category": "Drum & rope",
       "qty": 1,
       "price": 15,
-      "note": "The drum shaft, 200 mm, used uncut.",
+      "note": "The drum shaft (a 12 mm linear shaft), cut to 262 mm with a cut-off wheel.",
       "url": "",
       "status": "Estimate",
       "date": "",
-      "rank": 21
+      "motor": [
+        "main220"
+      ],
+      "rank": 22
+    },
+    {
+      "id": "p161",
+      "name": "Drum shaft, 20 mm h7 ground 1045 steel, cut to 258 mm (Misumi NSFHR20-258)",
+      "category": "Drum & rope",
+      "qty": 1,
+      "price": 24.54,
+      "note": "Not hardened, so it can be drilled for the two cross bolts. Misumi USA cuts it to length (the 260 mm price; shipping not shown).",
+      "url": "https://us.misumi-ec.com/vona2/result/?Keyword=NSFHR20-255",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 23
+    },
+    {
+      "id": "p162",
+      "name": "Drum tube, 6061-T6 round tube, 1 in OD x .065 in wall, 12 in",
+      "category": "Drum & rope",
+      "qty": 1,
+      "price": 14.4,
+      "note": "Cut into the drum barrel (110 mm) and the two mount spacers (78 mm each). A common size at metal suppliers such as Metal Supermarkets (online price, October 27) or Online Metals. Used as bought: no lathe.",
+      "url": "https://www.metalsupermarkets.com/product/aluminum-round-tube-6061/",
+      "status": "Source price",
+      "date": "Checked Oct 27, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 24
     },
     {
       "id": "p007",
@@ -402,7 +416,10 @@
       "url": "https://www.amazon.com/dp/B07GVN7GQ7",
       "status": "Recorded price",
       "date": "Oct 2, 2026",
-      "rank": 22
+      "motor": [
+        "main220"
+      ],
+      "rank": 25
     },
     {
       "id": "p008",
@@ -410,47 +427,116 @@
       "category": "Drum & rope",
       "qty": 2,
       "price": 9.99,
-      "note": "Drum hub and 81T gear hub.",
+      "note": "The drum hub and the 81T gear hub.",
       "url": "https://www.servocity.com",
       "status": "Estimate",
       "date": "",
-      "rank": 23
+      "motor": [
+        "main220"
+      ],
+      "rank": 26
+    },
+    {
+      "id": "p163",
+      "name": "SHF20 shaft supports, 4-pack (HiPicco)",
+      "category": "Drum & rope",
+      "qty": 1,
+      "price": 15.59,
+      "note": "One used, on the drum adapter. 4.5 stars (26).",
+      "url": "https://www.amazon.com/dp/B0BHZKD6Q8",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 27
+    },
+    {
+      "id": "p164",
+      "name": "KFL004 flange bearings, 20 mm, 2-pack (S SYDIEN)",
+      "category": "Drum & rope",
+      "qty": 1,
+      "price": 10.39,
+      "note": "Both used: the drum's left end on the inner plate, its right end on the right plate. 4.3 stars (195).",
+      "url": "https://www.amazon.com/dp/B0F3D8BG1X",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 28
     },
     {
       "id": "p024",
-      "name": "1/8 in UHMWPE rope",
+      "name": "AmSteel-Blue rope, 1/8 in x 25 ft (2,300 lb)",
       "category": "Drum & rope",
       "qty": 1,
-      "price": 15,
-      "note": "About 3 m.",
+      "price": 20.95,
+      "note": "One rope in use (about 3.5-4 m) and the rest for the next one. The main build's 7/8 in drum bends it tighter than the usual 8:1, by choice: inspect it every ~20 sessions and replace it when fuzzy, glazed, flat, stiff or a strand is broken, or after about 6 months of use. 4.8 stars (378).",
+      "url": "https://www.amazon.com/dp/B0B8WKH8L1",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "rank": 29
+    },
+    {
+      "id": "p165",
+      "name": "MGW15 rail, 250 mm, with an MGW15H block",
+      "category": "Level-wind & exit",
+      "qty": 1,
+      "price": 55.0,
+      "note": "The traveller rail, cut to 213 mm with an abrasive cut-off wheel and deburred. Estimate: about $5 more than a 200 mm MGN15 set; the listing is still to be picked.",
       "url": "",
       "status": "Estimate",
       "date": "",
-      "rank": 24
+      "motor": [
+        "main220"
+      ],
+      "rank": 30
     },
     {
       "id": "p092",
-      "name": "MGN15H rail 200 mm with block, 2 sets",
+      "name": "MGN15 rails, 200 mm, with MGN15H blocks, 2-pack (Coavoo)",
       "category": "Level-wind & exit",
       "qty": 1,
-      "price": 49.99,
-      "note": "The traveller rail (one spare set).",
+      "price": 25.0,
+      "note": "One rail and block used, uncut: the guide. Priced by the piece: 1 of the 2-pack ($49.99). 4.7 stars (7).",
       "url": "https://www.amazon.com/dp/B0D7CLND4B",
-      "status": "Recorded price",
-      "date": "Checked Oct 3-5, 2026",
-      "rank": 25
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 31
+    },
+    {
+      "id": "p166",
+      "name": "Tr8 x 2 lead screw, 250 mm, with brass flange nut",
+      "category": "Level-wind & exit",
+      "qty": 1,
+      "price": 13.0,
+      "note": "Single start (a 3D-printer Z screw), cut to 245 mm. Estimate: the 200 mm 2-pack is $11.99.",
+      "url": "",
+      "status": "Estimate",
+      "date": "",
+      "motor": [
+        "main220"
+      ],
+      "rank": 32
     },
     {
       "id": "p091",
-      "name": "Tr8 x 2 lead screw, 200 mm, 2-pack",
+      "name": "Tr8 x 2 lead screw, 200 mm, brass nut, 2-pack (Vichan)",
       "category": "Level-wind & exit",
       "qty": 1,
       "price": 11.99,
-      "note": "With brass flange nuts; used uncut. Pick \"200mm / 2pcs Tr8X2\".",
+      "note": "Used uncut. Pick \"200mm / 2pcs Tr8X2\". 4.4 stars (468).",
       "url": "https://www.amazon.com/dp/B0B8RKSDJV",
-      "status": "Recorded price",
-      "date": "Checked Oct 3-5, 2026",
-      "rank": 26
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 33
     },
     {
       "id": "p090",
@@ -462,19 +548,40 @@
       "url": "https://www.gobilda.com/1309-series-sonic-hub-8mm-bore/",
       "status": "Source price",
       "date": "Checked Oct 12, 2026",
-      "rank": 27
+      "motor": [
+        "main220"
+      ],
+      "rank": 34
+    },
+    {
+      "id": "p167",
+      "name": "NATR6-PP track rollers, 6 mm bore",
+      "category": "Level-wind & exit",
+      "qty": 4,
+      "price": 6.0,
+      "note": "The two travelling and two fixed rollers, one each, on the 6 x 16 mm shoulder bolts. Estimate per roller.",
+      "url": "",
+      "status": "Estimate",
+      "date": "",
+      "motor": [
+        "main220"
+      ],
+      "rank": 35
     },
     {
       "id": "p093",
       "name": "626ZZ bearings, 10-pack",
       "category": "Level-wind & exit",
       "qty": 1,
-      "price": 9.99,
-      "note": "Travelling and fixed rollers, 8 needed.",
+      "price": 10.99,
+      "note": "The guide and fixed rollers. 4.7 stars (759).",
       "url": "https://www.amazon.com/dp/B07JHKBG4X",
-      "status": "Recorded price",
-      "date": "Checked Oct 3-5, 2026",
-      "rank": 28
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 36
     },
     {
       "id": "p021",
@@ -486,7 +593,10 @@
       "url": "https://www.amazon.com/dp/B08199J4RJ",
       "status": "Recorded price",
       "date": "Checked Oct 3-5, 2026",
-      "rank": 29
+      "motor": [
+        "main220"
+      ],
+      "rank": 37
     },
     {
       "id": "p095",
@@ -498,7 +608,10 @@
       "url": "https://www.amazon.com/dp/B089GG2YCT",
       "status": "Source price",
       "date": "Checked Oct 12, 2026",
-      "rank": 30
+      "motor": [
+        "main220"
+      ],
+      "rank": 38
     },
     {
       "id": "p096",
@@ -510,43 +623,112 @@
       "url": "https://www.amazon.com/dp/B07QLTXJDH",
       "status": "Recorded price",
       "date": "Checked Oct 3-5, 2026",
-      "rank": 31
+      "motor": [
+        "main220"
+      ],
+      "rank": 39
+    },
+    {
+      "id": "p168",
+      "name": "F8-16M thrust ball bearings, 2-pack (uxcell)",
+      "category": "Level-wind & exit",
+      "qty": 1,
+      "price": 6.29,
+      "note": "The lead screw's fixed end, both directions (3.0 kN static). 4.7 stars (94).",
+      "url": "https://www.amazon.com/dp/B07PMRH7NJ",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 40
     },
     {
       "id": "p097",
       "name": "8 mm set-screw shaft collars, 10-pack",
       "category": "Level-wind & exit",
       "qty": 1,
-      "price": 8.89,
-      "note": "Preloads the thrust pair.",
+      "price": 0.89,
+      "note": "Holds the screw against the thrust pair. Priced by the piece: 1 of a 10-pack ($8.89).",
       "url": "https://www.amazon.com/dp/B08SK2LNNV",
       "status": "Recorded price",
       "date": "Checked Oct 3-5, 2026",
-      "rank": 32
+      "motor": [
+        "main220"
+      ],
+      "rank": 41
+    },
+    {
+      "id": "p169",
+      "name": "8 mm shaft collars, 10-pack",
+      "category": "Level-wind & exit",
+      "qty": 1,
+      "price": 1.78,
+      "note": "The lead screw's ends. Priced by the piece: 2 of a 10-pack ($8.89). 4.7 stars (229).",
+      "url": "https://www.amazon.com/dp/B08SK2LNNV",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 42
+    },
+    {
+      "id": "p170",
+      "name": "F608ZZ flanged bearings, 4-pack",
+      "category": "Level-wind & exit",
+      "qty": 1,
+      "price": 7.49,
+      "note": "The lead screw's two bearings. 4.5 stars (59).",
+      "url": "https://www.amazon.com/dp/B0F4QWGCTV",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 43
+    },
+    {
+      "id": "p171",
+      "name": "M12 flat washers, 304, 25-pack (uxcell)",
+      "category": "Level-wind & exit",
+      "qty": 1,
+      "price": 0.84,
+      "note": "Two on the lead screw and one under the low mount spacer bolt's nut. Priced by the piece: 3 of a 25-pack ($6.99).",
+      "url": "https://www.amazon.com/dp/B0DDGMJ6YS",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 44
     },
     {
       "id": "p094",
       "name": "ISO 7379 shoulder bolts 6 x 16, M5, 6-pack",
       "category": "Level-wind & exit",
       "qty": 1,
-      "price": 8.99,
-      "note": "The four roller axles.",
+      "price": 5.99,
+      "note": "The four roller axles. Priced by the piece: 4 of a 6-pack ($8.99).",
       "url": "https://www.amazon.com/dp/B0DP6ZRSTT",
       "status": "Recorded price",
       "date": "Checked Oct 3-5, 2026",
-      "rank": 33
+      "motor": [
+        "main220"
+      ],
+      "rank": 45
     },
     {
       "id": "p098",
       "name": "16008-2RS bearings 40 x 68 x 9, 2-pack",
       "category": "Level-wind & exit",
       "qty": 1,
-      "price": 12.59,
-      "note": "The exit swivel pair. uxcell 2-pack, two-day delivery (the single listing shipped in two weeks).",
+      "price": 13.29,
+      "note": "The exit swivel pair. uxcell 2-pack. 4.7 stars (7).",
       "url": "https://www.amazon.com/dp/B0CMXGZMG8",
       "status": "Source price",
-      "date": "Checked Oct 12, 2026",
-      "rank": 34
+      "date": "Checked Oct 26, 2026",
+      "rank": 46
     },
     {
       "id": "p099",
@@ -558,7 +740,7 @@
       "url": "https://www.amazon.com/dp/B09BVV9BYZ",
       "status": "Recorded price",
       "date": "Checked Oct 3-5, 2026",
-      "rank": 35
+      "rank": 47
     },
     {
       "id": "p100",
@@ -570,31 +752,82 @@
       "url": "https://www.amazon.com/dp/B077GX5R3H",
       "status": "Source price",
       "date": "Checked Oct 12, 2026",
-      "rank": 36
+      "motor": [
+        "main220"
+      ],
+      "rank": 48
+    },
+    {
+      "id": "p172",
+      "name": "Shoulder bolts 12 x 25 mm, M10, 304, 2-pack (MECCANIXITY)",
+      "category": "Level-wind & exit",
+      "qty": 1,
+      "price": 11.49,
+      "note": "The exit pulley axles. 4.9 stars (17).",
+      "url": "https://www.amazon.com/dp/B0FDQZJQY1",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 49
     },
     {
       "id": "p137",
       "name": "M12 flat washers, DIN 125A 13 x 24 x 2.5, 25 pcs",
       "category": "Level-wind & exit",
       "qty": 1,
-      "price": 8.39,
-      "note": "Two on each exit axle shoulder, so the nut still clamps the pulleys. 2.5 mm thick (thinner ones leave the shoulder proud).",
+      "price": 1.34,
+      "note": "Two on each exit axle shoulder, so the nut still clamps the pulleys. 2.5 mm thick (thinner ones leave the shoulder proud). Priced by the piece: 4 of 25 ($8.39).",
       "url": "https://www.amazon.com/dp/B0FQHCTQ5N",
       "status": "Source price",
       "date": "Checked Oct 12, 2026",
-      "rank": 37
+      "motor": [
+        "main220"
+      ],
+      "rank": 50
     },
     {
       "id": "p101",
       "name": "Dowel pins 5 x 60 mm, 304 stainless, 24-pack",
       "category": "Level-wind & exit",
       "qty": 1,
-      "price": 8.49,
-      "note": "The exit's side rails.",
+      "price": 0.71,
+      "note": "The exit's two side rails. Priced by the piece: 2 of a 24-pack ($8.49).",
       "url": "https://www.amazon.com/dp/B0FZHR1NP3",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "rank": 51
+    },
+    {
+      "id": "p173",
+      "name": "DE-STA-CO 630-M straight-line toggle clamp, flange base",
+      "category": "Rack side & latch",
+      "qty": 1,
+      "price": 69.63,
+      "note": "The lever that locks the rack side to the upright (2,500 lbf holding): hang the plate, push the hitch pin through, push the lever over center. To take it off: lift the lever, pull the pin. FreerTool $69.63, Zoro $102.99 (October 2026). Its spindle is an M10 x 40 hex bolt (8.8) with two jam nuts.",
+      "url": "https://www.destaco.com/clamping/manual/straight-line-action-clamps/straight-line-action-clamps-630/productdetails.630-M.html",
       "status": "Recorded price",
-      "date": "Checked Oct 3-5, 2026",
-      "rank": 38
+      "date": "Oct 2026",
+      "motor": [
+        "main220"
+      ],
+      "rank": 52
+    },
+    {
+      "id": "p174",
+      "name": "Rear mount and latch small parts",
+      "category": "Rack side & latch",
+      "qty": 1,
+      "price": 35.0,
+      "note": "Four ISO 7379 12 x 12 mm shoulder screws (M10 x 16, 12.9) with four DIN 439 M10 thin nuts and 12 x 18 mm shim washers, two M10 x 19 ball spring plungers, the latch's hardened dowel pins (2 x 3 x 18, 2 x 4 x 16, 1 x 8 x 16 mm), its 0.5 x 4 x 40 mm stainless spring, 1.2 mm stainless rod and two M2.5 x 3 mm spacers. Estimate for the set.",
+      "url": "",
+      "status": "Estimate",
+      "date": "",
+      "motor": [
+        "main220"
+      ],
+      "rank": 53
     },
     {
       "id": "p046",
@@ -607,12 +840,9 @@
       "status": "Estimate",
       "date": "",
       "motor": [
-        "aps8072s",
-        "mp80100",
-        "mp80100_220",
-        "c80100_220"
+        "main220"
       ],
-      "rank": 39
+      "rank": 54
     },
     {
       "id": "p048",
@@ -624,7 +854,10 @@
       "url": "https://www.amazon.com/dp/B00KM6XMXO",
       "status": "Recorded price",
       "date": "Oct 2, 2026",
-      "rank": 40
+      "motor": [
+        "main220"
+      ],
+      "rank": 55
     },
     {
       "id": "p049",
@@ -636,37 +869,10 @@
       "url": "https://www.pololu.com/product/5571",
       "status": "Source price",
       "date": "Checked Oct 2, 2026",
-      "rank": 41
-    },
-    {
-      "id": "p127",
-      "name": "Seeed XIAO ESP32-C3",
-      "category": "Controls & screen",
-      "qty": 1,
-      "price": 9.9,
-      "note": "Bluetooth link to the phone app and the knob; talks to the S1 over CAN through the CAN board. 4.7 stars (382), ships from Amazon.",
-      "url": "https://www.amazon.com/dp/B0B94JZ2YF",
-      "status": "Source price",
-      "date": "Checked Oct 10, 2026",
       "motor": [
-        "lite150"
+        "main220"
       ],
-      "rank": 42
-    },
-    {
-      "id": "p128",
-      "name": "EC11 rotary encoders with push button and knob caps, 5-pack",
-      "category": "Controls & screen",
-      "qty": 1,
-      "price": 9.99,
-      "note": "The resistance knob, through the left cover. 4.3 stars (163), ships from Amazon. Or the WWZMDiB 6-pack (B0C6Q67V97, $8.88).",
-      "url": "https://www.amazon.com/dp/B08728K3YB",
-      "status": "Source price",
-      "date": "Checked Oct 10, 2026",
-      "motor": [
-        "lite150"
-      ],
-      "rank": 43
+      "rank": 56
     },
     {
       "id": "p043",
@@ -679,12 +885,9 @@
       "status": "Estimate",
       "date": "",
       "motor": [
-        "aps8072s",
-        "mp80100",
-        "mp80100_220",
-        "c80100_220"
+        "main220"
       ],
-      "rank": 44
+      "rank": 57
     },
     {
       "id": "p045",
@@ -697,12 +900,9 @@
       "status": "Source price",
       "date": "Checked Oct 13, 2026",
       "motor": [
-        "aps8072s",
-        "mp80100",
-        "mp80100_220",
-        "c80100_220"
+        "main220"
       ],
-      "rank": 45
+      "rank": 58
     },
     {
       "id": "p142",
@@ -715,12 +915,9 @@
       "status": "Source price",
       "date": "Checked Oct 13, 2026",
       "motor": [
-        "aps8072s",
-        "mp80100",
-        "mp80100_220",
-        "c80100_220"
+        "main220"
       ],
-      "rank": 46
+      "rank": 59
     },
     {
       "id": "p143",
@@ -733,12 +930,9 @@
       "status": "Source price",
       "date": "Checked Oct 13, 2026",
       "motor": [
-        "aps8072s",
-        "mp80100",
-        "mp80100_220",
-        "c80100_220"
+        "main220"
       ],
-      "rank": 47
+      "rank": 60
     },
     {
       "id": "p144",
@@ -751,24 +945,21 @@
       "status": "Source price",
       "date": "Checked Oct 13, 2026",
       "motor": [
-        "aps8072s",
-        "mp80100",
-        "mp80100_220",
-        "c80100_220"
+        "main220"
       ],
-      "rank": 48
+      "rank": 61
     },
     {
       "id": "p050",
       "name": "Noctua NF-A4x10 5V fan",
       "category": "Controls & screen",
       "qty": 1,
-      "price": 17,
-      "note": "Non-PWM reference; unit allowance.",
+      "price": 15.95,
+      "note": "Main build: cools the ODrive through its duct and the machined heatsink. Budget build: blows across the ODESC. Both run from the 5 V regulator. 4.8 stars (3,969).",
       "url": "https://www.amazon.com/dp/B00NEMGCIA",
-      "status": "Estimate",
-      "date": "",
-      "rank": 49
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "rank": 62
     },
     {
       "id": "p052",
@@ -781,12 +972,129 @@
       "status": "Estimate",
       "date": "",
       "motor": [
-        "aps8072s",
-        "mp80100",
-        "mp80100_220",
-        "c80100_220"
+        "main220"
       ],
-      "rank": 50
+      "rank": 63
+    },
+    {
+      "id": "p127",
+      "name": "Seeed XIAO ESP32-C3",
+      "category": "Controls & screen",
+      "qty": 1,
+      "price": 9.9,
+      "note": "On the perfboard by the ODESC: Bluetooth to the phone app, the knob and the start button, UART to the ODESC. 4.7 stars (386).",
+      "url": "https://www.amazon.com/dp/B0B94JZ2YF",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 64
+    },
+    {
+      "id": "p128",
+      "name": "EC11 push-button rotary encoders with knob caps, 6-pack",
+      "category": "Controls & screen",
+      "qty": 1,
+      "price": 8.88,
+      "note": "The dial on the motor's front: turn it to set the weight. 4.7 stars (71).",
+      "url": "https://www.amazon.com/dp/B0C6Q67V97",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 65
+    },
+    {
+      "id": "p175",
+      "name": "Pololu APM81815 5 V regulator carrier (#5267)",
+      "category": "Controls & screen",
+      "qty": 1,
+      "price": 6.95,
+      "note": "5.05-72 V in, 1.1 A: runs the XIAO and the fan from 48 V, on the perfboard. Plus shipping (not sold on Amazon).",
+      "url": "https://www.pololu.com/product/5267",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 66
+    },
+    {
+      "id": "p176",
+      "name": "AS5047P encoder board (Autoro)",
+      "category": "Controls & screen",
+      "qty": 1,
+      "price": 11.99,
+      "note": "Reads the drum's position for the controller. 5.0 stars (5).",
+      "url": "https://www.amazon.com/dp/B0H15G7NPX",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 67
+    },
+    {
+      "id": "p177",
+      "name": "Diametric magnets, 6 x 2.5 mm, 50-pack (KuntaiMag)",
+      "category": "Controls & screen",
+      "qty": 1,
+      "price": 0.42,
+      "note": "The encoder's magnet, in the drum's end. Priced by the piece: 1 of 50 ($20.98).",
+      "url": "https://www.amazon.com/dp/B0H1578MWG",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 68
+    },
+    {
+      "id": "p178",
+      "name": "Tactile switches, 12 x 12 x 7.3 mm, 25-pack (Gikfun)",
+      "category": "Controls & screen",
+      "qty": 1,
+      "price": 0.39,
+      "note": "One, behind the flush start/stop button. Priced by the piece: 1 of 25 ($9.78). 4.7 stars (362).",
+      "url": "https://www.amazon.com/dp/B01E38OS7K",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 69
+    },
+    {
+      "id": "p179",
+      "name": "Capacitors, 47 \u00b5F 63 V, 10-pack (JCCON)",
+      "category": "Controls & screen",
+      "qty": 1,
+      "price": 0.5,
+      "note": "One across the regulator's input. Priced by the piece: 1 of 10 ($4.99).",
+      "url": "https://www.amazon.com/dp/B0D78NSH96",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 70
+    },
+    {
+      "id": "p180",
+      "name": "10 k\u03a9 resistor and 1 \u00b5F ceramic capacitor",
+      "category": "Controls & screen",
+      "qty": 1,
+      "price": 0.2,
+      "note": "The motor thermistor's divider at the ODESC; from any kit.",
+      "url": "",
+      "status": "Estimate",
+      "date": "",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 71
     },
     {
       "id": "p107",
@@ -799,12 +1107,9 @@
       "status": "Recorded price",
       "date": "Checked Oct 3-5, 2026",
       "motor": [
-        "aps8072s",
-        "mp80100",
-        "mp80100_220",
-        "c80100_220"
+        "main220"
       ],
-      "rank": 51
+      "rank": 72
     },
     {
       "id": "p035",
@@ -812,17 +1117,11 @@
       "category": "Connectors & charging",
       "qty": 1,
       "price": 9.88,
-      "note": "Panel charge socket; one used.",
+      "note": "Main build: the panel charge socket. Budget build: the floor box's output. One used.",
       "url": "https://www.amazon.com/dp/B09SL2MNN1",
       "status": "Recorded price",
       "date": "Sep 2026",
-      "motor": [
-        "aps8072s",
-        "mp80100",
-        "mp80100_220",
-        "c80100_220"
-      ],
-      "rank": 52
+      "rank": 73
     },
     {
       "id": "p037",
@@ -835,12 +1134,9 @@
       "status": "Recorded price",
       "date": "Sep 2026",
       "motor": [
-        "aps8072s",
-        "mp80100",
-        "mp80100_220",
-        "c80100_220"
+        "main220"
       ],
-      "rank": 53
+      "rank": 74
     },
     {
       "id": "p038",
@@ -853,12 +1149,9 @@
       "status": "Recorded price",
       "date": "Sep 2026",
       "motor": [
-        "aps8072s",
-        "mp80100",
-        "mp80100_220",
-        "c80100_220"
+        "main220"
       ],
-      "rank": 54
+      "rank": 75
     },
     {
       "id": "p034",
@@ -871,12 +1164,9 @@
       "status": "Recorded price",
       "date": "Sep 2026",
       "motor": [
-        "aps8072s",
-        "mp80100",
-        "mp80100_220",
-        "c80100_220"
+        "main220"
       ],
-      "rank": 55
+      "rank": 76
     },
     {
       "id": "p036",
@@ -889,12 +1179,69 @@
       "status": "Recorded price",
       "date": "Sep 2026",
       "motor": [
-        "aps8072s",
-        "mp80100",
-        "mp80100_220",
-        "c80100_220"
+        "main220"
       ],
-      "rank": 56
+      "rank": 77
+    },
+    {
+      "id": "p181",
+      "name": "XT60 pairs with 14 AWG silicone leads, 2-pack",
+      "category": "Connectors & charging",
+      "qty": 1,
+      "price": 6.99,
+      "note": "The power cable's ends. 4.7 stars (311).",
+      "url": "https://www.amazon.com/dp/B07BF8154S",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 78
+    },
+    {
+      "id": "p182",
+      "name": "Amass XT60E-M panel plugs, 10-pack",
+      "category": "Connectors & charging",
+      "qty": 1,
+      "price": 11.99,
+      "note": "The unit's rear power port; one used. 4.8 stars (144).",
+      "url": "https://www.amazon.com/dp/B07YJMCDC3",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 79
+    },
+    {
+      "id": "p183",
+      "name": "5.5 mm gold bullet connectors, 6 pairs (OliRC)",
+      "category": "Connectors & charging",
+      "qty": 1,
+      "price": 4.0,
+      "note": "Three pairs on the motor's phase leads. Priced by the piece: 3 of 6 pairs ($7.99).",
+      "url": "https://www.amazon.com/dp/B07YV6B8VL",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 80
+    },
+    {
+      "id": "p184",
+      "name": "JST-PH 2.0 6-pin plug and socket pairs, 150 mm, 20 pairs",
+      "category": "Connectors & charging",
+      "qty": 1,
+      "price": 0.96,
+      "note": "Extends the motor's Hall sensor cable (check its plug first). Priced by the piece: 2 of 20 ($9.59).",
+      "url": "https://www.amazon.com/dp/B0BKSNM7NF",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 81
     },
     {
       "id": "p088",
@@ -902,11 +1249,14 @@
       "category": "Adhesives & spacers",
       "qty": 1,
       "price": 14.82,
-      "note": "Bonds the drum hub (and the CNC drum flanges) to the round shaft. The 10 mL listing is gone; the 50 mL bottle costs less.",
+      "note": "Bonds the drum flanges to the tube ends and the drum hub to the round shaft. The 10 mL listing is gone; the 50 mL bottle costs less.",
       "url": "https://www.amazon.com/dp/B000O01EV0",
       "status": "Source price",
       "date": "Checked Oct 12, 2026",
-      "rank": 57
+      "motor": [
+        "main220"
+      ],
+      "rank": 82
     },
     {
       "id": "p135",
@@ -918,44 +1268,416 @@
       "url": "https://www.amazon.com/dp/B01MQJ92VM",
       "status": "Source price",
       "date": "Checked Oct 11, 2026",
-      "rank": 58
+      "motor": [
+        "main220"
+      ],
+      "rank": 83
     },
     {
-      "id": "p089",
-      "name": "M5 aluminium spacers 10 x 3 mm, 20-pack",
+      "id": "p185",
+      "name": "M5 aluminum spacers, \u00d810 x 10 mm (5.2 mm bore)",
       "category": "Adhesives & spacers",
       "qty": 1,
-      "price": 5.5,
-      "note": "The 3 mm spacers under the APS 8072S face.",
-      "url": "https://www.amazon.com/dp/B0CQ2R5GDW",
-      "status": "Source price",
-      "date": "Checked Oct 12, 2026",
-      "rank": 59
-    },
-    {
-      "id": "p140",
-      "name": "6061-T6 aluminum plate and drum tube, to cut yourself",
-      "category": "Aluminum frame stock",
-      "qty": 1,
-      "price": 180,
-      "note": "0.250, 0.375 and 0.750 in plate and the 1-1/4 in drum tube from a local metal shop, enough for one build. You cut and drill it (CNC router or laser, a drill and taps, the printed drill guides). No CNC: have the metal made instead (below).",
+      "price": 1.2,
+      "note": "Four, between the MP8085's face and the motor face plate (4 x M5 x 25 through them). Estimate: about $6 for a 20-pack, priced by the piece.",
       "url": "",
       "status": "Estimate",
       "date": "",
-      "rank": 60
+      "motor": [
+        "main220"
+      ],
+      "rank": 84
+    },
+    {
+      "id": "p192",
+      "name": "1/2-13 x 8 in hex cap screws, grade 8, 10-pack (Hard-to-Find Fastener)",
+      "category": "Hardware",
+      "qty": 1,
+      "price": 6.24,
+      "note": "The two mount spacer bolts through the drum-side handle's posts. Priced by the piece: 2 of 10 ($31.20).",
+      "url": "https://www.amazon.com/dp/B00BBCV4RO",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 85
+    },
+    {
+      "id": "p193",
+      "name": "1/2-13 hex nuts, grade 8, 25-pack (Makers Bolt)",
+      "category": "Hardware",
+      "qty": 1,
+      "price": 0.72,
+      "note": "The mount spacer bolts' nuts. Priced by the piece: 2 of 25 ($8.97).",
+      "url": "https://www.amazon.com/dp/B0D362QFSM",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 86
+    },
+    {
+      "id": "p194",
+      "name": "1/2 in SAE flat washers, grade 8, 100-pack (Makers Bolt)",
+      "category": "Hardware",
+      "qty": 1,
+      "price": 0.51,
+      "note": "Three on the mount spacer bolts. Priced by the piece: 3 of 100 ($16.97).",
+      "url": "https://www.amazon.com/dp/B0D65L42PZ",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 87
+    },
+    {
+      "id": "p195",
+      "name": "3/8-16 x 5 in socket head cap screws, 12.9, 6 pcs",
+      "category": "Hardware",
+      "qty": 1,
+      "price": 6.0,
+      "note": "The motor bay's three spacer bolts (grade 5 or 8 hex bolts from a hardware store work too). Priced by the piece: 3 of 6 ($11.99).",
+      "url": "https://www.amazon.com/dp/B08VGB9L94",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 88
+    },
+    {
+      "id": "p196",
+      "name": "3/8 in nuts and washers kit",
+      "category": "Hardware",
+      "qty": 1,
+      "price": 1.17,
+      "note": "For the spacer bolts. Priced by the piece: 7 of 60 ($9.99).",
+      "url": "https://www.amazon.com/dp/B0GQB93PG8",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 89
+    },
+    {
+      "id": "p197",
+      "name": "M8 screw kit, class 12.9, 72 pcs (M8 x 30 socket heads, nuts, washers)",
+      "category": "Hardware",
+      "qty": 1,
+      "price": 0.83,
+      "note": "The KFL004 bearings' bolts and nuts. Priced by the piece: 6 of 72 ($9.99).",
+      "url": "https://www.amazon.com/dp/B0GPXBPR31",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 90
+    },
+    {
+      "id": "p198",
+      "name": "Bolt kit M3-M6, 900 pcs",
+      "category": "Hardware",
+      "qty": 1,
+      "price": 2.45,
+      "note": "Screws 8-20 mm, nuts and washers: the base plate strips, the motor and its pod, the fan. Priced by the piece: 116 of 900 ($18.99).",
+      "url": "https://www.amazon.com/dp/B0CWTP62N8",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 91
+    },
+    {
+      "id": "p199",
+      "name": "Lock nuts M3-M12, 170 pcs",
+      "category": "Hardware",
+      "qty": 1,
+      "price": 0.47,
+      "note": "All the nylocs. Priced by the piece: 8 of 170 ($9.99).",
+      "url": "https://www.amazon.com/dp/B0F61WKT6R",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 92
+    },
+    {
+      "id": "p200",
+      "name": "M3 countersunk screw assortment, 30-50 mm",
+      "category": "Hardware",
+      "qty": 1,
+      "price": 0.78,
+      "note": "The swivel housing's four and the two M3 x 50 stack bolts. Priced by the piece: 6 of 75 ($9.69).",
+      "url": "https://www.amazon.com/dp/B0CZQQX1TZ",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 93
+    },
+    {
+      "id": "p201",
+      "name": "Flat-head socket screw kit, M3/M4/M5, 304, 510 pcs with nuts (Glarks)",
+      "category": "Hardware",
+      "qty": 1,
+      "price": 1.47,
+      "note": "The covers, trays, rope clamp and start button. Priced by the piece: 47 of 510 ($15.99).",
+      "url": "https://www.amazon.com/dp/B0734Q7DDG",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 94
+    },
+    {
+      "id": "p202",
+      "name": "M4 x 16 button-head socket screws, 304, 100 pcs",
+      "category": "Hardware",
+      "qty": 1,
+      "price": 1.35,
+      "note": "The corner brackets. Priced by the piece: 15 of 100 ($8.99).",
+      "url": "https://www.amazon.com/dp/B081JQZDF6",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 95
+    },
+    {
+      "id": "p203",
+      "name": "M3 button-head screw kit, 304, 580 pcs",
+      "category": "Hardware",
+      "qty": 1,
+      "price": 0.15,
+      "note": "The encoder board and the floor box. Priced by the piece: 18 of 580 ($4.99).",
+      "url": "https://www.amazon.com/dp/B0D46D9D42",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 96
+    },
+    {
+      "id": "p204",
+      "name": "M3 x 30 socket head screws with nuts, 100 sets",
+      "category": "Hardware",
+      "qty": 1,
+      "price": 0.32,
+      "note": "The guide nut's four. Priced by the piece: 4 of 100 ($7.99).",
+      "url": "https://www.amazon.com/dp/B0DJP6TK7T",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 97
+    },
+    {
+      "id": "p205",
+      "name": "M6 x 20 flat-head socket cap screws, 10.9, 25 pcs",
+      "category": "Hardware",
+      "qty": 1,
+      "price": 2.88,
+      "note": "The base strips through the plates, flush (14 N\u00b7m). Priced by the piece: 8 of 25 ($8.99).",
+      "url": "https://www.amazon.com/dp/B085M34WJL",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 98
+    },
+    {
+      "id": "p206",
+      "name": "M6 x 16 button-head socket cap screws, 10.9, 80 pcs",
+      "category": "Hardware",
+      "qty": 1,
+      "price": 0.85,
+      "note": "The base strips up through the base plate (14 N\u00b7m). Priced by the piece: 8 of 80 ($8.54).",
+      "url": "https://www.amazon.com/dp/B0FY5TFKPB",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 99
+    },
+    {
+      "id": "p207",
+      "name": "M5 x 45 hex bolts with nuts, 304, 10 sets (MECCANIXITY)",
+      "category": "Hardware",
+      "qty": 1,
+      "price": 1.54,
+      "note": "The drum's two cross bolts (one hacksawn to 32 mm). Priced by the piece: 2 of 10 ($7.69).",
+      "url": "https://www.amazon.com/dp/B0FGJB2283",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 100
+    },
+    {
+      "id": "p208",
+      "name": "M6 x 40 socket screws, part-threaded, 12.9, 10-pack (uxcell)",
+      "category": "Hardware",
+      "qty": 1,
+      "price": 3.0,
+      "note": "The roller axles. Priced by the piece: 4 of 10 ($7.49).",
+      "url": "https://www.amazon.com/dp/B012T9NG0K",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 101
+    },
+    {
+      "id": "p209",
+      "name": "M5 x 12 flat-head socket screws, 304, 25-pack",
+      "category": "Hardware",
+      "qty": 1,
+      "price": 0.96,
+      "note": "The roller brackets. Priced by the piece: 4 of 25 ($5.99).",
+      "url": "https://www.amazon.com/dp/B0CTB9CF3V",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 102
+    },
+    {
+      "id": "p140",
+      "name": "6061-T6 aluminum plate, drum tube and heatsink stock, to cut yourself",
+      "category": "Frame stock",
+      "qty": 1,
+      "price": 186,
+      "note": "0.250, 0.375, 0.500 and 0.750 in plate, a 1/2 in offcut for the ODrive heatsink and the 7/8 in OD x 1/8 in wall drum tube (cut to 162 mm and used as bought), from a metal supplier, enough for one build. You cut and drill it: a CNC router or laser, a drill and the printed drill guides; no lathe. No CNC: have the metal made instead (below).",
+      "url": "",
+      "status": "Estimate",
+      "date": "",
+      "motor": [
+        "main220"
+      ],
+      "rank": 103
+    },
+    {
+      "id": "p186",
+      "name": "6061 plate, 6 x 6 in (6.0 mm), single (PATIKIL)",
+      "category": "Frame stock",
+      "qty": 1,
+      "price": 12.69,
+      "note": "The inner plate. 4.7 stars (41).",
+      "url": "https://www.amazon.com/dp/B0DGWZBNS2",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 104
+    },
+    {
+      "id": "p187",
+      "name": "6061 plate, 6 x 8 in (6.0 mm, Uxney)",
+      "category": "Frame stock",
+      "qty": 2,
+      "price": 18.99,
+      "note": "The right plate, and the exit plate cut to 188 mm. 4.6 stars (16).",
+      "url": "https://www.amazon.com/dp/B0GYXY2BJN",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 105
+    },
+    {
+      "id": "p188",
+      "name": "6061 flat bar, 1/4 x 4 x 8 in",
+      "category": "Frame stock",
+      "qty": 1,
+      "price": 12.97,
+      "note": "The cheek, hacksawn to 6 in. 4.8 stars (30).",
+      "url": "https://www.amazon.com/dp/B0GFNBPJB3",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 106
+    },
+    {
+      "id": "p189",
+      "name": "Steel angle, 1.6 x 1.6 x 0.18 in, A36, 12 in (Rocaris)",
+      "category": "Frame stock",
+      "qty": 1,
+      "price": 14.99,
+      "note": "Hacksawn into four 19 mm corner brackets for the exit plate and the 44 mm cheek strip. 4.6 stars (14).",
+      "url": "https://www.amazon.com/dp/B0FM29RL2V",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 107
+    },
+    {
+      "id": "p190",
+      "name": "6061-T651 sheet, 12 x 12 x 1/8 in",
+      "category": "Frame stock",
+      "qty": 1,
+      "price": 19.99,
+      "note": "The base plate, the left plate, the heat spreader and the drum flange, all from this one sheet, drilled through printed stand-ins. 4.6 stars (134).",
+      "url": "https://www.amazon.com/dp/B0BZPL1D4K",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 108
+    },
+    {
+      "id": "p191",
+      "name": "Aluminum angle, 1 x 1 x 1/8 in, 6061-T6, 12 in, 3 pcs (YLJNGUS)",
+      "category": "Frame stock",
+      "qty": 1,
+      "price": 18.99,
+      "note": "The inner, right and exit strips, 58, 43 and 110 mm, from one piece. 4.5 stars (66).",
+      "url": "https://www.amazon.com/dp/B0DXF1MMN4",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ],
+      "rank": 109
     }
   ],
   "accessories": [
     {
       "id": "p141",
-      "name": "Taps and drills for the edge holes",
+      "name": "Drills and taps",
       "category": "Accessories",
       "qty": 1,
       "price": 25,
-      "note": "M3 and M4 taps with a tap handle, and 2.5 and 3.3 mm drills: the edge holes are drilled by hand through the printed guides.",
+      "note": "3.4 and 4.5 mm drills for the edge holes (drilled by hand through the printed guides into the nut windows), and M2.5, M3 and M10 taps with a handle for the few holes that are still threaded (the fuse-block pad, the latch slider, the two ball plungers) if your service does not tap them.",
       "url": "",
       "status": "Estimate",
-      "date": ""
+      "date": "",
+      "motor": [
+        "main220"
+      ]
     },
     {
       "id": "p004",
@@ -963,7 +1685,7 @@
       "category": "Accessories",
       "qty": 1,
       "price": 35,
-      "note": "Protects the PC when you set up the ODrive over USB.",
+      "note": "Protects the PC when you set up the ODrive or the ODESC over USB.",
       "url": "https://shop.odriverobotics.com/",
       "status": "Estimate",
       "date": ""
@@ -988,7 +1710,24 @@
       "note": "10 to 24 AWG; lengths in the wiring reference.",
       "url": "",
       "status": "Estimate",
-      "date": ""
+      "date": "",
+      "motor": [
+        "main220"
+      ]
+    },
+    {
+      "id": "p210",
+      "name": "Silicone wire 12 AWG, red and black, 3 ft each (BNTECHGO)",
+      "category": "Accessories",
+      "qty": 1,
+      "price": 8.48,
+      "note": "The motor's three phase leads extended to the ODESC (measure the leads first).",
+      "url": "https://www.amazon.com/dp/B01AQU3ST8",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ]
     },
     {
       "id": "p040",
@@ -1001,10 +1740,7 @@
       "status": "Recorded price",
       "date": "Sep 2026",
       "motor": [
-        "aps8072s",
-        "mp80100",
-        "mp80100_220",
-        "c80100_220"
+        "main220"
       ]
     },
     {
@@ -1019,90 +1755,6 @@
       "date": ""
     },
     {
-      "id": "p129",
-      "name": "IEC C13 mains cord",
-      "category": "Accessories",
-      "qty": 1,
-      "price": 8,
-      "note": "Any standard computer or monitor power cord.",
-      "url": "",
-      "status": "Estimate",
-      "date": "",
-      "motor": [
-        "lite150"
-      ]
-    },
-    {
-      "id": "p130",
-      "name": "6.3 mm insulated female quick-disconnects",
-      "category": "Accessories",
-      "qty": 1,
-      "price": 7,
-      "note": "For the inlet and rocker switch tabs.",
-      "url": "",
-      "status": "Estimate",
-      "date": "",
-      "motor": [
-        "lite150"
-      ]
-    },
-    {
-      "id": "p131",
-      "name": "Power supply mating connectors (CN1, CN2)",
-      "category": "Accessories",
-      "qty": 1,
-      "price": 6,
-      "note": "The AC input and 12 V aux housings with crimps, as listed in the LOP-600 datasheet.",
-      "url": "",
-      "status": "Estimate",
-      "date": "",
-      "motor": [
-        "lite150"
-      ]
-    },
-    {
-      "id": "p132",
-      "name": "Ring terminals, M3.5 and M4, 10-16 AWG",
-      "category": "Accessories",
-      "qty": 1,
-      "price": 8,
-      "note": "The supply's DC screws, its earth screw and the earth stud in the base plate.",
-      "url": "",
-      "status": "Estimate",
-      "date": "",
-      "motor": [
-        "lite150"
-      ]
-    },
-    {
-      "id": "p133",
-      "name": "Thermal pad, 0.5 mm, 6 W/mK",
-      "category": "Accessories",
-      "qty": 1,
-      "price": 8,
-      "note": "Between the S1 and its plate.",
-      "url": "",
-      "status": "Estimate",
-      "date": "",
-      "motor": [
-        "lite150"
-      ]
-    },
-    {
-      "id": "p134",
-      "name": "JST GH 4-pin cable",
-      "category": "Accessories",
-      "qty": 1,
-      "price": 7,
-      "note": "CAN from the CAN board to the S1.",
-      "url": "",
-      "status": "Estimate",
-      "date": "",
-      "motor": [
-        "lite150"
-      ]
-    },
-    {
       "id": "p047",
       "name": "Low-profile female header strips",
       "category": "Accessories",
@@ -1111,7 +1763,10 @@
       "note": "Teensy socket: 2 x 14-pin low-profile machined-pin female.",
       "url": "https://www.amazon.com/dp/B0948H7FPP",
       "status": "Estimate",
-      "date": ""
+      "date": "",
+      "motor": [
+        "main220"
+      ]
     },
     {
       "id": "p051",
@@ -1119,7 +1774,7 @@
       "category": "Accessories",
       "qty": 1,
       "price": 10,
-      "note": "Three small boards (Teensy, CAN, regulator).",
+      "note": "Main build: three small boards (Teensy, CAN, regulator). Budget build: one (the XIAO and the regulator).",
       "url": "https://www.amazon.com/dp/B072Z7Y19F",
       "status": "Estimate",
       "date": ""
@@ -1135,10 +1790,7 @@
       "status": "Estimate",
       "date": "",
       "motor": [
-        "aps8072s",
-        "mp80100",
-        "mp80100_220",
-        "c80100_220"
+        "main220"
       ]
     },
     {
@@ -1150,7 +1802,10 @@
       "note": "The end pieces, level-wind, exit, tower, gears and brackets.",
       "url": "https://www.amazon.com/dp/B0F37YW223",
       "status": "Estimate",
-      "date": ""
+      "date": "",
+      "motor": [
+        "main220"
+      ]
     },
     {
       "id": "p108",
@@ -1161,7 +1816,24 @@
       "note": "The covers.",
       "url": "",
       "status": "Estimate",
-      "date": ""
+      "date": "",
+      "motor": [
+        "main220"
+      ]
+    },
+    {
+      "id": "p215",
+      "name": "PETG filament, 1 kg x 2 (ELEGOO)",
+      "category": "Accessories",
+      "qty": 1,
+      "price": 25.98,
+      "note": "The budget build's printed parts and covers. 4.6 stars (2,386).",
+      "url": "https://www.amazon.com/dp/B0D41Y3WWZ",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ]
     },
     {
       "id": "p061",
@@ -1174,10 +1846,7 @@
       "status": "Estimate",
       "date": "",
       "motor": [
-        "aps8072s",
-        "mp80100",
-        "mp80100_220",
-        "c80100_220"
+        "main220"
       ]
     },
     {
@@ -1191,10 +1860,7 @@
       "status": "Estimate",
       "date": "",
       "motor": [
-        "aps8072s",
-        "mp80100",
-        "mp80100_220",
-        "c80100_220"
+        "main220"
       ]
     },
     {
@@ -1210,36 +1876,36 @@
     },
     {
       "id": "p064",
-      "name": "1 inch steel rack hitch pin",
+      "name": "Hitch pin, 1 x 5 in, with R-clip, 2-pack (YuGtcen)",
       "category": "Accessories",
       "qty": 1,
-      "price": 20,
-      "note": "Or your rack's own 1 in pin: at least 92 mm between the head and the clip hole.",
-      "url": "https://www.amazon.com/dp/B08974F734",
-      "status": "Estimate",
-      "date": ""
+      "price": 15.97,
+      "note": "One used. Or your rack's own 1 in pin: the main build's rack side needs about 5 in usable between the head and the clip hole.",
+      "url": "https://www.amazon.com/dp/B0DRF883JL",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026"
     },
     {
-      "id": "p066",
-      "name": "Metric socket screw assortment",
+      "id": "p213",
+      "name": "Steel snap hook, 396 lb (seller's rating)",
       "category": "Accessories",
       "qty": 1,
-      "price": 22.99,
-      "note": "Purchase pack; the exact sizes and counts come with the build files.",
-      "url": "https://www.amazon.com/dp/B0FJFVG31G",
-      "status": "Recorded price",
-      "date": "Oct 2, 2026"
+      "price": 6.99,
+      "note": "Clips the handle to the rope. 4.8 stars (170).",
+      "url": "https://www.amazon.com/dp/B09LXKGBHM",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026"
     },
     {
-      "id": "p067",
-      "name": "M4 button-head assortment",
+      "id": "p214",
+      "name": "D-handle, 880 lb (Yes4All)",
       "category": "Accessories",
       "qty": 1,
-      "price": 9.59,
-      "note": "Purchase pack; the exact sizes and counts come with the build files.",
-      "url": "https://www.amazon.com/dp/B0BJQ4M7D5",
-      "status": "Recorded price",
-      "date": "Oct 2, 2026"
+      "price": 12.74,
+      "note": "Or any cable attachment you have. 4.8 stars (2,589).",
+      "url": "https://www.amazon.com/dp/B00FX34KDW",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026"
     },
     {
       "id": "p072",
@@ -1250,7 +1916,66 @@
       "note": "The insert pockets in every printed part are cut for this kit: M2 3 x 3.2, M2.5 4 x 4.0, M3 4 x 4.2, M4 5 x 5.0, M5 5 x 7.0 mm (length x outer diameter). Other brands may not grip.",
       "url": "https://www.amazon.com/dp/B0D2R955CL",
       "status": "Source price",
-      "date": "Checked Oct 13, 2026"
+      "date": "Checked Oct 13, 2026",
+      "motor": [
+        "main220"
+      ]
+    },
+    {
+      "id": "p211",
+      "name": "Heat-set inserts, 380-piece kit (3DZWMAN)",
+      "category": "Accessories",
+      "qty": 1,
+      "price": 1.0,
+      "note": "20 M3 for the covers, the motor tray, the floor box lid and the encoder cap. Priced by the piece: 20 of 380 ($18.99).",
+      "url": "https://www.amazon.com/dp/B0D2R955CL",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ]
+    },
+    {
+      "id": "p212",
+      "name": "Loctite 641 bearing retainer",
+      "category": "Accessories",
+      "qty": 1,
+      "price": 15.25,
+      "note": "The lead screw's two flanged 608 bearings.",
+      "url": "https://www.amazon.com/dp/B01MQJ92VM",
+      "status": "Source price",
+      "date": "Checked Oct 26, 2026",
+      "motor": [
+        "budget180"
+      ]
+    },
+    {
+      "id": "p066",
+      "name": "Metric socket screw assortment",
+      "category": "Accessories",
+      "qty": 1,
+      "price": 22.99,
+      "note": "Purchase pack; the exact sizes and counts come with the build files.",
+      "url": "https://www.amazon.com/dp/B0FJFVG31G",
+      "status": "Recorded price",
+      "date": "Oct 2, 2026",
+      "motor": [
+        "main220"
+      ]
+    },
+    {
+      "id": "p067",
+      "name": "M4 button-head assortment",
+      "category": "Accessories",
+      "qty": 1,
+      "price": 9.59,
+      "note": "Purchase pack; the exact sizes and counts come with the build files.",
+      "url": "https://www.amazon.com/dp/B0BJQ4M7D5",
+      "status": "Recorded price",
+      "date": "Oct 2, 2026",
+      "motor": [
+        "main220"
+      ]
     },
     {
       "id": "p074",
@@ -1261,7 +1986,10 @@
       "note": "Purchase pack; the exact sizes and counts come with the build files.",
       "url": "https://www.amazon.com/dp/B0GS8FZLTK",
       "status": "Estimate",
-      "date": ""
+      "date": "",
+      "motor": [
+        "main220"
+      ]
     },
     {
       "id": "p075",
@@ -1272,7 +2000,10 @@
       "note": "Purchase pack; the exact sizes and counts come with the build files.",
       "url": "https://www.amazon.com/dp/B0H5JVF4K4",
       "status": "Estimate",
-      "date": ""
+      "date": "",
+      "motor": [
+        "main220"
+      ]
     },
     {
       "id": "p076",
@@ -1283,7 +2014,10 @@
       "note": "Purchase pack; the exact sizes and counts come with the build files.",
       "url": "https://www.amazon.com/dp/B0956VQVJ2",
       "status": "Estimate",
-      "date": ""
+      "date": "",
+      "motor": [
+        "main220"
+      ]
     },
     {
       "id": "p077",
@@ -1294,7 +2028,10 @@
       "note": "Purchase pack; the exact sizes and counts come with the build files.",
       "url": "https://www.amazon.com/dp/B0CW5Y4RQY",
       "status": "Estimate",
-      "date": ""
+      "date": "",
+      "motor": [
+        "main220"
+      ]
     },
     {
       "id": "p078",
@@ -1305,7 +2042,10 @@
       "note": "Purchase pack; the exact sizes and counts come with the build files.",
       "url": "https://www.amazon.com/dp/B0CG1NVX6J",
       "status": "Estimate",
-      "date": ""
+      "date": "",
+      "motor": [
+        "main220"
+      ]
     },
     {
       "id": "p079",
@@ -1316,7 +2056,10 @@
       "note": "Purchase pack; the exact sizes and counts come with the build files.",
       "url": "https://www.amazon.com/dp/B0FG2BYJSR",
       "status": "Estimate",
-      "date": ""
+      "date": "",
+      "motor": [
+        "main220"
+      ]
     },
     {
       "id": "p080",
@@ -1327,7 +2070,10 @@
       "note": "Purchase pack; the exact sizes and counts come with the build files.",
       "url": "https://www.amazon.com/dp/B0GM84W3X8",
       "status": "Estimate",
-      "date": ""
+      "date": "",
+      "motor": [
+        "main220"
+      ]
     },
     {
       "id": "p109",
@@ -1338,7 +2084,10 @@
       "note": "Exit clamp, 4 needed.",
       "url": "",
       "status": "Estimate",
-      "date": ""
+      "date": "",
+      "motor": [
+        "main220"
+      ]
     },
     {
       "id": "p110",
@@ -1349,7 +2098,10 @@
       "note": "Lead screw nut flange, 4 needed.",
       "url": "",
       "status": "Estimate",
-      "date": ""
+      "date": "",
+      "motor": [
+        "main220"
+      ]
     },
     {
       "id": "p111",
@@ -1360,7 +2112,10 @@
       "note": "Exit pulley axles, 2 of each.",
       "url": "",
       "status": "Estimate",
-      "date": ""
+      "date": "",
+      "motor": [
+        "main220"
+      ]
     },
     {
       "id": "p083",
@@ -1371,7 +2126,10 @@
       "note": "Purchase pack; the exact sizes and counts come with the build files.",
       "url": "https://www.amazon.com/dp/B0F1FGKC1C",
       "status": "Estimate",
-      "date": ""
+      "date": "",
+      "motor": [
+        "main220"
+      ]
     },
     {
       "id": "p084",
@@ -1382,7 +2140,10 @@
       "note": "Purchase pack; the exact sizes and counts come with the build files.",
       "url": "https://www.amazon.com/dp/B097N3SGCD",
       "status": "Estimate",
-      "date": ""
+      "date": "",
+      "motor": [
+        "main220"
+      ]
     }
   ],
   "outsourced": [
@@ -1393,34 +2154,43 @@
       "qty": 1,
       "low": 200,
       "high": 300,
-      "note": "The base, rear and motor face plates, the rack cheeks and the drum flanges (0.250 and 0.375 in), plus the four 2 mm steel bearing cheeks, cut from the DXF files at an instant-priced laser service such as SendCutSend. The prototype's plates came to about $200-300 at SendCutSend (October 2026). Tapping and countersinking are extra, charged per hole.",
+      "note": "The base, rear and motor face plates (with their nut windows), the drum flanges and the latch slider (0.250 and 0.375 in), plus the four 2 mm steel bearing cheeks, cut from the DXF files at an instant-priced laser service such as SendCutSend. The prototype's plates came to about $200-300 at SendCutSend (October 2026). Countersinking is extra, charged per hole.",
       "url": "https://sendcutsend.com",
       "status": "Recorded price",
-      "date": "Oct 2026"
+      "date": "Oct 2026",
+      "motor": [
+        "main220"
+      ]
     },
     {
       "id": "p136",
-      "name": "Thick plate parts: drum holders, corner gussets and the mating plate",
+      "name": "Thick plate parts: drum holders, corner gussets, rack side and ODrive heatsink",
       "category": "Fabrication",
       "qty": 1,
-      "low": 75,
-      "high": 175,
-      "note": "The two 3/8 in drum bearing holders, the three 1/4 in corner gussets and the 3/4 in mating plate, cut from plate like the rest (no machined blocks). The 28 mm bearing bores are finished to H7 and the M10 threads tapped after cutting.",
+      "low": 100,
+      "high": 225,
+      "note": "The two 3/8 in drum bearing holders, the three 1/4 in corner gussets, the rack side's mating plate, its two 1/2 in cheeks and pad bar, and the finned ODrive heatsink, milled from plate (no machined blocks, no lathe). The 28 mm bearing bores are finished to H7.",
       "url": "",
       "status": "Estimate",
-      "date": ""
+      "date": "",
+      "motor": [
+        "main220"
+      ]
     },
     {
       "id": "p103",
-      "name": "Drum tube, 6061, 1-1/4 in OD x 0.250 in wall, 100 mm",
+      "name": "Drum tube, 6061-T6, 7/8 in OD x 1/8 in wall, 162 mm",
       "category": "Fabrication",
       "qty": 1,
-      "low": 15,
-      "high": 30,
-      "note": "From a local metal shop, cut square; ask for T6.",
+      "low": 10,
+      "high": 20,
+      "note": "From a metal supplier such as Metal Supermarkets or Online Metals, cut square (reference: about $8.50 a foot). Used as bought: no lathe.",
       "url": "",
       "status": "Estimate",
-      "date": ""
+      "date": "",
+      "motor": [
+        "main220"
+      ]
     }
   ]
 }
